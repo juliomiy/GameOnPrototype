@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/rg230v/Desktop/Archive/twitter4j-core-2.1.2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/rg230v/Desktop/Archive/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/rg230v/Desktop/Archive/signpost-commonshttp4-1.2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Documents and Settings/rg230v/Desktop/Archive/signpost-core-1.2.1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
