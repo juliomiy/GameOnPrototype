@@ -3,6 +3,7 @@ package com.jittr.android.fs.impl;
 
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 
 import android.util.Log;
@@ -15,6 +16,7 @@ import com.jittr.android.fs.dto.Tip;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.Venue;
 import com.jittr.android.fs.handlers.UserHandler;
+import com.jittr.android.fs.handlers.VenueHandler;
 import com.jittr.android.fs.utils.Constants;
 import com.jittr.android.fs.utils.FSConnectionHandler;
 import com.jittr.android.fs.utils.NVPair;
@@ -67,6 +69,107 @@ public class FSClientAPIImpl implements FSClientInterface {
 		}
 	}
 
+	public List<User> getFriends(String uid) {
+		try {
+			
+			NVPair nvps [] = {new NVPair("uid",uid) };
+	
+			String url = URLBuilder.createUrl(Constants.USER_Friends_URL,nvps);
+			Log.d("","Getting Friends Url :"+url);
+  
+			String data = fsc.getContent(new URL(url));
+	
+			// Use XML/JSON Handler based on Factory But for now use only xml handler
+			UserHandler uh = new UserHandler(data);
+			List users = uh.parseList();
+			
+			//Lets Verify the returned data..will remove this
+			System.out.println("Users Size "+users.size());
+			for(int i=0;i<users.size();i++) {
+				User temp = (User)users.get(i);
+				Log.d("", " i  "+i);
+				Log.d("", "User ID "+temp.getId());
+				Log.d("", "User FName "+temp.getFirstName());
+				Log.d("", "User LName "+temp.getLastName());
+				Log.d("", "User Phone "+temp.getPhone());
+				Log.d("", "User Email "+temp.getEmail());
+			}
+			return  users;
+		}
+		catch(Exception e) {
+			Log.w("", "Exception while getting user friends  "+e.getMessage());
+			return null;
+		}
+		
+		
+	}
+	
+	
+	public List<Venue> getNearByVenues(String geolat, String geolong, int limit,String query) {
+		
+		try {
+			NVPair nvps [] = {new NVPair("geolat",geolat),
+					  new NVPair("geolong",geolong),
+					  new NVPair("limit", String.valueOf(limit)),
+					  new NVPair("query", query) 
+					 };
+	
+			String url = URLBuilder.createUrl(Constants.Venues_Search_URL,nvps);
+			Log.d("","Url :"+url);
+  
+			String data = fsc.getContent(new URL(url));
+			Log.d("","data :"+data);
+			VenueHandler vh = new VenueHandler(data);
+			
+			List venues = vh.parseList();
+			
+			//Lets Verify the returned data..will remove this
+			System.out.println("venues Size.... "+venues.size());
+			for(int i=0;i<venues.size();i++) {
+				Venue temp = (Venue)venues.get(i);
+				Log.d("", " i  "+i);
+				Log.d("", "Venue ID "+temp.getId());
+				Log.d("", "Venue Name "+temp.getName());
+				Log.d("", "Venue CStreet "+temp.getCrossstreet());
+				Log.d("", "Venue Address "+temp.getAddress());
+				Log.d("", "Venue City "+temp.getCity());
+				Log.d("", "Venue Group Type  "+temp.getGroupType());
+				Log.d("", "Venue Category "+temp.getCategory());
+				Log.d("", "Venue Stats  "+temp.getStats());
+			}
+			return venues;
+		}
+		catch(Exception e) {
+			Log.w("", "Exception while getNearByVenues "+e.getMessage());
+			return null;
+		}
+		
+	}
+	
+	public Venue getVenueDetails(String vid) {
+		try {
+			NVPair nvps [] = {new NVPair("vid",vid) };
+	
+			String url = URLBuilder.createUrl(Constants.Venue_Detail_URL,nvps);
+			Log.d("","Url :"+url);
+  
+			String data = fsc.getContent(new URL(url));
+			Log.d("","data :"+data);
+			
+			VenueHandler vh = new VenueHandler(data);
+			Venue temp = (Venue)vh.parse();
+			Log.d("", "Venue ID "+temp.getId());
+			Log.d("", "Venue Name "+temp.getName());
+			Log.d("", "Venue CStreet "+temp.getCrossstreet());
+			Log.d("", "Venue Address "+temp.getAddress());
+			Log.d("", "Venue City "+temp.getCity());
+		}
+		catch(Exception e) {
+			Log.w("", "Exception while getNearByVenues "+e.getMessage());
+			return null;
+		}
+		return null;
+	}
 	
 	public List<Venue> getCheckInHistory() {
 		// TODO Auto-generated method stub
@@ -138,10 +241,7 @@ public class FSClientAPIImpl implements FSClientInterface {
 		return null;
 	}
 
-	public List<User> getFriends(String uid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	public List<User> getPendingFriendRequests() {
 		// TODO Auto-generated method stub
@@ -153,16 +253,9 @@ public class FSClientAPIImpl implements FSClientInterface {
 		return null;
 	}
 
-	public Venue getVenueDetails(String vid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
-	public List<Venue> getVenues(String geolat, String geolong, int limit,
-			String query) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	public Tip markTipAsToDo(String tid) {
 		// TODO Auto-generated method stub

@@ -1,5 +1,7 @@
 package com.jittr.android;
 
+import java.util.List;
+
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
 
@@ -50,8 +52,14 @@ public class mainForm extends Activity {
 		//Create client 
 		FSClientAPIImpl fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		//Call FS implemnted methods
-		User userObj = fs.getUserDetails("2478174", null, false,false);
-		System.out.println("Got the USer Obj ..."+userObj.getFirstName());
+		//User userObj = fs.getUserDetails("2478174", null, false,false);
+		//System.out.println("Got the USer Obj ..."+userObj.getFirstName());
+		//List users = fs.getFriends("2478174");
+		//NY geolat:40.7204, geolong:-73.9933
+		fs.getNearByVenues("40.7204","-73.9933",10,"");
+		//fs.getVenueDetails("79153");
+		
+		Log.d("", "Test User Method complted ");
 		
     	finish();
     }  //cancelButton_pressed

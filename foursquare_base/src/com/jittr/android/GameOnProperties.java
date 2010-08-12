@@ -3,10 +3,11 @@ package com.jittr.android;
  * 
  */
 import java.io.IOException;
+
 import java.io.InputStream;
 import java.util.Properties;
 
-import twitter4j.http.AccessToken;
+
 import com.jittr.android.R;
 import android.content.Context;
 import android.content.SharedPreferences;

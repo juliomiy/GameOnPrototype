@@ -11,8 +11,10 @@ public class URLBuilder {
 		
 		String queryStr = "";
 		for(int i=0;i<nvps.length;i++) {
-			String tempPair = nvps[i].getName()+"="+nvps[i].getValue()+"&";
-			queryStr = queryStr+tempPair;
+			if(nvps[i].getValue() !=null && !"".equals(nvps[i].getValue())) {
+				String tempPair = nvps[i].getName()+"="+nvps[i].getValue()+"&";
+				queryStr = queryStr+tempPair;
+			}
 		}
 		System.out.println("QueryStr "+queryStr);
 		String finalUrl =url+"?"+queryStr;

@@ -49,7 +49,8 @@ public class FSConnectionHandler {
     		String cred = username+":"+pwd;
     		String encoding = BASE64Encoder.encode(cred.getBytes());
     		connection.setRequestProperty ("Authorization", "Basic " + encoding);
-    		connection.setRequestProperty("Content-Type","application/xml"); 
+    		connection.setRequestProperty("Content-Type","application/xml");
+    		connection.setRequestProperty("User-Agent", "JITTR/Gameon_"+Constants.GameOn_Version);
     		//Connect
     		connection.connect();
     		//Get Response Code

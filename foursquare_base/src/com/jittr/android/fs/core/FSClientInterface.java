@@ -19,18 +19,24 @@ import com.jittr.android.fs.dto.Venue;
 public interface FSClientInterface  {
    
 	
-	// Check-in methods
-	List<CheckIn> getRecentCheckins(String geolat, String geolong);
-	CheckinResonse checkin(String vid, String venueName, String shout, boolean isPrivate, boolean sendToTwitter, boolean sendToFaceBook,String geoLat, String geoLang);
-	List<Venue> getCheckInHistory();
-
 	// User methods
 	User getUserDetails(String uid, String twitter, boolean badges, boolean mayor);
 	List<User> getFriends(String uid);
 	
 	// Venue methods
-	List<Venue> getVenues(String geolat, String geolong,int limit, String query);
+	List<Venue> getNearByVenues(String geolat, String geolong,int limit, String query);
 	Venue getVenueDetails(String vid);
+	
+	
+	// Check-in methods
+	List<CheckIn> getRecentCheckins(String geolat, String geolong);
+	CheckinResonse checkin(String vid, String venueName, String shout, boolean isPrivate, boolean sendToTwitter, boolean sendToFaceBook,String geoLat, String geoLang);
+	List<Venue> getCheckInHistory();
+
+	
+	
+	
+	
 	List <Category> getAllcategories();
 	Venue addvenue(String name, String address, String crossstreet, String city, String state,String zip, String phone, String geolat, String geolong, String categoryId);
 	boolean proposeVenueEdit(String name, String address, String crossstreet, String city, String state,String zip, String phone, String geolat, String geolong, String categoryId);

@@ -2,6 +2,7 @@ package com.jittr.android.fs.handlers;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.SAXParser;
@@ -25,6 +26,7 @@ public class UserHandler extends DefaultHandler implements ParserInterface {
 	String data = "";
 	private StringBuilder builder;
     private User user = null;
+    private List users = null;
     
 	public UserHandler(String data) {
 		this.data = data;
@@ -45,13 +47,17 @@ public class UserHandler extends DefaultHandler implements ParserInterface {
 
 	public void startDocument() throws SAXException {
 		super.startDocument();
+		System.out.println("Start document");
 		user = new User();
+		users = new ArrayList();
+		
 		builder = new StringBuilder();
     }
 	
     public void startElement(String uri, String localName, String name,Attributes attributes) throws SAXException {
 		super.startElement(uri, localName, name, attributes);
-		System.out.println("selement uri= " + uri +  " localName = " + localName + " name = " + name);
+		
+		System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
 		if (localName.equalsIgnoreCase(Constants.FS_USER)){
 		   this.user = new User();
 		 }
@@ -66,6 +72,7 @@ public class UserHandler extends DefaultHandler implements ParserInterface {
 	
     public void endElement(String uri, String localName, String name)  throws SAXException {
 		super.endElement(uri, localName, name);
+		
 		System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
 		if (this.user != null){
 		    if (localName.equalsIgnoreCase(Constants.FS_ID)){
@@ -90,13 +97,28 @@ public class UserHandler extends DefaultHandler implements ParserInterface {
 		        user.setFacebook(builder.toString());
 		    }
 		    
+		    if (localName.equalsIgnoreCase(Constants.FS_USER)){
+		    	System.out.println("Adding to users List ");
+		    	users.add(user);  
+			}
+		    
 		    builder.setLength(0);    
 		}
 	}
 	
     
     public List<Object> parseList() {
-		return null;
+		
+    	try {
+			SAXParserFactory factory = SAXParserFactory.newInstance();
+            SAXParser saxParser = factory.newSAXParser();
+            saxParser.parse(new DataInputStream(new ByteArrayInputStream(data.getBytes())), this);
+            
+            return users;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    	
 	}
 	
 		
