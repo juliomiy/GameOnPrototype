@@ -2,6 +2,7 @@ package com.jittr.android;
 
 import java.util.List;
 
+import com.jittr.android.R.id;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
 
@@ -15,6 +16,8 @@ import android.widget.Button;
 public class mainForm extends Activity {
  	private Button cancelButton;
 	private Button foursquareOauthButton;
+	private Button getUserDetailsButton;
+	private Button getNearbyVenuesButton;
 
 	/** Called when the activity is first created. */
     @Override
@@ -32,6 +35,26 @@ public class mainForm extends Activity {
     private void setUpViews() {
 		cancelButton = (Button) findViewById(R.id.cancel_button);
         foursquareOauthButton = (Button)findViewById(R.id.foursquareoauth);
+        getUserDetailsButton = (Button)findViewById(R.id.getuserdetails_button);
+        getNearbyVenuesButton = (Button)findViewById(R.id.getnearbyvenues_button);
+        
+        getNearbyVenuesButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			    getNearbyVenuesButtonClicked(); {
+			    	
+			    }
+			}
+		});
+        
+        getUserDetailsButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				getUserDetailsButtonClicked();
+			}
+		});
         cancelButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				cancelButtonClicked(v);
@@ -45,7 +68,16 @@ public class mainForm extends Activity {
 
     } //setupViews
     
-    // finish the app 
+    protected void getNearbyVenuesButtonClicked() {
+    	Intent intent = new Intent(this,GetNearbyVenuesActivity.class);
+		startActivity(intent);		}
+
+	protected void getUserDetailsButtonClicked() {
+    	Intent intent = new Intent(this,GetUserDetailsActivity.class);
+		startActivity(intent);	
+	}
+
+	// finish the app 
     private void cancelButtonClicked(View v) {
     	
 		Log.d("", "Test User Method ");

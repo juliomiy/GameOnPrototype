@@ -16,6 +16,18 @@
     android:layout_height="wrap_content">
 </Button>
 <Button 
+    android:text="@string/testuserdetails"
+    android:id="@+id/getuserdetails_button" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</Button>
+<Button 
+    android:text="@string/testnearbyvenues"
+    android:id="@+id/getnearbyvenues_button" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</Button>
+<Button 
      android:text="@string/cancel_button" 
      android:id="@+id/cancel_button" 
      android:layout_width="wrap_content" 

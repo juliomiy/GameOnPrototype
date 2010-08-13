@@ -15,6 +15,12 @@
        <activity android:name=".FoursquareOauth"  
                  android:label="@string/app_name">
        </activity>
+       <activity android:name=".GetUserDetailsActivity"
+                 android:label="@string/testuserdetails">
+       </activity>
+       <activity android:name=".GetNearbyVenuesActivity"
+                 android:label="@string/testnearbyvenues">
+       </activity>          
  
     </application>
     <uses-sdk android:minSdkVersion="4" />

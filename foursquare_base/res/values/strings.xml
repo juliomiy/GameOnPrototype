@@ -5,4 +5,8 @@
     <string name="foursquarebase">Foursquare Base</string>
     <string name="foursquareoauth">Start Foursquare Oauth</string>
     <string name="cancel_button">Cancel</string>
+    <string name="testuserdetails">Test getUserDetails</string>
+    <string name="testnearbyvenues">Test getNearByVenues</string>
+    <string name="emailedittext">Enter Email</string>
+    <string name="novenues">No Venues</string>
 </resources>
