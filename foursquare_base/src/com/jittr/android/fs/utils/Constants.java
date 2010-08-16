@@ -9,6 +9,10 @@ public class Constants {
 	 public static String Venues_Search_URL = "http://api.foursquare.com/v1/venues";
 	 public static String Venue_Detail_URL = "http://api.foursquare.com/v1/venue";
 	 
+	 public static String Venue_Check_In_URL="http://api.foursquare.com/v1/checkin";
+	 
+	 public static String Categories_URL = "http://api.foursquare.com/v1/categories";
+	 
 	 public static final String FS_ID="id";
 	 public static final String FS_USER="user";
 	 public static final String FS_FNAME="firstname";

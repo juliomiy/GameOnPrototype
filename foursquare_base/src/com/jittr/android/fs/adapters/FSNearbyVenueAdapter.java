@@ -1,6 +1,7 @@
 package com.jittr.android.fs.adapters;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import android.content.Context;
@@ -24,23 +25,19 @@ public class FSNearbyVenueAdapter extends BaseAdapter {
 	     this.context=context;
 	}
 
-	@Override
 	public int getCount() {
 		int size = venues.size();
 		return venues.size();
 	}
 
-	@Override
 	public Venue getItem(int position) {
 		return (null == venues) ? null : venues.get(position);
 	}
 
-	@Override
 	public long getItemId(int position) {
 		return position;
 	}
 
-	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		VenueListItemLayout tli;
 		if (null == convertView) {

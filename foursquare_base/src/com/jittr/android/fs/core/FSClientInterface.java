@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.jittr.android.fs.dto.Category;
 import com.jittr.android.fs.dto.CheckIn;
-import com.jittr.android.fs.dto.CheckinResonse;
+import com.jittr.android.fs.dto.CheckinResponse;
 import com.jittr.android.fs.dto.Tip;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.Venue;
@@ -30,7 +30,7 @@ public interface FSClientInterface  {
 	
 	// Check-in methods
 	List<CheckIn> getRecentCheckins(String geolat, String geolong);
-	CheckinResonse checkin(String vid, String venueName, String shout, boolean isPrivate, boolean sendToTwitter, boolean sendToFaceBook,String geoLat, String geoLang);
+	CheckinResponse checkin(String vid, String venueName, String shout, boolean isPrivate, boolean sendToTwitter, boolean sendToFaceBook,String geoLat, String geoLang);
 	List<Venue> getCheckInHistory();
 
 	

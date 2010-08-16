@@ -2,6 +2,7 @@ package com.jittr.android;
 
 import java.util.List;
 
+
 import com.jittr.android.R.id;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
@@ -12,6 +13,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+ 
+
 
 public class mainForm extends Activity {
  	private Button cancelButton;
@@ -40,7 +43,6 @@ public class mainForm extends Activity {
         
         getNearbyVenuesButton.setOnClickListener(new View.OnClickListener() {
 			
-			@Override
 			public void onClick(View v) {
 			    getNearbyVenuesButtonClicked(); {
 			    	
@@ -50,7 +52,6 @@ public class mainForm extends Activity {
         
         getUserDetailsButton.setOnClickListener(new View.OnClickListener() {
 			
-			@Override
 			public void onClick(View v) {
 				getUserDetailsButtonClicked();
 			}
@@ -88,10 +89,15 @@ public class mainForm extends Activity {
 		//System.out.println("Got the USer Obj ..."+userObj.getFirstName());
 		//List users = fs.getFriends("2478174");
 		//NY geolat:40.7204, geolong:-73.9933
-		fs.getNearByVenues("40.7204","-73.9933",10,"");
-		//fs.getVenueDetails("79153");
+		//fs.getNearByVenues("40.7204","-73.9933",10,"");
 		
-		Log.d("", "Test User Method complted ");
+		//fs.getVenueDetails("79153");
+		//fs.getNearByVenues("40.7204","-73.9933",10,"test string...");
+		System.out.println("************************");
+		//fs.checkin("79153", null, "just checked in using API", false, false, false, null, null);
+		fs.getAllcategories();
+		
+		Log.d("", "Test  Method complted ");
 		
     	finish();
     }  //cancelButton_pressed

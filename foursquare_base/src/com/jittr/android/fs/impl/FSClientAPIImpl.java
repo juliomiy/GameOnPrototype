@@ -11,10 +11,12 @@ import android.util.Log;
 import com.jittr.android.fs.core.FSClientInterface;
 import com.jittr.android.fs.dto.Category;
 import com.jittr.android.fs.dto.CheckIn;
-import com.jittr.android.fs.dto.CheckinResonse;
+import com.jittr.android.fs.dto.CheckinResponse;
 import com.jittr.android.fs.dto.Tip;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.Venue;
+import com.jittr.android.fs.handlers.CategoriesHandler;
+import com.jittr.android.fs.handlers.CheckInHandler;
 import com.jittr.android.fs.handlers.UserHandler;
 import com.jittr.android.fs.handlers.VenueHandler;
 import com.jittr.android.fs.utils.Constants;
@@ -171,6 +173,67 @@ public class FSClientAPIImpl implements FSClientInterface {
 		return null;
 	}
 	
+
+	public CheckinResponse checkin(String vid, String venue, String shout,
+			boolean isPrivate, boolean sendToTwitter, boolean sendToFaceBook,
+			String geoLat, String geoLang) {
+		
+		try {
+			NVPair nvps [] = {new NVPair("vid",vid),
+						  new NVPair("venue",venue),
+						  new NVPair("shout",shout),
+						  new NVPair("private",(isPrivate) ? "1" : "0"),
+						  new NVPair("twitter",(sendToTwitter) ? "1" : "0"),
+						  new NVPair("facebook",(sendToFaceBook) ? "1" : "0"),
+						  new NVPair("geolat",geoLat),
+						  new NVPair("geolong",geoLang),
+						  
+						  };
+	        
+			Log.d("","Url :"+Constants.Venue_Check_In_URL);
+		  
+			String response = fsc.submitToFs(new URL(Constants.Venue_Check_In_URL),nvps);
+			Log.d("","response :"+response);
+			//Parse response
+			CheckInHandler ch = new CheckInHandler(response);
+			CheckinResponse chResponse = (CheckinResponse)ch.parse();
+			Log.d("","chResponse ID :"+chResponse.getId());
+			Log.d("","chResponse Created :"+chResponse.getCreated());
+			Log.d("","chResponse Message :"+chResponse.getMessage());
+			Log.d("","chResponse Venue :"+chResponse.getVenue());
+			Log.d("","chResponse Venue Address:"+chResponse.getVenue().getAddress());
+			Log.d("","chResponse Mayor :"+chResponse.getMayor());
+			Log.d("","chResponse Mayor message:"+chResponse.getMayor().getMessage());
+			Log.d("","chResponse Mayor user:"+chResponse.getMayor().getUser());
+		}
+		catch (Exception e) {
+			Log.w("", "Exception while checkin "+e.getMessage());
+			return null;
+		}
+		return null;
+	}
+	
+	public List<Category> getAllcategories() {
+		try {
+			
+			Log.d("","Url :"+Constants.Categories_URL);
+  
+			String data = fsc.getContent(new URL(Constants.Categories_URL));
+			Log.d("","data :"+data);
+			
+			CategoriesHandler ch = new CategoriesHandler(data);
+			List categories = ch.parseList();
+			Log.d("","Categories :"+categories.size());
+		}
+		catch(Exception e) {
+			Log.w("", "Exception while getNearByVenues "+e.getMessage());
+			return null;
+		}
+		return null;
+
+	}
+	
+	
 	public List<Venue> getCheckInHistory() {
 		// TODO Auto-generated method stub
 		return null;
@@ -236,10 +299,7 @@ public class FSClientAPIImpl implements FSClientInterface {
 		return false;
 	}
 
-	public List<Category> getAllcategories() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	
 
@@ -291,10 +351,5 @@ public class FSClientAPIImpl implements FSClientInterface {
 
 
 
-	public CheckinResonse checkin(String vid, String venueName, String shout,
-			boolean isPrivate, boolean sendToTwitter, boolean sendToFaceBook,
-			String geoLat, String geoLang) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }
