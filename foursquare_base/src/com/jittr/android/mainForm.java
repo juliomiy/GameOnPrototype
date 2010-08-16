@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import com.jittr.android.R.id;
+import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
 
@@ -95,8 +96,12 @@ public class mainForm extends Activity {
 		//fs.getNearByVenues("40.7204","-73.9933",10,"test string...");
 		System.out.println("************************");
 		//fs.checkin("79153", null, "just checked in using API", false, false, false, null, null);
-		fs.getAllcategories();
+		//fs.getAllcategories();
+		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
 		
+		bs.getUserDashBoard("20");
+		
+		//bs.getPublicGames("NFL", "New York Giants", "baseball", "", "", 0);
 		Log.d("", "Test  Method complted ");
 		
     	finish();

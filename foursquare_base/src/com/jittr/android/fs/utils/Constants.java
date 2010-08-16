@@ -13,6 +13,11 @@ public class Constants {
 	 
 	 public static String Categories_URL = "http://api.foursquare.com/v1/categories";
 	 
+	 //public static String Public_Games_URL = "http://jittr.com/jittr/gameon/go_getpublicgames.php";
+	 
+	 public static String Public_Games_URL ="http://api.betsquared.com/v1/go_getpublicgames.php"; 
+	 public static String User_DashBoard_URL = "http://api.betsquared.com/v1/go_getuserdashboard.php";
+	 
 	 public static final String FS_ID="id";
 	 public static final String FS_USER="user";
 	 public static final String FS_FNAME="firstname";

@@ -35,6 +35,9 @@ public class FSConnectionHandler {
 	public FSConnectionHandler(String aUserName, String aPwd){
        this.username = aUserName;
        this.pwd = aPwd;
+       System.setProperty("http.proxyHost", "ftpproxy.wdc.cingular.net");
+       System.setProperty("http.proxyPort", "8080");
+
     }
 
         
