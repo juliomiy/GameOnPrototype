@@ -2,6 +2,7 @@ package com.jittr.android.api.betsquared;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import android.util.Log;
@@ -27,11 +28,11 @@ public class BSClientAPIImpl implements BSClientInterface {
 	}
 
 	
-	public List<Game> getPublicGames(String league, String team,
-			String sportCategory, String latitude, String longitude,
-			int timeframe) {
+	public List<Game> getPublicGames(HashMap<String , String> criteria) {
 		
 		try {
+			
+			/*
 			NVPair nvps [] = {new NVPair("league",league),
 				  new NVPair("team",team),
 				  new NVPair("sport", sportCategory),
@@ -39,8 +40,9 @@ public class BSClientAPIImpl implements BSClientInterface {
 				  new NVPair("longitude", longitude),
 				  new NVPair("timeframe", String.valueOf(timeframe)),
 				 };
-
-			String url = URLBuilder.createUrl(Constants.Public_Games_URL,nvps);
+			*/
+			 
+			String url = URLBuilder.createUrl(Constants.Public_Games_URL,criteria);
 			Log.d("","Url :"+url);
 	
 			String data = fsc.getContent(new URL(url));

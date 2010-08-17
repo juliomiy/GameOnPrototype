@@ -1,5 +1,6 @@
 package com.jittr.android;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -101,7 +102,15 @@ public class mainForm extends Activity {
 		
 		bs.getUserDashBoard("20");
 		
-		//bs.getPublicGames("NFL", "New York Giants", "baseball", "", "", 0);
+		HashMap<String, String> params = new HashMap();
+		params.put("league", "NFL");
+		params.put("team", "New York Giants");
+		params.put("sport", "baseball");
+		params.put("latitude", "");
+		params.put("longitude", "");
+		params.put("timeframe", "0");
+		bs.getPublicGames(params);
+		
 		Log.d("", "Test  Method complted ");
 		
     	finish();
