@@ -115,6 +115,16 @@ public class User {
 	public void setMayorships(List<Venue> mayorships) {
 		this.mayorships = mayorships;
 	}
+	@Override
+	public String toString() {
+		return "User [badges=" + badges + ", checkIn=" + checkIn + ", created="
+				+ created + ", email=" + email + ", facebook=" + facebook
+				+ ", firstName=" + firstName + ", friendStatus=" + friendStatus
+				+ ", gender=" + gender + ", id=" + id + ", lastName="
+				+ lastName + ", mayorships=" + mayorships + ", phone=" + phone
+				+ ", photo=" + photo + ", settings=" + settings + ", twitter="
+				+ twitter + "]";
+	}
 
     	 
 }

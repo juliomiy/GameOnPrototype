@@ -132,5 +132,15 @@ public class Venue {
 	public void setZip(String zip) {
 		this.zip = zip;
 	}
+	@Override
+	public String toString() {
+		return "Venue [address=" + address + ", category=" + category
+				+ ", city=" + city + ", cityid=" + cityid + ", crossstreet="
+				+ crossstreet + ", distance=" + distance + ", geolat=" + geolat
+				+ ", geolong=" + geolong + ", groupType=" + groupType + ", id="
+				+ id + ", name=" + name + ", phone=" + phone + ", state="
+				+ state + ", stats=" + stats + ", twitter=" + twitter
+				+ ", zip=" + zip + "]";
+	}
 
 }

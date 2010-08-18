@@ -8,6 +8,12 @@ public class BSUserDashBoard {
 	String totalwins;
 	String totalloses;
 	
+	
+	
+	
+	
+	
+	
 	public String getUserid() {
 		return userid;
 	}
@@ -43,5 +49,14 @@ public class BSUserDashBoard {
 	}
 	public void setTotalloses(String totalloses) {
 		this.totalloses = totalloses;
+	}
+	
+	@Override
+	public String toString() {
+		return "BSUserDashBoard [totalbets=" + totalbets
+				+ ", totalbetsaccepted=" + totalbetsaccepted
+				+ ", totalbetsinitiated=" + totalbetsinitiated
+				+ ", totalloses=" + totalloses + ", totalwins=" + totalwins
+				+ ", userid=" + userid + "]";
 	}
 }

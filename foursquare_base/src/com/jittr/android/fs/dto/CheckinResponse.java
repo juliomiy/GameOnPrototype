@@ -40,11 +40,18 @@ public class CheckinResponse {
 		this.specials = specials;
 	}
 	
+	@Override
+	public String toString() {
+		return "CheckinResponse [created=" + created + ", id=" + id
+				+ ", mayor=" + mayor + ", message=" + message + ", specials="
+				+ specials + ", venue=" + venue + "]";
+	}
 	public Mayor getMayor() {
 		return mayor;
 	}
 	public void setMayor(Mayor mayor) {
 		this.mayor = mayor;
 	}
+	
 	
 }

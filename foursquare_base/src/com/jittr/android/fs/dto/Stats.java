@@ -11,6 +11,11 @@ public class Stats {
 	public void setCheckins(String checkins) {
 		this.checkins = checkins;
 	}
+
+	@Override
+	public String toString() {
+		return "Stats [checkins=" + checkins + "]";
+	}
     
     
 }

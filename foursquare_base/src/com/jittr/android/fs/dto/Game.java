@@ -21,6 +21,7 @@ public class Game {
 	public String getId() {
 		return id;
 	}
+	
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -109,4 +110,15 @@ public class Game {
 		this.team2 = team2;
 	}
 	
+	@Override
+	public String toString() {
+		return "Game [address=" + address + ", city=" + city
+				+ ", eventdatetime=" + eventdatetime + ", eventname="
+				+ eventname + ", fsvenueid=" + fsvenueid + ", id=" + id
+				+ ", latitude=" + latitude + ", leaguename=" + leaguename
+				+ ", longitude=" + longitude + ", seasonweek=" + seasonweek
+				+ ", sportname=" + sportname + ", stadiumname=" + stadiumname
+				+ ", state=" + state + ", team1=" + team1 + ", team2=" + team2
+				+ "]";
+	}
 }
