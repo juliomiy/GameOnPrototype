@@ -27,9 +27,12 @@ public class GetUserDetailsActivity extends Activity {
 		if (fs == null ) {
 			fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		    
-			fsUser = fs.getUserDetails("9259485368", "juliomiy", true, true);
+			fsUser = fs.getUserDetails("", "juliomiy", true, true);
 		} //if
 		emailEditText.setText(  fsUser.getEmail());
+		//Temp setting user name
+		if( fsUser.getEmail() == null)
+			emailEditText.setText(fsUser.getFirstName());
 
 	} //onResume
 	
