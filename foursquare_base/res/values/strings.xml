@@ -7,6 +7,14 @@
     <string name="cancel_button">Cancel</string>
     <string name="testuserdetails">Test getUserDetails</string>
     <string name="testnearbyvenues">Test getNearByVenues</string>
-    <string name="emailedittext">Enter Email</string>
+    <string name="testgetpublicgames">Test getPublicGames</string>
+    <string name="emailaddress">Email Address</string>
     <string name="novenues">No Venues</string>
+    <string name="twitterid">Twitter ID</string>
+    <string name="facebookid">Facebook ID</string>
+    <string name="lastname">Last Name</string>
+    <string name="firstname">First Name</string>
+    <string name="nogames">No Games</string>
+    <string name="gobutton">Go</string>
+    <string name="testgetuserdashboard">Test User Dashboard</string>
 </resources>

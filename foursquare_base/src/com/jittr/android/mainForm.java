@@ -23,6 +23,8 @@ public class mainForm extends Activity {
 	private Button foursquareOauthButton;
 	private Button getUserDetailsButton;
 	private Button getNearbyVenuesButton;
+	private Button getPublicGamesButton;
+	private Button getUserDashBoardButton;
 
 	/** Called when the activity is first created. */
     @Override
@@ -42,12 +44,29 @@ public class mainForm extends Activity {
         foursquareOauthButton = (Button)findViewById(R.id.foursquareoauth);
         getUserDetailsButton = (Button)findViewById(R.id.getuserdetails_button);
         getNearbyVenuesButton = (Button)findViewById(R.id.getnearbyvenues_button);
+        getPublicGamesButton = (Button)findViewById(R.id.getpublicgames_button);
+        getUserDashBoardButton=(Button)findViewById(R.id.getuserdashboard_button);
+        
+        getUserDashBoardButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+               getUserDashBoardButtonClicked();
+			}
+		});
+        
+        getPublicGamesButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+		        getPublicGameButtonClicked();		
+			}
+		});
         
         getNearbyVenuesButton.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
 			    getNearbyVenuesButtonClicked(); {
-			    	
 			    }
 			}
 		});
@@ -71,7 +90,16 @@ public class mainForm extends Activity {
 
     } //setupViews
     
-    protected void getNearbyVenuesButtonClicked() {
+	protected void getUserDashBoardButtonClicked() {
+       	Intent intent = new Intent(this,GetUserDashBoardActivity.class);
+		startActivity(intent);		
+	}
+    protected void getPublicGameButtonClicked() {
+       	Intent intent = new Intent(this,GetPublicGamesActivity.class);
+		startActivity(intent);		
+	}
+
+	protected void getNearbyVenuesButtonClicked() {
     	Intent intent = new Intent(this,GetNearbyVenuesActivity.class);
 		startActivity(intent);		}
 

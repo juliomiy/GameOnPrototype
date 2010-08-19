@@ -8,39 +8,78 @@
 package com.jittr.android;
 
 public final class R {
+    public static final class array {
+        public static final int sport_choices=0x7f050001;
+        public static final int team_choices=0x7f050002;
+        /**  Used in customize Date driven layout 
+         */
+        public static final int time_choices=0x7f050000;
+    }
     public static final class attr {
+    }
+    public static final class d {
+        public static final int lastNameEditText=0x7f080000;
+        public static final int twitterEditText=0x7f080001;
     }
     public static final class drawable {
         public static final int icon=0x7f020000;
     }
     public static final class id {
-        public static final int cancel_button=0x7f060002;
-        public static final int emailEditText=0x7f060003;
-        public static final int enter_pin_title=0x7f060001;
-        public static final int foursquareoauth=0x7f060004;
-        public static final int getnearbyvenues_button=0x7f060006;
-        public static final int getuserdetails_button=0x7f060005;
-        public static final int web_view=0x7f060000;
+        public static final int LinearLayout01=0x7f070003;
+        public static final int TextView01=0x7f07000a;
+        public static final int TextView02=0x7f070008;
+        public static final int TextView03=0x7f07000b;
+        public static final int TextView04=0x7f07000c;
+        public static final int TextView05=0x7f070009;
+        public static final int cancelButton=0x7f07000d;
+        public static final int cancel_button=0x7f070002;
+        public static final int emailEditText=0x7f07000e;
+        public static final int enter_pin_title=0x7f070001;
+        public static final int faceBookEditText=0x7f070012;
+        public static final int firstNameEditText=0x7f07000f;
+        public static final int foursquareoauth=0x7f070013;
+        public static final int getnearbyvenues_button=0x7f070015;
+        public static final int getpublicgames_button=0x7f070016;
+        public static final int getuserdashboard_button=0x7f070017;
+        public static final int getuserdetails_button=0x7f070014;
+        public static final int goButton=0x7f070007;
+        public static final int lastNameEdiTtext=0x7f070010;
+        public static final int sportFilterSpinner=0x7f070005;
+        public static final int teamFilterSpinner=0x7f070006;
+        public static final int timeFilterSpinner=0x7f070004;
+        public static final int twitterEditText=0x7f070011;
+        public static final int web_view=0x7f070000;
     }
     public static final class layout {
         public static final int authorization_view=0x7f030000;
-        public static final int getnearbyvenues=0x7f030001;
-        public static final int getuserdetails=0x7f030002;
-        public static final int main=0x7f030003;
-        public static final int venuelistitem=0x7f030004;
+        public static final int gamelistitem=0x7f030001;
+        public static final int getnearbyvenues=0x7f030002;
+        public static final int getpublicgames=0x7f030003;
+        public static final int getuserdashboard=0x7f030004;
+        public static final int getuserdetails=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int venuelistitem=0x7f030007;
     }
     public static final class raw {
         public static final int gameonv1=0x7f040000;
     }
     public static final class string {
-        public static final int app_name=0x7f050001;
-        public static final int cancel_button=0x7f050004;
-        public static final int emailedittext=0x7f050007;
-        public static final int foursquarebase=0x7f050002;
-        public static final int foursquareoauth=0x7f050003;
-        public static final int hello=0x7f050000;
-        public static final int novenues=0x7f050008;
-        public static final int testnearbyvenues=0x7f050006;
-        public static final int testuserdetails=0x7f050005;
+        public static final int app_name=0x7f060001;
+        public static final int cancel_button=0x7f060004;
+        public static final int emailaddress=0x7f060008;
+        public static final int facebookid=0x7f06000b;
+        public static final int firstname=0x7f06000d;
+        public static final int foursquarebase=0x7f060002;
+        public static final int foursquareoauth=0x7f060003;
+        public static final int gobutton=0x7f06000f;
+        public static final int hello=0x7f060000;
+        public static final int lastname=0x7f06000c;
+        public static final int nogames=0x7f06000e;
+        public static final int novenues=0x7f060009;
+        public static final int testgetpublicgames=0x7f060007;
+        public static final int testgetuserdashboard=0x7f060010;
+        public static final int testnearbyvenues=0x7f060006;
+        public static final int testuserdetails=0x7f060005;
+        public static final int twitterid=0x7f06000a;
     }
 }

@@ -48,7 +48,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 			String data = fsc.getContent(new URL(url));
 			System.out.println("data "+data);
 			GameHandler gh = new GameHandler(data);
-			List<Object> games = gh.parseList();
+			List<Game> games = (List) gh.parseList();
 			
 			System.out.println("Games "+games.size());
 			
@@ -61,7 +61,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 				Log.d("", "Game Team1 "+temp.getTeam1());
 				Log.d("", "Game Team2 "+temp.getTeam2());
 			}
-			return null;
+			return games;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -91,7 +91,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 			System.out.println("userstats getTotalloses :"+userstats.getTotalloses());
 			
 			
-			return null;
+			return userstats;
 		}
 		catch (Exception e) {
 			e.printStackTrace();

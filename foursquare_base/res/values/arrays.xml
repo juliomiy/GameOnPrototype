@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Used in customize Date driven layout -->
+    <string-array name="time_choices">
+        <item>Today</item>
+        <item>This Weekend</item>
+        <item>This Week</item>
+        <item>This Month</item>
+        <item>All</item>
+    </string-array>
+    <string-array name="sport_choices">
+       <item>NFL</item>
+       <item>MLB</item>
+       <item>NCAA Football</item>
+       <item>NBA</item>
+    </string-array>
+    <string-array name="team_choices">
+       <item>New York Mets</item>
+       <item>New York Jets</item>
+    </string-array>
+</resources>

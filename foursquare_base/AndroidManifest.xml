@@ -21,7 +21,13 @@
        <activity android:name=".GetNearbyVenuesActivity"
                  android:label="@string/testnearbyvenues">
        </activity>          
- 
+       <activity android:name=".GetPublicGamesActivity"
+                 android:label="@string/testgetpublicgames">
+       </activity> 
+       <activity android:name=".GetUserDashBoardActivity"
+                 android:label="@string/testgetuserdashboard">
+       </activity> 
+
     </application>
     <uses-sdk android:minSdkVersion="4" />
  <uses-permission android:name="android.permission.INTERNET" /> 

@@ -1,12 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
-<EditText
-    android:text="@string/emailedittext" 
-    android:id="@+id/emailEditText" 
+<Button 
+    android:text="@string/cancel_button" 
+    android:id="@+id/cancelButton"
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
+ </Button>
+ <EditText
+    android:text="@string/emailaddress" 
+    android:id="@+id/emailEditText" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:layout_below="@id/cancel_button">
+ </EditText>
+ <EditText
+    android:text="@string/firstname" 
+    android:id="@+id/firstNameEditText" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:layout_below="@id/emailEditText">
+ </EditText>
+<EditText 
+     android:text="@string/lastname" 
+     android:id="@+id/lastNameEdiTtext"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content"
+     android:layout_below="@id/emailEditText">
+</EditText>
+<EditText 
+     android:text="@string/twitterid" 
+     android:id="@+id/twitterEditText"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content"
+     android:layout_below="@+d/lastNameEditText"
+ >
+</EditText>
+<EditText 
+     android:text="@string/facebookid" 
+     android:id="@+id/faceBookEditText"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content"
+     android:layout_below="@+d/twitterEditText">
  </EditText>
 </LinearLayout>
