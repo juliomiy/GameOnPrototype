@@ -159,18 +159,39 @@ public class FSClientAPIImpl implements FSClientInterface {
 			Log.d("","data :"+data);
 			
 			VenueHandler vh = new VenueHandler(data);
-			Venue temp = (Venue)vh.parse();
-			Log.d("", "Venue ID "+temp.getId());
-			Log.d("", "Venue Name "+temp.getName());
-			Log.d("", "Venue CStreet "+temp.getCrossstreet());
-			Log.d("", "Venue Address "+temp.getAddress());
-			Log.d("", "Venue City "+temp.getCity());
+			Venue venu = (Venue)vh.parse();
+			Log.d("", "Venue ID "+venu.getId());
+			Log.d("", "Venue Name "+venu.getName());
+			Log.d("", "Venue CStreet "+venu.getCrossstreet());
+			Log.d("", "Venue Address "+venu.getAddress());
+			Log.d("", "Venue City "+venu.getCity());
+			return venu;
 		}
 		catch(Exception e) {
 			Log.w("", "Exception while getNearByVenues "+e.getMessage());
 			return null;
 		}
-		return null;
+		
+	}
+	
+	public List<User> getCurrentCheckedInUsers(String vid) {
+		try {
+			NVPair nvps [] = {new NVPair("vid",vid) };
+	
+			String url = URLBuilder.createUrl(Constants.Venue_Detail_URL,nvps);
+			Log.d("","Url :"+url);
+  
+			String data = fsc.getContent(new URL(url));
+			Log.d("","data :"+data);
+			
+			VenueHandler vh = new VenueHandler(data);
+			Venue venue = (Venue)vh.parse();
+			return venue.getCurrentCheckedInUsers();
+		}
+		catch(Exception e) {
+			Log.w("", "Exception while getCurrentCheckedInUsers "+e.getMessage());
+			return null;
+		}
 	}
 	
 
@@ -205,12 +226,13 @@ public class FSClientAPIImpl implements FSClientInterface {
 			Log.d("","chResponse Mayor :"+chResponse.getMayor());
 			Log.d("","chResponse Mayor message:"+chResponse.getMayor().getMessage());
 			Log.d("","chResponse Mayor user:"+chResponse.getMayor().getUser());
+			return chResponse;
 		}
 		catch (Exception e) {
 			Log.w("", "Exception while checkin "+e.getMessage());
 			return null;
 		}
-		return null;
+		
 	}
 	
 	public List<Category> getAllcategories() {
@@ -224,12 +246,13 @@ public class FSClientAPIImpl implements FSClientInterface {
 			CategoriesHandler ch = new CategoriesHandler(data);
 			List categories = ch.parseList();
 			Log.d("","Categories :"+categories.size());
+			return categories;
 		}
 		catch(Exception e) {
 			Log.w("", "Exception while getNearByVenues "+e.getMessage());
 			return null;
 		}
-		return null;
+		
 
 	}
 	

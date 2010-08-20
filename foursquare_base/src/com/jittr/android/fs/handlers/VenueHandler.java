@@ -34,6 +34,8 @@ public class VenueHandler extends DefaultHandler implements ParserInterface{
 	String groupType = null;
 	
 	Category primaryCategory =null;
+	User user = null;
+	List users = null;
 	
 	private StringBuilder builder;
 	
@@ -72,7 +74,7 @@ public class VenueHandler extends DefaultHandler implements ParserInterface{
 		System.out.println("Start document");
 		
 		venues = new ArrayList();
-		
+		users = new ArrayList();
 		builder = new StringBuilder();
     }
 	
@@ -95,6 +97,10 @@ public class VenueHandler extends DefaultHandler implements ParserInterface{
 		if (localName.equalsIgnoreCase(Constants.FS_Primary_Category)){
 			primaryCategory = new Category();
 		}
+		
+		if (localName.equalsIgnoreCase(Constants.FS_USER)){
+			user = new User();
+		}
 		 
     }
 
@@ -114,6 +120,9 @@ public class VenueHandler extends DefaultHandler implements ParserInterface{
 		    if (localName.equalsIgnoreCase(Constants.FS_ID)){ //id can be venue or category  
 		    	if(primaryCategory !=null) {
 		    		primaryCategory.setId(builder.toString());
+		    	}
+		    	else if (user !=null) {
+		    		user.setId(builder.toString());
 		    	}
 		    	else {
 		    	  venue.setId(builder.toString());
@@ -157,21 +166,46 @@ public class VenueHandler extends DefaultHandler implements ParserInterface{
 		    	venue.setTwitter(builder.toString());
 		    }
 		    else if (localName.equalsIgnoreCase(Constants.FS_Full_Path)) {
-		    	primaryCategory.setFullpathName(builder.toString());
+		    	if(primaryCategory !=null) {
+		    		primaryCategory.setFullpathName(builder.toString());
+		    	}
 		    }
 		    else if (localName.equalsIgnoreCase(Constants.FS_Node_Name)) {
-		    	primaryCategory.setNodeName(builder.toString());
+		    	if(primaryCategory !=null) {
+		    		primaryCategory.setNodeName(builder.toString());
+		    	}
 		    }
 		    else if (localName.equalsIgnoreCase(Constants.FS_Primary_Category)){
 		    	venue.setCategory(primaryCategory);
 		    	primaryCategory = null;
 			}
 		    
+		    else if (localName.equalsIgnoreCase(Constants.FS_FNAME)){
+		        user.setFirstName(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase(Constants.FS_LAST_NAME)){
+		        user.setLastName(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase(Constants.FS_FRND_STATUS)){
+		        user.setFriendStatus(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase(Constants.FS_HOME_CITY)){
+		        user.setHomecity(builder.toString());
+		    }
+		    
+		    if (localName.equalsIgnoreCase(Constants.FS_USER)){
+				//ADD 
+		    	users.add(user);
+		    	user = null;
+				
+			}
 		    
 		    
 		    if (localName.equalsIgnoreCase(Constants.FS_Venue)){
 		    	System.out.println("Adding to venue to List ");
+		    	venue.setCurrentCheckedInUsers(users);
 		    	venues.add(venue);  
+		    	
 			}
 		    
 		    builder.setLength(0);    

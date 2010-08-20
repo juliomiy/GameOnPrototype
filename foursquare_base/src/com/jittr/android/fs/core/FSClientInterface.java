@@ -27,6 +27,7 @@ public interface FSClientInterface  {
 	List<Venue> getNearByVenues(String geolat, String geolong,int limit, String query);
 	Venue getVenueDetails(String vid);
 	
+	List<User> getCurrentCheckedInUsers(String vid);
 	
 	// Check-in methods
 	List<CheckIn> getRecentCheckins(String geolat, String geolong);

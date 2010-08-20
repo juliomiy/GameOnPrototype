@@ -27,7 +27,8 @@ public class Constants {
 	 public static final String FS_EMAIL="email";
 	 public static final String FS_TWITTER = "twitter";
 	 public static final String FS_FACEBOOK = "facebook";
-	 
+	 public static final String FS_FRND_STATUS = "friendstatus";
+	 public static final String FS_HOME_CITY = "homecity";
 	 
 	 public static final String FS_Group = "group";
 	 public static final String FS_Venues ="venues";

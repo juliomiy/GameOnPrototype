@@ -1,5 +1,6 @@
 package com.jittr.android;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import java.util.List;
 import com.jittr.android.R.id;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.fs.dto.User;
+import com.jittr.android.fs.dto.Venue;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
 
 import android.app.Activity;
@@ -115,20 +117,23 @@ public class mainForm extends Activity {
 		//Create client 
 		FSClientAPIImpl fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		//Call FS implemnted methods
-		User userObj = fs.getUserDetails("2478174", null, false,false);
+		//User userObj = fs.getUserDetails("2478174", null, false,false);
 		
-		System.out.println("Got the USer Obj ..."+userObj);
+		//System.out.println("Got the USer Obj ..."+userObj);
 		//List users = fs.getFriends("2478174");
 		//NY geolat:40.7204, geolong:-73.9933
 		//fs.getNearByVenues("40.7204","-73.9933",10,"");
 		
-		//fs.getVenueDetails("79153");
+		List users = fs.getCurrentCheckedInUsers("7834042");
+		System.out.println("Current checkedIn users :"+users.size());
+		
 		//fs.getNearByVenues("40.7204","-73.9933",10,"test string...");
 		System.out.println("************************");
 		//fs.checkin("79153", null, "just checked in using API", false, false, false, null, null);
 		//fs.getAllcategories();
-		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
+		//BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
 		
+		/*
 		bs.getUserDashBoard("20");
 		
 		HashMap<String, String> params = new HashMap();
@@ -139,7 +144,7 @@ public class mainForm extends Activity {
 		params.put("longitude", "");
 		params.put("timeframe", "0");
 		bs.getPublicGames(params);
-		
+		*/
 		Log.d("", "Test  Method complted ");
 		
     	finish();

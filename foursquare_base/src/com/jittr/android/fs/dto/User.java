@@ -19,6 +19,8 @@ public class User {
 	private String facebook;
 	private String twitter;
 	private String friendStatus;
+	private String homecity;
+	
 	private CheckIn checkIn;
 	private List<Badge> badges;
     private Settings settings;
@@ -124,6 +126,12 @@ public class User {
 				+ lastName + ", mayorships=" + mayorships + ", phone=" + phone
 				+ ", photo=" + photo + ", settings=" + settings + ", twitter="
 				+ twitter + "]";
+	}
+	public String getHomecity() {
+		return homecity;
+	}
+	public void setHomecity(String homecity) {
+		this.homecity = homecity;
 	}
 
     	 
