@@ -18,7 +18,7 @@ public class Game {
 	String team1;
 	String team2;
 	
-	Public Game() {
+	public Game() {
 		
 	}
 	public String getId() {
