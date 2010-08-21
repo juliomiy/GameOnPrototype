@@ -6,31 +6,37 @@
   android:layout_height="wrap_content">
 <TextView
     android:text="@+id/TextView02"
-    android:id="@+id/TextView02" 
+    android:id="@+id/userIDTextView" 
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 </TextView>
 <TextView
     android:text="@+id/TextView05" 
-    android:id="@+id/TextView05"
+    android:id="@+id/totalBetsTextView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 </TextView>
 <TextView 
     android:text="@+id/TextView01"
-    android:id="@+id/TextView01" 
+    android:id="@+id/betsInitiatedTextView" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
 </TextView>
 <TextView 
     android:text="@+id/TextView03" 
-    android:id="@+id/TextView03" 
+    android:id="@+id/betsAcceptedTextView" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
 </TextView>
 <TextView 
     android:text="@+id/TextView04" 
-    android:id="@+id/TextView04" 
+    android:id="@+id/totalWinsTextView" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+ </TextView>
+<TextView 
+    android:text="@+id/TextView04" 
+    android:id="@+id/totalLosesTextView" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
  </TextView>

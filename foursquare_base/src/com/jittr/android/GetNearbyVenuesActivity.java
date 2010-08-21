@@ -4,17 +4,23 @@ import java.util.ArrayList;
 
 import com.jittr.android.fs.impl.FSClientAPIImpl;
 import com.jittr.android.fs.adapters.FSNearbyVenueAdapter;
+import com.jittr.android.fs.dto.Venue;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListAdapter;
+import android.widget.ListView;
+import static com.jittr.android.util.Consts.*;
 
 public class GetNearbyVenuesActivity extends ListActivity {
 
 	private Button cancelButton;
 	private FSNearbyVenueAdapter adapter;
-	FSClientAPIImpl fs;;
+	FSClientAPIImpl fs;
+	private Venue venue;;
 	
 	public GetNearbyVenuesActivity() {
 		// TODO Auto-generated constructor stub
@@ -28,12 +34,20 @@ public class GetNearbyVenuesActivity extends ListActivity {
         fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
         adapter = new FSNearbyVenueAdapter(this ,(ArrayList)fs.getNearByVenues("40.7204","-73.9933",10,""));
         setListAdapter(adapter);
-
-        
-     //   app = (GameManagerApplication)getApplication();
-     //   adapter = new GameListAdapter(this, app.getCurrentGames());
-     //   setListAdapter(adapter);
-    }
+    }  //onCreate
+	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		venue = adapter.getItem(position);
+	
+		if (null != venue) {
+			Log.d("Venue", venue.toString());
+			Intent intent = new Intent(GetNearbyVenuesActivity.this, ViewVenueActivity.class);
+			intent.putExtra(INTENT_VIEW_VENUE,venue);
+			startActivity(intent);			
+		}
+	} //onListItem
 	@Override
 	protected void onResume() {
 		super.onResume();

@@ -8,6 +8,7 @@
     <string name="testuserdetails">Test getUserDetails</string>
     <string name="testnearbyvenues">Test getNearByVenues</string>
     <string name="testgetpublicgames">Test getPublicGames</string>
+    <string name="testviewvenueactivity">Test View Venue</string>
     <string name="emailaddress">Email Address</string>
     <string name="novenues">No Venues</string>
     <string name="twitterid">Twitter ID</string>

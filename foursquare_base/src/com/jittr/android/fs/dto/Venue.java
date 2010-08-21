@@ -1,14 +1,16 @@
 package com.jittr.android.fs.dto;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * @author rg230v
  *
  */
 
-public class Venue {
+public class Venue implements Parcelable {
 	private String groupType;
 	
 	private String id;
@@ -33,7 +35,59 @@ public class Venue {
     
     private List<User> currentCheckedInUsers;
     
-   
+    public static final Parcelable.Creator<Venue> CREATOR
+    = new Parcelable.Creator<Venue>() {
+   	
+        public Venue createFromParcel(Parcel in) {
+           return new Venue(in);
+        }
+        
+        public Venue[] newArray(int arg0) {
+    		// TODO Auto-generated method stub
+    		return null;
+    	}
+        
+     };
+    private Venue(Parcel in) {
+    	 readFromParcel(in);
+     }
+
+    public Venue() {
+    	
+    } //constructor
+    
+	public void readFromParcel(Parcel in) {
+        name = in.readString();
+		id = in.readString();
+		phone = in.readString();
+		address = in.readString();
+        crossstreet = in.readString();
+        city = in.readString();
+        cityid= in.readString();
+        state = in.readString();
+        geolat = in.readString();
+        geolong = in.readString();
+	}
+
+    @Override
+    public int describeContents() {
+	// TODO Auto-generated method stub
+	return 0;
+    }
+    @Override
+    public void writeToParcel(Parcel in, int flags) {
+	    in.writeString(name);
+	    in.writeString(id);
+	    in.writeString(phone);
+	    in.writeString(address);
+	    in.writeString(crossstreet);
+	    in.writeString(city);
+	    in.writeString(cityid);
+	    in.writeString(state);
+	    in.writeString(geolat);
+	    in.writeString(geolong);
+    }  //writeToParcel	
+
     public String getGroupType() {
 		return groupType;
 	}
@@ -152,6 +206,6 @@ public class Venue {
 				+ ", groupType=" + groupType + ", id=" + id + ", name=" + name
 				+ ", phone=" + phone + ", state=" + state + ", stats=" + stats
 				+ ", twitter=" + twitter + ", zip=" + zip + "]";
-	}
+	} //toString
 
-}
+}  //class
