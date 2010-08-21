@@ -4,6 +4,9 @@ public class Stats {
 
     private String checkins;
 
+    Stats() {
+    	
+    }
 	public String getCheckins() {
 		return checkins;
 	}

@@ -125,20 +125,7 @@ public class FSClientAPIImpl implements FSClientInterface {
 			
 			List venues = vh.parseList();
 			
-			//Lets Verify the returned data..will remove this
-			System.out.println("venues Size.... "+venues.size());
-			for(int i=0;i<venues.size();i++) {
-				Venue temp = (Venue)venues.get(i);
-				Log.d("", " i  "+i);
-				Log.d("", "Venue ID "+temp.getId());
-				Log.d("", "Venue Name "+temp.getName());
-				Log.d("", "Venue CStreet "+temp.getCrossstreet());
-				Log.d("", "Venue Address "+temp.getAddress());
-				Log.d("", "Venue City "+temp.getCity());
-				Log.d("", "Venue Group Type  "+temp.getGroupType());
-				Log.d("", "Venue Category "+temp.getCategory());
-				Log.d("", "Venue Stats  "+temp.getStats());
-			}
+			
 			return venues;
 		}
 		catch(Exception e) {

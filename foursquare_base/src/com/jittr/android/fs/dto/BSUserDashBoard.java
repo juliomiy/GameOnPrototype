@@ -10,7 +10,9 @@ public class BSUserDashBoard {
 	
 	
 	
-	
+	public BSUserDashBoard() {
+		
+	}
 	
 	
 	

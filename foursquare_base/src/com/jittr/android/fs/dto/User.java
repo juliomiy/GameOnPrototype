@@ -26,6 +26,9 @@ public class User {
     private Settings settings;
     private List<Venue> mayorships;
     
+    public User() {
+    	
+    }
 	public String getId() {
 		return id;
 	}

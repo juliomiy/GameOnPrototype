@@ -18,6 +18,9 @@ public class Game {
 	String team1;
 	String team2;
 	
+	Public Game() {
+		
+	}
 	public String getId() {
 		return id;
 	}

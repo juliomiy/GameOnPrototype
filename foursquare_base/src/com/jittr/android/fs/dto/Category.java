@@ -6,6 +6,9 @@ public class Category {
 	String nodeName;
 
   
+	public Category() {
+		
+	}
   	public String getId() {
 		return id;
 	}

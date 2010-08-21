@@ -6,7 +6,9 @@ public class Settings {
 	 private boolean sendTofacebook;
 	 private boolean sendTotwitter;
 	
-	
+	public Settings() {
+		
+	}
 	public String getPings() {
 		return pings;
 	}

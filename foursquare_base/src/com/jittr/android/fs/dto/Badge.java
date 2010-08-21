@@ -9,7 +9,12 @@ public class Badge {
     private String mId;
     private String mName;
     
-    public String getmDescription() {
+    
+    public Badge() {
+		
+	}
+
+	public String getmDescription() {
 		return mDescription;
 	}
 

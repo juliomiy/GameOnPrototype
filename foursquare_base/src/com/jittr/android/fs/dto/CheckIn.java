@@ -15,6 +15,9 @@ public class CheckIn {
       String shout;
       String created;
       
+    public CheckIn() {
+    	
+    }
 	public String getId() {
 		return id;
 	}

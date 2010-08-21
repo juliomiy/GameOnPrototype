@@ -117,23 +117,29 @@ public class mainForm extends Activity {
 		//Create client 
 		FSClientAPIImpl fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		//Call FS implemnted methods
-		//User userObj = fs.getUserDetails("2478174", null, false,false);
+		/*
+		User userObj = fs.getUserDetails("2478174", null, false,false);
+		List users = fs.getFriends("2478174");
+		*/
 		
-		//System.out.println("Got the USer Obj ..."+userObj);
-		//List users = fs.getFriends("2478174");
-		//NY geolat:40.7204, geolong:-73.9933
-		//fs.getNearByVenues("40.7204","-73.9933",10,"");
 		
-		List users = fs.getCurrentCheckedInUsers("7834042");
-		System.out.println("Current checkedIn users :"+users.size());
-		
-		//fs.getNearByVenues("40.7204","-73.9933",10,"test string...");
-		System.out.println("************************");
-		//fs.checkin("79153", null, "just checked in using API", false, false, false, null, null);
-		//fs.getAllcategories();
-		//BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
+		List venues = fs.getNearByVenues("40.7204","-73.9933",10,""); //NY geolat:40.7204, geolong:-73.9933
+		//Lets Verify the returned data..
+		Log.d("", "Venues Size.... "+venues.size());
+		for(int i=0;i<venues.size();i++) {
+			Venue temp = (Venue)venues.get(i);
+			Log.d("", " i  "+i);
+			Log.d("", "Venue:  "+temp);
+		}
 		
 		/*
+		List users = fs.getCurrentCheckedInUsers("7834042");
+		Log.d("Current checkedIn users :"+users.size());
+		
+		
+		fs.checkin("79153", null, "just checked in using API", false, false, false, null, null);
+		fs.getAllcategories();
+		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
 		bs.getUserDashBoard("20");
 		
 		HashMap<String, String> params = new HashMap();

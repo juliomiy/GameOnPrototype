@@ -43,7 +43,7 @@ public class Constants {
 	 public static final String FS_State = "state";
 	 public static final String FS_Zip = "zip";
 	 public static final String FS_Geo_Lat = "geolat";
-	 public static final String FS_Geo_Lang = "geolang";
+	 public static final String FS_Geo_Lang = "geolong";
 	 public static final String FS_Stats = "stats";
 	 public static final String FS_Here_NOW = "herenow";
 	 public static final String FS_Distance = "distance";

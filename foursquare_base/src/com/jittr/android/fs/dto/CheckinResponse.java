@@ -9,6 +9,9 @@ public class CheckinResponse {
 	Mayor mayor;
 	String specials;
 
+	public CheckinResponse() {
+		
+	}
 	public String getId() {
 		return id;
 	}

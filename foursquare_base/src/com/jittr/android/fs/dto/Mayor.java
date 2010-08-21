@@ -2,6 +2,10 @@ package com.jittr.android.fs.dto;
 
 public class Mayor {
 	
+	
+	public Mayor() {
+		
+	}
 	String type;
 	String checkins;
 	User user;
