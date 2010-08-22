@@ -6,6 +6,12 @@
   android:orientation="vertical">
 <TextView 
     android:text="@+id/TextView01"
+    android:id="@+id/currentGeoTextView" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</TextView>
+<TextView 
+    android:text="@+id/TextView01"
     android:id="@+id/venueNameTextView" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">

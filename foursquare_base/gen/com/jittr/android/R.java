@@ -31,12 +31,13 @@ public final class R {
         public static final int TextView03=0x7f07000e;
         public static final int TextView04=0x7f070010;
         public static final int TextView05=0x7f07000a;
-        public static final int addressTextView=0x7f07001f;
+        public static final int addressTextView=0x7f070020;
         public static final int betsAcceptedTextView=0x7f07000f;
         public static final int betsInitiatedTextView=0x7f07000d;
         public static final int cancelButton=0x7f070013;
         public static final int cancel_button=0x7f070002;
-        public static final int cityStateTextView=0x7f070020;
+        public static final int cityStateTextView=0x7f070021;
+        public static final int currentGeoTextView=0x7f07001e;
         public static final int emailEditText=0x7f070014;
         public static final int enter_pin_title=0x7f070001;
         public static final int faceBookEditText=0x7f070018;
@@ -48,7 +49,7 @@ public final class R {
         public static final int getuserdetails_button=0x7f07001a;
         public static final int goButton=0x7f070007;
         public static final int lastNameEdiTtext=0x7f070016;
-        public static final int latLongTextView=0x7f070021;
+        public static final int latLongTextView=0x7f070022;
         public static final int sportFilterSpinner=0x7f070005;
         public static final int teamFilterSpinner=0x7f070006;
         public static final int timeFilterSpinner=0x7f070004;
@@ -57,7 +58,7 @@ public final class R {
         public static final int totalWinsTextView=0x7f070011;
         public static final int twitterEditText=0x7f070017;
         public static final int userIDTextView=0x7f070009;
-        public static final int venueNameTextView=0x7f07001e;
+        public static final int venueNameTextView=0x7f07001f;
         public static final int web_view=0x7f070000;
     }
     public static final class layout {
@@ -75,23 +76,24 @@ public final class R {
         public static final int gameonv1=0x7f040000;
     }
     public static final class string {
+        public static final int app_description=0x7f060002;
         public static final int app_name=0x7f060001;
-        public static final int cancel_button=0x7f060004;
-        public static final int emailaddress=0x7f060009;
-        public static final int facebookid=0x7f06000c;
-        public static final int firstname=0x7f06000e;
-        public static final int foursquarebase=0x7f060002;
-        public static final int foursquareoauth=0x7f060003;
-        public static final int gobutton=0x7f060010;
+        public static final int cancel_button=0x7f060005;
+        public static final int emailaddress=0x7f06000a;
+        public static final int facebookid=0x7f06000d;
+        public static final int firstname=0x7f06000f;
+        public static final int foursquarebase=0x7f060003;
+        public static final int foursquareoauth=0x7f060004;
+        public static final int gobutton=0x7f060011;
         public static final int hello=0x7f060000;
-        public static final int lastname=0x7f06000d;
-        public static final int nogames=0x7f06000f;
-        public static final int novenues=0x7f06000a;
-        public static final int testgetpublicgames=0x7f060007;
-        public static final int testgetuserdashboard=0x7f060011;
-        public static final int testnearbyvenues=0x7f060006;
-        public static final int testuserdetails=0x7f060005;
-        public static final int testviewvenueactivity=0x7f060008;
-        public static final int twitterid=0x7f06000b;
+        public static final int lastname=0x7f06000e;
+        public static final int nogames=0x7f060010;
+        public static final int novenues=0x7f06000b;
+        public static final int testgetpublicgames=0x7f060008;
+        public static final int testgetuserdashboard=0x7f060012;
+        public static final int testnearbyvenues=0x7f060007;
+        public static final int testuserdetails=0x7f060006;
+        public static final int testviewvenueactivity=0x7f060009;
+        public static final int twitterid=0x7f06000c;
     }
 }

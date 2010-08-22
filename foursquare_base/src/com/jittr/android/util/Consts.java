@@ -9,11 +9,15 @@ public static final String INTENT_VIEW_VENUE = "VIEW_VENUE";
 //Bitly Constants
 	
 //Google Maps
-	
+public static final String GOOGLE_MAP_API_KEY = "ABQIAAAAkkbA1TOcucOZig_ctpQNSRQH3Cvd4D3k_1VFIvdkDzxWu_QC3hQMauhlyVDyEB5rQFm5ddDmGwWIDg";	
+
 //Bet Square API
 	
 //FourSquare API 
-	
+public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";
+public final static String FOURSQUARE_ACCESS_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/access_token";
+public final static String FOURSQUARE_AUTHORIZE_WEBSITE_URL="http://foursquare.com/oauth/authorize";
+
 	  // PRIVATE //
 
 	  /**
