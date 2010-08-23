@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Theme.GameOn"  parent="@android:Theme.Light">
+		<!-- Colors -->
+		        <item name="android:windowBackground">@color/WHITE</item>
+        <item name="android:colorForeground">@color/WHITE</item>
+     <!--     <item name="android:colorForegroundInverse">@color/translucent_red</item> -->
+		<item name="android:colorBackground">@color/WHITE</item>
+	<!-- Activity Window Title  -->
+	     <item name="android:windowTitleStyle">@style/CustomWindowTitle</item> 
+    </style>
+</resources>

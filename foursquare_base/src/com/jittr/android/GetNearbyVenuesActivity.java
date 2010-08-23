@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import static com.jittr.android.util.Consts.*;
+import com.jittr.android.GameOnLocationManager;
 
 public class GetNearbyVenuesActivity extends ListActivity {
 
@@ -25,6 +26,7 @@ public class GetNearbyVenuesActivity extends ListActivity {
 	public GetNearbyVenuesActivity() {
 		// TODO Auto-generated constructor stub
 	}
+	@SuppressWarnings("unchecked")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,7 @@ public class GetNearbyVenuesActivity extends ListActivity {
         
         setUpViews();
         fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
-        adapter = new FSNearbyVenueAdapter(this ,(ArrayList)fs.getNearByVenues("40.7204","-73.9933",10,""));
+        adapter = new FSNearbyVenueAdapter(this ,(ArrayList)fs.getNearByVenues( GameOnLocationManager.getLatitudeString(),GameOnLocationManager.getLongitudeString(),10,""));
         setListAdapter(adapter);
     }  //onCreate
 	

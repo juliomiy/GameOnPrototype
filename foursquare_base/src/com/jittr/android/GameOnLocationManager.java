@@ -51,4 +51,12 @@ public class GameOnLocationManager implements LocationListener {
 	public String toString() {
 		return "GameOnLocationManager [toString()=" + super.toString() + "]";
 	}
+
+	public static String getLatitudeString() {
+		return String.valueOf(latitude);
+	}
+
+	public static String getLongitudeString() {
+		return String.valueOf(longitude);
+	}
 }

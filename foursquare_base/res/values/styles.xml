@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="gameon_background_color"> 
+      <item  name="android:colorBackground">@color/BLACK</item>
+      <item  name="android:background">@color/WHITE</item>
+ </style>
+ <!--  <style name="TextAppearance.Title.WindowTitle">-->
+  <!--       <item name="android:textColor">#fff</item>-->
+  <!--        <item name="android:textSize">18sp</item> -->
+  <!--        <item name="android:textStyle">bold</item>  -->
+<!--  </style> --> 
+<style name="CustomWindowTitle" parent="android:WindowTitle">
+          <item name="android:textAppearance">@style/CustomWindowTitleText</item>
+          <item name="android:shadowDx">10</item>
+          <item name="android:shadowDy">15</item>
+          <item name="android:shadowRadius">5</item>
+          <item name="android:shadowColor">#1155CC</item>
+ </style>
+ <style name="CustomWindowTitleText" parent="android:TextAppearance.WindowTitle">
+          <item name="android:textSize">20dip</item>
+          <item name="android:textColor">#5599FF</item>
+          <item name="android:textStyle">bold|italic</item>
+</style>
+</resources>

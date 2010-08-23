@@ -79,4 +79,15 @@ public class GameOnProperties  {
 	    editor.putBoolean("firstrun", false);  //set firstRun to false
 	    editor.commit();
 	}
+
+	/* stub - eventually will clean up , persist etc */
+	public void close() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void getProperty(String string, boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
 }  //class	

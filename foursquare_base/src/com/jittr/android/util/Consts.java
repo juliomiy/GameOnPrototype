@@ -17,6 +17,14 @@ public static final String GOOGLE_MAP_API_KEY = "ABQIAAAAkkbA1TOcucOZig_ctpQNSRQ
 public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";
 public final static String FOURSQUARE_ACCESS_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/access_token";
 public final static String FOURSQUARE_AUTHORIZE_WEBSITE_URL="http://foursquare.com/oauth/authorize";
+//Facebook
+public final static String FACEBOOK_REQUEST_TOKEN_ENDPOINT_URL= "http://foursquare.com/oauth/request_token";
+public final static String FACEBOOK_ACCESS_TOKEN_ENDPOINT_URL="https://graph.facebook.com/oauth/access_token";
+public final static String FACEBOOK_AUTHORIZE_ENDPOINT_URL= "https://graph.facebook.com/oauth/authorize";
+//Twitter
+public final static String TWITTER_REQUEST_TOKEN_ENDPOINT_URL="http://twitter.com/oauth/request_token";
+public final static String TWITTER_ACCESS_TOKEN_ENDPOINT_URL="http://twitter.com/oauth/access_token";
+public final static String TWITTER_AUTHORIZE_ENDPOINT_URL="http://twitter.com/oauth/authorize";
 
 	  // PRIVATE //
 
