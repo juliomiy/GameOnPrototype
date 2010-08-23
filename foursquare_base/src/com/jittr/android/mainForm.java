@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.jittr.android.R.id;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.Venue;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
@@ -115,13 +116,13 @@ public class mainForm extends Activity {
     	
 		Log.d("", "Test User Method ");
 		//Create client 
-		
+		/*
 		FSClientAPIImpl fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		//Call FS implemnted methods
 		
 		User userObj = fs.getUserDetails("2478174", null, false,false);
 		List users = fs.getFriends("2478174");
-		
+		*/
 		
 		/*
 		List venues = fs.getNearByVenues("40.7204","-73.9933",10,""); //NY geolat:40.7204, geolong:-73.9933
@@ -167,9 +168,11 @@ public class mainForm extends Activity {
 		params.put("timeframe", "0");
 		bs.getPublicGames(params);
 		
-		
-		bs.addUser("ravindergade_test4");
 		*/
+		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
+		UserAddResponse user = bs.addUser("ravindergade7");
+		Log.d("", "Response :"+user);
+		
 		Log.d("", "Test  Method complted ");
 		
     	finish();

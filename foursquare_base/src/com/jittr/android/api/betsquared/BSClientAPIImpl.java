@@ -9,10 +9,11 @@ import android.util.Log;
 
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.UserAddResponse;
+import com.jittr.android.bs.handlers.BSDashBoardHandler;
+import com.jittr.android.bs.handlers.GameHandler;
+import com.jittr.android.bs.handlers.UserResponseHandler;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.BSUserDashBoard;
-import com.jittr.android.fs.handlers.BSDashBoardHandler;
-import com.jittr.android.fs.handlers.GameHandler;
 
 import com.jittr.android.fs.utils.Constants;
 import com.jittr.android.fs.utils.FSConnectionHandler;
@@ -114,14 +115,22 @@ public class BSClientAPIImpl implements BSClientInterface {
 			String url = URLBuilder.createUrl(Constants.User_ADD_URL,nvps);
 			Log.d("","Url :"+url);
 			String data = fsc.getContent(new URL(url));
-			System.out.println("data "+data);
+			
+			UserResponseHandler uh = new UserResponseHandler(data);
+			UserAddResponse userresponse = (UserAddResponse)uh.parse();
+			
+			System.out.println("userresponse "+userresponse);
+			userresponse.setUsername(userName);
+			return userresponse;
+			
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 		
 		
-		return null;
+		
 	}
 	
 	
