@@ -7,7 +7,8 @@ import java.util.List;
 
 import android.util.Log;
 
-import com.jittr.android.fs.dto.Game;
+import com.jittr.android.bs.dto.Game;
+import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.BSUserDashBoard;
 import com.jittr.android.fs.handlers.BSDashBoardHandler;
@@ -101,6 +102,26 @@ public class BSClientAPIImpl implements BSClientInterface {
 		
 		
 		
+	}
+
+
+	@Override
+	public UserAddResponse addUser(String userName) {
+		// TODO Auto-generated method stub
+		try {
+			NVPair nvps [] = {new NVPair("newusername",userName)};
+		
+			String url = URLBuilder.createUrl(Constants.User_ADD_URL,nvps);
+			Log.d("","Url :"+url);
+			String data = fsc.getContent(new URL(url));
+			System.out.println("data "+data);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return null;
 	}
 	
 	

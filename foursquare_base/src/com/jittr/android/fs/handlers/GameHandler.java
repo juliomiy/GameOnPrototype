@@ -12,8 +12,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import com.jittr.android.bs.dto.Game;
 import com.jittr.android.fs.core.ParserInterface;
-import com.jittr.android.fs.dto.Game;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.utils.Constants;
 

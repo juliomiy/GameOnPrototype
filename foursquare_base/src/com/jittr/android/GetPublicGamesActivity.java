@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSGetPublicGamesAdapter;
-import com.jittr.android.fs.dto.Game;
+import com.jittr.android.bs.dto.Game;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
 
 import android.app.ListActivity;

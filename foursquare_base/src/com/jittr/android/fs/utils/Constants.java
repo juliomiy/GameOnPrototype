@@ -17,6 +17,7 @@ public class Constants {
 	 
 	 public static String Public_Games_URL ="http://api.betsquared.com/v1/go_getpublicgames.php"; 
 	 public static String User_DashBoard_URL = "http://api.betsquared.com/v1/go_getuserdashboard.php";
+	 public static String User_ADD_URL= "http://jittr.com/jittr/gameon/go_postnewuser.php";
 	 
 	 public static final String FS_ID="id";
 	 public static final String FS_USER="user";

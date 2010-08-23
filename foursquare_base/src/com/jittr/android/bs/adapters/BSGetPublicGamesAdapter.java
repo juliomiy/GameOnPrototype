@@ -3,7 +3,8 @@ package com.jittr.android.bs.adapters;
 import java.util.ArrayList;
 
 import com.jittr.android.R;
-import com.jittr.android.fs.dto.Game;
+import com.jittr.android.bs.dto.Game;
+
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;

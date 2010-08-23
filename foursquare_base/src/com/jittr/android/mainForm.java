@@ -115,14 +115,15 @@ public class mainForm extends Activity {
     	
 		Log.d("", "Test User Method ");
 		//Create client 
+		
 		FSClientAPIImpl fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		//Call FS implemnted methods
-		/*
+		
 		User userObj = fs.getUserDetails("2478174", null, false,false);
 		List users = fs.getFriends("2478174");
-		*/
 		
 		
+		/*
 		List venues = fs.getNearByVenues("40.7204","-73.9933",10,""); //NY geolat:40.7204, geolong:-73.9933
 		//Lets Verify the returned data..
 		Log.d("", "Venues Size.... "+venues.size());
@@ -131,6 +132,7 @@ public class mainForm extends Activity {
 			Log.d("", " i  "+i);
 			Log.d("", "Venue:  "+temp);
 		}
+		*/
 		
 		/*
 		List users = fs.getCurrentCheckedInUsers("7834042");
@@ -150,6 +152,23 @@ public class mainForm extends Activity {
 		params.put("longitude", "");
 		params.put("timeframe", "0");
 		bs.getPublicGames(params);
+		
+		
+		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
+		bs.getUserDashBoard("20");
+		
+		
+		HashMap<String, String> params = new HashMap();
+		params.put("league", "NFL");
+		params.put("team", "New York Giants");
+		params.put("sport", "baseball");
+		params.put("latitude", "");
+		params.put("longitude", "");
+		params.put("timeframe", "0");
+		bs.getPublicGames(params);
+		
+		
+		bs.addUser("ravindergade_test4");
 		*/
 		Log.d("", "Test  Method complted ");
 		

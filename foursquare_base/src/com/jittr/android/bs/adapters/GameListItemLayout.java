@@ -1,6 +1,7 @@
 package com.jittr.android.bs.adapters;
 
-import com.jittr.android.fs.dto.Game;
+import com.jittr.android.bs.dto.Game;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
