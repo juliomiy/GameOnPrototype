@@ -7,10 +7,12 @@ import java.util.List;
 
 import android.util.Log;
 
+import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
 import com.jittr.android.bs.handlers.GameHandler;
+import com.jittr.android.bs.handlers.UserDetailsHandler;
 import com.jittr.android.bs.handlers.UserResponseHandler;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.BSUserDashBoard;
@@ -111,6 +113,32 @@ public class BSClientAPIImpl implements BSClientInterface {
 			UserResponseHandler uh = new UserResponseHandler(data);
 			UserAddResponse ur = (UserAddResponse)uh.parse();
 			return ur;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+
+
+	@Override
+	public BSUserDetails getUserDetails(HashMap<String , String> params) {
+		
+		try {
+		
+			String url = URLBuilder.createUrl(Consts.BS_GET_USER_DETAILS_ENDPOINT_URL,params);
+			Log.d("","Url :"+url);
+	
+			String data = htppClient.getContent(new URL(url));
+			System.out.println("data "+data);
+			
+			
+			
+			UserDetailsHandler uh = new UserDetailsHandler(data);
+			BSUserDetails user = (BSUserDetails)uh.parse();
+			System.out.println("BSUserDetails User  :"+user);
+			return user;
 		}
 		catch (Exception e) {
 			e.printStackTrace();

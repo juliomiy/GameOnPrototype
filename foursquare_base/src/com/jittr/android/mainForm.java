@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.jittr.android.R.id;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.Venue;
@@ -116,15 +117,15 @@ public class mainForm extends Activity {
     	
 		Log.d("", "Test User Method ");
 		//Create client 
-		/*
+		
 		FSClientAPIImpl fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		//Call FS implemnted methods
-		
+		/*
 		User userObj = fs.getUserDetails("2478174", null, false,false);
 		List users = fs.getFriends("2478174");
 		*/
 		
-		/*
+		
 		List venues = fs.getNearByVenues("40.7204","-73.9933",10,""); //NY geolat:40.7204, geolong:-73.9933
 		//Lets Verify the returned data..
 		Log.d("", "Venues Size.... "+venues.size());
@@ -133,7 +134,7 @@ public class mainForm extends Activity {
 			Log.d("", " i  "+i);
 			Log.d("", "Venue:  "+temp);
 		}
-		*/
+		
 		
 		/*
 		List users = fs.getCurrentCheckedInUsers("7834042");
@@ -170,7 +171,7 @@ public class mainForm extends Activity {
 		*/
 		
 		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
-		
+		/*
 		HashMap<String, String> params = new HashMap();
 		params.put("newusername", "rgade11_using_post");
 		params.put("firtstname", "ravinder");
@@ -179,7 +180,14 @@ public class mainForm extends Activity {
 		
 		UserAddResponse userResponse = bs.addUser(params);
 		Log.d("", "Response :"+userResponse);
+		*/
+		HashMap<String, String> params = new HashMap();
+		params.put("userid", "99");
 		
+		
+		//BSUserDetails user = bs.getUserDetails(params);
+		
+		//System.out.println("BSUserDetails User Main form  :"+user);
 		Log.d("", "Test  Method complted ");
 		
     	finish();

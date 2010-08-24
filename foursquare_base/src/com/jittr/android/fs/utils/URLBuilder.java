@@ -27,11 +27,12 @@ public class URLBuilder {
 				String tempPair = nvps[i].getName()+"="+URLEncoder.encode(nvps[i].getValue())+"&";
 				queryStr = queryStr+tempPair;
 			}
-			//Discard extra &
-			String finalStr = queryStr.substring(0, queryStr.length()-1);
-			return finalStr;
 		}
-		return queryStr;
+		//Discard extra &
+		System.out.println("Before queryStr "+queryStr);
+		String finalStr = queryStr.substring(0, queryStr.length()-1);
+		System.out.println("After finalStr "+finalStr);
+		return finalStr;
 	}
 	
 	public static String createUrl(String url, HashMap<String, String> criteria) {
@@ -55,7 +56,9 @@ public class URLBuilder {
 				queryStr = queryStr+tempPair;
 			}
 		}
+		System.out.println("Before queryStr "+queryStr);
 		String finalStr = queryStr.substring(0, queryStr.length()-1);
+		System.out.println("After finalStr "+finalStr);
 		return finalStr;
 	}
 	
