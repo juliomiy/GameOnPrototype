@@ -169,9 +169,11 @@ public class mainForm extends Activity {
 		bs.getPublicGames(params);
 		
 		*/
+		HashMap<String, String> params = new HashMap();
+		params.put("newusername", "ravindergade9");
 		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
-		UserAddResponse user = bs.addUser("ravindergade7");
-		Log.d("", "Response :"+user);
+		UserAddResponse userResponse = bs.addUser(params);
+		Log.d("", "Response :"+userResponse);
 		
 		Log.d("", "Test  Method complted ");
 		

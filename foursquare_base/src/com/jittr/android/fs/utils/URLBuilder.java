@@ -24,15 +24,12 @@ public class URLBuilder {
 		String queryStr = "";
 		for(int i=0;i<nvps.length;i++) {
 			if(nvps[i].getValue() !=null && !"".equals(nvps[i].getValue())) {
-				String tempPair ="";
-				if(i == ((nvps.length)-1)) {
-					tempPair = nvps[i].getName()+"="+URLEncoder.encode(nvps[i].getValue());
-				}
-				else {
-					tempPair = nvps[i].getName()+"="+URLEncoder.encode(nvps[i].getValue())+"&";
-				}
+				String tempPair = nvps[i].getName()+"="+URLEncoder.encode(nvps[i].getValue())+"&";
 				queryStr = queryStr+tempPair;
 			}
+			//Discard extra &
+			String finalStr = queryStr.substring(0, queryStr.length());
+			return finalStr;
 		}
 		return queryStr;
 	}
@@ -58,7 +55,8 @@ public class URLBuilder {
 				queryStr = queryStr+tempPair;
 			}
 		}
-		return queryStr;
+		String finalStr = queryStr.substring(0, queryStr.length());
+		return finalStr;
 	}
 	
 	
