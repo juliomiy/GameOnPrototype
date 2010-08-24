@@ -19,14 +19,16 @@ import com.jittr.android.fs.utils.Constants;
 import com.jittr.android.fs.utils.FSConnectionHandler;
 import com.jittr.android.fs.utils.NVPair;
 import com.jittr.android.fs.utils.URLBuilder;
+import com.jittr.android.util.Consts;
+import com.jittr.android.util.HttpConnectionHandler;
 
 public class BSClientAPIImpl implements BSClientInterface {
 
 	
-	FSConnectionHandler fsc = null;
+	HttpConnectionHandler htppClient = null;
 	
 	public BSClientAPIImpl(String type, String user, String pwd) {
-		fsc = new FSConnectionHandler(user,pwd);
+		htppClient = new HttpConnectionHandler(user,pwd);
 	}
 
 	
@@ -34,20 +36,10 @@ public class BSClientAPIImpl implements BSClientInterface {
 		
 		try {
 			
-			/*
-			NVPair nvps [] = {new NVPair("league",league),
-				  new NVPair("team",team),
-				  new NVPair("sport", sportCategory),
-				  new NVPair("latitude", latitude), 
-				  new NVPair("longitude", longitude),
-				  new NVPair("timeframe", String.valueOf(timeframe)),
-				 };
-			*/
-			 
-			String url = URLBuilder.createUrl(Constants.Public_Games_URL,criteria);
+			String url = URLBuilder.createUrl(Consts.BS_GET_PUBLIC_GAMES_ENDPOINT_URL,criteria);
 			Log.d("","Url :"+url);
 	
-			String data = fsc.getContent(new URL(url));
+			String data = htppClient.getContent(new URL(url));
 			System.out.println("data "+data);
 			GameHandler gh = new GameHandler(data);
 			List<Game> games = (List) gh.parseList();
@@ -72,15 +64,14 @@ public class BSClientAPIImpl implements BSClientInterface {
 	}
 
 	public BSUserDashBoard getUserDashBoard(String userid) {
-		// TODO Auto-generated method stub
 		
 		try {
 			NVPair nvps [] = {new NVPair("userid",userid)};
 			
-			String url = URLBuilder.createUrl(Constants.User_DashBoard_URL,nvps);
+			String url = URLBuilder.createUrl(Consts.BS_GET_USER_DASHBOARD_ENDPOINT_URL,nvps);
 			Log.d("","Url :"+url);
 	
-			String data = fsc.getContent(new URL(url));
+			String data = htppClient.getContent(new URL(url));
 			System.out.println("data "+data);
 			
 			
@@ -111,9 +102,11 @@ public class BSClientAPIImpl implements BSClientInterface {
 		
 		try {
 			//NVPair nvps [] = {new NVPair("newusername",userName)};
-			String url = URLBuilder.createUrl(Constants.User_ADD_URL,params);
-			Log.d("","Url :"+url);
-			String data = fsc.getContent(new URL(url));
+			String querStr = URLBuilder.createQueryStr(params);
+			
+			Log.d("","querStr:"+querStr);
+			Log.d("", "Url :"+Consts.BS_ADD_USER_ENDPOINT_URL);
+			String data = htppClient.submitPostToServer(new URL(Consts.BS_ADD_USER_ENDPOINT_URL), querStr); 
 			System.out.println("data "+data);
 			UserResponseHandler uh = new UserResponseHandler(data);
 			UserAddResponse ur = (UserAddResponse)uh.parse();

@@ -12,7 +12,12 @@ public static final String INTENT_VIEW_VENUE = "VIEW_VENUE";
 public static final String GOOGLE_MAP_API_KEY = "ABQIAAAAkkbA1TOcucOZig_ctpQNSRQH3Cvd4D3k_1VFIvdkDzxWu_QC3hQMauhlyVDyEB5rQFm5ddDmGwWIDg";	
 
 //Bet Square API
-	
+public static String BS_ADD_USER_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postnewuser_post.php";
+public static String BS_GET_PUBLIC_GAMES_ENDPOINT_URL ="http://api.betsquared.com/v1/go_getpublicgames.php"; 
+public static String BS_GET_USER_DASHBOARD_ENDPOINT_URL = "http://api.betsquared.com/v1/go_getuserdashboard.php";
+
+
+
 //FourSquare API 
 public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";
 public final static String FOURSQUARE_ACCESS_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/access_token";
