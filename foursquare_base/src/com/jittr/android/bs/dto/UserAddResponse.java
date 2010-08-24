@@ -5,7 +5,7 @@ public class UserAddResponse {
 	String status_code;
 	String status_message;
 	String userid;
-	String username;
+	//String username;
 	String networkname;
 	
 	public UserAddResponse() {
@@ -35,7 +35,7 @@ public class UserAddResponse {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-
+/*
 	public String getUsername() {
 		return username;
 	}
@@ -43,7 +43,7 @@ public class UserAddResponse {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
+*/
 	public String getNetworkname() {
 		return networkname;
 	}
@@ -56,7 +56,7 @@ public class UserAddResponse {
 	public String toString() {
 		return "UserAddResponse [networkname=" + networkname + ", status_code="
 				+ status_code + ", status_message=" + status_message
-				+ ", userid=" + userid + ", username=" + username + "]";
+				+ ", userid=" + userid + "]";
 	}
 	
 	

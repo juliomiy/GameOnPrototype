@@ -11,6 +11,7 @@ import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
 import com.jittr.android.bs.handlers.GameHandler;
+import com.jittr.android.bs.handlers.UserResponseHandler;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.BSUserDashBoard;
 
@@ -106,22 +107,23 @@ public class BSClientAPIImpl implements BSClientInterface {
 
 
 	@Override
-	public UserAddResponse addUser(String userName) {
-		// TODO Auto-generated method stub
-		try {
-			NVPair nvps [] = {new NVPair("newusername",userName)};
+	public UserAddResponse addUser(HashMap<String , String> params) {
 		
-			String url = URLBuilder.createUrl(Constants.User_ADD_URL,nvps);
+		try {
+			//NVPair nvps [] = {new NVPair("newusername",userName)};
+			String url = URLBuilder.createUrl(Constants.User_ADD_URL,params);
 			Log.d("","Url :"+url);
 			String data = fsc.getContent(new URL(url));
 			System.out.println("data "+data);
+			UserResponseHandler uh = new UserResponseHandler(data);
+			UserAddResponse ur = (UserAddResponse)uh.parse();
+			return ur;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 		
-		
-		return null;
 	}
 	
 	

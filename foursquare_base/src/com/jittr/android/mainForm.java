@@ -116,13 +116,13 @@ public class mainForm extends Activity {
     	
 		Log.d("", "Test User Method ");
 		//Create client 
-		/*
+		
 		FSClientAPIImpl fs = new FSClientAPIImpl("xml", "9259485368", "findme3366");
 		//Call FS implemnted methods
 		
 		User userObj = fs.getUserDetails("2478174", null, false,false);
 		List users = fs.getFriends("2478174");
-		*/
+		
 		
 		/*
 		List venues = fs.getNearByVenues("40.7204","-73.9933",10,""); //NY geolat:40.7204, geolong:-73.9933
@@ -167,10 +167,10 @@ public class mainForm extends Activity {
 		params.put("longitude", "");
 		params.put("timeframe", "0");
 		bs.getPublicGames(params);
-		
 		*/
+		
 		HashMap<String, String> params = new HashMap();
-		params.put("newusername", "ravindergade9");
+		params.put("newusername", "ravindergade10");
 		BSClientAPIImpl bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
 		UserAddResponse userResponse = bs.addUser(params);
 		Log.d("", "Response :"+userResponse);

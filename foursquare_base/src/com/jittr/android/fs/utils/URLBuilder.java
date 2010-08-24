@@ -28,7 +28,7 @@ public class URLBuilder {
 				queryStr = queryStr+tempPair;
 			}
 			//Discard extra &
-			String finalStr = queryStr.substring(0, queryStr.length());
+			String finalStr = queryStr.substring(0, queryStr.length()-1);
 			return finalStr;
 		}
 		return queryStr;
@@ -55,7 +55,7 @@ public class URLBuilder {
 				queryStr = queryStr+tempPair;
 			}
 		}
-		String finalStr = queryStr.substring(0, queryStr.length());
+		String finalStr = queryStr.substring(0, queryStr.length()-1);
 		return finalStr;
 	}
 	
