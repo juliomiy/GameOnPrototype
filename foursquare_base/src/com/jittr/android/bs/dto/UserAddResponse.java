@@ -1,13 +1,52 @@
 package com.jittr.android.bs.dto;
 
+/*changed by Julio Hernandez-Miyares
+ * selected StringBuilder to generate toString
+ * added firstName, lastName, userName email as class properites including setters/getters
+ */
 public class UserAddResponse {
    
 	String status_code;
 	String status_message;
 	String userid;
-	//String username;
+	String username;
+	String firstName;
+	String lastName;
+	String email;
 	String networkname;
 	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public UserAddResponse() {
 		
 	}
@@ -54,9 +93,25 @@ public class UserAddResponse {
 
 	@Override
 	public String toString() {
-		return "UserAddResponse [networkname=" + networkname + ", status_code="
-				+ status_code + ", status_message=" + status_message
-				+ ", userid=" + userid + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("UserAddResponse [email=");
+		builder.append(email);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", networkname=");
+		builder.append(networkname);
+		builder.append(", status_code=");
+		builder.append(status_code);
+		builder.append(", status_message=");
+		builder.append(status_message);
+		builder.append(", userid=");
+		builder.append(userid);
+		builder.append(", username=");
+		builder.append(username);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	

@@ -17,11 +17,18 @@
             </intent-filter>
             
         </activity>
+       <activity
+                 android:name=".GetBetSquareUserDetailsActivity"
+                 android:label="@string/testgetbetsquareduserdetails">
+       </activity>
        <activity android:name=".FoursquareOauth"  
                  android:label="@string/app_name">
        </activity>
+       <activity android:name=".GameOnRegisterActivity"  
+                 android:label="@string/app_name">
+       </activity>
        <activity android:name=".GetUserDetailsActivity"
-                 android:label="@string/testuserdetails">
+                 android:label="@string/testfoursquareuserdetails">
        </activity>
        <activity android:name=".GetNearbyVenuesActivity"
                  android:label="@string/testnearbyvenues">

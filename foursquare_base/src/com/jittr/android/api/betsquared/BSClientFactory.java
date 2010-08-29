@@ -1,8 +1,5 @@
 package com.jittr.android.api.betsquared;
 
-import com.jittr.android.fs.core.FSClientInterface;
-import com.jittr.android.fs.impl.FSClientAPIImpl;
-
 /**
 * @author rg230v
 *

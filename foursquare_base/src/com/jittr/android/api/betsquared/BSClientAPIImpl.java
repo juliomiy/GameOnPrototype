@@ -1,7 +1,6 @@
 package com.jittr.android.api.betsquared;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,11 +13,8 @@ import com.jittr.android.bs.handlers.BSDashBoardHandler;
 import com.jittr.android.bs.handlers.GameHandler;
 import com.jittr.android.bs.handlers.UserDetailsHandler;
 import com.jittr.android.bs.handlers.UserResponseHandler;
-import com.jittr.android.fs.dto.User;
-import com.jittr.android.fs.dto.BSUserDashBoard;
+import com.jittr.android.bs.dto.BSUserDashBoard;
 
-import com.jittr.android.fs.utils.Constants;
-import com.jittr.android.fs.utils.FSConnectionHandler;
 import com.jittr.android.fs.utils.NVPair;
 import com.jittr.android.fs.utils.URLBuilder;
 import com.jittr.android.util.Consts;
@@ -33,6 +29,10 @@ public class BSClientAPIImpl implements BSClientInterface {
 		htppClient = new HttpConnectionHandler(user,pwd);
 	}
 
+	public BSClientAPIImpl() {
+		//default constructor
+		this("test","juliomiy","test");
+	}  //constructor
 	
 	public List<Game> getPublicGames(HashMap<String , String> criteria) {
 		

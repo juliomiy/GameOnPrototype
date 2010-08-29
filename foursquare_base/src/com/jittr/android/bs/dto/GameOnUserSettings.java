@@ -1,4 +1,4 @@
-package com.jittr.android;
+package com.jittr.android.bs.dto;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -21,12 +21,14 @@ public class GameOnUserSettings implements Parcelable {
 	private String  facebookOAuthTokenSecret;
 	private String  foursquareOAuthToken;
 	private String  foursquareOAuthTokenSecret;
+	private String foursquarePassword;
+	private final String TAG = "GameOnUserSettings";
 
 	public GameOnUserSettings() {
 		
 	}
 	public GameOnUserSettings(int userID) {
-		// TODO Auto-generated constructor stub
+        this.userID = userID;
 	}
 	public int getUserID() {
 		return userID;
@@ -47,7 +49,9 @@ public class GameOnUserSettings implements Parcelable {
 		this.facebookID = facebookID;
 	}
 	public String getFoursquareID() {
-		return foursquareID;
+		//TODO remove hardcode value
+		return "9173702880";
+	//	return foursquareID;
 	}
 	public void setFoursquareID(String foursquareID) {
 		this.foursquareID = foursquareID;
@@ -125,5 +129,54 @@ public class GameOnUserSettings implements Parcelable {
 	public void writeToParcel(Parcel dest, int flags) {
 		// TODO Auto-generated method stub
 		
+	}
+//deprecated once oauth is required
+	public String getFoursquarePassword() {
+		//TODO - remove hardcoded value
+		return "cuba1a";
+		//return foursquarePassword;
+	}
+	public void setFoursquarePassword(String password) {
+         foursquarePassword = password;		
+	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("GameOnUserSettings [aimID=");
+		builder.append(aimID);
+		builder.append(", facebookDefault=");
+		builder.append(facebookDefault);
+		builder.append(", facebookID=");
+		builder.append(facebookID);
+		builder.append(", facebookOAuthToken=");
+		builder.append(facebookOAuthToken);
+		builder.append(", facebookOAuthTokenSecret=");
+		builder.append(facebookOAuthTokenSecret);
+		builder.append(", foursquareDefault=");
+		builder.append(foursquareDefault);
+		builder.append(", foursquareID=");
+		builder.append(foursquareID);
+		builder.append(", foursquareOAuthToken=");
+		builder.append(foursquareOAuthToken);
+		builder.append(", foursquareOAuthTokenSecret=");
+		builder.append(foursquareOAuthTokenSecret);
+		builder.append(", foursquarePassword=");
+		builder.append(foursquarePassword);
+		builder.append(", icqID=");
+		builder.append(icqID);
+		builder.append(", twitterDefault=");
+		builder.append(twitterDefault);
+		builder.append(", twitterID=");
+		builder.append(twitterID);
+		builder.append(", twitterOAuthToken=");
+		builder.append(twitterOAuthToken);
+		builder.append(", twitterOAuthTokenSecret=");
+		builder.append(twitterOAuthTokenSecret);
+		builder.append(", userID=");
+		builder.append(userID);
+		builder.append(", userName=");
+		builder.append(userName);
+		builder.append("]");
+		return builder.toString();
 	}
 	} //class

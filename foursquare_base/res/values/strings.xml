@@ -6,7 +6,8 @@
     <string name="foursquarebase">Foursquare Base</string>
     <string name="foursquareoauth">Start Foursquare Oauth</string>
     <string name="cancel_button">Cancel</string>
-    <string name="testuserdetails">Test getUserDetails</string>
+    <string name="testfoursquareuserdetails">Test FourSquare getUserDetails</string>
+    <string name="testbetsquareuserdetails">Test BetSquare getUserDetails</string>
     <string name="testnearbyvenues">Test getNearByVenues</string>
     <string name="testgetpublicgames">Test getPublicGames</string>
     <string name="testviewvenueactivity">Test View Venue</string>
@@ -18,8 +19,14 @@
     <string name="firstname">First Name</string>
     <string name="nogames">No Games</string>
     <string name="gobutton">Go</string>
+    <string name="register">Register</string>
+    <string name="update">Update</string>
     <string name="testgetuserdashboard">Test User Dashboard</string>
     <string name="username">User Name</string>
     <string name="userpassword">User Password</string>
     <string name="loginbuttontext">Login</string>
-</resources>
+    <string name="logoutbuttontext">Logout</string>
+    <string name="registerbuttontext">Register</string>
+    <string name="testgetbetsquareduserdetails">Test Get Betsquared User Details</string>
+    <string name="avatarurl">Avatar Url</string>
+ </resources>

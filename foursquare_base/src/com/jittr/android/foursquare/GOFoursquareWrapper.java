@@ -36,7 +36,7 @@ public class GOFoursquareWrapper {
 	 */
 	public GOFoursquareWrapper(Context context) {
 		 this.context=context;
-		 gameOnProperties = new GameOnProperties(context);
+	//	 gameOnProperties = new GameOnProperties(context);
 		 consumerKey = gameOnProperties.getProperty("GAMEON_FOURSQUARE_CONSUMER_KEY");   //obtain consumer gameon keys from properties
 		 consumerSecretKey = gameOnProperties.getProperty("GAMEON_FOURSQUARE_CONSUMER_SECRET");
    	     consumer = new CommonsHttpOAuthConsumer(consumerKey,consumerSecretKey);

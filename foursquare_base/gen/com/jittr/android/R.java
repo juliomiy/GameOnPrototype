@@ -20,6 +20,37 @@ public final class R {
     public static final class color {
         public static final int BLACK=0x7f060001;
         public static final int WHITE=0x7f060000;
+        public static final int button_color_dark=0x7f060010;
+        public static final int button_color_disabled=0x7f060011;
+        /**   Button 
+         */
+        public static final int button_color_light=0x7f06000f;
+        public static final int button_default_border=0x7f060012;
+        public static final int button_disabled_focused_border=0x7f060014;
+        public static final int button_focused_border=0x7f060013;
+        public static final int color_background=0x7f060004;
+        public static final int color_foreground=0x7f060003;
+        public static final int color_foreground_inverse=0x7f060005;
+        public static final int list_item_color_dark=0x7f060016;
+        public static final int list_item_color_disabled=0x7f06001b;
+        /**   List Item 
+         */
+        public static final int list_item_color_light=0x7f060015;
+        public static final int list_item_pressed_color_dark=0x7f06001a;
+        public static final int list_item_pressed_color_light=0x7f060019;
+        public static final int list_item_selected_color_dark=0x7f060018;
+        public static final int list_item_selected_color_light=0x7f060017;
+        public static final int textfield_color_dark=0x7f06000a;
+        public static final int textfield_color_disabled=0x7f06000b;
+        /**  Text Field 
+         */
+        public static final int textfield_color_light=0x7f060009;
+        public static final int textfield_default_border=0x7f06000c;
+        public static final int textfield_disabled_focused_border=0x7f06000e;
+        public static final int textfield_focused_border=0x7f06000d;
+        public static final int title_border=0x7f060008;
+        public static final int title_color_dark=0x7f060007;
+        public static final int title_color_light=0x7f060006;
         public static final int translucent_red=0x7f060002;
     }
     public static final class d {
@@ -28,58 +59,78 @@ public final class R {
     }
     public static final class drawable {
         public static final int icon=0x7f020000;
+        public static final int list_item_divider=0x7f020001;
+        public static final int window_title_background=0x7f020002;
     }
     public static final class id {
-        public static final int LinearLayout01=0x7f090008;
+        public static final int LinearLayout01=0x7f090011;
+        public static final int LinearLayout02=0x7f090012;
+        public static final int LinearLayout03=0x7f090013;
+        public static final int LinearLayout04=0x7f090014;
         public static final int TextView01=0x7f090002;
-        public static final int TextView02=0x7f09000d;
-        public static final int TextView03=0x7f090012;
-        public static final int TextView04=0x7f090014;
-        public static final int TextView05=0x7f09000f;
-        public static final int addressTextView=0x7f090023;
-        public static final int betsAcceptedTextView=0x7f090013;
-        public static final int betsInitiatedTextView=0x7f090011;
-        public static final int cancelButton=0x7f090006;
-        public static final int cancel_button=0x7f090007;
-        public static final int cityStateTextView=0x7f090024;
-        public static final int currentGeoTextView=0x7f090021;
-        public static final int emailEditText=0x7f090017;
+        public static final int TextView02=0x7f09001b;
+        public static final int TextView03=0x7f090020;
+        public static final int TextView04=0x7f090022;
+        public static final int TextView05=0x7f09001d;
+        public static final int addressTextView=0x7f090033;
+        public static final int betsAcceptedTextView=0x7f090021;
+        public static final int betsInitiatedTextView=0x7f09001f;
+        public static final int cancelButton=0x7f090007;
+        public static final int cancel_button=0x7f090016;
+        public static final int cityStateTextView=0x7f090034;
+        public static final int currentGeoTextView=0x7f090031;
+        public static final int emailEditText=0x7f090010;
+        public static final int emailTextView=0x7f09000f;
         public static final int enter_pin_title=0x7f090001;
-        public static final int faceBookEditText=0x7f09001b;
-        public static final int firstNameEditText=0x7f090018;
-        public static final int foursquareoauth=0x7f09001c;
-        public static final int getnearbyvenues_button=0x7f09001e;
-        public static final int getpublicgames_button=0x7f09001f;
-        public static final int getuserdashboard_button=0x7f090020;
-        public static final int getuserdetails_button=0x7f09001d;
-        public static final int goButton=0x7f09000c;
-        public static final int lastNameEdiTtext=0x7f090019;
-        public static final int latLongTextView=0x7f090025;
+        public static final int faceBookEditText=0x7f090027;
+        public static final int firstNameEditText=0x7f09000c;
+        public static final int firstNameTextView=0x7f09000b;
+        public static final int foursquareAvatarUrlImageView=0x7f090029;
+        public static final int foursquareAvatarUrlTextView=0x7f090028;
+        public static final int foursquareoauth=0x7f09002a;
+        public static final int getbetsuserdetails_button=0x7f09002c;
+        public static final int getnearbyvenues_button=0x7f09002d;
+        public static final int getpublicgames_button=0x7f09002e;
+        public static final int getuserdashboard_button=0x7f09002f;
+        public static final int getuserdetails_button=0x7f09002b;
+        public static final int goButton=0x7f09001a;
+        public static final int lastNameEdiTtext=0x7f090025;
+        public static final int lastNameEditText=0x7f09000e;
+        public static final int lastNameTextView=0x7f09000d;
+        public static final int latLongTextView=0x7f090035;
         public static final int loginButton=0x7f090005;
-        public static final int sportFilterSpinner=0x7f09000a;
-        public static final int teamFilterSpinner=0x7f09000b;
-        public static final int timeFilterSpinner=0x7f090009;
-        public static final int totalBetsTextView=0x7f090010;
-        public static final int totalLosesTextView=0x7f090016;
-        public static final int totalWinsTextView=0x7f090015;
-        public static final int twitterEditText=0x7f09001a;
-        public static final int userIDTextView=0x7f09000e;
+        public static final int logout_button=0x7f090030;
+        public static final int passwordEditText=0x7f09000a;
+        public static final int passwordTextView=0x7f090009;
+        public static final int registerButton=0x7f090006;
+        public static final int sportFilterSpinner=0x7f090018;
+        public static final int teamFilterSpinner=0x7f090019;
+        public static final int timeFilterSpinner=0x7f090017;
+        public static final int totalBetsTextView=0x7f09001e;
+        public static final int totalLosesTextView=0x7f090024;
+        public static final int totalWinsTextView=0x7f090023;
+        public static final int twitterEditText=0x7f090026;
+        public static final int updateButton=0x7f090015;
+        public static final int userIDTextView=0x7f09001c;
         public static final int userNameEditText=0x7f090003;
+        public static final int userNameTextView=0x7f090008;
         public static final int userPasswordEditText=0x7f090004;
-        public static final int venueNameTextView=0x7f090022;
+        public static final int venueNameTextView=0x7f090032;
         public static final int web_view=0x7f090000;
     }
     public static final class layout {
         public static final int authorization_view=0x7f030000;
         public static final int gamelistitem=0x7f030001;
         public static final int gameonloginlayout=0x7f030002;
-        public static final int getnearbyvenues=0x7f030003;
-        public static final int getpublicgames=0x7f030004;
-        public static final int getuserdashboard=0x7f030005;
-        public static final int getuserdetails=0x7f030006;
-        public static final int main=0x7f030007;
-        public static final int venuelistitem=0x7f030008;
-        public static final int viewvenue=0x7f030009;
+        public static final int gameonregisterlayout=0x7f030003;
+        public static final int getbetsquareduserdetails=0x7f030004;
+        public static final int getnearbyvenues=0x7f030005;
+        public static final int getpublicgames=0x7f030006;
+        public static final int getuserdashboard=0x7f030007;
+        public static final int getuserdetails=0x7f030008;
+        public static final int main=0x7f030009;
+        public static final int venuelistitem=0x7f03000a;
+        public static final int viewvenue=0x7f03000b;
     }
     public static final class raw {
         public static final int gameonv1=0x7f040000;
@@ -87,28 +138,36 @@ public final class R {
     public static final class string {
         public static final int app_description=0x7f070002;
         public static final int app_name=0x7f070001;
+        public static final int avatarurl=0x7f07001c;
         public static final int cancel_button=0x7f070005;
-        public static final int emailaddress=0x7f07000a;
-        public static final int facebookid=0x7f07000d;
-        public static final int firstname=0x7f07000f;
+        public static final int emailaddress=0x7f07000b;
+        public static final int facebookid=0x7f07000e;
+        public static final int firstname=0x7f070010;
         public static final int foursquarebase=0x7f070003;
         public static final int foursquareoauth=0x7f070004;
-        public static final int gobutton=0x7f070011;
+        public static final int gobutton=0x7f070012;
         public static final int hello=0x7f070000;
-        public static final int lastname=0x7f07000e;
-        public static final int loginbuttontext=0x7f070015;
-        public static final int nogames=0x7f070010;
-        public static final int novenues=0x7f07000b;
-        public static final int testgetpublicgames=0x7f070008;
-        public static final int testgetuserdashboard=0x7f070012;
-        public static final int testnearbyvenues=0x7f070007;
-        public static final int testuserdetails=0x7f070006;
-        public static final int testviewvenueactivity=0x7f070009;
-        public static final int twitterid=0x7f07000c;
-        public static final int username=0x7f070013;
-        public static final int userpassword=0x7f070014;
+        public static final int lastname=0x7f07000f;
+        public static final int loginbuttontext=0x7f070018;
+        public static final int logoutbuttontext=0x7f070019;
+        public static final int nogames=0x7f070011;
+        public static final int novenues=0x7f07000c;
+        public static final int register=0x7f070013;
+        public static final int registerbuttontext=0x7f07001a;
+        public static final int testbetsquareuserdetails=0x7f070007;
+        public static final int testfoursquareuserdetails=0x7f070006;
+        public static final int testgetbetsquareduserdetails=0x7f07001b;
+        public static final int testgetpublicgames=0x7f070009;
+        public static final int testgetuserdashboard=0x7f070015;
+        public static final int testnearbyvenues=0x7f070008;
+        public static final int testviewvenueactivity=0x7f07000a;
+        public static final int twitterid=0x7f07000d;
+        public static final int update=0x7f070014;
+        public static final int username=0x7f070016;
+        public static final int userpassword=0x7f070017;
     }
     public static final class style {
+        public static final int CancelButton=0x7f080009;
         /**   <style name="TextAppearance.Title.WindowTitle">
        <item name="android:textColor">#fff</item>
         <item name="android:textSize">18sp</item> 
@@ -117,7 +176,16 @@ public final class R {
          */
         public static final int CustomWindowTitle=0x7f080001;
         public static final int CustomWindowTitleText=0x7f080002;
-        public static final int Theme_GameOn=0x7f080003;
+        public static final int StandardButton=0x7f080008;
+        /**   <item name="android:minWidth">75.5dip</item>  
+         */
+        public static final int StandardEditText=0x7f080004;
+        public static final int StandardEmailEditText=0x7f080006;
+        public static final int StandardListView=0x7f08000a;
+        public static final int StandardPasswordEditText=0x7f080005;
+        public static final int StandardTextView=0x7f080007;
+        public static final int Theme_GameOn=0x7f08000b;
+        public static final int WindowTitleBackground=0x7f080003;
         public static final int gameon_background_color=0x7f080000;
     }
 }

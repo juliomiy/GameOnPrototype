@@ -4,6 +4,8 @@
   android:orientation="vertical"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
+ 
+
 <Button 
     android:text="@string/cancel_button" 
     android:id="@+id/cancelButton"
@@ -13,15 +15,18 @@
  <EditText
     android:text="@string/emailaddress" 
     android:id="@+id/emailEditText" 
-    android:layout_width="wrap_content" 
+    android:layout_width="wrap_content"  
+    android:layout_weight="1"
+    android:maxLines="1"
+    android:maxLength="25"
+    android:inputType="textEmailAddress"
     android:layout_height="wrap_content"
     android:layout_below="@id/cancel_button">
  </EditText>
  <EditText
+    style="@style/StandardEditText"
     android:text="@string/firstname" 
     android:id="@+id/firstNameEditText" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
     android:layout_below="@id/emailEditText">
  </EditText>
 <EditText 
@@ -46,4 +51,18 @@
      android:layout_height="wrap_content"
      android:layout_below="@+d/twitterEditText">
  </EditText>
-</LinearLayout>
+<TextView 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content"
+     android:text="@string/avatarurl" 
+     android:id="@+id/foursquareAvatarUrlTextView"
+ >
+ </TextView>
+<ImageView 
+     android:id="@+id/foursquareAvatarUrlImageView"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content"
+     android:text="@string/avatarurl"
+ >
+ </ImageView>  
+ </LinearLayout>

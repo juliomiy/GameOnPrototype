@@ -2,7 +2,6 @@ package com.jittr.android.fs.handlers;
 
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.parsers.SAXParser;
@@ -12,9 +11,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import com.jittr.android.bs.dto.Game;
 import com.jittr.android.fs.core.ParserInterface;
-import com.jittr.android.fs.dto.BSUserDashBoard;
+import com.jittr.android.bs.dto.BSUserDashBoard;
 
 public class BSDashBoardHandler extends DefaultHandler implements ParserInterface {
 

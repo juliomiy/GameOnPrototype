@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+<LinearLayout 
+    android:id="@+id/LinearLayout01" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+<TextView 
+    style="@style/StandardTextView"
+    android:text="@string/username" 
+    android:id="@+id/TextView01"> 
+</TextView>
+<EditText 
+    style="@style/StandardEditText"
+    android:text="@string/username" 
+    android:id="@+id/userNameEditText"> 
+ </EditText>
+</LinearLayout>
+<LinearLayout 
+    android:id="@+id/LinearLayout02" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+<TextView 
+    style="@style/StandardTextView"
+    android:text="@string/firstname" 
+    android:id="@+id/TextView01"> 
+</TextView>
+<EditText 
+    style="@style/StandardEditText"
+    android:text="@string/firstname" 
+    android:id="@+id/firstNameEditText"> 
+ </EditText>
+</LinearLayout>
+<LinearLayout 
+    android:id="@+id/LinearLayout03" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+<TextView 
+    style="@style/StandardTextView"
+    android:text="@string/lastname" 
+    android:id="@+id/TextView01"> 
+</TextView>
+<EditText 
+    style="@style/StandardEditText"
+    android:text="@string/lastname" 
+    android:id="@+id/lastNameEditText"> 
+ </EditText>
+</LinearLayout>
+<LinearLayout 
+    android:id="@+id/LinearLayout04" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+<TextView 
+    style="@style/StandardTextView"
+    android:text="@string/emailaddress" 
+    android:id="@+id/TextView01"> 
+</TextView>
+<EditText 
+    style="@style/StandardEmailEditText"
+    android:text="@string/emailaddress" 
+    android:id="@+id/emailEditText"> 
+ </EditText>
+</LinearLayout>
+<Button 
+    style="@style/StandardButton"
+    android:text="@string/update" 
+    android:id="@+id/updateButton"> 
+</Button>
+<Button 
+    style="@style/StandardButton"
+    android:text="@string/cancel_button" 
+    android:id="@+id/cancelButton"> 
+</Button>
+</LinearLayout>

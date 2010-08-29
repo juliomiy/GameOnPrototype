@@ -1,4 +1,4 @@
-package com.jittr.android.fs.dto;
+package com.jittr.android.bs.dto;
 
 public class BSUserDashBoard {
 	String userid;
@@ -11,10 +11,8 @@ public class BSUserDashBoard {
 	
 	
 	public BSUserDashBoard() {
-		
+		super();
 	}
-	
-	
 	
 	public String getUserid() {
 		return userid;

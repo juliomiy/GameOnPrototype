@@ -54,7 +54,9 @@ public class User {
 		this.lastName = lastName;
 	}
 	public String getPhoto() {
-		return photo;
+		//TODO remove hardcode value
+		return "http://playfoursquare.s3.amazonaws.com/userpix/Q551BPHTMFMLATUO.jpg";
+		//return photo;
 	}
 	public void setPhoto(String photo) {
 		this.photo = photo;

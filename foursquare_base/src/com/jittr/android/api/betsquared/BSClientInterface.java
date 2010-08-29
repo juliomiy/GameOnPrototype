@@ -6,7 +6,7 @@ import java.util.List;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.UserAddResponse;
-import com.jittr.android.fs.dto.BSUserDashBoard;
+import com.jittr.android.bs.dto.BSUserDashBoard;
 
 public interface BSClientInterface {
 	

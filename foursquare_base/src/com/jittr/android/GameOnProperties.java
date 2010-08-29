@@ -20,19 +20,19 @@ public class GameOnProperties  {
 	private static final String APPLICATION_PREFERENCES = "app_prefs";
 	private Properties properties;
     private Resources resources; // = appContext.getResources();
-    private Context context;
+    private BetSquaredApplication appContext;
     private SharedPreferences prefs;
     private final String TAG="GameOnProperties";
     
     //private AssetManager assetManager = new AssetManager();
     
-	public GameOnProperties(Context context) {
+	public GameOnProperties(BetSquaredApplication appContext) {
 		// Read from the /res/raw directory
 		
-		this.context=context;
-		prefs = context.getSharedPreferences(APPLICATION_PREFERENCES, Context.MODE_PRIVATE);
+		this.appContext=appContext;
+		prefs = appContext.getSharedPreferences(APPLICATION_PREFERENCES, Context.MODE_PRIVATE);
 		try {
-			resources = context.getResources();
+			resources = appContext.getResources();
 		    final InputStream rawResource =  resources.openRawResource(R.raw.gameonv1);
 		    properties = new Properties();
 		    properties.load(rawResource);
@@ -44,20 +44,32 @@ public class GameOnProperties  {
 	} //constructor
 
 	/* Store a key/value pair in shared perferences*/
-	public void storeSharedPreference(String key, String value) {
-		if (prefs == null) return;
+	public boolean storeSharedPreference(String key, String value) {
+		if (prefs == null) return false;
 	    Editor editor = prefs.edit();
 	    editor.putString(key, value);
 	    editor.commit();
-	}
+	    return true;
+	} //string
+	public boolean storeSharedPreference(String key, int value) {
+		if (prefs == null) return false;
+	    Editor editor = prefs.edit();
+	    editor.putInt(key, value);
+	    editor.commit();
+	    return true;
+	} //int
+
 	/* retrieve shared Preference value based on key */
 	public String retrieveSharedPreference(String key) {
         return retrieveSharedPreference(key,null);
 	}
 
 	public String retrieveSharedPreference(String key, String defaultValue) {
-		String value = properties.getProperty(key,defaultValue);
-		return value;
+        return prefs.getString(key, defaultValue);
+	}
+
+	public int retrieveSharedPreference(String key, int defaultInt) {
+        return prefs.getInt(key, defaultInt);
 	}
 
 	public String getProperty(final String key) {
@@ -90,4 +102,5 @@ public class GameOnProperties  {
 		// TODO Auto-generated method stub
 		
 	}
+
 }  //class	

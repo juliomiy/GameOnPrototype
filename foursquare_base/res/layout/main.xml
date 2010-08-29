@@ -17,8 +17,14 @@
     android:layout_height="wrap_content">
 </Button>
 <Button 
-    android:text="@string/testuserdetails"
+    android:text="@string/testfoursquareuserdetails"
     android:id="@+id/getuserdetails_button" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</Button>
+<Button 
+    android:text="@string/testbetsquareuserdetails"
+    android:id="@+id/getbetsuserdetails_button" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
 </Button>
@@ -40,6 +46,12 @@
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
 </Button>
+<Button 
+     android:text="@string/logoutbuttontext" 
+     android:id="@+id/logout_button" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+ </Button>
 <Button 
      android:text="@string/cancel_button" 
      android:id="@+id/cancel_button" 

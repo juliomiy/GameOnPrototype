@@ -1,15 +1,14 @@
 package com.jittr.android;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
-import com.jittr.android.fs.dto.BSUserDashBoard;
+import com.jittr.android.bs.dto.BSUserDashBoard;
 
-public class GetUserDashBoardActivity extends Activity {
+public class GetUserDashBoardActivity extends GameOnBaseActivity {
 
 	private BSClientAPIImpl bs;
 	private BSUserDashBoard dashBoard;
@@ -22,7 +21,7 @@ public class GetUserDashBoardActivity extends Activity {
 	private TextView totalLosesTextView;
 
 	public GetUserDashBoardActivity() {
-		// TODO Auto-generated constructor stub
+        super();
 	}
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,13 +50,17 @@ public class GetUserDashBoardActivity extends Activity {
 	    super.onResume();
 	    if (null == bs ) {
 	        bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
-            dashBoard = bs.getUserDashBoard("1");
-            userIDTextView.setText("UserID: " + dashBoard.getUserid());
-            totalBetsTextView.setText("Total Bets: " + dashBoard.getTotalbets());
-            betsAcceptedTextView.setText("Total Bets Accepted: " + dashBoard.getTotalbetsaccepted());
-            betsInitiatedTextView.setText("Bets Initiated: " + dashBoard.getTotalbetsinitiated());
-            totalWinsTextView.setText("Total Wins: " + dashBoard.getTotalwins());
-            totalLosesTextView.setText("Total Loses: " + dashBoard.getTotalloses());
+            dashBoard = bs.getUserDashBoard(String.valueOf(getAppContext().getLoginID()));
+            
+            if (null != dashBoard) {
+	            userIDTextView.setText("UserID: " + dashBoard.getUserid());
+	            totalBetsTextView.setText("Total Bets: " + dashBoard.getTotalbets());
+	            betsAcceptedTextView.setText("Total Bets Accepted: " + dashBoard.getTotalbetsaccepted());
+	            betsInitiatedTextView.setText("Bets Initiated: " + dashBoard.getTotalbetsinitiated());
+	            totalWinsTextView.setText("Total Wins: " + dashBoard.getTotalwins());
+	            totalLosesTextView.setText("Total Loses: " + dashBoard.getTotalloses());
+
+            } //if
 	    } //if
     } //onResume
 }  //class

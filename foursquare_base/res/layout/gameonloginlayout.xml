@@ -34,9 +34,9 @@
     android:layout_height="wrap_content">
  </TextView>
 <EditText 
+    style="@style/StandardPasswordEditText"
     android:id="@+id/userPasswordEditText" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+ >
  </EditText>
 </LinearLayout>
  <Button 
@@ -46,9 +46,16 @@
     android:layout_height="wrap_content">
  </Button>
  <Button 
+    style="@style/StandardButton"
+    android:text="@string/registerbuttontext" 
+    android:id="@+id/registerButton"
+ >    
+ </Button>
+ <Button
+    style="@style/CancelButton" 
     android:text="@string/cancel_button" 
     android:id="@+id/cancelButton" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
  </Button>
-</LinearLayout>
+ </LinearLayout>
