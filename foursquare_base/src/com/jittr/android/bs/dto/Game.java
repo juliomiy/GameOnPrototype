@@ -1,25 +1,58 @@
 package com.jittr.android.bs.dto;
 
-public class Game {
+import com.jittr.android.fs.dto.Venue;
 
-	String id;
-	String sportname;
-	String leaguename;
-	String seasonweek;
-	String eventname;
-	String eventdatetime;
-	String stadiumname;
-	String address;
-	String city;
-	String state;
-	String fsvenueid;
-	String latitude;
-	String longitude;
-	String team1;
-	String team2;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Game implements Parcelable {
+
+	private String id;
+	private String sportname;
+	private String leaguename;
+	private String seasonweek;
+	private String eventname;
+	private String eventdatetime;
+	private String stadiumname;
+	private String address;
+	private String city;
+	private String state;
+	private String fsvenueid;
+	private String latitude;
+	private String longitude;
+	private String team1;
+	private String team2;
+	private final String TAG = "Game";
 	
+    public static final Parcelable.Creator<Game> CREATOR
+    = new Parcelable.Creator<Game>() {
+   	
+        public Game createFromParcel(Parcel in) {
+           return new Game(in);
+        }
+        
+        public Game[] newArray(int arg0) {
+    		// TODO Auto-generated method stub
+    		return null;
+    	}
+        
+     };
+     
+    private Game(Parcel in) {
+    	 readFromParcel(in);
+     }
+
+	public void readFromParcel(Parcel in) {
+		id = in.readString();
+		team1 = in.readString();
+        team2 = in.readString();
+        eventname = in.readString();
+        eventdatetime = in.readString();
+		// TODO Auto-generated method stub
+	}
+
 	public Game() {
-		
+	    super();	
 	}
 	public String getId() {
 		return id;
@@ -113,6 +146,14 @@ public class Game {
 		this.team2 = team2;
 	}
 	
+	//TODO - improve getHome and Visiting team getters
+	public String getHomeTeam() {
+	  return team1;	
+	}
+	public String getVisitingTeam() {
+	   return team2;	
+	}
+	
 	@Override
 	public String toString() {
 		return "Game [address=" + address + ", city=" + city
@@ -124,4 +165,17 @@ public class Game {
 				+ ", state=" + state + ", team1=" + team1 + ", team2=" + team2
 				+ "]";
 	}
-}
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(id);
+		dest.writeString(getHomeTeam());
+		dest.writeString(getVisitingTeam());
+        dest.writeString(eventname);
+        dest.writeString(eventdatetime);
+	}
+}  //class

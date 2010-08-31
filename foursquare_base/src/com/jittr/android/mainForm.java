@@ -35,6 +35,7 @@ public class mainForm extends GameOnBaseActivity {
 	private Button getUserDashBoardButton;
 	private Button getBetSquareDetailsButton;
 	private Button logoutButton;
+	private Button twitterOAuthButton;
   //  private BetSquaredApplication appContext;
     
     public mainForm() {
@@ -66,12 +67,22 @@ public class mainForm extends GameOnBaseActivity {
     private void setUpViews() {
 		cancelButton = (Button) findViewById(R.id.cancel_button);
         foursquareOauthButton = (Button)findViewById(R.id.foursquareoauth);
+        twitterOAuthButton = (Button)findViewById(R.id.twitterOAuthButton);
         getUserDetailsButton = (Button)findViewById(R.id.getuserdetails_button);
         getBetSquareDetailsButton = (Button)findViewById(R.id.getbetsuserdetails_button);
         getNearbyVenuesButton = (Button)findViewById(R.id.getnearbyvenues_button);
         getPublicGamesButton = (Button)findViewById(R.id.getpublicgames_button);
         getUserDashBoardButton=(Button)findViewById(R.id.getuserdashboard_button);
         logoutButton = (Button)findViewById(R.id.logout_button);
+        
+  
+        twitterOAuthButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+               twitterOAuthButtonClicked();				
+			}
+		});
         
         logoutButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -133,7 +144,11 @@ public class mainForm extends GameOnBaseActivity {
 		});
 
     } //setupViews
-    private void logoutButtonClicked() {
+    protected void twitterOAuthButtonClicked() {
+     	Intent intent = new Intent(this,GameOnTwitterOAuthActivity.class);
+		startActivity(intent);				
+	}
+	private void logoutButtonClicked() {
 		boolean rv = getAppContext().logout();
 		if (rv) cancelButtonClicked(null);
 	} //logoutButtonClicked

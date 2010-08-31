@@ -17,6 +17,12 @@
     android:layout_height="wrap_content">
 </Button>
 <Button 
+    android:text="@string/twitteroauth"
+    android:id="@+id/twitterOAuthButton" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</Button>
+<Button 
     android:text="@string/testfoursquareuserdetails"
     android:id="@+id/getuserdetails_button" 
     android:layout_width="wrap_content" 

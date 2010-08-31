@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class GameOnDatabase extends SQLiteOpenHelper {
-	public static final int VERSION = 4;
+	public static final int VERSION = 5;
 	public static final String DB_NAME  = "betsquared_db.sqlite";
 	public static final String GAME_TABLE = "go_games";
 	public static final String DB_USER_TABLE = "go_user";
@@ -17,7 +17,12 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	public static final String DB_USER_TABLE_FIRSTNAME = "firstName";
 	public static final String DB_USER_TABLE_LASTNAME = "lastName";
 	public static final String DB_USER_TABLE_EMAIL = "email";
-	
+	public static final String DB_USER_TABLE_FS_TOKEN="foursquareToken";
+	public static final String DB_USER_TABLE_FS_TOKEN_SECRET="foursquareTokenSecret";
+	public static final String DB_USER_TABLE_TWITTER_TOKEN="twitterToken";
+	public static final String DB_USER_TABLE_TWITTER_TOKEN_SECRET="twitterTokenSecret";
+	public static final String DB_USER_TABLE_FB_TOKEN="facebookToken";
+	public static final String DB_USER_TABLE_FB_TOKEN_SECRET="facebookTokenSecret";	
 	public GameOnDatabase(Context context) {
 
 		super(context, DB_NAME, null, VERSION);
@@ -43,6 +48,12 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	      DB_USER_TABLE_FIRSTNAME + " text null," +
 	      DB_USER_TABLE_LASTNAME + " text null," +
 	      DB_USER_TABLE_EMAIL + " text null," +
+	      DB_USER_TABLE_FS_TOKEN + " text null," +
+	      DB_USER_TABLE_FS_TOKEN_SECRET + " text null," +
+	      DB_USER_TABLE_FB_TOKEN + " text null," +
+	      DB_USER_TABLE_FB_TOKEN_SECRET + " text null," +
+	      DB_USER_TABLE_TWITTER_TOKEN + " text null," +
+	      DB_USER_TABLE_TWITTER_TOKEN_SECRET + " text null," +
 	      "loggedInSince timestamp null, " + 
 	      "bankBalance float not null default 0," +
 	      "createdDate timestamp not null default CURRENT_TIMESTAMP," +
@@ -65,7 +76,7 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 		values.put(DB_USER_TABLE_USERID, 1);
 		values.put(DB_USER_TABLE_FIRSTNAME, "julio");
 		values.put(DB_USER_TABLE_LASTNAME, "Miyares");
-		values.put(DB_USER_TABLE_EMAIL, "jluio@jittr.com");
+		values.put(DB_USER_TABLE_EMAIL, "julio@jittr.com");
 
 		long id = db.insert(DB_USER_TABLE, null, values);
 	}

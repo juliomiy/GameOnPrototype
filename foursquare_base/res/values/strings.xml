@@ -14,6 +14,7 @@
     <string name="emailaddress">Email Address</string>
     <string name="novenues">No Venues</string>
     <string name="twitterid">Twitter ID</string>
+    <string name="twitteroauth">Twitter OAuth</string>
     <string name="facebookid">Facebook ID</string>
     <string name="lastname">Last Name</string>
     <string name="firstname">First Name</string>
@@ -29,4 +30,7 @@
     <string name="registerbuttontext">Register</string>
     <string name="testgetbetsquareduserdetails">Test Get Betsquared User Details</string>
     <string name="avatarurl">Avatar Url</string>
+    <string name="visitingteam">Visiting Team</string>
+    <string name="hometeam">Home Team</string>
+    <string name="betbutton">Bet</string>
  </resources>

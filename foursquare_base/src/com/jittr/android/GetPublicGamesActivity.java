@@ -1,6 +1,6 @@
 package com.jittr.android;
 
-import static com.jittr.android.util.Consts.INTENT_VIEW_VENUE;
+import static com.jittr.android.util.Consts.INTENT_VIEW_PUBLIC_GAME;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,8 +8,6 @@ import java.util.HashMap;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSGetPublicGamesAdapter;
 import com.jittr.android.bs.dto.Game;
-import com.jittr.android.fs.impl.FSClientAPIImpl;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,8 +27,9 @@ public class GetPublicGamesActivity extends ListActivity {
 	private Spinner sportFilterSpinner;
 	private Button goButton;
 	private Game game;
+	
 	public GetPublicGamesActivity() {
-		// TODO Auto-generated constructor stub
+       super();
 	}
 	@SuppressWarnings("unchecked")
 	@Override
@@ -77,9 +76,9 @@ public class GetPublicGamesActivity extends ListActivity {
 	
 		if (null != game) {
 			Log.d("Game", game.toString());
-		//	Intent intent = new Intent(GetNearbyVenuesActivity.this, ViewVenueActivity.class);
-		//	intent.putExtra(INTENT_VIEW_VENUE,venue);
-		//	startActivity(intent);			
+		    Intent intent = new Intent(GetPublicGamesActivity.this, GameOnCustomizePublicGameActivity.class);
+		    intent.putExtra(INTENT_VIEW_PUBLIC_GAME,game);
+		 	startActivity(intent);			
 		}
 	} //onListItem
 

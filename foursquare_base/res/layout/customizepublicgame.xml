@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+<RadioGroup 
+     android:id="@+id/teamsRadioGroup" 
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content">
+<RadioButton 
+     android:text="@+id/visitingteam" 
+     android:id="@+id/visitingTeamRadioButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+ </RadioButton>
+<RadioButton 
+     android:text="@+id/hometeam" 
+     android:id="@+id/homeTeamRadioButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+ </RadioButton>
+ </RadioGroup>
+<TextView 
+     style="@style/StandardTextView"
+     android:text="@+id/TextView01" 
+     android:id="@+id/TextView01" >
+</TextView>
+<Button 
+      style="@style/StandardButton"
+      android:text="@string/betbutton" 
+      android:id="@+id/betButton" >
+</Button>
+<Button 
+      style="@style/StandardButton"
+      android:text="@string/cancel_button" 
+      android:id="@+id/cancelButton" >
+</Button>
+
+</LinearLayout>

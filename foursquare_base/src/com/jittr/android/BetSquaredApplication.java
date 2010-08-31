@@ -9,8 +9,8 @@ import com.jittr.android.bs.dto.GameOnUserSettings;
 import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.location.*;
 import android.util.Log;
@@ -177,6 +177,21 @@ public class BetSquaredApplication extends Application {
  		return userID;
 	 } //registerNewUser
 	
+	 /* pass raw sql and apply to sqlite database 
+	  * returns number of rows affected
+	  */
+	 public int updateDatabaseSQL(String sql) {
+		    int rowsAffected = -1;
+	        Log.d(TAG,sql);
+	        try {
+	    	   database.execSQL(sql);
+	    	   rowsAffected++;    //TODO - find way to determine recordsAffected
+	        } catch (SQLException e) {
+	           e.printStackTrace();	
+	        }  //try
+	    	return rowsAffected;
+	 }  //updateDatabaseSQL
+	 
 	 public int getLoginID() {
 		   Log.d(TAG,gameOnUserSettings.toString());
 		 return (null != gameOnUserSettings ? gameOnUserSettings.getUserID() : 0);

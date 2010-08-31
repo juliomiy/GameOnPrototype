@@ -53,7 +53,7 @@ public class Venue implements Parcelable {
      }
 
     public Venue() {
-    	
+    	super();
     } //constructor
     
 	public void readFromParcel(Parcel in) {

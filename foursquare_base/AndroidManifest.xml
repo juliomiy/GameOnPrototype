@@ -18,6 +18,10 @@
             
         </activity>
        <activity
+                 android:name=".GameOnTwitterOAuthActivity"
+                 android:label="@string/app_name">
+       </activity>
+       <activity
                  android:name=".GetBetSquareUserDetailsActivity"
                  android:label="@string/testgetbetsquareduserdetails">
        </activity>
@@ -44,6 +48,9 @@
        </activity> 
        <activity android:name=".GameOnLoginActivity"
                  android:label="@string/loginbuttontext">
+       </activity>
+        <activity android:name=".GameOnCustomizePublicGameActivity"
+                 android:label="@string/app_name">
        </activity>
     </application>
     <uses-sdk android:minSdkVersion="6" />
