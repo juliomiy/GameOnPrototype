@@ -1,28 +1,28 @@
 package com.jittr.android;
 
-import com.jittr.android.foursquare.GOFoursquareWrapper;
-
-import android.app.Activity;
+import com.jittr.android.fs.foursquareOAuth;
+import static com.jittr.android.util.Consts.*;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class FoursquareOauth extends Activity {
+public class FoursquareOauthActivity extends GameOnBaseActivity {
 
+	private static final String TAG = "FoursquareOauthActivity";
 	private WebView webView;
-	private GOFoursquareWrapper foursquare;
+	private foursquareOAuth foursquare;
 	private Context appContext;
 	private String authURL;
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.authorization_view);
-  	    appContext = this.getApplicationContext();
-        foursquare = new GOFoursquareWrapper(appContext);
+        setContentView(R.layout.webview);
+        foursquare = new foursquareOAuth(getAppContext(),FOURSQUARE_NETWORK, null, null);
         setUpViews();
     }
 	  /* get the authorization url for foursquare Oauth and fire off webview
@@ -31,16 +31,21 @@ public class FoursquareOauth extends Activity {
 	   */
 	  @Override
 	  protected void onResume() {
-	    super.onResume();
-        authURL = foursquare.getAuthUrl();
-	    webView.loadUrl(authURL);
+	  //  super.onResume();
+
+	   // if (null == authURL) {
+           authURL = foursquare.getAuthUrl();
+	       Log.d(TAG,authURL);
+           webView.loadUrl(authURL);
+	   // } //if
+          super.onResume();
 	  }  //onResume
 
     private void setUpViews() {
-	  	    webView = (WebView)findViewById(R.id.web_view);
+	  	    webView = (WebView)findViewById(R.id.webView);
 	  	    webView.setWebViewClient(webViewClient);
-	  	    webView.getSettings().setJavaScriptEnabled(true);
-	 }
+	  	//    webView.getSettings().setJavaScriptEnabled(true);
+	 }   //setUpViews
 
 	 private WebViewClient webViewClient = new WebViewClient() {
 	  	    @Override
@@ -48,6 +53,7 @@ public class FoursquareOauth extends Activity {
 	  	      // the URL we're looking for looks like this:
 	  	      // http://otweet.com/authenticated?oauth_token=1234567890qwertyuiop
 	  	      Uri uri = Uri.parse(url);
+	  	      Log.d(TAG,url);
 	  	      if (uri.getHost().equals("jittr.com")) {
 	  	        String token = uri.getQueryParameter("oauth_token");
 	  	        if (null != token) {
@@ -55,6 +61,13 @@ public class FoursquareOauth extends Activity {
 	   	        }  //if   	     
 	  	      }  //if
 		      super.onLoadResource(view, url);
-	  	    } //if
+	  	    }  //onLoadResource
+
+	  	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	  	    	
+	  	    	Log.d(TAG + "from shouldOverride" , url );
+	  	    	view.loadUrl(url);
+	  	    	return true;
+	  	    }
 	      };  //onLoadResource
-}
+} //class

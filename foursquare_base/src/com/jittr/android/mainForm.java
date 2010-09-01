@@ -183,7 +183,7 @@ public class mainForm extends GameOnBaseActivity {
     
     //start foursquare oauth 
     private void foursquareOauthButtonClicked(View v) {
-		Intent intent = new Intent(this,FoursquareOauth.class);
+		Intent intent = new Intent(this,FoursquareOauthActivity.class);
 		startActivity(intent);
     }
 } //class
