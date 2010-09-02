@@ -19,7 +19,9 @@
 <EditText 
     android:id="@+id/userNameEditText" 
     android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:imeOptions="actionNext"
+    android:hint="Betsquared User Name" >
  </EditText>
  </LinearLayout>
 <LinearLayout
@@ -36,7 +38,8 @@
 <EditText 
     style="@style/StandardPasswordEditText"
     android:id="@+id/userPasswordEditText" 
- >
+    android:hint="Betsquared Password"
+    android:imeOptions="actionDone" >
  </EditText>
 </LinearLayout>
  <Button 

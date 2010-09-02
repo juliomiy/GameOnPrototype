@@ -58,13 +58,14 @@ public final class R {
         public static final int twitterEditText=0x7f0a0001;
     }
     public static final class drawable {
-        public static final int icon=0x7f020000;
-        public static final int list_item_background_disabled=0x7f020001;
-        public static final int list_item_background_focus=0x7f020002;
-        public static final int list_item_divider=0x7f020003;
-        public static final int list_selector_background=0x7f020004;
-        public static final int small_side_lockup_white=0x7f020005;
-        public static final int window_title_background=0x7f020006;
+        public static final int betsquareredicon=0x7f020000;
+        public static final int icon=0x7f020001;
+        public static final int list_item_background_disabled=0x7f020002;
+        public static final int list_item_background_focus=0x7f020003;
+        public static final int list_item_divider=0x7f020004;
+        public static final int list_selector_background=0x7f020005;
+        public static final int small_side_lockup_white=0x7f020006;
+        public static final int window_title_background=0x7f020007;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f090019;
@@ -101,6 +102,7 @@ public final class R {
         public static final int getuserdashboard_button=0x7f090038;
         public static final int getuserdetails_button=0x7f090034;
         public static final int goButton=0x7f090022;
+        public static final int header=0x7f090040;
         public static final int homeTeamRadioButton=0x7f090006;
         public static final int hometeam=0x7f090005;
         public static final int lastNameEdiTtext=0x7f09002d;
@@ -131,6 +133,8 @@ public final class R {
         public static final int visitingteam=0x7f090003;
         public static final int webView=0x7f09003f;
         public static final int web_view=0x7f090000;
+        public static final int windowicon=0x7f090042;
+        public static final int windowtitle=0x7f090041;
     }
     public static final class layout {
         public static final int authorization_view=0x7f030000;
@@ -148,6 +152,7 @@ public final class R {
         public static final int venuelistitem=0x7f03000c;
         public static final int viewvenue=0x7f03000d;
         public static final int webview=0x7f03000e;
+        public static final int windowtitle=0x7f03000f;
     }
     public static final class raw {
         public static final int gameonv1=0x7f040000;

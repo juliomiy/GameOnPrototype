@@ -17,19 +17,19 @@
 <EditText 
     style="@style/StandardEditText"
     android:id="@+id/userNameEditText" 
- >   
+    android:imeOptions="actionNext">   
 </EditText>
 </LinearLayout>
 <TextView
    style="@style/StandardTextView"
     android:text="@string/userpassword" 
     android:id="@+id/passwordTextView"
- >
+    >
  </TextView>
 <EditText 
     style="@style/StandardPasswordEditText"
     android:id="@+id/passwordEditText" 
->
+    android:imeOptions="actionNext">
 </EditText>
  <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
@@ -44,7 +44,7 @@
 <EditText 
     style="@style/StandardEditText"
     android:id="@+id/firstNameEditText" 
->
+    android:imeOptions="actionNext">
 </EditText>
 </LinearLayout>
 <LinearLayout
@@ -60,7 +60,7 @@
  <EditText 
     style="@style/StandardEditText"
     android:id="@+id/lastNameEditText" 
- >
+    android:imeOptions="actionNext">
 ></EditText>
 </LinearLayout> 
 <TextView 
@@ -72,7 +72,7 @@
 <EditText 
     style="@style/StandardEmailEditText"
     android:id="@+id/emailEditText" 
-> >
+>   android:imeOptions="actionDone">
 </EditText>
  <Button 
     style="@style/StandardButton"
