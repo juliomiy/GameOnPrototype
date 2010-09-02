@@ -8,9 +8,11 @@ import android.util.Log;
 
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Game;
+import com.jittr.android.bs.dto.GameAddResponse;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
 import com.jittr.android.bs.handlers.GameHandler;
+import com.jittr.android.bs.handlers.GameResponseHandler;
 import com.jittr.android.bs.handlers.UserDetailsHandler;
 import com.jittr.android.bs.handlers.UserResponseHandler;
 import com.jittr.android.bs.dto.BSUserDashBoard;
@@ -145,6 +147,28 @@ public class BSClientAPIImpl implements BSClientInterface {
 			return null;
 		}
 		
+	}
+
+	@Override
+	public GameAddResponse addGame(HashMap<String, String> params) {
+		// TODO Auto-generated method stub
+		
+		try {
+			String querStr = URLBuilder.createQueryStr(params);
+			
+			Log.d("","querStr:"+querStr);
+			Log.d("", "Url :"+Consts.BS_ADD_GAME_ENDPOINT_URL);
+			String data = htppClient.submitPostToServer(new URL(Consts.BS_ADD_GAME_ENDPOINT_URL), querStr); 
+			System.out.println("data "+data);
+			GameResponseHandler gh = new GameResponseHandler(data);
+			
+			GameAddResponse ur = (GameAddResponse)gh.parse();
+			return ur;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	
