@@ -7,9 +7,9 @@
         <item name="android:colorBackground">@color/color_background</item>
      <!--     <item name="android:colorForegroundInverse">@color/translucent_red</item> -->
 	<!-- Activity Window Title  -->
-	     <item name="android:windowTitleSize">38dip</item>
-	     <item name="android:windowTitleStyle">@style/CustomWindowTitle</item> 
-        <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item>
+	   <item name="android:windowTitleSize">35dip</item> -->
+	  <!--     <item name="android:windowTitleStyle">@style/CustomWindowTitle</item> -->
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
 	   
 	   <item name="android:listViewStyle">@style/StandardListView</item>  
     </style>

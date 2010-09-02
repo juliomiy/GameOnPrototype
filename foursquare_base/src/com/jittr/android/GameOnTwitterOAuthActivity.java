@@ -60,7 +60,7 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
     };   //WebViewClient
 
   @Override
-  protected void onCreate(Bundle savedInstanceState) {
+public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     twitter = new twitterOAuth(getAppContext(),TWITTER_NETWORK,null, null);
     setContentView(R.layout.webview);

@@ -41,6 +41,7 @@ public class FoursquareOauthActivity extends GameOnBaseActivity {
           super.onResume();
 	  }  //onResume
 
+	  
     private void setUpViews() {
 	  	    webView = (WebView)findViewById(R.id.webView);
 	  	    webView.setWebViewClient(webViewClient);

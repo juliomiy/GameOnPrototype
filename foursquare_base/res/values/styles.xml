@@ -9,12 +9,15 @@
   <!--        <item name="android:textSize">18sp</item> -->
   <!--        <item name="android:textStyle">bold</item>  -->
 <!--  </style> --> 
-<style name="CustomWindowTitle" parent="android:WindowTitle">
-          <item name="android:textAppearance">@style/CustomWindowTitleText</item>
-          <item name="android:shadowDx">10</item>
-          <item name="android:shadowDy">15</item>
-          <item name="android:shadowRadius">5</item>
-          <item name="android:shadowColor">#1155CC</item>
+<style name="CustomWindowTitleBackground" parent="android:WindowTitle">
+      <!--      <item name="android:windowTitleBackgroundStyle">@style/WindowTitleBackground</item> -->
+          <item name="android:windowTitleSize">35dip</item>
+          <item name="android:background">#323331</item>
+         <!-- <item name="android:textAppearance">@style/CustomWindowTitleText</item>  -->
+     <!--       <item name="android:shadowDx">10</item>  -->
+    <!--       <item name="android:shadowDy">15</item> -->
+     <!--     <item name="android:shadowRadius">5</item> -->
+     <!--     <item name="android:shadowColor">#1155CC</item> -->
  </style>
  <style name="CustomWindowTitleText" parent="android:TextAppearance.WindowTitle">
           <item name="android:singleLine">true</item>
@@ -23,7 +26,8 @@
           <item name="android:textStyle">bold|italic</item>
 </style>
 <style name="WindowTitleBackground">
-        <item name="android:background">@drawable/window_title_background</item>
+       <!--   <item name="android:background">@drawable/window_title_background</item> -->
+      <!--   <item name="android:background">@drawable/small_side_lockup_white</item> -->
  </style>
  <style name="StandardEditText" parent="android:Widget.EditText">
      <item name="android:maxLines">1</item>
