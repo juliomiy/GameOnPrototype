@@ -101,7 +101,6 @@ public final class R {
         public static final int getuserdashboard_button=0x7f090038;
         public static final int getuserdetails_button=0x7f090034;
         public static final int goButton=0x7f090022;
-        public static final int header=0x7f090040;
         public static final int homeTeamRadioButton=0x7f090006;
         public static final int hometeam=0x7f090005;
         public static final int lastNameEdiTtext=0x7f09002d;
@@ -132,8 +131,6 @@ public final class R {
         public static final int visitingteam=0x7f090003;
         public static final int webView=0x7f09003f;
         public static final int web_view=0x7f090000;
-        public static final int windowicon=0x7f090042;
-        public static final int windowtitle=0x7f090041;
     }
     public static final class layout {
         public static final int authorization_view=0x7f030000;
@@ -151,7 +148,6 @@ public final class R {
         public static final int venuelistitem=0x7f03000c;
         public static final int viewvenue=0x7f03000d;
         public static final int webview=0x7f03000e;
-        public static final int windowtitle=0x7f03000f;
     }
     public static final class raw {
         public static final int gameonv1=0x7f040000;
