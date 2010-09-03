@@ -9,9 +9,11 @@ import android.util.Log;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.GameAddResponse;
+import com.jittr.android.bs.dto.GameInvites;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
 import com.jittr.android.bs.handlers.GameHandler;
+import com.jittr.android.bs.handlers.GameInvitesHandler;
 import com.jittr.android.bs.handlers.GameResponseHandler;
 import com.jittr.android.bs.handlers.UserDetailsHandler;
 import com.jittr.android.bs.handlers.UserResponseHandler;
@@ -169,6 +171,29 @@ public class BSClientAPIImpl implements BSClientInterface {
 			e.printStackTrace();
 			return null;
 		}
+	}
+
+	@Override
+	public GameInvites getGameInvites(HashMap<String, String> params) {
+		
+		try {
+			
+			String url = URLBuilder.createUrl(Consts.BS_GAME_INVITES_ENDPOINT_URL,params);
+			Log.d("","Url :"+url);
+	
+			String data = htppClient.getContent(new URL(url));
+			System.out.println("data "+data);
+			
+			GameInvitesHandler gh = new GameInvitesHandler(data);
+			GameInvites game_invites = (GameInvites)gh.parse();
+			System.out.println("game_invites  :"+game_invites);
+			return game_invites;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
 	}
 	
 	

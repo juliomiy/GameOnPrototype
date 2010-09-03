@@ -23,6 +23,7 @@ public final static String BS_GET_PUBLIC_GAMES_ENDPOINT_URL ="http://api.betsqua
 public final static String BS_GET_USER_DASHBOARD_ENDPOINT_URL = "http://api.betsquared.com/v1/go_getuserdashboard.php";
 public final static String BS_GET_USER_DETAILS_ENDPOINT_URL = "http://api.betsquared.com/v1/go_getuser.php";
 public final static String BS_ADD_GAME_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postnewgame.php";
+public final static String BS_GAME_INVITES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getgameinvites.php";
 
 //FourSquare API 
 public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";

@@ -8,6 +8,7 @@ import java.util.List;
 import com.jittr.android.R.id;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.dto.BSUserDetails;
+import com.jittr.android.bs.dto.GameInvites;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.fs.dto.User;
 import com.jittr.android.fs.dto.Venue;
