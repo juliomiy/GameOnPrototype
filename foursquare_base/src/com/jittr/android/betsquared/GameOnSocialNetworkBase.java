@@ -173,7 +173,7 @@ public abstract class GameOnSocialNetworkBase implements
 	 */
 	@Override
 	public boolean saveUserAuthCredentials(int userID,int socialNetwork, String token,
-			String tokenSecret) {
+			String tokenSecret, String networkUserID, String networkScreenName, String networkName) {
 
 		String sql = "update go_user set ";
 		if (null == token) token = getAccessToken();
@@ -186,7 +186,11 @@ public abstract class GameOnSocialNetworkBase implements
 				  break;
 			case TWITTER_NETWORK:
 				  sql += GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN + "='" + token + "'," +
-				         GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET + "='" + tokenSecret + "'";
+				         GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET + "='" + tokenSecret + "'," +
+				         GameOnDatabase.DB_USER_TABLE_TWITTER_USERID + "='" + networkUserID + "'," + 
+				         GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME + "='" + networkScreenName + "'," + 
+				         GameOnDatabase.DB_USER_TABLE_TWITTER_NAME + "='" + networkUserID + "'" ; 
+;
 				  break;
 			case FOURSQUARE_NETWORK:
 				  break;

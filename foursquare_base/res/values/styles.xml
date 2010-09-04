@@ -31,35 +31,40 @@
  </style>
  <style name="StandardEditText" parent="android:Widget.EditText">
      <item name="android:maxLines">1</item>
-     <item name="android:layout_width">wrap_content</item>
+     <item name="android:singleLine">true</item>
+     <item name="android:layout_width">150dip</item>
      <item name="android:layout_height">wrap_content</item>
     <!--  <item name="android:minWidth">75.5dip</item>  -->
  </style>
  <style name="StandardPasswordEditText" parent="android:Widget.EditText">
      <item name="android:maxLines">1</item>
+     <item name="android:singleLine">true</item>
      <item name="android:layout_width">wrap_content</item>
      <item name="android:layout_height">wrap_content</item>
      <item name="android:inputType">textPassword</item>
  </style>
  <style name="StandardEmailEditText" parent="android:Widget.EditText">
      <item name="android:maxLines">1</item>
-     <item name="android:layout_width">wrap_content</item>
+     <item name="android:singleLine">true</item>
+     <item name="android:layout_width">150dip</item>
      <item name="android:layout_height">wrap_content</item>
      <item name="android:inputType">textEmailAddress</item>
  </style>
  <style name="StandardTextView" parent="android:Widget.TextView">
      <item name="android:maxLines">1</item>
-     <item name="android:padding">12dip</item>
+     <item name="android:padding">8dip</item>
      <item name="android:layout_marginBottom">5dip</item>
      <item name="android:layout_width">wrap_content</item>
      <item name="android:layout_height">wrap_content</item>
  </style>
  <style name="StandardButton"  parent="android:Widget.Button">
-     <item name="android:layout_width">wrap_content</item>
+     <item name="android:layout_width">80dip</item>
+<!--     <item name="android:layout_width">wrap_content</item>  --> 
      <item name="android:layout_height">wrap_content</item>
  </style>
 <style name="CancelButton" parent="android:Widget.Button">
-     <item name="android:layout_width">wrap_content</item>
+     <item name="android:layout_width">80dip</item>
+<!--     <item name="android:layout_width">wrap_content</item>  --> 
      <item name="android:layout_height">wrap_content</item>
  </style>
     <style name="StandardListView" parent="android:Widget.ListView">

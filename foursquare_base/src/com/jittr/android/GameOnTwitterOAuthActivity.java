@@ -47,7 +47,19 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
    	    	    if (null != token) {
    	    	    	rv = twitter.authorized();   //grab the accessToken and secret
    	    	    	if (rv) {
-   	    	    		twitter.saveUserAuthCredentials(getAppContext().getLoginID(), TWITTER_NETWORK,null, null);
+   	    	    		try {
+							String twitterSN = twitter.getTwitter4j().getScreenName();
+							Log.d(TAG,"twitter SN: " + twitterSN);
+						} catch (IllegalStateException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (TwitterException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+   	    	    		twitter.saveUserAuthCredentials(getAppContext().getLoginID(), TWITTER_NETWORK,twitter.getAccessToken(), 
+   	    	    				twitter.getAccessTokenSecret(),
+   	    	    				null, null, null);
    	   	    	        webView.setVisibility(View.INVISIBLE);
    	   	    	        finish();
    	    	    	} //if

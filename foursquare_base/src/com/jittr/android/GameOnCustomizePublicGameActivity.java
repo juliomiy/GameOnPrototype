@@ -6,10 +6,13 @@ import com.jittr.android.bs.dto.Game;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
 public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 
@@ -21,6 +24,9 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 	private Intent callingIntent;
 	private TextView eventNameTextView;
 	private TextView eventDateTimeTextView;
+	private RadioGroup teamRadioGroup;
+	private OnCheckedChangeListener teamSelectionListener;
+	protected CharSequence selectedTeam;
     
 	public GameOnCustomizePublicGameActivity() {
 		super();
@@ -47,6 +53,16 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 	}  //onResume	
 
 	private void setUpViews() {
+		teamRadioGroup = (RadioGroup)findViewById(R.id.teamsRadioGroup);
+        teamSelectionListener = new OnCheckedChangeListener() {
+
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+                   RadioButton r = (RadioButton) group.findViewById(checkedId);
+                   selectedTeam  = r.getText();
+                   Log.d(TAG,"Team selected = " + selectedTeam);
+			}
+        };
+        teamRadioGroup.setOnCheckedChangeListener(teamSelectionListener);
 		visitingTeamRadioButton = (RadioButton)findViewById(R.id.visitingTeamRadioButton);
 		homeTeamRadioButton = (RadioButton)findViewById(R.id.homeTeamRadioButton);
         eventNameTextView = (TextView)findViewById(R.id.eventNameTextView);

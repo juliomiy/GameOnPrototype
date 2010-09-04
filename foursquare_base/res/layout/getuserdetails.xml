@@ -65,4 +65,5 @@
      android:text="@string/avatarurl"
  >
  </ImageView>  
+ <include android:id="@+id/cell1" layout="@layout/bottombar" />
  </LinearLayout>

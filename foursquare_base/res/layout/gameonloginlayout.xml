@@ -11,15 +11,13 @@
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
 <TextView 
+    style="@style/StandardTextView"
     android:text="@string/username"
-    android:id="@+id/TextView01" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:id="@+id/TextView01" >
  </TextView>
 <EditText 
+    style="@style/StandardEditText"
     android:id="@+id/userNameEditText" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content"
     android:imeOptions="actionNext"
     android:hint="Betsquared User Name" >
  </EditText>
@@ -30,10 +28,9 @@
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
  <TextView 
+    style="@style/StandardTextView"
     android:text="@string/userpassword"
-    android:id="@+id/TextView01" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:id="@+id/TextView01"> 
  </TextView>
 <EditText 
     style="@style/StandardPasswordEditText"

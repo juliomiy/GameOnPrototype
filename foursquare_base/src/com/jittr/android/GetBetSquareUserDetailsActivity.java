@@ -1,9 +1,12 @@
 package com.jittr.android;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.dto.BSUserDetails;
+import com.jittr.android.bs.dto.GameInvite;
+import com.jittr.android.bs.dto.GameInvites;
 import com.jittr.android.fs.impl.FSClientAPIImpl;
 
 import android.app.Activity;
@@ -28,6 +31,7 @@ private HashMap<String, String> params;
 //private BetSquaredApplication appObject;
 private final String  TAG = "GetBetSquarerUserDetails";
 private Integer userID;
+private Button testButton;
 
 	/* 
 <usersettings>
@@ -99,6 +103,7 @@ private Integer userID;
                 finish();				
 			}
  	   });      
+	   setBottomBar();
      
 	} //setUpViews
 
