@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal"
+  android:layout_alignParentBottom="true"
+  android:layout_width="fill_parent"
+        android:id="@+id/bottomBarLayout"
+        android:layout_height="45dip"
+        android:gravity="center_vertical"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:background="#CC0000">
+ <Button  
+        android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+        android:paddingTop="2dip"
+        android:paddingBottom="2dip"
+        
+        android:text="@string/friendsbutton" 
+        android:id="@+id/friendsButton" 
+        android:layout_width="60dip" 
+        android:layout_height="40dip">
+</Button>
+ <Button  
+        android:layout_alignParentBottom="true"
+        android:text="@string/placesbutton" 
+        android:id="@+id/placesButton" 
+        android:layout_width="60dip"
+         android:layout_height="40dip">
+ </Button>
+<Button  
+        android:layout_alignParentBottom="true"
+        android:text="@string/betsbutton" 
+        android:id="@+id/betsButton" 
+        android:layout_width="60dip"
+        android:layout_height="40dip">
+ </Button>
+ <Button  
+        android:layout_alignParentBottom="true"
+        android:text="@string/mebutton" 
+        android:id="@+id/meButton" 
+        android:layout_width="60dip"
+        android:layout_height="40dip">
+ </Button>
+ <Button  
+        android:layout_alignParentBottom="true"
+        android:text="@string/testbutton" 
+        android:id="@+id/testButton" 
+        android:layout_width="60dip"
+        android:layout_height="40dip">
+ </Button>
+</LinearLayout>

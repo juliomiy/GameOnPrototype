@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
   android:layout_width="wrap_content"
@@ -10,10 +10,13 @@
 </TextView>
 <TextView 
      style="@style/StandardTextView"
+     android:layout_below="@+id/eventNameTextView"
       android:id="@+id/eventDateTimeTextView" >
 </TextView>
 <RadioGroup 
      android:id="@+id/teamsRadioGroup" 
+     android:layout_below="@+id/eventDateTimeTextView"
+     android:imeOptions="actionNext"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content">
 <RadioButton 
@@ -29,7 +32,51 @@
      android:layout_height="wrap_content">
  </RadioButton>
  </RadioGroup>
-<Button 
+<LinearLayout
+     android:paddingLeft= "5dip"
+     android:layout_marginLeft="5dip"
+     android:background="@drawable/rectangle_background"
+     android:id="@+id/wagerTypeLayout"
+     android:orientation="horizontal"
+     android:layout_below="@+id/teamsRadioGroup"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content">
+<TextView 
+     style="@style/StandardTextView"
+     android:text="@string/wagertype">
+</TextView>
+<EditText
+     android:imeOptions="actionNext"
+     style="@style/StandardEditText"
+     android:id="@+id/wagerTypeEditText">
+</EditText>
+</LinearLayout>
+<LinearLayout
+     android:paddingLeft= "5dip"
+     android:layout_marginLeft="5dip"
+     android:id="@+id/wagerUnitsLayout"
+     android:background="@drawable/rectangle_background"
+     android:layout_below="@+id/wagerTypeLayout"
+     android:orientation="horizontal"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content">
+<TextView 
+     style="@style/StandardTextView"
+     android:text="@string/wagerunits">
+</TextView>
+<EditText
+     style="@style/StandardEditText"
+     android:imeOptions="actionDone"
+     android:layout_centerHorizontal="true"
+     android:id="@+id/wagerUnitsEditText">
+</EditText>
+</LinearLayout>
+<LinearLayout
+     android:orientation="horizontal"
+     android:layout_below="@+id/wagerUnitsLayout"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+><Button 
       style="@style/StandardButton"
       android:text="@string/betbutton" 
       android:id="@+id/betButton" >
@@ -39,5 +86,6 @@
       android:text="@string/cancel_button" 
       android:id="@+id/cancelButton" >
 </Button>
-
 </LinearLayout>
+<include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
+</RelativeLayout>

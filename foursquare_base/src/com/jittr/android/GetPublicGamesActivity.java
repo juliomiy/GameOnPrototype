@@ -17,7 +17,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-public class GetPublicGamesActivity extends ListActivity {
+public class GetPublicGamesActivity extends GameOnBaseListActivity {
 
 	private BSClientAPIImpl bs;
 	private BSGetPublicGamesAdapter adapter;
@@ -64,6 +64,7 @@ public class GetPublicGamesActivity extends ListActivity {
                 finish();				
 			}
 		});
+		setBottomBar();
 	}
 	protected void getPublicGames() {
 		// TODO Auto-generated method stub

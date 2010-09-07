@@ -6,32 +6,26 @@
   android:layout_height="wrap_content">
 <TextView
    style="@style/StandardTextView"
-    android:text="@+id/TextView02"
     android:id="@+id/userIDTextView" 
 ></TextView>
 <TextView
    style="@style/StandardTextView"
-    android:text="@+id/TextView05" 
     android:id="@+id/totalBetsTextView"
  ></TextView>
 <TextView 
    style="@style/StandardTextView"
-    android:text="@+id/TextView01"
     android:id="@+id/betsInitiatedTextView" 
   ></TextView>
 <TextView 
     style="@style/StandardTextView"
-    android:text="@+id/TextView03" 
     android:id="@+id/betsAcceptedTextView" 
 ></TextView>
 <TextView 
    style="@style/StandardTextView"
-    android:text="@+id/TextView04" 
     android:id="@+id/totalWinsTextView" 
  ></TextView>
 <TextView 
    style="@style/StandardTextView"
-    android:text="@+id/TextView04" 
     android:id="@+id/totalLosesTextView" 
  ></TextView>
 <Button 

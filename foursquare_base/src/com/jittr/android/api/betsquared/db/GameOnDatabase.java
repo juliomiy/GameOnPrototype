@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class GameOnDatabase extends SQLiteOpenHelper {
-	public static final int VERSION = 5;
+	public static final int VERSION = 6;
 	public static final String DB_NAME  = "betsquared_db.sqlite";
 	public static final String GAME_TABLE = "go_games";
 	public static final String DB_USER_TABLE = "go_user";
@@ -22,7 +22,11 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	public static final String DB_USER_TABLE_TWITTER_TOKEN="twitterToken";
 	public static final String DB_USER_TABLE_TWITTER_TOKEN_SECRET="twitterTokenSecret";
 	public static final String DB_USER_TABLE_FB_TOKEN="facebookToken";
-	public static final String DB_USER_TABLE_FB_TOKEN_SECRET="facebookTokenSecret";	
+	public static final String DB_USER_TABLE_FB_TOKEN_SECRET="facebookTokenSecret";
+	public static final String DB_USER_TABLE_TWITTER_USERID = "twitterUserID";	
+	public static final String DB_USER_TABLE_TWITTER_SCREENNAME = "twitterScreenName";	
+	public static final String DB_USER_TABLE_TWITTER_NAME = "twitterName";	
+
 	public GameOnDatabase(Context context) {
 
 		super(context, DB_NAME, null, VERSION);
@@ -54,6 +58,9 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	      DB_USER_TABLE_FB_TOKEN_SECRET + " text null," +
 	      DB_USER_TABLE_TWITTER_TOKEN + " text null," +
 	      DB_USER_TABLE_TWITTER_TOKEN_SECRET + " text null," +
+	      DB_USER_TABLE_TWITTER_USERID + " text null," +
+	      DB_USER_TABLE_TWITTER_SCREENNAME + " text null," +
+	      DB_USER_TABLE_TWITTER_NAME + " text null," +
 	      "loggedInSince timestamp null, " + 
 	      "bankBalance float not null default 0," +
 	      "createdDate timestamp not null default CURRENT_TIMESTAMP," +

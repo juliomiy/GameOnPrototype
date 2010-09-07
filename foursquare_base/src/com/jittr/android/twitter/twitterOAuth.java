@@ -31,10 +31,12 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 	 * @param token
 	 * @param secret
 	 */
-	public twitterOAuth(BetSquaredApplication appContext, int network, String token, String secret) {
-		super(appContext, network, token, secret);
+	@SuppressWarnings("deprecation")
+	public twitterOAuth(BetSquaredApplication appContext, int network, String token, String tokenSecret) {
+		super(appContext, network, token, tokenSecret);
 	    twitter4j = new TwitterFactory().getInstance();
 	    twitter4j.setOAuthConsumer(getConsumerKey(), getConsumerKeySecret());
+	    if (isAuthorized()) twitter4j.setOAuthAccessToken(new AccessToken(token,tokenSecret));
 	
 	}  //Constructor
 
@@ -54,11 +56,10 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 			RequestToken currentRequestToken = twitter4j.getOAuthRequestToken();
 			authorizationUrl = currentRequestToken.getAuthorizationURL();
 		} catch (TwitterException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return authorizationUrl;
-	}
+	}  //getAuthUrl
 
 	public Twitter getTwitter4j() {
 		return twitter4j;

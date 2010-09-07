@@ -16,7 +16,7 @@ import android.widget.ListView;
 import static com.jittr.android.util.Consts.*;
 import com.jittr.android.GameOnLocationManager;
 
-public class GetNearbyVenuesActivity extends ListActivity {
+public class GetNearbyVenuesActivity extends GameOnBaseListActivity {
 
 	private Button cancelButton;
 	private FSNearbyVenueAdapter adapter;
@@ -66,5 +66,6 @@ public class GetNearbyVenuesActivity extends ListActivity {
                 finish();				
 			}
 		});
+		setBottomBar();
 	}
 }

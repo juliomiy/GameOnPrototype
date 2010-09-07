@@ -17,4 +17,5 @@
 		android:id="@id/android:list"
 		android:text="@string/novenues">
 </ListView>	
+<include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
 </RelativeLayout>

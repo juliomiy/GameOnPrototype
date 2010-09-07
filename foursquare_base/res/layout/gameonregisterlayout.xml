@@ -11,8 +11,7 @@
 <TextView
     style="@style/StandardTextView"
     android:text="@string/username"
-    android:id="@+id/userNameTextView" 
->
+    android:id="@+id/userNameTextView"> 
 </TextView>
 <EditText 
     style="@style/StandardEditText"
@@ -20,6 +19,11 @@
     android:imeOptions="actionNext">   
 </EditText>
 </LinearLayout>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"> 
 <TextView
    style="@style/StandardTextView"
     android:text="@string/userpassword" 
@@ -31,8 +35,10 @@
     android:id="@+id/passwordEditText" 
     android:imeOptions="actionNext">
 </EditText>
+</LinearLayout>
  <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"> 
 <TextView
@@ -63,6 +69,10 @@
     android:imeOptions="actionNext">
 ></EditText>
 </LinearLayout> 
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"> 
 <TextView 
    style="@style/StandardTextView"
     android:text="@string/emailaddress"
@@ -74,11 +84,12 @@
     android:id="@+id/emailEditText" 
 >   android:imeOptions="actionDone">
 </EditText>
+</LinearLayout>
  <Button 
     style="@style/StandardButton"
     android:text="@string/registerbuttontext" 
     android:id="@+id/registerButton"
- >    
+    android:enabled="false">
  </Button>
   <Button 
     style="@style/CancelButton"

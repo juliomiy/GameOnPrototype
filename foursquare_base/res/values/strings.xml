@@ -33,4 +33,11 @@
     <string name="visitingteam">Visiting Team</string>
     <string name="hometeam">Home Team</string>
     <string name="betbutton">Bet</string>
+    <string name="friendsbutton">Friends</string>
+    <string name="mebutton">Me</string>
+    <string name="betsbutton">Bets</string>
+    <string name="placesbutton">Places</string>
+    <string name="testbutton">Test</string>
+    <string name="wagerunits">Wager Amount</string>
+    <string name="wagertype">Wager Type</string>
  </resources>

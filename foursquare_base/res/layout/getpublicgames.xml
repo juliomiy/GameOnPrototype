@@ -41,7 +41,7 @@
      android:id="@+id/cancel_button" 
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content"
-     android:layout_below="@+id/android:list">
+     android:layout_above="@+id/android:list">
 </Button>	
  <ListView
  		android:layout_width="fill_parent"
@@ -50,6 +50,5 @@
 		android:id="@id/android:list"
 		android:text="@string/nogames">
 </ListView>	
-
-
+<include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
 </RelativeLayout>

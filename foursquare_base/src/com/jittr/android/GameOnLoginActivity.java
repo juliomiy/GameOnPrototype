@@ -50,6 +50,7 @@ public class GameOnLoginActivity extends GameOnBaseActivity {
 		});
 		
 		loginButton = (Button)findViewById(R.id.loginButton);
+	//	loginButton.setEnabled(false);
         loginButton.setOnClickListener(new View.OnClickListener() {
 		
 			@Override
