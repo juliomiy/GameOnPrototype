@@ -69,12 +69,12 @@ public class BSClientAPIImpl implements BSClientInterface {
 		return null;
 	}
 
-	public BSUserDashBoard getUserDashBoard(String userid) {
+	public BSUserDashBoard getUserDashBoard(HashMap<String , String> params) throws Exception {
 		
 		try {
-			NVPair nvps [] = {new NVPair("userid",userid)};
+			//NVPair nvps [] = {new NVPair("userid",userid)};
 			
-			String url = URLBuilder.createUrl(Consts.BS_GET_USER_DASHBOARD_ENDPOINT_URL,nvps);
+			String url = URLBuilder.createUrl(Consts.BS_GET_USER_DASHBOARD_ENDPOINT_URL,params);
 			Log.d("","Url :"+url);
 	
 			String data = htppClient.getContent(new URL(url));
@@ -94,8 +94,9 @@ public class BSClientAPIImpl implements BSClientInterface {
 		}
 		catch (Exception e) {
 			e.printStackTrace();
+			throw e;
 		}
-		return null;
+		//return null;
 
 		
 		

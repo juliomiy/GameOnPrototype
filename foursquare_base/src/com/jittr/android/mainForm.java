@@ -183,6 +183,7 @@ public class mainForm extends GameOnBaseActivity {
 	// finish the app 
     private void cancelButtonClicked(View v) {
     	finish();
+    	
     }  //cancelButton_pressed
     
     //start foursquare oauth 
