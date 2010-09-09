@@ -154,7 +154,9 @@ public class mainForm extends GameOnBaseActivity {
 	}
 	private void logoutButtonClicked() {
 		boolean rv = getAppContext().logout();
-		if (rv) cancelButtonClicked(null);
+		Intent intent = new Intent(this ,GameOnLoginActivity.class); 
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+	    startActivity(intent); 
 	} //logoutButtonClicked
     
 	protected void viewUserDetails() {
