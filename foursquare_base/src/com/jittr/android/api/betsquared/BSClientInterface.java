@@ -14,7 +14,7 @@ public interface BSClientInterface {
 	
 		//List<Game> getPublicGames(String league, String team,String sportCategory,String latitude, String longitude, int timeframe);
      	List<Game> getPublicGames(HashMap<String, String> criteria);
-		BSUserDashBoard getUserDashBoard(String userid);
+		BSUserDashBoard getUserDashBoard(HashMap<String, String> params) throws Exception;
 		UserAddResponse addUser(HashMap<String , String> params);
 		BSUserDetails getUserDetails(HashMap<String , String> params);
 		GameAddResponse addGame(HashMap<String , String> params);
