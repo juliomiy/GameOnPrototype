@@ -1,13 +1,12 @@
 package com.jittr.android.bs.dto;
 
-import com.jittr.android.fs.dto.Venue;
-
 import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Game implements Parcelable {
 
 	private String id;
+	private String publicGameID;
 	private String sportname;
 	private String leaguename;
 	private String seasonweek;
@@ -22,6 +21,11 @@ public class Game implements Parcelable {
 	private String longitude;
 	private String team1;
 	private String team2;
+	private int typeID;
+	private String typeName;
+	private int sportID;
+	private String sportName;
+	
 	private final String TAG = "Game";
 	
     public static final Parcelable.Creator<Game> CREATOR
@@ -44,11 +48,15 @@ public class Game implements Parcelable {
 
 	public void readFromParcel(Parcel in) {
 		id = in.readString();
+		publicGameID = in.readString();
 		team1 = in.readString();
         team2 = in.readString();
         eventname = in.readString();
         eventdatetime = in.readString();
-		// TODO Auto-generated method stub
+        sportName = in.readString();
+        sportID = in.readInt();
+        typeName = in.readString();
+        typeID = in.readInt();
 	}
 
 	public Game() {
@@ -61,6 +69,7 @@ public class Game implements Parcelable {
 	public void setId(String id) {
 		this.id = id;
 	}
+	
 	public String getSportname() {
 		return sportname;
 	}
@@ -154,16 +163,126 @@ public class Game implements Parcelable {
 	   return team2;	
 	}
 	
+	/**
+	 * @return the typeID
+	 */
+	public int getTypeID() {
+		return typeID;
+	}
+
+	/**
+	 * @param typeID the typeID to set
+	 */
+	public void setTypeID(int typeID) {
+		this.typeID = typeID;
+	}
+
+	/**
+	 * @return the typeName
+	 */
+	public String getTypeName() {
+		return typeName;
+	}
+
+	/**
+	 * @param typeName the typeName to set
+	 */
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+
+	/**
+	 * @return the sportID
+	 */
+	public int getSportID() {
+		return sportID;
+	}
+
+	/**
+	 * @return the publicGameID
+	 */
+	public String getPublicGameID() {
+		return publicGameID;
+	}
+
+	/**
+	 * @param publicGameID the publicGameID to set
+	 */
+	public void setPublicGameID(String publicGameID) {
+		this.publicGameID = publicGameID;
+	}
+
+	/**
+	 * @param sportID the sportID to set
+	 */
+	public void setSportID(int sportID) {
+		this.sportID = sportID;
+	}
+
+	/**
+	 * @return the sportName
+	 */
+	public String getSportName() {
+		return sportName;
+	}
+
+	/**
+	 * @param sportName the sportName to set
+	 */
+	public void setSportName(String sportName) {
+		this.sportName = sportName;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "Game [address=" + address + ", city=" + city
-				+ ", eventdatetime=" + eventdatetime + ", eventname="
-				+ eventname + ", fsvenueid=" + fsvenueid + ", id=" + id
-				+ ", latitude=" + latitude + ", leaguename=" + leaguename
-				+ ", longitude=" + longitude + ", seasonweek=" + seasonweek
-				+ ", sportname=" + sportname + ", stadiumname=" + stadiumname
-				+ ", state=" + state + ", team1=" + team1 + ", team2=" + team2
-				+ "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Game [TAG=");
+		builder.append(TAG);
+		builder.append(", address=");
+		builder.append(address);
+		builder.append(", city=");
+		builder.append(city);
+		builder.append(", eventdatetime=");
+		builder.append(eventdatetime);
+		builder.append(", eventname=");
+		builder.append(eventname);
+		builder.append(", fsvenueid=");
+		builder.append(fsvenueid);
+		builder.append(", id=");
+		builder.append(id);
+		builder.append(", latitude=");
+		builder.append(latitude);
+		builder.append(", leaguename=");
+		builder.append(leaguename);
+		builder.append(", longitude=");
+		builder.append(longitude);
+		builder.append(", publicGameID=");
+		builder.append(publicGameID);
+		builder.append(", seasonweek=");
+		builder.append(seasonweek);
+		builder.append(", sportID=");
+		builder.append(sportID);
+		builder.append(", sportName=");
+		builder.append(sportName);
+		builder.append(", sportname=");
+		builder.append(sportname);
+		builder.append(", stadiumname=");
+		builder.append(stadiumname);
+		builder.append(", state=");
+		builder.append(state);
+		builder.append(", team1=");
+		builder.append(team1);
+		builder.append(", team2=");
+		builder.append(team2);
+		builder.append(", typeID=");
+		builder.append(typeID);
+		builder.append(", typeName=");
+		builder.append(typeName);
+		builder.append("]");
+		return builder.toString();
 	}
 	@Override
 	public int describeContents() {
@@ -173,9 +292,16 @@ public class Game implements Parcelable {
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(id);
+		dest.writeString(publicGameID);
 		dest.writeString(getHomeTeam());
 		dest.writeString(getVisitingTeam());
         dest.writeString(eventname);
         dest.writeString(eventdatetime);
-	}
+        dest.writeString(sportName);
+        dest.writeInt(sportID);
+        dest.writeString(typeName);
+        dest.writeInt(typeID);
+	}  //writeToParcel
+
+
 }  //class

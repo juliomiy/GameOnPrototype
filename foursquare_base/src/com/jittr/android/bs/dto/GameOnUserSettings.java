@@ -7,6 +7,9 @@ public class GameOnUserSettings implements Parcelable {
 
 	private int userID;
 	private String userName;
+	private String firstName;
+	private String lastName;
+	private String email;
 	private String twitterID; //= null; //"juliomiy";
 	private String facebookID; //=null; //"juliomiyares@mac.com";
 	private String foursquareID;//=null; //"9173702880";
@@ -27,6 +30,42 @@ public class GameOnUserSettings implements Parcelable {
 	public GameOnUserSettings() {
 		
 	}
+	/**
+	 * @return the firstName
+	 */
+	public String getFirstName() {
+		return firstName;
+	}
+	/**
+	 * @param firstName the firstName to set
+	 */
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
+	/**
+	 * @param email the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public GameOnUserSettings(int userID) {
         this.userID = userID;
 	}
@@ -36,6 +75,13 @@ public class GameOnUserSettings implements Parcelable {
 	public void setUserID(int userID) {
 		this.userID = userID;
 	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName( String userName) {
+		this.userName= userName;
+	}
+
 	public String getTwitterID() {
 		return twitterID;
 	}
@@ -49,9 +95,7 @@ public class GameOnUserSettings implements Parcelable {
 		this.facebookID = facebookID;
 	}
 	public String getFoursquareID() {
-		//TODO remove hardcode value
-		return "9173702880";
-	//	return foursquareID;
+    	return foursquareID;
 	}
 	public void setFoursquareID(String foursquareID) {
 		this.foursquareID = foursquareID;
@@ -139,11 +183,18 @@ public class GameOnUserSettings implements Parcelable {
 	public void setFoursquarePassword(String password) {
          foursquarePassword = password;		
 	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("GameOnUserSettings [aimID=");
+		builder.append("GameOnUserSettings [TAG=");
+		builder.append(TAG);
+		builder.append(", aimID=");
 		builder.append(aimID);
+		builder.append(", email=");
+		builder.append(email);
 		builder.append(", facebookDefault=");
 		builder.append(facebookDefault);
 		builder.append(", facebookID=");
@@ -152,6 +203,8 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(facebookOAuthToken);
 		builder.append(", facebookOAuthTokenSecret=");
 		builder.append(facebookOAuthTokenSecret);
+		builder.append(", firstName=");
+		builder.append(firstName);
 		builder.append(", foursquareDefault=");
 		builder.append(foursquareDefault);
 		builder.append(", foursquareID=");
@@ -164,6 +217,8 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(foursquarePassword);
 		builder.append(", icqID=");
 		builder.append(icqID);
+		builder.append(", lastName=");
+		builder.append(lastName);
 		builder.append(", twitterDefault=");
 		builder.append(twitterDefault);
 		builder.append(", twitterID=");

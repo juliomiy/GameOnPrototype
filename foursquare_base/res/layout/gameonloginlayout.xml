@@ -1,61 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content">
-
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="horizontal"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content">
-<TextView 
-    style="@style/StandardTextView"
-    android:text="@string/username"
-    android:id="@+id/TextView01" >
- </TextView>
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content">
+ <ImageView 
+    android:layout_marginTop="10dip"
+    android:src="@drawable/betsquaredicon_100x100"
+    android:id="@+id/ImageView01" 
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+ </ImageView>
 <EditText 
-    style="@style/StandardEditText"
+    android:layout_marginTop="10dip"
+    android:layout_width="150dip"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="top"
+    android:singleLine="true"
     android:id="@+id/userNameEditText" 
     android:imeOptions="actionNext"
-    android:hint="Betsquared User Name" >
+    android:hint="@string/username" >
  </EditText>
- </LinearLayout>
-<LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="horizontal"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content">
- <TextView 
-    style="@style/StandardTextView"
-    android:text="@string/userpassword"
-    android:id="@+id/TextView01"> 
- </TextView>
-<EditText 
-    style="@style/StandardPasswordEditText"
+ <EditText 
+    android:layout_width="150dip"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="top"
+    android:singleLine="true"
     android:id="@+id/userPasswordEditText" 
-    android:hint="Betsquared Password"
+    android:hint="@string/userpassword"
     android:imeOptions="actionDone" >
+    android:layout_marginBotoom="10dip"
  </EditText>
-</LinearLayout>
+<LinearLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content">
+   <!--  style="@style/textEditComboLayout"> -->
  <Button 
     android:text="@string/loginbuttontext" 
     android:id="@+id/loginButton" 
-    android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:textSize="15px"
+    android:textStyle="bold"
+    android:layout_width="match_parent" 
+    android:layout_height="40dip">
  </Button>
+ <TextView 
+    style="@style/StandardTextView"
+    android:lines="3"
+    android:text="@string/signin_up_text"
+    android:id="@+id/TextView01" >
+ </TextView>
  <Button 
-    style="@style/StandardButton"
+    android:layout_width="match_parent" 
+    android:layout_height="40dip"
+    android:textSize="15px"
+    android:textStyle="bold"
     android:text="@string/registerbuttontext" 
-    android:id="@+id/registerButton"
- >    
+    android:id="@+id/registerButton">    
  </Button>
+ </LinearLayout>
  <Button
     style="@style/CancelButton" 
     android:text="@string/cancel_button" 
     android:id="@+id/cancelButton" 
+    android:visibility="invisible"
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content">
  </Button>
- </LinearLayout>
+</LinearLayout>
+ 

@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<style name="bottomBar">
+       <item name="android:textSize">12dip</item>
+       <item name="android:gravity">center</item>
+       <item name="android:layout_width">60dip</item>
+       <item name="android:layout_height">35dip</item>
+       <item name="android:textStyle">bold</item>
+</style>
+<style  name="StandardCancelButton">
+      <item name="android:src">@drawable/finalarrow1</item>
+      <item name="android:layout_width">40dip</item>
+      <item name="android:layout_height">40dip</item>
+      <item name="android:layout_marginTop">5dip</item>
+</style>
 <style name="gameon_background_color"> 
       <item  name="android:colorBackground">@color/BLACK</item>
       <item  name="android:background">@color/WHITE</item>
@@ -73,4 +86,9 @@
        <item name="android:divider">@drawable/list_item_divider</item>
        <item name="android:dividerHeight">1dp</item>
     </style>
+ <style name="textEditComboLayout" >
+     <item name="android:layout_width">wrap_content</item>
+     <item name="android:layout_height">wrap_content</item>
+     <item name="android:orientation">horizontal</item>
+ </style>   
 </resources>

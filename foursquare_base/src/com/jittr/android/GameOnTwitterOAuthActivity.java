@@ -38,6 +38,8 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
 		@Override
 	    public void onLoadResource(WebView view, String url) {
             boolean rv = false;
+            String twitterSN=null;
+            String twitterID=null;
 			Log.d(TAG,url);
 	    	String token = null;
 	    	AccessToken accessToken = null;
@@ -48,7 +50,9 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
    	    	    	rv = twitter.authorized();   //grab the accessToken and secret
    	    	    	if (rv) {
    	    	    		try {
-							String twitterSN = twitter.getTwitter4j().getScreenName();
+							twitterSN = twitter.getTwitter4j().getScreenName();
+							twitterID = String.valueOf( twitter.getTwitter4j().getId());
+							//twitterName = twitter.getTwitter4j().get
 							Log.d(TAG,"twitter SN: " + twitterSN);
 						} catch (IllegalStateException e) {
 							// TODO Auto-generated catch block
@@ -57,10 +61,13 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
+						finally {
+	   	   	    	        webView.setVisibility(View.INVISIBLE);
+						}
    	    	    		twitter.saveUserAuthCredentials(getAppContext().getLoginID(), TWITTER_NETWORK,twitter.getAccessToken(), 
    	    	    				twitter.getAccessTokenSecret(),
-   	    	    				null, null, null);
-   	   	    	        webView.setVisibility(View.INVISIBLE);
+   	    	    				twitterID, twitterSN, null);
+   	    	    		getAppContext().refreshUserSettings(getAppContext().getLoginID());
    	   	    	        finish();
    	    	    	} //if
    	    	    } else {

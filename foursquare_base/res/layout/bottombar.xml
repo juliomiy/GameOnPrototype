@@ -3,50 +3,40 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="horizontal"
   android:layout_alignParentBottom="true"
-  android:layout_width="fill_parent"
+  android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingTop="2dip"
+        android:paddingBottom="2dip"
         android:id="@+id/bottomBarLayout"
         android:layout_height="45dip"
-        android:gravity="center_vertical"
         android:paddingLeft="5dip"
         android:paddingRight="5dip"
         android:background="#CC0000">
+<Button  
+        style="@style/bottomBar"
+        android:text="@string/betsbutton" 
+        android:id="@+id/betsButton"> 
+ </Button>
  <Button  
-        android:layout_alignParentBottom="true"
-                android:gravity="center_vertical"
-        android:paddingTop="2dip"
-        android:paddingBottom="2dip"
-        
+        style="@style/bottomBar"
+        android:text="@string/placesbutton" 
+        android:id="@+id/placesButton"> 
+ </Button>
+ <Button  
+        style="@style/bottomBar"
         android:text="@string/friendsbutton" 
-        android:id="@+id/friendsButton" 
-        android:layout_width="60dip" 
-        android:layout_height="40dip">
+        android:id="@+id/friendsButton" >
 </Button>
  <Button  
-        android:layout_alignParentBottom="true"
-        android:text="@string/placesbutton" 
-        android:id="@+id/placesButton" 
-        android:layout_width="60dip"
-         android:layout_height="40dip">
- </Button>
-<Button  
-        android:layout_alignParentBottom="true"
-        android:text="@string/betsbutton" 
-        android:id="@+id/betsButton" 
-        android:layout_width="60dip"
-        android:layout_height="40dip">
- </Button>
- <Button  
-        android:layout_alignParentBottom="true"
+        style="@style/bottomBar"
         android:text="@string/mebutton" 
-        android:id="@+id/meButton" 
-        android:layout_width="60dip"
-        android:layout_height="40dip">
+        android:id="@+id/meButton" >
  </Button>
  <Button  
-        android:layout_alignParentBottom="true"
+        style="@style/bottomBar"
         android:text="@string/testbutton" 
-        android:id="@+id/testButton" 
-        android:layout_width="60dip"
-        android:layout_height="40dip">
+        android:id="@+id/testButton"
+        android:visibility="gone" >
  </Button>
-</LinearLayout>
+ </LinearLayout>

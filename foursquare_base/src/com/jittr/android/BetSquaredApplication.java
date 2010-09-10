@@ -105,7 +105,7 @@ public class BetSquaredApplication extends Application {
         	database.execSQL(sql);
         	gameOnProperties.storeSharedPreference(LOGGEDINAS, userID);
         	Log.d(TAG,"UserID of Login = " + String.valueOf(userID));
-            gameOnUserSettings = new GameOnUserSettings(userID);
+            gameOnUserSettings = refreshUserSettings(userID);
         	loginSuccessful = true;
         } //if
         if (null != cursor) cursor.close();
@@ -142,11 +142,7 @@ public class BetSquaredApplication extends Application {
             	  loggedInAsInt = preferredUserID;
               }
               Log.d(TAG,"Value of LoggedInSince = " + loggedInSince);
-          /*    gameOnUserSettings = new GameOnUserSettings(userID);
-             
-              gameOnUserSettings.setFoursquareID("juliomiy");  //temporary
-              gameOnUserSettings.setFoursquarePassword("cuba1a");  //temporary              loggedInAsInt = preferredUserID;
-          */
+              gameOnUserSettings = refreshUserSettings(loggedInAsInt);
               cursor.close();
            } //if
       
@@ -158,7 +154,7 @@ public class BetSquaredApplication extends Application {
 	  * This eventually will register an entirely new user for the application 
 	  * Is an involved function as the user may have already registered on the website and will need to ascertain that 
 	  */
-	 public int registerNewUser(int userID, String userName, String password, String firstName, String lastName) {
+	 public int registerNewUser(int userID, String userName, String password, String firstName, String lastName, String email) {
          //int userID = 0;		 
   
          //insert to device go_user sqlite - uses the userID generated and provided by call to host to add new user
@@ -168,6 +164,7 @@ public class BetSquaredApplication extends Application {
  		values.put(GameOnDatabase.DB_USER_TABLE_PASSWORD, password);
  		values.put(GameOnDatabase.DB_USER_TABLE_FIRSTNAME, firstName);
  		values.put(GameOnDatabase.DB_USER_TABLE_LASTNAME, lastName);
+ 		values.put(GameOnDatabase.DB_USER_TABLE_EMAIL, email);
  		userID = (int) database.insert(GameOnDatabase.DB_USER_TABLE, null, values);
 
  		//update gameOnProperties to note userID on the handset. There is an implied Login while registering
@@ -192,13 +189,49 @@ public class BetSquaredApplication extends Application {
 	    	return rowsAffected;
 	 }  //updateDatabaseSQL
 	 
+	 /*
+	  * @params userID userid of the logged in user
+	  */
+	 public GameOnUserSettings refreshUserSettings(int userID) {
+	      GameOnUserSettings settings = new GameOnUserSettings(userID);	
+	    
+	      Cursor cursor = database.query(GameOnDatabase.DB_USER_TABLE, 
+	    		  new String[] { GameOnDatabase.DB_USER_TABLE_USERNAME,
+	    		                 GameOnDatabase.DB_USER_TABLE_FIRSTNAME,
+	    		                 GameOnDatabase.DB_USER_TABLE_LASTNAME,
+	    		                 GameOnDatabase.DB_USER_TABLE_EMAIL,
+	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN, 
+	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET}, 
+	                "userID ='" + userID + "'", null, null, null, null);
+	      /* will return at most 1 record so no loop is necessary. 0 rowcount means the credentials were not correct */
+	       if (null != cursor && cursor.getCount() >0 && cursor.moveToFirst() ) {
+	    	   settings.setUserName(cursor.getString(0));
+	    	   settings.setFirstName(cursor.getString(1));
+	    	   settings.setLastName(cursor.getString(2));
+	    	   settings.setEmail(cursor.getString(3));
+               settings.setTwitterOAuthToken(cursor.getString(4));   
+               settings.setTwitterOAuthTokenSecret(cursor.getString(5));   
+	       } //if
+	       cursor.close();
+           Log.d(TAG,settings.toString());
+	       return settings;
+	 } //refreshUserSettings
+	 
 	 public int getLoginID() {
 		   Log.d(TAG,gameOnUserSettings.toString());
 		 return (null != gameOnUserSettings ? gameOnUserSettings.getUserID() : 0);
 	 }
 
+	 public void setUserSettings(GameOnUserSettings in) {
+		 gameOnUserSettings = in;
+	 }
+	 
 	 public GameOnUserSettings getUserSettings() {
 
 		   return gameOnUserSettings; 
 	 }
+
+	public String getUserName() {
+		return gameOnUserSettings.getUserName();
+	}
 }  //class

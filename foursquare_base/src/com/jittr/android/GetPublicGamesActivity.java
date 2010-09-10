@@ -38,7 +38,7 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
         setContentView(R.layout.getpublicgames);
         
         setUpViews();
-        bs = new BSClientAPIImpl("xml", "9259485368", "findme3366");
+        bs = new BSClientAPIImpl();
         HashMap hm = new HashMap();
         hm.put("team", "New York Jets");
         adapter = new BSGetPublicGamesAdapter(this ,(ArrayList) bs.getPublicGames(hm));

@@ -4,8 +4,13 @@
   android:orientation="vertical"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
+ <ImageButton 
+      style="@style/StandardCancelButton"
+      android:id="@+id/cancelButton" >
+</ImageButton>
 <TextView 
      style="@style/StandardTextView"
+     android:layout_below="@+id/cancelButton"
      android:id="@+id/eventNameTextView" >
 </TextView>
 <TextView 
@@ -71,21 +76,15 @@
      android:id="@+id/wagerUnitsEditText">
 </EditText>
 </LinearLayout>
-<LinearLayout
-     android:orientation="horizontal"
-     android:layout_below="@+id/wagerUnitsLayout"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-><Button 
-      style="@style/StandardButton"
-      android:text="@string/betbutton" 
-      android:id="@+id/betButton" >
-</Button>
 <Button 
-      style="@style/StandardButton"
-      android:text="@string/cancel_button" 
-      android:id="@+id/cancelButton" >
+    android:layout_marginTop="10dip"
+    android:layout_below="@+id/wagerUnitsLayout"
+    android:layout_width="match_parent" 
+    android:layout_height="40dip"
+    android:textSize="15px"
+    android:textStyle="bold"
+    android:text="@string/betbutton" 
+    android:id="@+id/betButton" >
 </Button>
-</LinearLayout>
 <include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
 </RelativeLayout>

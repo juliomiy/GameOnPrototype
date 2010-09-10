@@ -32,7 +32,7 @@
       android:id="@+id/betButton" >
 </Button>
 <Button 
-      style="@style/StandardButton"
+      style="@style/StandardCancelButton"
       android:text="@string/cancel_button" 
       android:id="@+id/cancelButton" >
 </Button>

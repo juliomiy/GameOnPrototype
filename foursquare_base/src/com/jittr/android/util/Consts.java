@@ -31,6 +31,7 @@ public final static String FOURSQUARE_ACCESS_TOKEN_ENDPOINT_URL="http://foursqua
 public final static String FOURSQUARE_AUTHORIZE_WEBSITE_URL="http://foursquare.com/oauth/authorize";
 public final static String FOURSQUARE_CONSUMER_KEY="AROV4OCBZMPAMSHLCF3LLYWQQ0W0F2WH1K1BDZDGBW1OFJSM";
 public final static String FOURSQUARE_CONSUMER_SECRET="IT5NN1BSTKCORZ3YVC32BRAJD5O4201TCCAGAK2KAMUYHOQD";
+
 public final static String FOURSQUARE_CALLBACK_URL = "123";
 
 //Facebook
@@ -40,6 +41,9 @@ public final static String FACEBOOK_AUTHORIZE_WEBSITE_URL= "https://graph.facebo
 public final static String FACEBOOK_CONSUMER_KEY="113817188649294";
 public final static String FACEBOOK_CONSUMER_SECRET="d0e1c39b00814c1cb4819f5133338c89";
 public final static String FACEBOOK_CALLBACK_URL = "123";
+public final static String FACEBOOK_API_KEY="2cdd2ba949d2d45e184f9814230ee20f";
+public final static String[] FACEBOOK_PERMISSIONS =
+    new String[] {"publish_stream", "read_stream", "offline_access"};
 
 //Twitter
 public final static String TWITTER_REQUEST_TOKEN_ENDPOINT_URL="http://twitter.com/oauth/request_token";

@@ -28,10 +28,11 @@
    style="@style/StandardTextView"
     android:id="@+id/totalLosesTextView" 
  ></TextView>
-<Button 
+<ImageButton 
     style="@style/StandardButton"
+    android:src="@drawable/finalarrow1"
     android:text="@string/cancel_button" 
     android:id="@+id/cancelButton" 
 >
- </Button>
+ </ImageButton>
 </LinearLayout>

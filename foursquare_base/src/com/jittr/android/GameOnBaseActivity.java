@@ -10,6 +10,8 @@ import com.jittr.android.bs.dto.GameInvites;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -26,6 +28,7 @@ public abstract class GameOnBaseActivity extends Activity {
     protected static final String TAG = "GameOnBaseActivity";
 	protected BetSquaredApplication appContext;
     protected TextView windowTitle;
+ //   protected TextWatcher textWatcher;
 	private ImageView windowIcon;
 	private LinearLayout bottomBarLayout;
 	private Button testButton;
@@ -38,7 +41,6 @@ public abstract class GameOnBaseActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 
         setContentView(R.layout.main);

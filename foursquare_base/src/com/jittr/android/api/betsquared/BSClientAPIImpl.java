@@ -19,7 +19,6 @@ import com.jittr.android.bs.handlers.UserDetailsHandler;
 import com.jittr.android.bs.handlers.UserResponseHandler;
 import com.jittr.android.bs.dto.BSUserDashBoard;
 
-import com.jittr.android.fs.utils.NVPair;
 import com.jittr.android.fs.utils.URLBuilder;
 import com.jittr.android.util.Consts;
 import com.jittr.android.util.HttpConnectionHandler;
@@ -68,9 +67,18 @@ public class BSClientAPIImpl implements BSClientInterface {
 		}
 		return null;
 	}
-
-	public BSUserDashBoard getUserDashBoard(HashMap<String , String> params) throws Exception {
-		
+/*
+ * (non-Javadoc)
+ * @author jittr.com
+ * @version 1.0
+ * @see com.jittr.android.api.betsquared.BSClientInterface#getUserDashBoard(java.util.HashMap)
+ * @params HashMap<String key, String value>
+ * @return BSUserDashBoard - if exception during call the object will be populated with statusCode and statusMessage
+ * 
+ */
+	public BSUserDashBoard getUserDashBoard(HashMap<String , String> params)  {
+		BSUserDashBoard userstats = null;
+		String errorMessage=null;
 		try {
 			//NVPair nvps [] = {new NVPair("userid",userid)};
 			
@@ -83,30 +91,30 @@ public class BSClientAPIImpl implements BSClientInterface {
 			
 			
 			BSDashBoardHandler gh = new BSDashBoardHandler(data);
-			BSUserDashBoard userstats = (BSUserDashBoard)gh.parse();
+			userstats = (BSUserDashBoard)gh.parse();
 			System.out.println("userstats User ID :"+userstats.getUserid());
 			System.out.println("userstats getTotalbets:"+userstats.getTotalbets());
 			System.out.println("userstats getTotalwins :"+userstats.getTotalwins());
 			System.out.println("userstats getTotalloses :"+userstats.getTotalloses());
-			
-			
-			return userstats;
 		}
 		catch (Exception e) {
-			e.printStackTrace();
-			throw e;
-		}
-		//return null;
-
-		
-		
-		
-	}
+			 e.printStackTrace();
+			 errorMessage = e.getMessage();
+		} finally {
+			if (null == userstats)  {
+				userstats = new BSUserDashBoard();
+   			    userstats.setStatusCode("500");
+			    userstats.setStatusMessage(errorMessage);
+			} //if
+		} //finally
+		return userstats;
+   }
 
 
 	@Override
 	public UserAddResponse addUser(HashMap<String , String> params) {
-		
+		String errorMessage = null;
+		UserAddResponse ur = null;
 		try {
 			//NVPair nvps [] = {new NVPair("newusername",userName)};
 			String querStr = URLBuilder.createQueryStr(params);
@@ -116,14 +124,19 @@ public class BSClientAPIImpl implements BSClientInterface {
 			String data = htppClient.submitPostToServer(new URL(Consts.BS_ADD_USER_ENDPOINT_URL), querStr); 
 			System.out.println("data "+data);
 			UserResponseHandler uh = new UserResponseHandler(data);
-			UserAddResponse ur = (UserAddResponse)uh.parse();
-			return ur;
+			ur = (UserAddResponse)uh.parse();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return null;
-		}
-		
+            errorMessage = e.getMessage();
+		} finally {
+            if (null == ur) { 
+            	ur = new UserAddResponse();			
+    			ur.setStatus_code("500");
+    			ur.setStatus_message(errorMessage);
+            } //if
+		}  //finally
+		return ur;
 	}
 
 

@@ -6,7 +6,7 @@ package com.jittr.android.bs.dto;
  */
 public class UserAddResponse {
    
-	String status_code;
+	public String status_code;
 	String status_message;
 	String userid;
 	String username;
@@ -52,11 +52,11 @@ public class UserAddResponse {
 	}
 
 	public String getStatus_code() {
-		return status_code;
+		return status_code.substring(0, 3);
 	}
 
 	public void setStatus_code(String statusCode) {
-		status_code = statusCode;
+		status_code = statusCode.trim();
 	}
 
 	public String getStatus_message() {

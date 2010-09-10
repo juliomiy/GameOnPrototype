@@ -24,10 +24,10 @@
     <string name="update">Update</string>
     <string name="testgetuserdashboard">Test User Dashboard</string>
     <string name="username">User Name</string>
-    <string name="userpassword">User Password</string>
-    <string name="loginbuttontext">Login</string>
+    <string name="userpassword">Password</string>
+    <string name="loginbuttontext">Sign-In</string>
     <string name="logoutbuttontext">Logout</string>
-    <string name="registerbuttontext">Register</string>
+    <string name="registerbuttontext">Sign-Up</string>
     <string name="testgetbetsquareduserdetails">Test Get Betsquared User Details</string>
     <string name="avatarurl">Avatar Url</string>
     <string name="visitingteam">Visiting Team</string>
@@ -40,4 +40,15 @@
     <string name="testbutton">Test</string>
     <string name="wagerunits">Wager Amount</string>
     <string name="wagertype">Wager Type</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="foursquare">Foursquare</string>
+    <string name="signin_up_text">You can sign-in with your foursquare, facebook, twitter or other account.</string>
+    <!--  Added for Facebook Example integration -->
+    <string name="request">Request!</string>
+    <string name="hello">Hello World!</string>
+    <string name="upload">Upload Photo</string><string name="post">Wall Post!</string>
+    <string name="delete">Delete Post</string>
+    <!-- End Added for Facebook Example integration -->
+
  </resources>

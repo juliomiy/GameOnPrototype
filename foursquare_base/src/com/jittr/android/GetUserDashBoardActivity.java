@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +22,7 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
 
 	private BSClientAPIImpl bs;
 	//private BSUserDashBoard dashBoard;
-	private Button cancelButton;
+	private ImageButton cancelButton;
 	private TextView userIDTextView;
 	private TextView totalBetsTextView;
 	private TextView betsAcceptedTextView;
@@ -41,7 +42,7 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
     } //onCreate
 	
 	private void setUpViews() {
-		cancelButton = (Button)findViewById(R.id.cancelButton);
+		cancelButton = (ImageButton)findViewById(R.id.cancelButton);
 		userIDTextView = (TextView)findViewById(R.id.userIDTextView);
 		totalBetsTextView = (TextView)findViewById(R.id.totalBetsTextView);
 		betsAcceptedTextView = (TextView)findViewById(R.id.betsAcceptedTextView);

@@ -1,10 +1,40 @@
 package com.jittr.android.bs.dto;
 
 public class BSUserDashBoard {
+	String statusCode;
+	String statusMessage;
 	String userid;
 	String totalbets;
 	String totalbetsinitiated;
 	String totalbetsaccepted;
+	/**
+	 * @return the statusCode
+	 */
+	public String getStatusCode() {
+		return statusCode;
+	}
+
+	/**
+	 * @param statusCode the statusCode to set
+	 */
+	public void setStatusCode(String statusCode) {
+		this.statusCode = statusCode;
+	}
+
+	/**
+	 * @return the statusMessage
+	 */
+	public String getStatusMessage() {
+		return statusMessage;
+	}
+
+	/**
+	 * @param statusMessage the statusMessage to set
+	 */
+	public void setStatusMessage(String statusMessage) {
+		this.statusMessage = statusMessage;
+	}
+
 	String totalwins;
 	String totalloses;
 	
@@ -51,12 +81,29 @@ public class BSUserDashBoard {
 		this.totalloses = totalloses;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
-		return "BSUserDashBoard [totalbets=" + totalbets
-				+ ", totalbetsaccepted=" + totalbetsaccepted
-				+ ", totalbetsinitiated=" + totalbetsinitiated
-				+ ", totalloses=" + totalloses + ", totalwins=" + totalwins
-				+ ", userid=" + userid + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("BSUserDashBoard [statusCode=");
+		builder.append(statusCode);
+		builder.append(", statusMessage=");
+		builder.append(statusMessage);
+		builder.append(", totalbets=");
+		builder.append(totalbets);
+		builder.append(", totalbetsaccepted=");
+		builder.append(totalbetsaccepted);
+		builder.append(", totalbetsinitiated=");
+		builder.append(totalbetsinitiated);
+		builder.append(", totalloses=");
+		builder.append(totalloses);
+		builder.append(", totalwins=");
+		builder.append(totalwins);
+		builder.append(", userid=");
+		builder.append(userid);
+		builder.append("]");
+		return builder.toString();
 	}
 }
