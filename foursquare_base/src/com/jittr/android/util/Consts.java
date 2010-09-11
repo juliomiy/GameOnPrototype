@@ -10,6 +10,8 @@ public static final int FACEBOOK_NETWORK = 1;
 public static final int TWITTER_NETWORK = 2;
 public static final int FOURSQUARE_NETWORK = 3;
 
+public static final int ERROR = 500; 
+
 //OAuth Constants
 	
 //Bitly Constants
@@ -24,6 +26,9 @@ public final static String BS_GET_USER_DASHBOARD_ENDPOINT_URL = "http://api.bets
 public final static String BS_GET_USER_DETAILS_ENDPOINT_URL = "http://api.betsquared.com/v1/go_getuser.php";
 public final static String BS_ADD_GAME_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postnewgame.php";
 public final static String BS_GAME_INVITES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getgameinvites.php";
+public final static String BS_GET_USER_GAMES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getusergames.php";
+
+
 
 //FourSquare API 
 public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";

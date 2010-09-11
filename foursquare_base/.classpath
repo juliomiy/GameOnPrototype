@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="src" path="facebookSDK"/>
+	<classpathentry kind="src" path="com_facebook_android"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

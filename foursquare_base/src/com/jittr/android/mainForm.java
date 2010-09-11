@@ -184,6 +184,10 @@ public class mainForm extends GameOnBaseActivity {
 
 	// finish the app 
     private void cancelButtonClicked(View v) {
+    	BSClientAPIImpl bs = new BSClientAPIImpl("xml", "", "");
+    	HashMap<String, String> hm = new HashMap<String, String>();
+    	hm.put("userid", "1");
+    	bs.getUserGames(hm);
     	finish();
     	
     }  //cancelButton_pressed

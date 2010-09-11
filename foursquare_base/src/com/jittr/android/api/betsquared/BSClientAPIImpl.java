@@ -11,12 +11,14 @@ import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.GameAddResponse;
 import com.jittr.android.bs.dto.GameInvites;
 import com.jittr.android.bs.dto.UserAddResponse;
+import com.jittr.android.bs.dto.UserGamesDetails;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
-import com.jittr.android.bs.handlers.GameHandler;
+import com.jittr.android.bs.handlers.PublicGamesHandler;
 import com.jittr.android.bs.handlers.GameInvitesHandler;
-import com.jittr.android.bs.handlers.GameResponseHandler;
+import com.jittr.android.bs.handlers.AddGameResponseHandler;
 import com.jittr.android.bs.handlers.UserDetailsHandler;
-import com.jittr.android.bs.handlers.UserResponseHandler;
+import com.jittr.android.bs.handlers.AddUserResponseHandler;
+import com.jittr.android.bs.handlers.UserGamesHandler;
 import com.jittr.android.bs.dto.BSUserDashBoard;
 
 import com.jittr.android.fs.utils.URLBuilder;
@@ -46,7 +48,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 	
 			String data = htppClient.getContent(new URL(url));
 			System.out.println("data "+data);
-			GameHandler gh = new GameHandler(data);
+			PublicGamesHandler gh = new PublicGamesHandler(data);
 			List<Game> games = (List) gh.parseList();
 			
 			System.out.println("Games "+games.size());
@@ -67,6 +69,8 @@ public class BSClientAPIImpl implements BSClientInterface {
 		}
 		return null;
 	}
+	
+		
 /*
  * (non-Javadoc)
  * @author jittr.com
@@ -123,7 +127,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 			Log.d("", "Url :"+Consts.BS_ADD_USER_ENDPOINT_URL);
 			String data = htppClient.submitPostToServer(new URL(Consts.BS_ADD_USER_ENDPOINT_URL), querStr); 
 			System.out.println("data "+data);
-			UserResponseHandler uh = new UserResponseHandler(data);
+			AddUserResponseHandler uh = new AddUserResponseHandler(data);
 			ur = (UserAddResponse)uh.parse();
 		}
 		catch (Exception e) {
@@ -176,7 +180,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 			Log.d("", "Url :"+Consts.BS_ADD_GAME_ENDPOINT_URL);
 			String data = htppClient.submitPostToServer(new URL(Consts.BS_ADD_GAME_ENDPOINT_URL), querStr); 
 			System.out.println("data "+data);
-			GameResponseHandler gh = new GameResponseHandler(data);
+			AddGameResponseHandler gh = new AddGameResponseHandler(data);
 			
 			GameAddResponse ur = (GameAddResponse)gh.parse();
 			return ur;
@@ -209,6 +213,36 @@ public class BSClientAPIImpl implements BSClientInterface {
 		}
 
 	}
+
+	@Override
+	public UserGamesDetails getUserGames(HashMap<String, String> params) {
+		String errorMessage ="" ;
+		UserGamesDetails uDetails;
+		try {
+			String url = URLBuilder.createUrl(Consts.BS_GET_USER_GAMES_ENDPOINT_URL,params);
+			Log.d("","Url :"+url);
+	
+			String data = htppClient.getContent(new URL(url));
+			System.out.println("data "+data);
+			UserGamesHandler uh = new UserGamesHandler(data);
+			uDetails = (UserGamesDetails)uh.parse();
+			
+			System.out.println("uDetails "+uDetails);
+			
+			return uDetails;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			errorMessage = e.getMessage();
+		}
+		finally {
+			uDetails = new UserGamesDetails();
+			uDetails.setStatus_code(Consts.ERROR);
+			uDetails.setStatus_message(errorMessage);
+		}
+		return uDetails;
+		
+	} //end of getUserGames 
 	
 	
 	
