@@ -5,10 +5,12 @@ public final class Consts {
 // Intents
 public static final String INTENT_VIEW_VENUE = "VIEW_VENUE"; 	
 public static final String INTENT_VIEW_PUBLIC_GAME = "VIEW_PUBLIC_GAME";
+public static final String INTENT_USER_SETTINGS = "VIEW_USER_SETTINGS";
 
 public static final int FACEBOOK_NETWORK = 1;
 public static final int TWITTER_NETWORK = 2;
 public static final int FOURSQUARE_NETWORK = 3;
+public static final int BETSQUARED_NETWORK = 4;
 
 public static final int ERROR = 500; 
 
@@ -57,6 +59,8 @@ public final static String TWITTER_AUTHORIZE_WEBSITE_URL="http://twitter.com/oau
 public final static String TWITTER_CONSUMER_KEY="EZmDfd0Sw0fPinp7CTNmNQ";
 public final static String TWITTER_CONSUMER_SECRET="xSY73z0TCs0drt00kFVFEG6LPNoH1yByRElWejrLE";
 public final static String TWITTER_CALLBACK_URL = "123";
+public static final String NEW_REGISTRATION = "NEW_REGISTRATION";
+
 
 //
 	  // PRIVATE //

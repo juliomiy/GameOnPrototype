@@ -2,7 +2,9 @@ package com.jittr.android;
 
 import com.facebook.android.Facebook;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.bs.dto.GameOnUserSettings;
 import com.jittr.android.bs.dto.UserAddResponse;
+import com.jittr.android.util.Consts;
 
 import java.util.HashMap;
 
@@ -13,7 +15,6 @@ import android.text.InputFilter;
 import android.text.LoginFilter;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -23,7 +24,7 @@ import android.widget.Toast;
 /*
  * 
  */
-public class GameOnRegisterActivity extends GameOnBaseActivity {
+public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 
 	private EditText userNameEditText;
 	private EditText passwordEditText;
@@ -42,7 +43,7 @@ public class GameOnRegisterActivity extends GameOnBaseActivity {
 	private CheckBox foursquareCheckBox;
 	private Facebook facebook;
 	
-	public GameOnRegisterActivity() {
+	public GameOnRegisterEmailActivity() {
         super();
 	}  //constructor
 
@@ -147,6 +148,8 @@ public class GameOnRegisterActivity extends GameOnBaseActivity {
 		    hm.put("lastname", lastName);
         if (! "".equals(email))
 		    hm.put("email", email);
+		hm.put("primarynetworkid", String.valueOf(Consts.BETSQUARED_NETWORK));
+		hm.put("primarynetworkname", "BETSQUARED");
 		
 		BSClientAPIImpl bs = new BSClientAPIImpl();
 		if (null == bs ) return;  //TODO Deal with error
@@ -156,7 +159,8 @@ public class GameOnRegisterActivity extends GameOnBaseActivity {
         
         if (newUser.getStatus_code().equals("200")) {
 	       int newUserID = Integer.parseInt(newUser.getUserid());
-	       getAppContext().registerNewUser(newUserID,newUserName,password,firstName,lastName,email);
+	       getAppContext().registerNewUser(new GameOnUserSettings(newUserID,newUserName,password,firstName,lastName,
+	    		    email,Consts.BETSQUARED_NETWORK,"BETSQUARED", null , null, null, null));
         } else {
             if (newUser.getStatus_code().equals("410")) {
         	   Toast.makeText(this, newUserName + " already taken. Try something else", Toast.LENGTH_LONG).show();

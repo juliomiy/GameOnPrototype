@@ -32,6 +32,10 @@ public abstract class GameOnBaseActivity extends Activity {
 	private ImageView windowIcon;
 	private LinearLayout bottomBarLayout;
 	private Button testButton;
+	private Button meButton;
+	private Button placesButton;
+	private Button betsButton;
+	private Button friendsButton;
 	
 	public GameOnBaseActivity() {
 		super();
@@ -52,7 +56,16 @@ public abstract class GameOnBaseActivity extends Activity {
         //icon  = (ImageView) findViewById(R.id.icon);
 	}
 	
-	protected boolean setBottomBar() {
+	protected void OnActivityResult(int requestCode, int resultCode, Intent data) {
+		Log.d(TAG, "In OnActivtyResult " + requestCode + " " + resultCode);
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
+	/* Sets up the bottomBar
+	 * @params
+	 * @returns true
+	 */
+	protected boolean setBottomBar(int  viewID) {
 /*		bottomBarLayout = (LinearLayout)findViewById(R.id.bottomBarLayout);
 		int views = bottomBarLayout.getChildCount();
 		for (int x = views; x<views; x++) {
@@ -66,6 +79,45 @@ public abstract class GameOnBaseActivity extends Activity {
 		View v = bottomBarLayout.getChildAt(0);
 */		
 		//bottomBarLayout.
+		    betsButton = (Button)findViewById(R.id.betsButton);
+		    if (null != betsButton) betsButton.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+		    friendsButton = (Button)findViewById(R.id.friendsButton);
+		    friendsButton.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+		    
+		    meButton = (Button)findViewById(R.id.meButton);
+            if (viewID != R.id.meButton) {
+	   		    meButton.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+						meButtonClicked();
+					}
+				});
+            } else {
+            	meButton.setEnabled(false);
+            }
+		    placesButton = (Button)findViewById(R.id.placesButton);
+		    placesButton.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+                     placesButtonClicked();					
+				}
+			});
    	        testButton = (Button)findViewById(R.id.testButton);
 		    testButton.setOnClickListener(new View.OnClickListener() {
 				
@@ -87,6 +139,16 @@ public abstract class GameOnBaseActivity extends Activity {
 			});
 		return true;
 	}
+	protected void meButtonClicked() {
+		Intent intent = new Intent(this,GetUserDashBoardActivity.class);
+		startActivity(intent);	
+	}
+
+	protected void placesButtonClicked() {
+		Intent intent = new Intent(this,GetNearbyVenuesActivity.class);
+		startActivity(intent);
+	}
+
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 			
@@ -101,9 +163,13 @@ public abstract class GameOnBaseActivity extends Activity {
 		Intent intent;
 		switch (item.getItemId())  {
 		   case R.id.update_user_settings :
+			   intent = new Intent(this,GetBetSquareUserDetailsActivity.class);
 			   break;
+	     default:
+	    	    return false;
 		}  //switch
 		
+	   startActivity(intent);	
        return true;
 	}  //onMenuItemSelected
 	

@@ -6,6 +6,8 @@ package com.jittr.android;
 import com.jittr.android.GameOnProperties;
 import com.jittr.android.api.betsquared.db.GameOnDatabase;
 import com.jittr.android.bs.dto.GameOnUserSettings;
+import static com.jittr.android.util.Consts.*;
+
 import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
@@ -122,6 +124,7 @@ public class BetSquaredApplication extends Application {
     	gameOnProperties.storeSharedPreference(LOGGEDINAS, 0);
     
     	logoutSuccessful = true;
+    	gameOnUserSettings = null;  //blow away existing userSettings
     	Log.d(TAG,"Result of logout = " + String.valueOf(logoutSuccessful));
 		return logoutSuccessful;
 	} //logout
@@ -153,25 +156,45 @@ public class BetSquaredApplication extends Application {
 	 /* register a user on the device 
 	  * This eventually will register an entirely new user for the application 
 	  * Is an involved function as the user may have already registered on the website and will need to ascertain that 
+	  * @returns integer userId
 	  */
-	 public int registerNewUser(int userID, String userName, String password, String firstName, String lastName, String email) {
-         //int userID = 0;		 
+	// public int registerNewUser(int userID, String userName, String password, String firstName, String lastName, String email) {
+     public int registerNewUser(GameOnUserSettings userSettings) {
+        if (null == userSettings) return 0;
+    	 //int userID = 0;		 
   
          //insert to device go_user sqlite - uses the userID generated and provided by call to host to add new user
  		ContentValues values = new ContentValues();
- 		values.put(GameOnDatabase.DB_USER_TABLE_USERID,userID);
- 		values.put(GameOnDatabase.DB_USER_TABLE_USERNAME, userName);
- 		values.put(GameOnDatabase.DB_USER_TABLE_PASSWORD, password);
- 		values.put(GameOnDatabase.DB_USER_TABLE_FIRSTNAME, firstName);
- 		values.put(GameOnDatabase.DB_USER_TABLE_LASTNAME, lastName);
- 		values.put(GameOnDatabase.DB_USER_TABLE_EMAIL, email);
+ 		values.put(GameOnDatabase.DB_USER_TABLE_USERID,userSettings.getUserID());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_USERNAME, userSettings.getUserName());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_PASSWORD, userSettings.getPassword());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_FIRSTNAME, userSettings.getFirstName());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_LASTNAME, userSettings.getLastName());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_EMAIL, userSettings.getEmail());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_PHONENUMBER, userSettings.getPhoneNumber());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_PRIMARY_NETWORKID, userSettings.getPrimaryNetworkID());
+ 		values.put(GameOnDatabase.DB_USER_TABLE_PRIMARY_NETWORKNAME, userSettings.getPrimaryNetworkName());
+
+ 		switch (userSettings.getPrimaryNetworkID()) {
+ 		    case TWITTER_NETWORK:
+ 		    	values.put(GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN, userSettings.getTwitterOAuthToken());
+ 		    	values.put(GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET, userSettings.getTwitterOAuthTokenSecret());
+ 		    	values.put(GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME, userSettings.getTwitterSN());
+ 		    	break;
+ 		    case FOURSQUARE_NETWORK:
+ 		    	values.put(GameOnDatabase.DB_USER_TABLE_FS_TOKEN, userSettings.getFoursquareOAuthToken());
+ 		    	values.put(GameOnDatabase.DB_USER_TABLE_FS_TOKEN_SECRET, userSettings.getFoursquareOAuthTokenSecret());
+ 		    	break;
+ 		    case FACEBOOK_NETWORK:
+ 		    	break;
+ 		} //switch
  		userID = (int) database.insert(GameOnDatabase.DB_USER_TABLE, null, values);
 
  		//update gameOnProperties to note userID on the handset. There is an implied Login while registering
  		//so just call login function which will take care of all the scaffolding
  		
- 		boolean rv = login(userName,password);
- 		return userID;
+ 		boolean rv = login(userSettings.getUserName(),userSettings.getPassword());
+ 		return (rv) ? userID : 0;
 	 } //registerNewUser
 	
 	 /* pass raw sql and apply to sqlite database 
@@ -200,8 +223,19 @@ public class BetSquaredApplication extends Application {
 	    		                 GameOnDatabase.DB_USER_TABLE_FIRSTNAME,
 	    		                 GameOnDatabase.DB_USER_TABLE_LASTNAME,
 	    		                 GameOnDatabase.DB_USER_TABLE_EMAIL,
+	    		                 GameOnDatabase.DB_USER_TABLE_PHONENUMBER,
+	    		                 
+	    		                 GameOnDatabase.DB_USER_TABLE_PRIMARY_NETWORKNAME,
+	    		                 GameOnDatabase.DB_USER_TABLE_PRIMARY_NETWORKID,
+	    		                 
 	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN, 
-	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET}, 
+	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET,
+	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME,
+	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_USERID,
+	    		                 
+	    		                 GameOnDatabase.DB_USER_TABLE_FS_TOKEN, 
+	    		                 GameOnDatabase.DB_USER_TABLE_FS_TOKEN_SECRET
+	    		                 }, 
 	                "userID ='" + userID + "'", null, null, null, null);
 	      /* will return at most 1 record so no loop is necessary. 0 rowcount means the credentials were not correct */
 	       if (null != cursor && cursor.getCount() >0 && cursor.moveToFirst() ) {
@@ -209,8 +243,13 @@ public class BetSquaredApplication extends Application {
 	    	   settings.setFirstName(cursor.getString(1));
 	    	   settings.setLastName(cursor.getString(2));
 	    	   settings.setEmail(cursor.getString(3));
-               settings.setTwitterOAuthToken(cursor.getString(4));   
-               settings.setTwitterOAuthTokenSecret(cursor.getString(5));   
+	    	   settings.setPhoneNumber(cursor.getString(4));
+	    	   settings.setPrimaryNetworkName(cursor.getString(5));
+	    	   settings.setPrimaryNetworkID(cursor.getInt(6));
+               settings.setTwitterOAuthToken(cursor.getString(7));   
+               settings.setTwitterOAuthTokenSecret(cursor.getString(8));
+               settings.setTwitterSN(cursor.getString(9));		      
+               settings.setTwitterID(cursor.getString(10));		      
 	       } //if
 	       cursor.close();
            Log.d(TAG,settings.toString());
@@ -218,7 +257,7 @@ public class BetSquaredApplication extends Application {
 	 } //refreshUserSettings
 	 
 	 public int getLoginID() {
-		   Log.d(TAG,gameOnUserSettings.toString());
+		 Log.d(TAG,(gameOnUserSettings != null ? gameOnUserSettings.toString() : " GameOnUserSettings null"));
 		 return (null != gameOnUserSettings ? gameOnUserSettings.getUserID() : 0);
 	 }
 

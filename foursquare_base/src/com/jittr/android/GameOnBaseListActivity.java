@@ -6,6 +6,7 @@ import java.util.HashMap;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.dto.GameInvite;
 import com.jittr.android.bs.dto.GameInvites;
+import com.jittr.android.fs.examples.DataFetchingCallBack;
 
 import android.app.ListActivity;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public abstract class GameOnBaseListActivity extends ListActivity {
+public abstract class GameOnBaseListActivity extends ListActivity implements DataFetchingCallBack {
 	private static final String TAG = "GameOnBaseListActivity";
 	protected TextView windowTitle;
 	private ImageView windowIcon;

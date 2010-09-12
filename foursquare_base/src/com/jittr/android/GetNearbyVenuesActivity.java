@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import static com.jittr.android.util.Consts.*;
@@ -18,7 +19,7 @@ import com.jittr.android.GameOnLocationManager;
 
 public class GetNearbyVenuesActivity extends GameOnBaseListActivity {
 
-	private Button cancelButton;
+	private ImageButton cancelButton;
 	private FSNearbyVenueAdapter adapter;
 	FSClientAPIImpl fs;
 	private Venue venue;;
@@ -59,7 +60,7 @@ public class GetNearbyVenuesActivity extends GameOnBaseListActivity {
 	}
 	
 	private void setUpViews() {
-		cancelButton = (Button)findViewById(R.id.cancel_button);
+		cancelButton = (ImageButton)findViewById(R.id.cancel_button);
 		cancelButton.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
@@ -67,5 +68,30 @@ public class GetNearbyVenuesActivity extends GameOnBaseListActivity {
 			}
 		});
 		setBottomBar();
+	}
+	@Override
+	public void dataLoadCancelled() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void dataLoadException(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void dataLoaded(Object response) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void dataLoading() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void preDataLoading() {
+		// TODO Auto-generated method stub
+		
 	}
 }

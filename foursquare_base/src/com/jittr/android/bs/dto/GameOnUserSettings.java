@@ -1,20 +1,33 @@
 package com.jittr.android.bs.dto;
 
+import static com.jittr.android.util.Consts.*;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/*
+ * @author juliomiyares
+ * @version 1.0
+ */
 public class GameOnUserSettings implements Parcelable {
 
 	private int userID;
+	private String password;
 	private String userName;
 	private String firstName;
 	private String lastName;
 	private String email;
+	private String phoneNumber;
+	private String imageURL;
+	private String fullName;
 	private String twitterID; //= null; //"juliomiy";
+	private String twitterSN; //twitter screenName
 	private String facebookID; //=null; //"juliomiyares@mac.com";
 	private String foursquareID;//=null; //"9173702880";
 	private String aimID;
 	private String icqID;
+	private int primaryNetworkID;
+	private String primaryNetworkName;
 	private boolean twitterDefault; //=true;
 	private boolean facebookDefault;//=false;
 	private boolean foursquareDefault;//=false;
@@ -27,8 +40,197 @@ public class GameOnUserSettings implements Parcelable {
 	private String foursquarePassword;
 	private final String TAG = "GameOnUserSettings";
 
+	 public static final Parcelable.Creator<GameOnUserSettings> CREATOR
+	    = new Parcelable.Creator<GameOnUserSettings>() {
+	   	
+	        public GameOnUserSettings createFromParcel(Parcel in) {
+	           return new GameOnUserSettings(in);
+	        }
+	        
+	        public GameOnUserSettings[] newArray(int arg0) {
+	    		// TODO Auto-generated method stub
+	    		return null;
+	    	}
+	        
+	     };  //Parcelable.Creator
+	     
+    private GameOnUserSettings(Parcel in) {
+    	 readFromParcel(in);
+    }  //Constructor
+
+	public void readFromParcel(Parcel in) {
+		userID = in.readInt();
+		password = in.readString();
+		userName = in.readString();
+		firstName = in.readString();
+		lastName = in.readString();
+		email = in.readString();
+		phoneNumber = in.readString();
+		twitterID = in.readString();
+		twitterSN = in.readString();
+		facebookID = in.readString();
+		foursquareID = in.readString();
+		aimID = in.readString();
+		icqID = in.readString();
+		primaryNetworkID = in.readInt();
+		primaryNetworkName = in.readString();
+		twitterDefault = (in.readInt() == 1 ? true : false );
+		facebookDefault = (in.readInt() == 1 ? true : false );
+		foursquareDefault = (in.readInt() == 1 ? true : false );
+        twitterOAuthToken = in.readString();
+        facebookOAuthToken = in.readString();
+        foursquareOAuthToken = in.readString();
+        twitterOAuthTokenSecret = in.readString();
+        facebookOAuthTokenSecret = in.readString();
+        foursquareOAuthTokenSecret = in.readString();
+	}  //readFromParcel
+	
+	public int describeContents() {
+		return 0;
+	}
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeInt(getUserID());
+		dest.writeString(password);
+		dest.writeString(userName);
+		dest.writeString(firstName);
+		dest.writeString(lastName);
+		dest.writeString(email);
+		dest.writeString(phoneNumber);
+		dest.writeString(twitterID);
+		dest.writeString(twitterSN);
+		dest.writeString(facebookID);
+		dest.writeString(foursquareID);
+		dest.writeString(aimID);
+		dest.writeString(icqID);
+		dest.writeInt(getPrimaryNetworkID());
+		dest.writeString(primaryNetworkName);
+		dest.writeInt(isTwitterDefaultInt());
+		dest.writeInt(isFacebookDefaultInt());
+		dest.writeInt(isFoursquareDefaultInt());
+		dest.writeString(twitterOAuthToken);
+		dest.writeString(facebookOAuthToken);
+		dest.writeString(foursquareOAuthToken);
+		dest.writeString(twitterOAuthTokenSecret);
+		dest.writeString(facebookOAuthTokenSecret);
+		dest.writeString(foursquareOAuthTokenSecret);
+	} //writeToParcel
+	
+	public GameOnUserSettings(int newUserID, String newUserName, String newPassword, String newFirstName, String newLastName, 
+			    String newEmail, int newPrimaryNetworkID, String newPrimaryNetworkName, String accessToken, String accessTokenSecret, String newImageURL, String newFullName) {
+		userID=newUserID;
+		userName = newUserName;
+		password = newPassword;
+		firstName = newFirstName;
+		lastName = newLastName;
+		email = newEmail;
+		primaryNetworkID = newPrimaryNetworkID;
+		primaryNetworkName = newPrimaryNetworkName;
+		imageURL = newImageURL;
+		fullName = newFullName;
+		switch (primaryNetworkID) {
+		  case TWITTER_NETWORK:
+			 twitterOAuthToken = accessToken; 
+			 twitterOAuthTokenSecret = accessTokenSecret;
+             twitterSN = newUserName;
+			 break;
+		  case FOURSQUARE_NETWORK:
+		     foursquareOAuthToken = accessToken; 
+		     foursquareOAuthTokenSecret = accessTokenSecret;
+			 break;
+		  case FACEBOOK_NETWORK:
+			  break;
+		}  //switch
+	}
 	public GameOnUserSettings() {
 		
+	} //default Constructor
+	/**
+	 * @return the password
+	 */
+	public String getPassword() {
+		return password;
+	}
+	/**
+	 * @return the imageURL
+	 */
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	/**
+	 * @param imageURL the imageURL to set
+	 */
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	/**
+	 * @return the fullName
+	 */
+	public String getFullName() {
+		return fullName;
+	}
+
+	/**
+	 * @param fullName the fullName to set
+	 */
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
+
+	/**
+	 * @param password the password to set
+	 */
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	/**
+	 * @return the phoneNumber
+	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	/**
+	 * @param phoneNumber the phoneNumber to set
+	 */
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	/**
+	 * @return the twitterSN
+	 */
+	public String getTwitterSN() {
+		return twitterSN;
+	}
+	/**
+	 * @param twitterSN the twitterSN to set
+	 */
+	public void setTwitterSN(String twitterSN) {
+		this.twitterSN = twitterSN;
+	}
+	/**
+	 * @return the primaryNetworkID
+	 */
+	public int getPrimaryNetworkID() {
+		return primaryNetworkID;
+	}
+	/**
+	 * @param primaryNetworkID the primaryNetworkID to set
+	 */
+	public void setPrimaryNetworkID(int primaryNetworkID) {
+		this.primaryNetworkID = primaryNetworkID;
+	}
+	/**
+	 * @return the primaryNetworkName
+	 */
+	public String getPrimaryNetworkName() {
+		return primaryNetworkName;
+	}
+	/**
+	 * @param primaryNetworkName the primaryNetworkName to set
+	 */
+	public void setPrimaryNetworkName(String primaryNetworkName) {
+		this.primaryNetworkName = primaryNetworkName;
 	}
 	/**
 	 * @return the firstName
@@ -115,6 +317,19 @@ public class GameOnUserSettings implements Parcelable {
 	public boolean isTwitterDefault() {
 		return twitterDefault;
 	}
+	protected int isTwitterDefaultInt() {
+		if (twitterDefault) return 1;
+		else return 0;                  
+	}
+	protected int isFacebookDefaultInt() {
+		if (facebookDefault) return 1;
+		else return 0;                  
+	}
+	protected int isFoursquareDefaultInt() {
+		if (foursquareDefault) return 1;
+		else return 0;                  
+	}
+
 	public void setTwitterDefault(boolean twitterDefault) {
 		this.twitterDefault = twitterDefault;
 	}
@@ -166,14 +381,7 @@ public class GameOnUserSettings implements Parcelable {
 	public void setFoursquareOAuthTokenSecret(String foursquareOAuthTokenSecret) {
 		this.foursquareOAuthTokenSecret = foursquareOAuthTokenSecret;
 	}
-	public int describeContents() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		
-	}
+
 //deprecated once oauth is required
 	public String getFoursquarePassword() {
 		//TODO - remove hardcoded value
@@ -215,10 +423,22 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(foursquareOAuthTokenSecret);
 		builder.append(", foursquarePassword=");
 		builder.append(foursquarePassword);
+		builder.append(", fullName=");
+		builder.append(fullName);
 		builder.append(", icqID=");
 		builder.append(icqID);
+		builder.append(", imageURL=");
+		builder.append(imageURL);
 		builder.append(", lastName=");
 		builder.append(lastName);
+		builder.append(", password=");
+		builder.append(password);
+		builder.append(", phoneNumber=");
+		builder.append(phoneNumber);
+		builder.append(", primaryNetworkID=");
+		builder.append(primaryNetworkID);
+		builder.append(", primaryNetworkName=");
+		builder.append(primaryNetworkName);
 		builder.append(", twitterDefault=");
 		builder.append(twitterDefault);
 		builder.append(", twitterID=");
@@ -227,6 +447,8 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(twitterOAuthToken);
 		builder.append(", twitterOAuthTokenSecret=");
 		builder.append(twitterOAuthTokenSecret);
+		builder.append(", twitterSN=");
+		builder.append(twitterSN);
 		builder.append(", userID=");
 		builder.append(userID);
 		builder.append(", userName=");

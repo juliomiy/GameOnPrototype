@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:gravity="center"
+  android:layout_gravity="center"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+<TextView
+     android:text="Sign up for Betsquared! It's Free!"
+     android:layout_width="match_parent" 
+     android:layout_height="wrap_content"
+     android:textStyle="bold"
+     android:singleLine="true"
+     android:textSize="13dip">
+</TextView>  
+<ImageButton
+     android:src="@drawable/facebooksignupbutton" 
+     android:layout_marginBottom="10dip"
+     android:id="@+id/signUpByFacebookButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+</ImageButton>
+<ImageButton
+     android:src="@drawable/twittersignupbutton" 
+     android:layout_marginBottom="10dip"
+     android:id="@+id/signUpByTwitterButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+</ImageButton>
+<ImageButton
+     android:layout_marginBottom="10dip"
+     android:src="@drawable/foursquaresignupbutton" 
+     android:id="@+id/signUpByFoursquareButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+ </ImageButton>
+ <TextView
+     android:layout_marginBottom="10dip"
+     android:id="@+id/ImageButton05" 
+     android:text="Or"
+     android:textStyle="bold"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+ >
+ </TextView>    
+<ImageButton
+     android:src="@drawable/emailsignupbutton" 
+     android:id="@+id/signUpByEmailButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+</ImageButton>     
+</LinearLayout>

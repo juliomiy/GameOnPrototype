@@ -5,4 +5,8 @@
           android:title="Preferences"
           android:icon="@drawable/ic_menu_preferences" 
      />
-</menu>
+ <item android:id="@+id/banksettings"
+          android:title="Bank Statement"
+          android:icon="@drawable/shopping" 
+ />
+ </menu>

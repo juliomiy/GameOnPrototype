@@ -20,6 +20,10 @@
             
         </activity>
        <activity
+                 android:name=".GameOnSignUpActivity"
+                 android:label="Sign Up Main">
+       </activity> 
+       <activity
                  android:name="com.jittr.android.facebook.Example"
                  android:label="Facebook Test">
        </activity> 
@@ -44,7 +48,7 @@
           </intent-filter>                 
                  
        </activity>
-       <activity android:name=".GameOnRegisterActivity"  
+       <activity android:name=".GameOnRegisterEmailActivity"  
                  android:label="@string/app_name">
        </activity>
        <activity android:name=".GetUserDetailsActivity"

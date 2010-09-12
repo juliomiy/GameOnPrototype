@@ -63,6 +63,7 @@ private Button testButton;
 //        appObject = (BetSquaredApplication) getApplication();
         setContentView(R.layout.getbetsquareduserdetails);
         setUpViews();
+        setBottomBar(0);
     }   //onCreate
 
 	protected void onResume() {
@@ -103,7 +104,7 @@ private Button testButton;
                 finish();				
 			}
  	   });      
-	   setBottomBar();
+//	   setBottomBar();
      
 	} //setUpViews
 

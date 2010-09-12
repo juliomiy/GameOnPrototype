@@ -70,7 +70,7 @@ public class Example extends Activity {
                     "specified before running this example: see Example.java");
         }
         
-        
+       // mFacebook.
         setContentView(R.layout.mainfacebook );
         mLoginButton = (LoginButton) findViewById(R.id.login);
         mText = (TextView) Example.this.findViewById(R.id.txt);

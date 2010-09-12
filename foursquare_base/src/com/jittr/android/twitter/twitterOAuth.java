@@ -65,7 +65,7 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 		return twitter4j;
 	}
 
-	public boolean authorized() {
+	public boolean authorized() throws TwitterException {
 		boolean authorized = false;
 	    try {
 			AccessToken accessToken = twitter4j.getOAuthAccessToken();
@@ -74,7 +74,10 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 			authorized=true;
 		} catch (TwitterException e) {
 			e.printStackTrace();
-		}
+			throw e;
+		} finally {
+		   
+		}  
 		return authorized;
 	}  //authorized
 } //class

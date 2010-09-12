@@ -49,6 +49,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gameoncustomizepublicgame);
         setUpViews();
+        setBottomBar(0);  //no exclusion of bottom buttons
     }   //onCreate
 
 	public void setWagerType(String wagerType) {

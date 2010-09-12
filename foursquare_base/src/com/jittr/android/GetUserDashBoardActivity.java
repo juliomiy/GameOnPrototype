@@ -39,6 +39,7 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
         super.onCreate(savedInstanceState);
         setContentView(R.layout.getuserdashboard);
         setUpViews();
+        setBottomBar(R.id.meButton);
     } //onCreate
 	
 	private void setUpViews() {
@@ -120,13 +121,10 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
 	}
 	@Override
 	public void dataLoaded(Object response) {
-		// TODO Auto-generated method stub
-		System.out.println("Call back method Triggered, dataLoaded, now we can render ");
+		Log.d(TAG,"Call back method Triggered, dataLoaded, now we can render ");
 		if(mdialog !=null) {
 			mdialog.dismiss();
 		}
-		
-		
 		
 		if(response !=null) {
 			BSUserDashBoard dashBoard = (BSUserDashBoard)response;
@@ -141,14 +139,12 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
 	}
 	@Override
 	public void dataLoading() {
-		// TODO Auto-generated method stub
-		System.out.println("Data Loading Cacll Back Triggered");
+		Log.d(TAG,"Data Loading Cacll Back Triggered");
 		showDialog(1);
 		
 	}
 	@Override
 	public void preDataLoading() {
-		// TODO Auto-generated method stub
-		System.out.println("Pre Data Loading Cacll Back Triggered");
+		Log.d(TAG,"Pre Data Loading Cacll Back Triggered");
 	}
 }  //class

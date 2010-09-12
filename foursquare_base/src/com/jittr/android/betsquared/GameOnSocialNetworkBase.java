@@ -5,6 +5,8 @@ package com.jittr.android.betsquared;
 
 import static com.jittr.android.util.Consts.*;
 
+import android.util.Log;
+
 import com.jittr.android.BetSquaredApplication;
 import com.jittr.android.api.betsquared.db.GameOnDatabase;
 import java.util.HashMap;
@@ -25,6 +27,7 @@ import oauth.signpost.exception.OAuthNotAuthorizedException;
 public abstract class GameOnSocialNetworkBase implements
 		GameOnSocialNetworkInterface {
 	
+	private static final String TAG = "GameOnSocialNetworkBase";
 	private String accessToken;
 	private String accessTokenSecret;
 	private CommonsHttpOAuthConsumer consumer;
@@ -197,6 +200,7 @@ public abstract class GameOnSocialNetworkBase implements
 			
 		}  //switch
 		sql += " where userID = " + userID;
+		Log.d(TAG,sql);
 		//first save to device - low risk, minimal letency - stored in sqlite
 		appContext.updateDatabaseSQL(sql);
 		//save to Host via Http Post

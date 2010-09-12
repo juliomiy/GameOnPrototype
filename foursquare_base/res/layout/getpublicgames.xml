@@ -1,52 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content">
+ <RelativeLayout    
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content" 
+     android:layout_width="match_parent" 
+     android:orientation="vertical">
+ <LinearLayout    
+     android:id="@+id/actionButtonsLayout"
+     android:layout_height="wrap_content" 
+     android:layout_width="match_parent" 
+     android:orientation="horizontal">
+<ImageButton 
+     style="@style/StandardCancelButton"
+     android:id="@+id/cancel_button" >
+ </ImageButton>	
+<Button 
+     android:text="@string/gobutton" 
+     android:id="@+id/goButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+</Button>
+</LinearLayout>
 <LinearLayout 
+     android:layout_below="@+id/actionButtonsLayout"
      android:layout_height="wrap_content" 
      android:layout_width="wrap_content" 
-     android:id="@+id/LinearLayout01" 
+     android:id="@+id/selectionSpinnerLayout" 
      android:orientation="horizontal">
 <Spinner 
+     android:textSize="15dip"
      android:id="@+id/timeFilterSpinner" 
      android:entries="@array/time_choices"
      android:layout_height="wrap_content" 
-     android:layout_width="wrap_content">
+     android:layout_width="70dip">
 </Spinner>
 <Spinner 
      android:id="@+id/sportFilterSpinner" 
      android:entries="@array/sport_choices"
-     android:layout_toRightOf="@id/timeFilterSpinner"
      android:layout_height="wrap_content" 
      android:layout_width="wrap_content">
 </Spinner>
 <Spinner
      android:id="@+id/teamFilterSpinner" 
      android:entries="@array/team_choices"
-     android:layout_toRightOf="@id/sportFilterSpinner"
      android:layout_height="wrap_content" 
      android:layout_width="wrap_content">
 </Spinner>
-<Button 
-     android:text="@string/gobutton" 
-     android:id="@+id/goButton" 
-     android:layout_width="wrap_content" 
-     android:layout_height="wrap_content"
-     android:layout_toRightOf="@id/teamFilterSpinner">
-</Button>
 </LinearLayout>	
-<Button 
-     android:text="@string/cancel_button" 
-     android:id="@+id/cancel_button" 
-     android:layout_width="wrap_content" 
-     android:layout_height="wrap_content"
-     android:layout_above="@+id/android:list">
-</Button>	
  <ListView
- 		android:layout_width="fill_parent"
+        android:layout_below="@+id/selectionSpinnerLayout"
+        android:layout_above="@+id/bottomBarLayout"
+ 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_below="@id/LinearLayout01"
+		android:scrollbars="vertical"
 		android:id="@id/android:list"
 		android:text="@string/nogames">
 </ListView>	

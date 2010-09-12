@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class GameOnDatabase extends SQLiteOpenHelper {
-	public static final int VERSION = 6;
+	public static final int VERSION = 8;
 	public static final String DB_NAME  = "betsquared_db.sqlite";
 	public static final String GAME_TABLE = "go_games";
 	public static final String DB_USER_TABLE = "go_user";
@@ -25,7 +25,10 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	public static final String DB_USER_TABLE_FB_TOKEN_SECRET="facebookTokenSecret";
 	public static final String DB_USER_TABLE_TWITTER_USERID = "twitterUserID";	
 	public static final String DB_USER_TABLE_TWITTER_SCREENNAME = "twitterScreenName";	
-	public static final String DB_USER_TABLE_TWITTER_NAME = "twitterName";	
+	public static final String DB_USER_TABLE_TWITTER_NAME = "twitterName";
+	public static final String DB_USER_TABLE_PRIMARY_NETWORKNAME = "primaryNetworkName";
+	public static final String DB_USER_TABLE_PHONENUMBER = "phoneNumber";
+	public static final String DB_USER_TABLE_PRIMARY_NETWORKID = "primaryNetworkID";	
 
 	public GameOnDatabase(Context context) {
 
@@ -52,6 +55,9 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	      DB_USER_TABLE_FIRSTNAME + " text null," +
 	      DB_USER_TABLE_LASTNAME + " text null," +
 	      DB_USER_TABLE_EMAIL + " text null," +
+	      DB_USER_TABLE_PHONENUMBER + " text null," +
+	      DB_USER_TABLE_PRIMARY_NETWORKNAME + " text null," +
+	      DB_USER_TABLE_PRIMARY_NETWORKID + " integer not null default 0," +
 	      DB_USER_TABLE_FS_TOKEN + " text null," +
 	      DB_USER_TABLE_FS_TOKEN_SECRET + " text null," +
 	      DB_USER_TABLE_FB_TOKEN + " text null," +
@@ -84,6 +90,9 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 		values.put(DB_USER_TABLE_FIRSTNAME, "julio");
 		values.put(DB_USER_TABLE_LASTNAME, "Miyares");
 		values.put(DB_USER_TABLE_EMAIL, "julio@jittr.com");
+		values.put(DB_USER_TABLE_PHONENUMBER, "9173702880");
+		values.put(DB_USER_TABLE_PRIMARY_NETWORKID, 4);
+		values.put(DB_USER_TABLE_PRIMARY_NETWORKNAME, "BETSQUARED");
 
 		long id = db.insert(DB_USER_TABLE, null, values);
 	}

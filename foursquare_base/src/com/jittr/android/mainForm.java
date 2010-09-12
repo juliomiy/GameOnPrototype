@@ -25,8 +25,8 @@ import android.widget.Button;
 
 /* Main Form - this is the activity that is invoked first - if the user is not logged in
  * , the login Acitivty is started
- * Author: Julio Hernandez-Miyares
- * Version: 1.0
+ * @author: juliomiyares
+ * @version: 1.0
  */
 public class mainForm extends GameOnBaseActivity {
  	private Button cancelButton;
@@ -38,6 +38,7 @@ public class mainForm extends GameOnBaseActivity {
 	private Button getBetSquareDetailsButton;
 	private Button logoutButton;
 	private Button twitterOAuthButton;
+	protected final static String TAG = "mainForm";
   //  private BetSquaredApplication appContext;
     
     public mainForm() {
@@ -51,6 +52,7 @@ public class mainForm extends GameOnBaseActivity {
         setContentView(R.layout.main);
         this.windowTitle.setText("Main Menu");
         setUpViews();
+        setBottomBar(0);
         //System.out.println("Inside Create...");
         //System.setProperty("proxySet", "true");
     	//System.setProperty("proxyHost", "ftpproxy.wdc.cingular.net");

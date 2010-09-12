@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     theme="@style/gameon_background_color"
- >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/foursquarebase"
-    />
+    >
 <Button 
     android:text="@string/foursquareoauth"
     android:id="@+id/foursquareoauth" 
@@ -20,21 +15,25 @@
     android:text="@string/twitteroauth"
     android:id="@+id/twitterOAuthButton" 
     android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/foursquareoauth">
 </Button>
 <Button 
     android:text="@string/testfoursquareuserdetails"
     android:id="@+id/getuserdetails_button" 
     android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/twitterOAuthButton">
 </Button>
 <Button 
     android:text="@string/testbetsquareuserdetails"
     android:id="@+id/getbetsuserdetails_button" 
     android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/getuserdetails_button">
 </Button>
 <Button 
+    android:visibility="invisible"
     android:text="@string/testnearbyvenues"
     android:id="@+id/getnearbyvenues_button" 
     android:layout_width="wrap_content" 
@@ -44,9 +43,11 @@
     android:text="@string/testgetpublicgames"
     android:id="@+id/getpublicgames_button" 
     android:layout_width="wrap_content" 
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/getbetsuserdetails_button">
 </Button>
 <Button 
+    android:visibility="invisible"
     android:text="@string/testgetuserdashboard"
     android:id="@+id/getuserdashboard_button" 
     android:layout_width="wrap_content" 
@@ -56,13 +57,15 @@
      android:text="@string/logoutbuttontext" 
      android:id="@+id/logout_button" 
      android:layout_width="wrap_content" 
-     android:layout_height="wrap_content">
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/getpublicgames_button">
  </Button>
 <Button 
+     android:visibility="invisible"
      android:text="@string/cancel_button" 
      android:id="@+id/cancel_button" 
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content">
  </Button>
- <include android:id="@+id/cell1" layout="@layout/bottombar" />
-</LinearLayout>
+ <include android:id="@+id/bottomBar" layout="@layout/bottombar" />
+</RelativeLayout>

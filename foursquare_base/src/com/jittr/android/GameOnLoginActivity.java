@@ -121,7 +121,7 @@ public class GameOnLoginActivity extends GameOnBaseActivity {
 
 	private void registerButtonClicked() {
 		inRegister = true;
-		Intent intent = new Intent(this,GameOnRegisterActivity.class);
+		Intent intent = new Intent(this,GameOnSignUpActivity.class);
 		startActivity(intent);
 	}
 	
