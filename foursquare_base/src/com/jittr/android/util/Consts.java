@@ -29,6 +29,7 @@ public final static String BS_GET_USER_DETAILS_ENDPOINT_URL = "http://api.betsqu
 public final static String BS_ADD_GAME_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postnewgame.php";
 public final static String BS_GAME_INVITES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getgameinvites.php";
 public final static String BS_GET_USER_GAMES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getusergames.php";
+public final static String BS_GET_USER_FRIENDS_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getfriends.php";
 
 
 

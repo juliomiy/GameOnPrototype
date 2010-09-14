@@ -1,18 +1,21 @@
 package com.jittr.android.api.betsquared;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import android.util.Log;
 
 import com.jittr.android.bs.dto.BSUserDetails;
+import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.GameAddResponse;
 import com.jittr.android.bs.dto.GameInvites;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.dto.UserGamesDetails;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
+import com.jittr.android.bs.handlers.FriendHandler;
 import com.jittr.android.bs.handlers.PublicGamesHandler;
 import com.jittr.android.bs.handlers.GameInvitesHandler;
 import com.jittr.android.bs.handlers.AddGameResponseHandler;
@@ -243,6 +246,32 @@ public class BSClientAPIImpl implements BSClientInterface {
 		return uDetails;
 		
 	} //end of getUserGames 
+
+	
+	@Override
+	public List<Friend> getUserFriends(HashMap<String, String> params) {
+		// TODO Auto-generated method stub
+		ArrayList<Friend> friends = new ArrayList<Friend>();
+		try {
+			
+			String url = URLBuilder.createUrl(Consts.BS_GET_USER_FRIENDS_ENDPOINT_URL,params);
+			Log.d("","Url :"+url);
+	
+			String data = htppClient.getContent(new URL(url));
+			System.out.println("data "+data);
+			
+			FriendHandler fh = new FriendHandler(data);
+			friends = (ArrayList<Friend>)fh.parse();
+			//System.out.println("friends  :"+friends);
+			//return friends; 
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			Log.w("", "Exception while getUserFriends "+e.getMessage());
+		}
+		
+		return friends; 
+	}
 	
 	
 	

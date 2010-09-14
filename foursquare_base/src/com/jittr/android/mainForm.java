@@ -8,6 +8,7 @@ import java.util.List;
 import com.jittr.android.R.id;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.dto.BSUserDetails;
+import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.GameInvites;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.fs.dto.User;
@@ -171,7 +172,7 @@ public class mainForm extends GameOnBaseActivity {
 		startActivity(intent);		
 	}
     protected void getPublicGameButtonClicked() {
-       	Intent intent = new Intent(this,GetPublicGamesActivity.class);
+    	Intent intent = new Intent(this,GetPublicGamesActivity.class);
 		startActivity(intent);		
 	}
 
@@ -186,10 +187,6 @@ public class mainForm extends GameOnBaseActivity {
 
 	// finish the app 
     private void cancelButtonClicked(View v) {
-    	BSClientAPIImpl bs = new BSClientAPIImpl("xml", "", "");
-    	HashMap<String, String> hm = new HashMap<String, String>();
-    	hm.put("userid", "1");
-    	bs.getUserGames(hm);
     	finish();
     	
     }  //cancelButton_pressed

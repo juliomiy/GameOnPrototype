@@ -43,7 +43,7 @@ public class PublicGamesHandler extends DefaultHandler implements ParserInterfac
 
 	public void startDocument() throws SAXException {
 		super.startDocument();
-		System.out.println("Start document");
+		//System.out.println("Start document");
 		
 		games = new ArrayList();
 		
@@ -53,7 +53,7 @@ public class PublicGamesHandler extends DefaultHandler implements ParserInterfac
     public void startElement(String uri, String localName, String name,Attributes attributes) throws SAXException {
 		super.startElement(uri, localName, name, attributes);
 		
-		System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
+		//System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
 		if (localName.equalsIgnoreCase("game")){
 		   game = new Game();
 		 }
@@ -70,7 +70,7 @@ public class PublicGamesHandler extends DefaultHandler implements ParserInterfac
 		super.endElement(uri, localName, name);
 		
 		
-		System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
+		//System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
 		if (this.game != null){
 		    if (localName.equalsIgnoreCase("gameid")){
 		        game.setId(builder.toString());
