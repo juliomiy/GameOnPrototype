@@ -14,6 +14,7 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.fs.core.ParserInterface;
+import com.jittr.android.util.Consts;
 import com.jittr.android.bs.dto.BSUserDashBoard;
 
 public class BSDashBoardHandler extends DefaultHandler implements ParserInterface {
@@ -42,15 +43,15 @@ public class BSDashBoardHandler extends DefaultHandler implements ParserInterfac
 
 	public void startDocument() throws SAXException {
 		super.startDocument();
-		System.out.println("Start document");
+		//System.out.println("Start document");
 		builder = new StringBuilder();
     }
 	
     public void startElement(String uri, String localName, String name,Attributes attributes) throws SAXException {
 		super.startElement(uri, localName, name, attributes);
 		
-		System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
-		if (localName.equalsIgnoreCase("userdashboard")){
+		//System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
+		if (localName.equalsIgnoreCase(Consts.XML_TAG_USER_DASH_BOARD)){
 			dashBoard = new BSUserDashBoard();
 		 }
 	  }
@@ -66,24 +67,24 @@ public class BSDashBoardHandler extends DefaultHandler implements ParserInterfac
 		super.endElement(uri, localName, name);
 		
 		
-		System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
+		//System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
 		if (this.dashBoard != null){
-		    if (localName.equalsIgnoreCase("userid")){
+		    if (localName.equalsIgnoreCase(Consts.XML_TAG_USER_ID)){
 		    	dashBoard.setUserid(builder.toString());
 		    } 
-		    else if (localName.equalsIgnoreCase("totalbets")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_TOTAL_BETS)){
 		    	dashBoard.setTotalbets(builder.toString());
 		    }
-		    else if (localName.equalsIgnoreCase("totalbetsinitiated")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_TOTAL_BETS_INITIATED)){
 		    	dashBoard.setTotalbetsinitiated(builder.toString());
 		    }
-		    else if (localName.equalsIgnoreCase("totalbetsaccepted")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_TOTAL_BETS_ACCPTED)){
 		    	dashBoard.setTotalbetsaccepted(builder.toString());
 		    }
-		    else if (localName.equalsIgnoreCase("totalwins")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_TOTAL_WINS)){
 		    	dashBoard.setTotalwins(builder.toString());
 		    }
-		    else if (localName.equalsIgnoreCase("totalloses")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_TOTAL_LOSES)){
 		    	dashBoard.setTotalloses(builder.toString());
 		    }
 		    	    

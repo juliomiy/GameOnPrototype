@@ -62,6 +62,31 @@ public final static String TWITTER_CALLBACK_URL = "123";
 public static final String NEW_REGISTRATION = "NEW_REGISTRATION";
 
 
+//XML Tags
+public final static String XML_TAG_GAME_ID = "gameid";
+public final static String XML_TAG_STATUS_CODE = "status_code";
+public final static String XML_TAG_STATUS_MSG  = "status_message";
+
+public final static String XML_TAG_USER_ID = "userid";
+public final static String XML_TAG_NETWORK_NAME = "networkname";
+
+public final static String XML_TAG_INSERT_USER = "insert_user";
+public final static String XML_TAG_USER_DASH_BOARD ="userdashboard";
+
+public final static String XML_TAG_TOTAL_BETS="totalbets";
+public final static String XML_TAG_TOTAL_BETS_INITIATED = "totalbetsinitiated";
+public final static String XML_TAG_TOTAL_BETS_ACCPTED= "totalbetsaccepted";
+public final static String XML_TAG_TOTAL_WINS = "totalwins";
+public final static String XML_TAG_TOTAL_LOSES = "totalloses";
+
+	
+
+
+
+
+
+
+
 //
 	  // PRIVATE //
 

@@ -16,6 +16,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.fs.core.ParserInterface;
+import com.jittr.android.util.Consts;
 import com.jittr.android.bs.dto.BSUserDashBoard;
 
 public class AddUserResponseHandler extends DefaultHandler implements ParserInterface {
@@ -44,15 +45,15 @@ public class AddUserResponseHandler extends DefaultHandler implements ParserInte
 
 	public void startDocument() throws SAXException {
 		super.startDocument();
-		System.out.println("Start document");
+		//System.out.println("Start document");
 		builder = new StringBuilder();
     }
 	
     public void startElement(String uri, String localName, String name,Attributes attributes) throws SAXException {
 		super.startElement(uri, localName, name, attributes);
 		
-		System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
-		if (localName.equalsIgnoreCase("insert_user")){
+		//System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
+		if (localName.equalsIgnoreCase(Consts.XML_TAG_INSERT_USER)){
 			response = new UserAddResponse();
 		 }
 	  }
@@ -66,20 +67,18 @@ public class AddUserResponseHandler extends DefaultHandler implements ParserInte
     	
     public void endElement(String uri, String localName, String name)  throws SAXException {
 		super.endElement(uri, localName, name);
-		
-		
-		System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
+		//System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
 		if (this.response != null){
-		    if (localName.equalsIgnoreCase("userid")){
+		    if (localName.equalsIgnoreCase(Consts.XML_TAG_USER_ID)){
 		    	response.setUserid(builder.toString());
 		    } 
-		    else if (localName.equalsIgnoreCase("status_code")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_STATUS_CODE)){
 		    	response.setStatus_code(builder.toString());
 		    }
-		    else if (localName.equalsIgnoreCase("status_message")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_STATUS_MSG)){
 		    	response.setStatus_message(builder.toString());
 		    }
-		    else if (localName.equalsIgnoreCase("networkname")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_NETWORK_NAME)){
 		    	response.setNetworkname(builder.toString());
 		    }
 		    builder.setLength(0);    

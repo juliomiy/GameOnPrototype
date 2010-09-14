@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import com.jittr.android.bs.dto.GameAddResponse;
 import com.jittr.android.fs.core.ParserInterface;
+import com.jittr.android.util.Consts;
 
 
 public class AddGameResponseHandler extends DefaultHandler implements ParserInterface {
@@ -42,14 +43,14 @@ public class AddGameResponseHandler extends DefaultHandler implements ParserInte
 
 	public void startDocument() throws SAXException {
 		super.startDocument();
-		System.out.println("Start document");
+		//System.out.println("Start document");
 		builder = new StringBuilder();
     }
 	
     public void startElement(String uri, String localName, String name,Attributes attributes) throws SAXException {
 		super.startElement(uri, localName, name, attributes);
 		
-		System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
+		//System.out.println("Start Element called,  uri= " + uri +  " localName = " + localName + " name = " + name);
 		if (localName.equalsIgnoreCase("insert_game")){
 			response = new GameAddResponse();
 		 }
@@ -66,15 +67,15 @@ public class AddGameResponseHandler extends DefaultHandler implements ParserInte
 		super.endElement(uri, localName, name);
 		
 		
-		System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
+		//System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
 		if (this.response != null){
-		    if (localName.equalsIgnoreCase("gameid")){
+		    if (localName.equalsIgnoreCase(Consts.XML_TAG_GAME_ID)){
 		    	response.setGameid(builder.toString());
 		    } 
-		    else if (localName.equalsIgnoreCase("status_code")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_STATUS_CODE)){
 		    	response.setStatus_code(builder.toString());
 		    }
-		    else if (localName.equalsIgnoreCase("status_message")){
+		    else if (localName.equalsIgnoreCase(Consts.XML_TAG_STATUS_MSG)){
 		    	response.setStatus_message(builder.toString());
 		    }
 		    

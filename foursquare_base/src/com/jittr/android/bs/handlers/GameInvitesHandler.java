@@ -75,7 +75,7 @@ public class GameInvitesHandler extends DefaultHandler implements ParserInterfac
 		super.endElement(uri, localName, name);
 		
 		
-		System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
+		//System.out.println("end element called uri "+uri+ " localName "+localName+ " name "+name);
 		if (this.invites != null){
 		    if (localName.equalsIgnoreCase("status_code")){
 		    	invites.setStatus_code(builder.toString());

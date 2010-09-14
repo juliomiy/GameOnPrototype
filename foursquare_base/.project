@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>foursquare_base</name>
+	<name>mainForm</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -31,11 +31,6 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 	<linkedResources>
-		<link>
-			<name>com_facebook_android</name>
-			<type>2</type>
-			<locationURI>_android_com_facebook_android/src</locationURI>
-		</link>
 		<link>
 			<name>facebookSDK</name>
 			<type>2</type>
