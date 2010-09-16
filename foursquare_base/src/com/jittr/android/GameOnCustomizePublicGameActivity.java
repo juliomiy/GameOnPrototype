@@ -35,7 +35,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 	private TextView eventDateTimeTextView;
 	private RadioGroup teamRadioGroup;
 	private OnCheckedChangeListener teamSelectionListener;
-	protected CharSequence selectedTeam;
+	protected String selectedTeam;
 	private EditText wagerTypeEditText;
 	private EditText wagerUnitsEditText;
 	private String wagerType;
@@ -85,7 +85,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
                    RadioButton r = (RadioButton) group.findViewById(checkedId);
-                   selectedTeam  = r.getText();
+                   selectedTeam  = (String) r.getText();
                    Log.d(TAG,"Team selected = " + selectedTeam);
                    betButton.setEnabled(passEdits());
 			}
@@ -161,7 +161,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 	} //passEdits
 	
 	protected void betButtonClickedI() {
-		HashMap queryParams = new HashMap();
+		HashMap<String, String> queryParams = new HashMap();
 		queryParams.put("eventname", game.getEventname());
 		queryParams.put("eventdatetime", game.getEventdatetime());
 		queryParams.put("wagerunits", wagerUnits);

@@ -18,7 +18,7 @@ import com.jittr.android.bs.dto.BSUserDashBoard;
 import com.jittr.android.fs.examples.BSClientAPIAsync;
 import com.jittr.android.fs.examples.DataFetchingCallBack;
 
-public class GetUserDashBoardActivity extends GameOnBaseActivity implements DataFetchingCallBack {
+public class GetUserDashBoardActivity extends GameOnBaseActivity  {
 
 	private BSClientAPIImpl bs;
 	//private BSUserDashBoard dashBoard;
@@ -29,9 +29,7 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
 	private TextView betsInitiatedTextView;
 	private TextView totalWinsTextView;
 	private TextView totalLosesTextView;
-	
-	ProgressDialog mdialog;
-	
+
 	public GetUserDashBoardActivity() {
         super();
 	}
@@ -83,47 +81,11 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
 	    } //if
     } //onResume
 	
-	//Following added by ravi
-	@Override
-    protected Dialog onCreateDialog(int id) {
-		Log.d("", "Inside onCreateDialog" );
-		ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setMessage("Please wait while loading...");
-        dialog.setIndeterminate(true);
-        dialog.setCancelable(true);
-        mdialog =dialog; 
-        return dialog;
-    }
-	
-	
-	@Override
-	public void dataLoadCancelled() {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void dataLoadException(String message) {
-		// TODO Auto-generated method stub
-		System.out.println("Call back method Triggered, dataLoadException, Show exeption "+message);
-		/*
-		//Dismiss Current Progress bar Dialog
-		if(mdialog !=null) {
-			System.out.println("mdialog ...");
-			mdialog.dismiss();
-		}
-		//Show Exception a Toaster Notification / or show a dialogue message..This wil be removed, just testing pupose
-		Context context = getApplicationContext();
-		int duration = Toast.LENGTH_SHORT;
-		Toast toast = Toast.makeText(context, message, duration);
-		toast.show();
-		*/
-				
-	}
 	@Override
 	public void dataLoaded(Object response) {
 		Log.d(TAG,"Call back method Triggered, dataLoaded, now we can render ");
-		if(mdialog !=null) {
-			mdialog.dismiss();
+		if(progressDialog !=null) {
+			progressDialog.dismiss();
 		}
 		
 		if(response !=null) {
@@ -136,15 +98,5 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity implements Data
 	        totalLosesTextView.setText("Total Loses: " + dashBoard.getTotalloses());
 		}
 		
-	}
-	@Override
-	public void dataLoading() {
-		Log.d(TAG,"Data Loading Cacll Back Triggered");
-		showDialog(1);
-		
-	}
-	@Override
-	public void preDataLoading() {
-		Log.d(TAG,"Pre Data Loading Cacll Back Triggered");
 	}
 }  //class

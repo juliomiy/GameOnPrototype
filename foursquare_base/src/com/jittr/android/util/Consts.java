@@ -79,7 +79,9 @@ public final static String XML_TAG_TOTAL_BETS_INITIATED = "totalbetsinitiated";
 public final static String XML_TAG_TOTAL_BETS_ACCPTED= "totalbetsaccepted";
 public final static String XML_TAG_TOTAL_WINS = "totalwins";
 public final static String XML_TAG_TOTAL_LOSES = "totalloses";
-
+//from go_types_lu table on host
+public static final int BS_TYPEID_USER = 5;
+public static final String BS_TYPENAME_USER = "User";
 	
 
 

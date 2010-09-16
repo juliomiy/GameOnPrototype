@@ -25,7 +25,6 @@ import android.widget.Spinner;
 
 public class GetPublicGamesActivity extends GameOnBaseListActivity {
 
-	private BSClientAPIImpl bs;
 	private BSClientAPIAsync bsAsync;   //new
 	private BSGetPublicGamesAdapter adapter;
 	private ImageButton cancelButton;
@@ -34,7 +33,7 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
 	private Spinner sportFilterSpinner;
 	private Button goButton;
 	private Game game;
-	private ProgressDialog progressDialog;
+	//private ProgressDialog progressDialog;
     private final String TAG = "GetPublicGamesActivity";
     
 	public GetPublicGamesActivity() {
@@ -47,7 +46,6 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
         setContentView(R.layout.getpublicgames);
         
         setUpViews();
-        bs = new BSClientAPIImpl();
         bsAsync = new BSClientAPIAsync();  //new
         
         HashMap hm = new HashMap();
@@ -76,7 +74,7 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
                 finish();				
 			}
 		});
-		setBottomBar();
+		setBottomBar(0);
 	}
 	protected void getPublicGamesButtonClicked() {
 		  HashMap hm = new HashMap();
@@ -84,18 +82,6 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
 	       hm.put("team", "New York Mets");
 	       bsAsync.getPublicGames(hm,this);
 	}
-	
-	@Override
-    protected Dialog onCreateDialog(int id) {
-		Log.d("", "Inside onCreateDialog" );
-		ProgressDialog dialog = new ProgressDialog(this);
-        dialog.setMessage("Please wait while loading...");
-        dialog.setIndeterminate(true);
-        dialog.setCancelable(true);
-        progressDialog =dialog; 
-        return dialog;
-    }
-	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
@@ -108,17 +94,6 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
 		 	startActivity(intent);			
 		}
 	} //onListItem
-	@Override
-	public void dataLoadCancelled() {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void dataLoadException(String message) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
 	public void dataLoaded(Object response) {
 		if(progressDialog !=null) {
 			progressDialog.dismiss();
@@ -127,16 +102,6 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
 			adapter = new BSGetPublicGamesAdapter(this, (ArrayList) response);
             setListAdapter(  adapter);
 		} //if
-	}
-	@Override
-	public void dataLoading() {
-		Log.d(TAG,"Data Loading Cacll Back Triggered");
-		showDialog(1);
-	}
-	@Override
-	public void preDataLoading() {
-		// TODO Auto-generated method stub
-		
 	}
 
 } //class

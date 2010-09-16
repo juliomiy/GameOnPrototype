@@ -1,6 +1,8 @@
 package com.jittr.android.bs.dto;
 
-public class Friend {
+import com.jittr.android.bs.adapters.BSListViewable;
+
+public class Friend implements BSListViewable {
 	int status_code;
 	String status_message;
 	String username;
@@ -119,6 +121,13 @@ public class Friend {
 
 	public void setNumberofbets(int numberofbets) {
 		this.numberofbets = numberofbets;
+	}
+
+
+
+	@Override
+	public String getListViewText() {
+		return friendusername;
 	}
 	
 	

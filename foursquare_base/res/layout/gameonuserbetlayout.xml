@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+<EditText
+     android:imeOptions="actionNext"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/betEditText"
+     android:hint="Enter Bet">
+</EditText>
+<EditText
+     android:layout_below="@+id/betEditText"
+     android:imeOptions="actionNext"
+     style="@style/StandardEditText"
+     android:hint="Enter Wager Type"
+     android:id="@+id/wagerTypeEditText">
+</EditText>
+<EditText
+     style="@style/StandardEditText"
+     android:inputType="numberDecimal"
+     android:hint="Enter Wager Units"
+     android:layout_below="@+id/wagerTypeEditText"
+     android:imeOptions="actionDone"
+     android:id="@+id/wagerUnitsEditText">
+</EditText>
+<Button 
+    android:enabled="true"
+    android:layout_marginTop="10dip"
+    android:layout_below="@+id/wagerUnitsEditText"
+    android:layout_width="match_parent" 
+    android:layout_height="40dip"
+    android:textSize="15px"
+    android:textStyle="bold"
+    android:text="@string/betbutton" 
+    android:id="@+id/betButton" >
+</Button>
+<include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" /> 
+</RelativeLayout>

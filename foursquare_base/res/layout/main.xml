@@ -54,11 +54,18 @@
     android:layout_height="wrap_content">
 </Button>
 <Button 
+     android:text="Test User Bet" 
+     android:id="@+id/userBetButton" 
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/getpublicgames_button">
+ </Button>
+<Button 
      android:text="@string/logoutbuttontext" 
      android:id="@+id/logout_button" 
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content"
-     android:layout_below="@+id/getpublicgames_button">
+     android:layout_below="@+id/userBetButton">
  </Button>
 <Button 
      android:visibility="invisible"

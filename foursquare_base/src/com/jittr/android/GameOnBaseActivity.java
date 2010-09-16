@@ -1,13 +1,12 @@
 package com.jittr.android;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.jittr.android.api.betsquared.BSClientAPIImpl;
-import com.jittr.android.bs.dto.GameInvite;
-import com.jittr.android.bs.dto.GameInvites;
+import com.jittr.android.fs.examples.DataFetchingCallBack;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -23,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public abstract class GameOnBaseActivity extends Activity {
+public abstract class GameOnBaseActivity extends Activity implements DataFetchingCallBack {
 
     protected static final String TAG = "GameOnBaseActivity";
 	protected BetSquaredApplication appContext;
@@ -31,11 +30,11 @@ public abstract class GameOnBaseActivity extends Activity {
  //   protected TextWatcher textWatcher;
 	private ImageView windowIcon;
 	private LinearLayout bottomBarLayout;
-	private Button testButton;
 	private Button meButton;
 	private Button placesButton;
 	private Button betsButton;
 	private Button friendsButton;
+	protected ProgressDialog progressDialog;
 	
 	public GameOnBaseActivity() {
 		super();
@@ -66,37 +65,19 @@ public abstract class GameOnBaseActivity extends Activity {
 	 * @returns true
 	 */
 	protected boolean setBottomBar(int  viewID) {
-/*		bottomBarLayout = (LinearLayout)findViewById(R.id.bottomBarLayout);
-		int views = bottomBarLayout.getChildCount();
-		for (int x = views; x<views; x++) {
-		   View v = bottomBarLayout.getChildAt(x);
-		   switch (v.getId()) {
-		   case R.id.testButton:
-			    testButton = (Button) v;
-		        break;
-		   }  //switch
-		}   //for
-		View v = bottomBarLayout.getChildAt(0);
-*/		
 		//bottomBarLayout.
-		    betsButton = (Button)findViewById(R.id.betsButton);
-		    if (null != betsButton) betsButton.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
+	       betsButton = (Button)findViewById(R.id.betsButton);
+	        if (viewID != R.id.betsButton) {
+		        betsButton.setOnClickListener(new View.OnClickListener() {
 					
-				}
-			});
-		    friendsButton = (Button)findViewById(R.id.friendsButton);
-		    friendsButton.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					
-				}
-			});
+					@Override
+					public void onClick(View v) {
+		              betsButtonClicked();				
+					}
+				});
+	        } else {
+	        	betsButton.setEnabled(false);
+	        }
 		    
 		    meButton = (Button)findViewById(R.id.meButton);
             if (viewID != R.id.meButton) {
@@ -111,34 +92,38 @@ public abstract class GameOnBaseActivity extends Activity {
             	meButton.setEnabled(false);
             }
 		    placesButton = (Button)findViewById(R.id.placesButton);
-		    placesButton.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-                     placesButtonClicked();					
-				}
-			});
-   	        testButton = (Button)findViewById(R.id.testButton);
-		    testButton.setOnClickListener(new View.OnClickListener() {
-				
-				@Override
-				public void onClick(View v) {
-					  HashMap hm = new HashMap();
-	                  BSClientAPIImpl bs = new BSClientAPIImpl();
-	                  hm.put("userid", "110");
-	                  GameInvites gameInvites = bs.getGameInvites(hm);
-	                  ArrayList<GameInvite> invites = gameInvites.getGameinvites();
-	                  
-	                  for ( GameInvite gi :  invites) {
-	                      Log.d(TAG,gi.toString());
-	                	  
-	                  }
-	                  //for each()
-	                  
-				}
-			});
+            if (viewID != R.id.placesButton) {
+			    placesButton.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+	                     placesButtonClicked();					
+					}
+				});
+            } //if
+	        friendsButton = (Button)findViewById(R.id.friendsButton);
+	        if (viewID != R.id.betsButton) {
+	        	friendsButton.setOnClickListener(new View.OnClickListener() {
+					
+					@Override
+					public void onClick(View v) {
+	                    friendsButtonClicked();					
+					}
+				});
+	        } //if
+
 		return true;
 	}
+	protected void friendsButtonClicked() {
+		Intent intent = new Intent(this,GameOnUserFriendsListActivity.class);
+		startActivity(intent);	
+	}
+
+	protected void betsButtonClicked() {
+		Intent intent = new Intent(this,GameOnUserBetsListActivity.class);
+		startActivity(intent);	
+	}
+
 	protected void meButtonClicked() {
 		Intent intent = new Intent(this,GetUserDashBoardActivity.class);
 		startActivity(intent);	
@@ -199,4 +184,34 @@ public abstract class GameOnBaseActivity extends Activity {
 			 return appContext;
 		 }
 	}
+    protected Dialog onCreateDialog(int id) {
+		Log.d("", "Inside onCreateDialog" );
+		ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setMessage("Please wait while loading...");
+        dialog.setIndeterminate(true);
+        dialog.setCancelable(true);
+        progressDialog =dialog; 
+        return dialog;
+    }
+
+	public void dataLoaded(Object response) {
+
+	}
+	
+	public void dataLoadCancelled() {
+		// TODO Auto-generated method stub
+		
+	}
+	public void dataLoadException(String message) {
+		// TODO Auto-generated method stub
+	}
+	public void dataLoading() {
+		Log.d(TAG,"Data Loading Call Back Triggered");
+		showDialog(1);
+		
+	}
+	public void preDataLoading() {
+		Log.d(TAG,"Pre Data Loading Call Back Triggered");
+	}
+
 }  //class

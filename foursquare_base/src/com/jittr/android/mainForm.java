@@ -39,6 +39,7 @@ public class mainForm extends GameOnBaseActivity {
 	private Button getBetSquareDetailsButton;
 	private Button logoutButton;
 	private Button twitterOAuthButton;
+	private Button userBetButton;
 	protected final static String TAG = "mainForm";
   //  private BetSquaredApplication appContext;
     
@@ -81,8 +82,16 @@ public class mainForm extends GameOnBaseActivity {
         getPublicGamesButton = (Button)findViewById(R.id.getpublicgames_button);
         getUserDashBoardButton=(Button)findViewById(R.id.getuserdashboard_button);
         logoutButton = (Button)findViewById(R.id.logout_button);
-        
+        userBetButton = (Button)findViewById(R.id.userBetButton);        
   
+        userBetButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+		         userBetButtonClicked();
+			}
+		});
+        
         twitterOAuthButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -151,7 +160,11 @@ public class mainForm extends GameOnBaseActivity {
 		});
 
     } //setupViews
-    protected void twitterOAuthButtonClicked() {
+    protected void userBetButtonClicked() {
+    	Intent intent = new Intent(this,GameOnUserBetActivity.class);
+		startActivity(intent);				
+	}
+	protected void twitterOAuthButtonClicked() {
      	Intent intent = new Intent(this,GameOnTwitterOAuthActivity.class);
 		startActivity(intent);				
 	}

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, mainForm!</string>
     <string name="app_name">Betsquared</string>
     <string name="app_description">Social Betting Android Application</string>
     <string name="foursquarebase">Foursquare Base</string>

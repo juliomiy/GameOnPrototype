@@ -67,7 +67,7 @@ public class GetNearbyVenuesActivity extends GameOnBaseListActivity {
                 finish();				
 			}
 		});
-		setBottomBar();
+		setBottomBar(R.id.placesButton);
 	}
 	@Override
 	public void dataLoadCancelled() {

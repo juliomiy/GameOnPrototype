@@ -20,6 +20,18 @@
             
         </activity>
        <activity
+                android:name=".GameOnUserBetActivity"
+                android:label="User Bet">
+       </activity> 
+       <activity
+                android:name=".GameOnUserFriendsListActivity"
+                android:label="User Friends">
+       </activity>
+       <activity
+                 android:name=".GameOnUserBetsListActivity"
+                 android:label="User Bets">
+       </activity>
+       <activity
                  android:name=".GameOnSignUpActivity"
                  android:label="Sign Up Main">
        </activity> 

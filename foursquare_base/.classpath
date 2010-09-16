@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/FacebookSDK"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.4.jar"/>
 	<classpathentry kind="lib" path="lib/signpost-commonshttp4-1.2.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/signpost-core-1.2.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/twitter4j-core-2.1.2-SNAPSHOT.jar"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="src" path="facebookSDK"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/facebook-android-sdk"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
