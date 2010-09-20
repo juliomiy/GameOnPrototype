@@ -9,6 +9,10 @@ import android.util.Log;
 
 import com.jittr.android.BetSquaredApplication;
 import com.jittr.android.api.betsquared.db.GameOnDatabase;
+import com.jittr.android.bs.adapters.BSListViewable;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 
 import com.jittr.android.util.Consts;
@@ -39,7 +43,7 @@ public abstract class GameOnSocialNetworkBase implements
 	private String callBackUrl;
 	private String accessTokenEndpointUrl;
 	private String authorizeAccessUrl;
-    private BetSquaredApplication appContext;  //context to the application object
+    protected BetSquaredApplication appContext;  //context to the application object
     
 	public GameOnSocialNetworkBase() {
 		super();
@@ -208,4 +212,64 @@ public abstract class GameOnSocialNetworkBase implements
 		return false;
 	}  //saveUserAuthCredentials
 
+	
+	public class SocialNetworkFriend implements BSListViewable {
+		String userID;
+		String userName;
+		String name;
+		URL profileImageURL;
+		/**
+		 * @return the userID
+		 */
+		public String getUserID() {
+			return userID;
+		}
+		/**
+		 * @param userID the userID to set
+		 */
+		public void setUserID(String userID) {
+			this.userID = userID;
+		}
+		/**
+		 * @return the userName
+		 */
+		public String getUserName() {
+			return userName;
+		}
+		/**
+		 * @param userName the userName to set
+		 */
+		public void setUserName(String userName) {
+			this.userName = userName;
+		}
+		/**
+		 * @return the name
+		 */
+		public String getName() {
+			return name;
+		}
+		/**
+		 * @param name the name to set
+		 */
+		public void setName(String name) {
+			this.name = name;
+		}
+		/**
+		 * @return the avatorURL
+		 */
+		public URL getProfileImageURL() {
+			return profileImageURL;
+		}
+		/**
+		 * @param avatorURL the avatorURL to set
+		 */
+		public void setProfileImageURL(URL url) {
+			profileImageURL = url;
+		}
+		@Override
+		public String getListViewText() {
+			return userName + " " + name + " " + profileImageURL;
+		}
+		
+	}
 }  //class

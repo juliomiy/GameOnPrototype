@@ -20,6 +20,14 @@
             
         </activity>
        <activity
+               android:name=".GameOnInviteFriendsTwitterListActivity"
+               android:label="Invite Friends - Twitter">
+       </activity> 
+       <activity
+               android:name=".TestTwitterActivity"
+               android:label="Test Twitter">
+       </activity> 
+       <activity
                 android:name=".GameOnUserBetActivity"
                 android:label="User Bet">
        </activity> 
