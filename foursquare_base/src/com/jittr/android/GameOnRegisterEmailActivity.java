@@ -133,7 +133,7 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 	/* Register a new user on Host - if successful, register the user on the handset device and login with the provided 
 	 * credentials */
 	protected void registerButtonClicked() {
-		HashMap hm = new HashMap();
+		HashMap<String,String> hm = new HashMap<String,String>();
 		String newUserName = userNameEditText.getText().toString();
 		String password = passwordEditText.getText().toString();
 		String firstName = firstNameEditText.getText().toString();

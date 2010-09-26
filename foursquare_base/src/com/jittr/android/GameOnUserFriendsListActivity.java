@@ -9,14 +9,14 @@ import java.util.List;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSBaseAdapter;
-import com.jittr.android.bs.adapters.BSGetUserGamesAdapter;
 import com.jittr.android.bs.dto.Friend;
 
 import android.os.Bundle;
 
 /**
  * @author juliomiyares
- *
+ * @version 1.0
+ * 
  */
 public final class GameOnUserFriendsListActivity extends GameOnBaseListActivity {
 
@@ -50,9 +50,8 @@ public final class GameOnUserFriendsListActivity extends GameOnBaseListActivity 
         } //if
 	}  //onCreate
 
-	private void setUpViews() {
-		// TODO Auto-generated method stub
-		
+	protected void setUpViews() {
+        super.setUpViews();  //call parent
 	} //setUpViews
 
 	/* (non-Javadoc)

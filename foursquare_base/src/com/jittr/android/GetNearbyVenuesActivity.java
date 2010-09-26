@@ -59,7 +59,7 @@ public class GetNearbyVenuesActivity extends GameOnBaseListActivity {
 	    int items = test.getCount();
 	}
 	
-	private void setUpViews() {
+	protected void setUpViews() {
 		cancelButton = (ImageButton)findViewById(R.id.cancel_button);
 		cancelButton.setOnClickListener(new View.OnClickListener() {
 			

@@ -28,6 +28,7 @@ public abstract class GameOnBaseListActivity extends ListActivity implements Dat
 	private Button meButton;
 	private Button placesButton;
 	protected ProgressDialog progressDialog;
+	private Button doneButton;
 
 	public GameOnBaseListActivity() {
 		super();
@@ -63,6 +64,19 @@ public abstract class GameOnBaseListActivity extends ListActivity implements Dat
 		
 	}
 
+	protected void setUpViews() {
+	    doneButton = (Button)findViewById(R.id.windowTitleLeftButton);	
+	    doneButton.setText("Done");
+	    doneButton.setVisibility(View.VISIBLE);
+	    
+	    doneButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+                finish();
+			}
+		});
+	}
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

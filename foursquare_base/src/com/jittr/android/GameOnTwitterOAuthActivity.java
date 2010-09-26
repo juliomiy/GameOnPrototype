@@ -4,13 +4,16 @@
 package com.jittr.android;
 
 import java.net.URL;
+import java.util.HashMap;
 
 import twitter4j.ResponseList;
 import twitter4j.TwitterException;
 import twitter4j.User;
 import twitter4j.http.AccessToken;
 
+import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.dto.GameOnUserSettings;
+import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.twitter.twitterOAuth;
 import com.jittr.android.util.Consts;
 
@@ -96,6 +99,7 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
 						    GameOnUserSettings userSettings = new GameOnUserSettings(twitterID,twitterSN,null,null,null,null,
 						    		Consts.TWITTER_NETWORK,"TWITTER",twitter.getAccessToken(),twitter.getAccessTokenSecret(), imageURL, name);
 						    Log.d(TAG,userSettings.toString());
+						    registerNewUserHost(userSettings);
 						    getAppContext().registerNewUser(userSettings);
 						    callingIntent.putExtra(Consts.INTENT_USER_SETTINGS, userSettings);
 						    setResult(RESULT_OK,callingIntent);
@@ -111,7 +115,25 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
   		   // } //if
             super.onLoadResource(view, url);
 	    }  //
+
     };   //WebViewClient
+private void registerNewUserHost(GameOnUserSettings userSettings) {
+    HashMap<String,String> hm = new HashMap<String,String>();
+
+    hm.put( (String) "newusername", userSettings.getTwitterSN());
+	hm.put("primarynetworkid", String.valueOf(Consts.TWITTER_NETWORK));
+	hm.put("primarynetworkname", "TWITTER");
+	hm.put("oauthtoken", userSettings.getTwitterOAuthToken());
+    hm.put("oauthtokensecret", userSettings.getTwitterOAuthTokenSecret());
+	BSClientAPIImpl bs = new BSClientAPIImpl();
+	if (null == bs ) return;  //TODO Deal with error
+	UserAddResponse newUser = bs.addUser(hm);  //attempt to add New User to host
+	if (null == newUser) return;  //TODO Deal with Error 
+    Log.d(TAG,newUser.toString());
+    if (newUser.getStatus_code().equals("200")) {
+	       int newUserID = Integer.parseInt(newUser.getUserid());
+    }
+} //registerNewUserHost
 
   @Override
 public void onCreate(Bundle savedInstanceState) {

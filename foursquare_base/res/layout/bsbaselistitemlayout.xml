@@ -4,18 +4,29 @@
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"
   android:orientation="horizontal">
-<CheckBox
-        android:id="@+id/listItemCheckBox"
- 	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:gravity="center_vertical" 
->
-</CheckBox> 	
+<ImageView
+   	android:id="@+id/user_avatar"
+   	android:layout_width="48px"
+   	android:layout_height="48px"
+   	android:adjustViewBounds="true"
+   	android:layout_marginTop="6dip"
+   	android:layout_marginLeft="6sp" 
+   	android:layout_marginRight="6sp" 
+   	android:visibility="gone"
+ />
  <TextView
+        android:layout_width="200dip"
      	android:id="@android:id/text1"
-	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:gravity="center_vertical" >
-	    
+	    android:layout_gravity="center_horizontal"
+	    android:gravity="center" >
  </TextView>
+ <Button
+       android:visibility="visible"
+       android:id="@android:id/button1"
+       android:text="Invite"
+       android:gravity="center"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
+ </Button>
 </com.jittr.android.bs.adapters.BSListItemLayout>

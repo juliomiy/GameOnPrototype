@@ -36,5 +36,14 @@
     android:text="@string/betbutton" 
     android:id="@+id/betButton" >
 </Button>
+<ListView
+        android:layout_marginTop="10dip"
+        android:layout_below="@+id/betButton"
+ 		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:scrollbars="vertical"
+		android:id="@id/android:list"
+		android:text="@string/nogames">
+</ListView>	
 <include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" /> 
 </RelativeLayout>

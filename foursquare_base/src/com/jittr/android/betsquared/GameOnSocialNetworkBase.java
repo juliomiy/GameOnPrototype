@@ -268,8 +268,8 @@ public abstract class GameOnSocialNetworkBase implements
 		}
 		@Override
 		public String getListViewText() {
-			return userName + " " + name + " " + profileImageURL;
-		}
+			return (name != null) ? name : userName; //+ " " + profileImageURL;
+		}  //getListView
 		
 	}
 }  //class

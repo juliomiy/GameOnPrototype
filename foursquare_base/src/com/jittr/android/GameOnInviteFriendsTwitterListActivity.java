@@ -10,6 +10,7 @@ import com.jittr.android.bs.adapters.BSBaseAdapter;
 import com.jittr.android.twitter.twitterOAuth;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 /**
  * @author juliomiyares
@@ -20,6 +21,7 @@ public class GameOnInviteFriendsTwitterListActivity extends
 
 	twitterOAuth twitter;
 	private BSBaseAdapter<SocialNetworkFriend> adapter;
+	private TextView loggedInAsTextView;
 	/**
 	 * 
 	 */
@@ -29,7 +31,7 @@ public class GameOnInviteFriendsTwitterListActivity extends
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gameonuserfriendslistactivity);
+        setContentView(R.layout.gameoninvitefriendslistactivity);
         
         setUpViews();
         setBottomBar(0);
@@ -41,11 +43,16 @@ public class GameOnInviteFriendsTwitterListActivity extends
 			twitter = new twitterOAuth(getAppContext());
 	 	    adapter = new BSBaseAdapter<SocialNetworkFriend>(this,(ArrayList<SocialNetworkFriend>) twitter.getFriends());
     	    setListAdapter(adapter);
+    	    loggedInAsTextView.setText(loggedInAsTextView.getText() + " " + getAppContext().getUserSettings().getTwitterSN());
 		} //if
 		
-	}
-	private void setUpViews() {
-		
+	}  //onResume
+	
+	protected void setUpViews() {
+
+		super.setUpViews();
+		loggedInAsTextView = (TextView)findViewById(R.id.loggedInAsTextView);
+
 	}  //setUpViews
 	
 	/* (non-Javadoc)

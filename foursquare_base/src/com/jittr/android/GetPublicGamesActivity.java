@@ -55,7 +55,7 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
       //  setListAdapter(adapter);
     } //onCreate
 
-	private void setUpViews() {
+	protected void setUpViews() {
 		timeFilterSpinner = (Spinner)findViewById(R.id.timeFilterSpinner);
 		teamFilterSpinner = (Spinner)findViewById(R.id.teamFilterSpinner);
 		sportFilterSpinner = (Spinner)findViewById(R.id.sportFilterSpinner);

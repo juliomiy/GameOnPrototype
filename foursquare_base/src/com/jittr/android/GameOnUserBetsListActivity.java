@@ -55,7 +55,7 @@ public class GameOnUserBetsListActivity extends GameOnBaseListActivity {
         }
 	}  //OnCreate
 
-	private void setUpViews() {
+	protected void setUpViews() {
 		// TODO Auto-generated method stub
 		
 	}

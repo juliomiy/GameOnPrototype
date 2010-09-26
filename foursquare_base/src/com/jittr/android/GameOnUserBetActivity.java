@@ -1,8 +1,11 @@
 package com.jittr.android;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.bs.adapters.BSBaseAdapter;
+import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.GameAddResponse;
 import static com.jittr.android.util.Consts.*;
 
@@ -15,8 +18,7 @@ import android.widget.Toast;
  * @author juliomiyares
  * @version 1.0
  */
-public final class GameOnUserBetActivity extends GameOnBaseActivity {
-
+public final class GameOnUserBetActivity extends GameOnBaseListActivity {
 
 	private Button betButton;
 	private EditText betEditText;
@@ -27,6 +29,8 @@ public final class GameOnUserBetActivity extends GameOnBaseActivity {
 	private String typeID = "2";
 	private EditText wagerTypeEditText;
 	private EditText wagerUnitsEditText;
+	protected BSBaseAdapter <Friend> adapter;
+
 
 	public GameOnUserBetActivity() {
 	} //default constructor
@@ -37,9 +41,12 @@ public final class GameOnUserBetActivity extends GameOnBaseActivity {
         setContentView(R.layout.gameonuserbetlayout);
         setUpViews();
         setBottomBar(0);
+        adapter = new BSBaseAdapter(this ,(ArrayList) getAppContext().getFriends());
+        setListAdapter(adapter);
 	} //onCreate
 
-	private void setUpViews() {
+	protected void setUpViews() {
+		super.setUpViews();
 		betButton = (Button)findViewById(R.id.betButton);
 		betEditText = (EditText)findViewById(R.id.betEditText);
         wagerTypeEditText = (EditText)findViewById(R.id.wagerTypeEditText);
@@ -82,6 +89,12 @@ public final class GameOnUserBetActivity extends GameOnBaseActivity {
 	protected void OnResume() {
 	   super.onResume();
 	} //OnResume
+
+	@Override
+	public void dataLoaded(Object response) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }  //GameOnUserBetActivity

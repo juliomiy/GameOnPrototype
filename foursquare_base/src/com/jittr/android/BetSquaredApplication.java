@@ -3,8 +3,11 @@
  */
 package com.jittr.android;
 
+import java.util.ArrayList;
+
 import com.jittr.android.GameOnProperties;
 import com.jittr.android.api.betsquared.db.GameOnDatabase;
+import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.GameOnUserSettings;
 import static com.jittr.android.util.Consts.*;
 
@@ -163,6 +166,8 @@ public class BetSquaredApplication extends Application {
         if (null == userSettings) return 0;
     	 //int userID = 0;		 
   
+        //insert to HOST first - if this succeeds 
+        
          //insert to device go_user sqlite - uses the userID generated and provided by call to host to add new user
  		ContentValues values = new ContentValues();
  		values.put(GameOnDatabase.DB_USER_TABLE_USERID,userSettings.getUserID());
@@ -212,6 +217,31 @@ public class BetSquaredApplication extends Application {
 	    	return rowsAffected;
 	 }  //updateDatabaseSQL
 	 
+	 /*
+	  * Get friends from go_userFriends handset table
+	  * This function does not require going across the network
+	  */
+	 public ArrayList<Friend> getFriends() {
+		  ArrayList<Friend>arrayList = null;
+		  int userID;
+		  
+		  userID = getLoginID();
+	      Cursor cursor = database.query(GameOnDatabase.DB_FRIENDS_TABLE, 
+	    		  new String[] { GameOnDatabase.DB_FRIENDS_TABLE_USERNAME,
+	    		                 GameOnDatabase.DB_FRIENDS_TABLE_USERID,
+	    		                 GameOnDatabase.DB_FRIENDS_TABLE_NAME },"userID ='" + userID + "'", null, null, null, null);	 
+	       if (null != cursor && cursor.getCount() >0 && cursor.moveToFirst() ) {
+               arrayList = new ArrayList<Friend>(); 
+	           do {
+                   Friend friend = new Friend();
+	    	       friend.setFriendusername(cursor.getString(0));
+	    	       friend.setFrienduserid(cursor.getInt(1));
+	    	       friend.setFriendname(cursor.getString(2));
+	    	       arrayList.add(friend);
+	           } while (cursor.moveToNext());     
+	       } //if
+		   return arrayList;
+	 }  //getFriends
 	 /*
 	  * @params userID userid of the logged in user
 	  */

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+<LinearLayout 
+     android:id="@+id/headerLayout"
+     android:layout_marginTop="10dip"
+     android:orientation="horizontal" 
+     android:layout_height="wrap_content" 
+     android:layout_width="match_parent">
+     <ImageView 
+   	        android:layout_marginLeft="6sp" 
+   	        android:id="@+id/networkLogoImageView" 
+            android:src="@drawable/twittericon"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+     </ImageView>
+     <TextView android:text="Logged in as " 
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/loggedInAsTextView" 
+            android:layout_height="wrap_content" 
+            android:layout_width="match_parent">
+     </TextView>
+ </LinearLayout>
+<TextView android:text="Invite Twitter Friends to BetSquared " 
+       android:layout_marginTop="10dip"
+       android:gravity="center"
+       android:textStyle="bold"
+       android:textSize="18dip"
+       android:layout_gravity="center"
+       android:id="@+id/instructionTextView" 
+       android:layout_below="@+id/headerLayout"
+       android:layout_height="wrap_content" 
+       android:layout_width="match_parent">
+</TextView>
+ <ListView
+        android:layout_marginTop="10dip"
+        android:layout_below="@+id/instructionTextView"
+ 		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:scrollbars="vertical"
+		android:id="@id/android:list"
+		android:text="@string/nogames">
+</ListView>	
+<include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
+</RelativeLayout>
