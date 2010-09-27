@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
 public class GameOnDatabase extends SQLiteOpenHelper {
-	public static final int VERSION = 9;
+	public static final int VERSION = 10;
 	public static final String DB_NAME  = "betsquared_db.sqlite";
 	public static final String GAME_TABLE = "go_games";
 	public static final String DB_USER_TABLE = "go_user";
@@ -80,10 +80,11 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	      //friends table - go_userFriends - mimics the one on the host
 	      sql = "create table " + DB_FRIENDS_TABLE + 
 	          "(" +
-	            DB_USER_TABLE_USERID + " integer primary key not null," +
+	            DB_USER_TABLE_USERID + " integer  not null," +
                 DB_FRIENDS_TABLE_USERID + " integer not null," +
                 DB_FRIENDS_TABLE_USERNAME + " text null," +
-                DB_FRIENDS_TABLE_NAME + " text null" +
+                DB_FRIENDS_TABLE_NAME + " text null," +
+                "primary key (" + DB_USER_TABLE_USERID + "," + DB_FRIENDS_TABLE_USERID + ")" +
 	          ")";
 	      db.execSQL(sql); 
 	      
@@ -92,6 +93,7 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 
 	private boolean dropTables(SQLiteDatabase db) {
 		db.execSQL("Drop table if exists " + DB_USER_TABLE + ";");
+		db.execSQL("Drop Table if exists " + DB_FRIENDS_TABLE + ";");
 		return true;
 	}
 	/*temporary Convenience method for development to set a record in go_user and go_userSettings */

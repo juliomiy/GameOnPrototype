@@ -17,16 +17,23 @@
  <TextView
         android:layout_width="200dip"
      	android:id="@android:id/text1"
-	    android:layout_height="wrap_content"
+	    android:layout_height="30dip"
 	    android:layout_gravity="center_horizontal"
 	    android:gravity="center" >
  </TextView>
  <Button
-       android:visibility="visible"
+       android:visibility="gone"
        android:id="@android:id/button1"
        android:text="Invite"
        android:gravity="center"
        android:layout_width="wrap_content"
-       android:layout_height="wrap_content">
+       android:layout_height="30dip">
  </Button>
+ <CheckBox
+       android:visibility="gone"
+       android:id="@android:id/checkbox"
+       android:gravity="center"
+       android:layout_width="wrap_content"
+       android:layout_height="30dip">
+ </CheckBox>
 </com.jittr.android.bs.adapters.BSListItemLayout>

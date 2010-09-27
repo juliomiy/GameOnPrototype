@@ -2,6 +2,7 @@ package com.jittr.android;
 
 import com.jittr.android.bs.adapters.BSBaseAdapter;
 import com.jittr.android.fs.examples.DataFetchingCallBack;
+import com.jittr.android.util.Consts;
 
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,7 +57,7 @@ public abstract class GameOnBaseListActivity extends ListActivity implements Dat
 	}
 	@Override
 	public void dataLoading() {
-		Log.d(TAG,"Data Loading Cacll Back Triggered");
+		Log.d(TAG,"Data Loading Call Back Triggered");
 		showDialog(1);
 	}
 	@Override
@@ -64,18 +66,28 @@ public abstract class GameOnBaseListActivity extends ListActivity implements Dat
 		
 	}
 
+	protected void setUpViews(int... attributes) {
+	    for (int attribute : attributes) {
+	    	switch (attribute) {
+	    	   case Consts.LAYOUT_ADD_DONE :
+	    		   doneButton = (Button)findViewById(R.id.windowTitleLeftButton);	
+	    		   doneButton.setVisibility(View.VISIBLE);
+                   break;
+	    	}  //switch
+	    } //for
+	    if (doneButton != null) { 
+	    	doneButton.setText("Done");
+		    doneButton.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+	                finish();
+				}
+			});
+	    } //if
+	}  //setUpViews
+	
 	protected void setUpViews() {
-	    doneButton = (Button)findViewById(R.id.windowTitleLeftButton);	
-	    doneButton.setText("Done");
-	    doneButton.setVisibility(View.VISIBLE);
-	    
-	    doneButton.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-                finish();
-			}
-		});
 	}
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

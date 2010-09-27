@@ -82,6 +82,10 @@ public final static String XML_TAG_TOTAL_LOSES = "totalloses";
 //from go_types_lu table on host
 public static final int BS_TYPEID_USER = 5;
 public static final String BS_TYPENAME_USER = "User";
+//layout constants
+public static final int LAYOUT_ADD_DONE = 1;
+public static final int LAYOUT_SELECT_BY_CHECKBOX = 2;
+public static final int LAYOUT_SELECT_BY_BUTTON = 3;
 	
 
 

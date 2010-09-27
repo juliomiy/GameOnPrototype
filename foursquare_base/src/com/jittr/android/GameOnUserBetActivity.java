@@ -7,6 +7,8 @@ import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSBaseAdapter;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.GameAddResponse;
+import com.jittr.android.util.Consts;
+
 import static com.jittr.android.util.Consts.*;
 
 import android.os.Bundle;
@@ -41,12 +43,12 @@ public final class GameOnUserBetActivity extends GameOnBaseListActivity {
         setContentView(R.layout.gameonuserbetlayout);
         setUpViews();
         setBottomBar(0);
-        adapter = new BSBaseAdapter(this ,(ArrayList) getAppContext().getFriends());
+        adapter = new BSBaseAdapter(this ,(ArrayList) getAppContext().getFriends(),Consts.LAYOUT_SELECT_BY_BUTTON);
         setListAdapter(adapter);
 	} //onCreate
 
 	protected void setUpViews() {
-		super.setUpViews();
+		super.setUpViews(Consts.LAYOUT_ADD_DONE);
 		betButton = (Button)findViewById(R.id.betButton);
 		betEditText = (EditText)findViewById(R.id.betEditText);
         wagerTypeEditText = (EditText)findViewById(R.id.wagerTypeEditText);

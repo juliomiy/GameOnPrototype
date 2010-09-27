@@ -37,8 +37,10 @@
     android:id="@+id/betButton" >
 </Button>
 <ListView
-        android:layout_marginTop="10dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
         android:layout_below="@+id/betButton"
+        android:layout_above="@+id/bottomBarLayout"
  		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:scrollbars="vertical"

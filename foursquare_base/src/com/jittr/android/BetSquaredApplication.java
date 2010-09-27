@@ -22,6 +22,7 @@ import android.util.Log;
 
 /**
  * @author juliomiyares
+ * @version 1.0
  * Location ; Database ; Preferences Services be encapsulated in Application Object
  *
  */
@@ -231,6 +232,7 @@ public class BetSquaredApplication extends Application {
 	    		                 GameOnDatabase.DB_FRIENDS_TABLE_USERID,
 	    		                 GameOnDatabase.DB_FRIENDS_TABLE_NAME },"userID ='" + userID + "'", null, null, null, null);	 
 	       if (null != cursor && cursor.getCount() >0 && cursor.moveToFirst() ) {
+	    	   Log.d(TAG, "Count of Friends in cursor = " + cursor.getCount());
                arrayList = new ArrayList<Friend>(); 
 	           do {
                    Friend friend = new Friend();
@@ -240,6 +242,8 @@ public class BetSquaredApplication extends Application {
 	    	       arrayList.add(friend);
 	           } while (cursor.moveToNext());     
 	       } //if
+	       cursor.close();
+	       cursor = null;
 		   return arrayList;
 	 }  //getFriends
 	 /*
