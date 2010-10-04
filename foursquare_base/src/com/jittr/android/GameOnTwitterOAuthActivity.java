@@ -28,6 +28,7 @@ import android.webkit.WebViewClient;
 
 /**
  * @author juliomiyares
+ * @version 1.0
  *
  */
 public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
@@ -46,12 +47,11 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
 	}  //default Constructor
 	
     private WebViewClient webViewClient = new WebViewClient() {
-
 		private String name;
-
 		@Override
 	    public void onLoadResource(WebView view, String url) {
             boolean rv = false;
+            boolean errorState = false;
             String twitterSN=null;
             String imageURL = null;
             String name = null;
@@ -63,8 +63,6 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
   		    if (uri.getHost().equals("jittr.com")) {
    	    	    token = uri.getQueryParameter("oauth_token");
    	    	    if (null != token) {
-   	    	   // 	rv = twitter.authorized();   //grab the accessToken and secret
-   	    	   // 	if (rv) {
    	    	    		try {
    	    	    			twitter.authorized();
 							twitterSN = twitter.getTwitter4j().getScreenName();
@@ -77,39 +75,35 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
 						    imageURL = user.getProfileImageURL().toString();
 							name = user.getName();
 						} catch (IllegalStateException e) {
-							// TODO Auto-generated catch block
+                            errorState=true;
 							e.printStackTrace();
 						} catch (TwitterException e) {
-							// TODO Auto-generated catch block
+                            errorState=true;
 							e.printStackTrace();
-						}
+						}  //try/catch
 						finally {
-							Log.d(TAG,"In Finally");
 	   	   	    	        webView.setVisibility(View.INVISIBLE);
-						}
-						if (!isNewRegistration ) {
-							    Log.d(TAG," in Not New Registration");
+						}   //finally
+						if (!isNewRegistration && !errorState ) {
+							    Log.d(TAG, "In Not New Registration");
    	    	       		        twitter.saveUserAuthCredentials(getAppContext().getLoginID(), TWITTER_NETWORK,twitter.getAccessToken(), 
    	    	    				twitter.getAccessTokenSecret(),
    	    	    				String.valueOf(twitterID), twitterSN, null);
    	    	    	    		getAppContext().refreshUserSettings(getAppContext().getLoginID());
-						} else {
-						    Log.d(TAG," in New Registration");
-							
+						} else if (isNewRegistration && !errorState) {
+							Log.d(TAG,"In New Registration");
 						    GameOnUserSettings userSettings = new GameOnUserSettings(twitterID,twitterSN,null,null,null,null,
 						    		Consts.TWITTER_NETWORK,"TWITTER",twitter.getAccessToken(),twitter.getAccessTokenSecret(), imageURL, name);
 						    Log.d(TAG,userSettings.toString());
-						    registerNewUserHost(userSettings);
-						    getAppContext().registerNewUser(userSettings);
+						    rv = registerNewUserHost(userSettings);  //register on host
+						    if (rv) getAppContext().registerNewUser(userSettings);  //register on device
 						    callingIntent.putExtra(Consts.INTENT_USER_SETTINGS, userSettings);
 						    setResult(RESULT_OK,callingIntent);
 						    //
 						} //if
-						Log.d(TAG,"About to call finish");
    	   	    	        finish();
    	    	    	} //if
    	    	    } else {
-   	    	    	Log.d(TAG,"In Empty else block");
    	    	    	//TODO Deal with Error
    	    	    }
   		   // } //if
@@ -117,22 +111,33 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
 	    }  //
 
     };   //WebViewClient
-private void registerNewUserHost(GameOnUserSettings userSettings) {
+ /*
+  * @uathor juliomiyares
+  * @version 1.0
+  * @purpose - register new user authenticated via Twitter onto the host
+  * 
+  */
+private boolean registerNewUserHost(GameOnUserSettings userSettings) {
     HashMap<String,String> hm = new HashMap<String,String>();
 
-    hm.put( (String) "newusername", userSettings.getTwitterSN());
+    hm.put(  "newusername", userSettings.getTwitterSN());
+    hm.put("avatarurl", userSettings.getImageURL());
 	hm.put("primarynetworkid", String.valueOf(Consts.TWITTER_NETWORK));
 	hm.put("primarynetworkname", "TWITTER");
 	hm.put("oauthtoken", userSettings.getTwitterOAuthToken());
     hm.put("oauthtokensecret", userSettings.getTwitterOAuthTokenSecret());
+    hm.put("twitterid", userSettings.getTwitterSN());
 	BSClientAPIImpl bs = new BSClientAPIImpl();
-	if (null == bs ) return;  //TODO Deal with error
+	if (null == bs ) return false;  //TODO Deal with error
 	UserAddResponse newUser = bs.addUser(hm);  //attempt to add New User to host
-	if (null == newUser) return;  //TODO Deal with Error 
+	if (null == newUser) return false;  //TODO Deal with Error 
     Log.d(TAG,newUser.toString());
     if (newUser.getStatus_code().equals("200")) {
 	       int newUserID = Integer.parseInt(newUser.getUserid());
-    }
+	       userSettings.setUserID(newUserID);
+	       userSettings.setUserName(userSettings.getUserName() + Consts.TWITTER_SUFFIX);  //TODO - replace - bug in response that doesnt return userName from webservice call
+    } else return false;
+    return true;
 } //registerNewUserHost
 
   @Override

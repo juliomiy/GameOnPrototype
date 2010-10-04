@@ -18,4 +18,102 @@
        <item>New York Mets</item>
        <item>New York Jets</item>
     </string-array>
+    <string-array name="nfl">
+    <item>Arizona Cardinals</item>      
+		<item>Atlanta Falcons</item>         
+		 <item>Baltimore Ravens</item>         
+		 <item>Buffalo Bills</item>            
+		 <item>Carolina Panthers</item>        
+		 <item>Chicago Bears</item>            
+		 <item>Cincinnati Bengals</item>       
+		 <item>Cleveland Browns</item>         
+		 <item>Dallas Cowboys</item>           
+		 <item>Denver Broncos</item>           
+		 <item>Detroit Lions</item>            
+		 <item>Green Bay Packers</item>        
+		 <item>Houston Texans</item>           
+		 <item>Indianapolis Colts</item>       
+		 <item>Jacksonville Jaguars</item>     
+		 <item>Kansas City Chiefs</item>       
+		 <item>Miami Dolphins</item>           
+		 <item>Minnesota Vikings</item>        
+		 <item>New England Patriots</item>     
+		 <item>New Orleans Saints</item>       
+		 <item>New York Giants</item>          
+		 <item>New York Jets</item>            
+		 <item>Oakland Raiders</item>          
+		 <item>Philadelphia Eagles</item>      
+		 <item>Pittsburgh Steelers</item>      
+		 <item>San Diego Chargers</item>       
+		 <item>San Francisco 49ers</item>      
+		 <item>Seattle Seahawks</item>         
+		 <item>St. Louis Rams</item>           
+		 <item>Tampa Bay Buccaneers</item>    
+		 <item>Tennessee Titans</item>       
+		 <item>Washington Redskins</item>     
+    </string-array>
+    <string-array name="mlb">
+         <item>Arizona Diamondbacks</item>    | 
+		 <item>Atlanta Braves</item>  
+		 <item>Baltimore Orioles</item>       
+		 <item>Boston Red Sox</item>           
+		 <item>Chicago Cubs</item>             
+		 <item>Chicago White Sox</item>        
+		 <item>Cincinnati Reds</item>          
+		 <item>Cleveland Indians</item>        
+		 <item>Colorado Rockies</item>         
+		 <item>Detroit Tigers</item>           
+		 <item>Florida Marlins</item>          
+		 <item>Houston Astros</item>           
+		 <item>Kansas City Royals</item>       
+		 <item>Los Angeles Angels</item>       
+		 <item>Los Angeles Dodgers</item>      
+		 <item>Milwaukee Brewers</item>        
+		 <item>Minnesota Twins</item>          
+		 <item>New York Mets</item>            
+		 <item>New York Yankees</item>         
+		 <item>Oakland Athletics</item>        
+		 <item>Philadelphia Phillies</item>    
+		 <item>Pittsburgh Pirates</item>       
+		 <item>San Diego Padres</item>         
+		 <item>San Francisco Giants</item>     
+		 <item>Seattle Mariners</item>         
+		 <item>St. Louis Cardinals</item>      
+		 <item>Tampa Bay Rays</item>           
+		 <item>Texas Rangers</item>            
+		 <item>Toronto Blue Jays</item>        
+		 <item>Washington Nationals</item>    
+    </string-array>
+    <string-array name="nba">
+         <item>Atlanta Hawks</item>            
+		 <item>Boston Celtics</item>          
+		 <item>Charlotte Bobcats</item>        
+		 <item>Chicago Bulls</item>            
+		 <item>Cleveland Cavaliers</item>      
+		 <item>Dallas Mavericks</item>         
+		 <item>Denver Nuggets</item>           
+		 <item>Detroit Pistons</item>          
+		 <item>Golden State Warriors</item>   
+		 <item>Houston Rockets</item>          
+		 <item>Indiana Pacers</item>           
+		 <item>Los Angeles Clippers</item>     
+		 <item>Los Angeles Lakers</item>       
+		 <item>Memphis Grizzlies</item>        
+		 <item>Miami Heat</item>               
+		 <item>Milwaukee Bucks</item>          
+		 <item>Minnesota Timberwolves</item>   
+		 <item>New Jersey Nets</item>          
+		 <item>New Orleans Hornets</item>      
+		 <item>New York Knicks</item>          
+		 <item>Oklahoma City Thunder</item>    
+		 <item>Orlando Magic</item>            
+		 <item>Philadelphia 76ers</item>       
+		 <item>Phoenix Suns</item>             
+		 <item>Portland Trail Blazers</item>   
+		 <item>Sacramento Kings</item>         
+		 <item>San Antonio Spurs</item>        
+		 <item>Toronto Raptors</item>          
+		 <item>Utah Jazz</item>                
+		 <item>Washington Wizards</item>     
+    </string-array>
 </resources>

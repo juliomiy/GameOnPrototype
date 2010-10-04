@@ -38,9 +38,6 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 	private String userName;
 	private String password;
 	private String passwordVerify;
-	private CheckBox facebookCheckBox;
-	private CheckBox twitterCheckBox;
-	private CheckBox foursquareCheckBox;
 	private Facebook facebook;
 	
 	public GameOnRegisterEmailActivity() {
@@ -58,10 +55,6 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 	}  //onResume	
 
 	private void setUpViews() {
-		facebookCheckBox = (CheckBox)findViewById(R.id.facebookCheckBox);
-		twitterCheckBox = (CheckBox)findViewById(R.id.twitterCheckBox);
-		foursquareCheckBox = (CheckBox)findViewById(R.id.foursquareCheckBox);
-		
 		userNameEditText = (EditText)findViewById(R.id.userNameEditText);
 	    userNameEditText.setFilters(new UserNameInputFilter().setUpFilter());
 		
@@ -117,11 +110,15 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 			 * login challenge
 			 */
 			public void onClick(View v) {
-			   registerButtonClicked();	
-			}
+			   boolean rv = registerButtonClicked();
+			   if (rv) {
+				   confirmRegistration();
+			   }  //if
+			 }
 		});
-		cancelButton = (Button)findViewById(R.id.cancelButton);
-		cancelButton.setOnClickListener(new View.OnClickListener() {
+	      cancelButton = (Button)findViewById(R.id.windowTitleLeftButton);
+	      cancelButton.setVisibility(View.VISIBLE);
+	      cancelButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -130,9 +127,16 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 		});
 	}  //setUpViews
 
+	protected void confirmRegistration() {
+		   Intent intent = new Intent(this,GameOnConfirmRegistration.class);	
+		   intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+		   startActivity(intent); 
+           finish();
+	}
+
 	/* Register a new user on Host - if successful, register the user on the handset device and login with the provided 
 	 * credentials */
-	protected void registerButtonClicked() {
+	protected boolean registerButtonClicked() {
 		HashMap<String,String> hm = new HashMap<String,String>();
 		String newUserName = userNameEditText.getText().toString();
 		String password = passwordEditText.getText().toString();
@@ -152,9 +156,9 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 		hm.put("primarynetworkname", "BETSQUARED");
 		
 		BSClientAPIImpl bs = new BSClientAPIImpl();
-		if (null == bs ) return;  //TODO Deal with error
+		if (null == bs ) return false;  //TODO Deal with error
 		UserAddResponse newUser = bs.addUser(hm);  //attempt to add New User to host
-		if (null == newUser) return;  //TODO Deal with Error 
+		if (null == newUser) return false;  //TODO Deal with Error 
         Log.d(TAG,newUser.toString());
         
         if (newUser.getStatus_code().equals("200")) {
@@ -163,14 +167,14 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 	    		    email,Consts.BETSQUARED_NETWORK,"BETSQUARED", null , null, null, null));
         } else {
             if (newUser.getStatus_code().equals("410")) {
-        	   Toast.makeText(this, newUserName + " already taken. Try something else", Toast.LENGTH_LONG).show();
+        	   Toast.makeText(this, newUser.getStatus_message(), Toast.LENGTH_LONG).show();
         	   
             } else {
      		   Toast.makeText(this, "Error Registering " + newUser.getStatus_message() , Toast.LENGTH_LONG).show();
             } //else
-        	return;
+        	return false;
         } //if
-		if (twitterCheckBox.isChecked()) {
+	/*	if (twitterCheckBox.isChecked()) {
 		    authorizeTwitter();
 	     }
 		if (facebookCheckBox.isChecked()) {
@@ -179,7 +183,9 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 		if (foursquareCheckBox.isChecked()) {
 		    authorizeFoursquare();
 	     }
-         finish();
+	     */
+         return true;
+        
  	}  //registerButton
 	
 
@@ -219,9 +225,6 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 	   	Intent intent = new Intent(this,com.jittr.android.facebook.Example.class);
 		startActivity(intent);	
 		return true;
-	}
-	private boolean authorizeFoursquare() {
-	    return false;	
 	}
 	
 	public class UserNameInputFilter {

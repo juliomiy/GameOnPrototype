@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF">
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
-  android:layout_width="wrap_content"
+  android:layout_gravity="center_vertical"
+  android:gravity="center_horizontal"
+  android:layout_width="match_parent"
   android:layout_height="wrap_content">
 <EditText 
     android:layout_marginTop="10dip"
@@ -26,6 +31,17 @@
     android:inputType="textPassword"
     android:imeOptions="actionNext">
 </EditText>
+<EditText 
+    android:singleLine="true"
+    android:layout_width="150dip"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="top"
+    android:id="@+id/emailEditText" 
+    android:hint="@string/emailaddress"
+    android:inputType="textEmailAddress"
+    android:imeOptions="actionDone">
+</EditText>
  <EditText 
     android:singleLine="true"
     android:layout_width="150dip"
@@ -44,36 +60,33 @@
     android:gravity="top"
     android:id="@+id/lastNameEditText" 
     android:hint="@string/lastname"
-    android:imeOptions="actionNext">
-></EditText>
-<EditText 
-    android:singleLine="true"
-    android:layout_width="150dip"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:gravity="top"
-    android:id="@+id/emailEditText" 
-    android:hint="@string/emailaddress"
-    android:inputType="textEmailAddress"
     android:imeOptions="actionDone">
-</EditText>
- <include android:id="@+id/socialNetworkLayout" layout="@layout/social_network_checkbox" />
- <Button 
-    android:layout_width="match_parent" 
-    android:layout_height="40dip"
-    android:textSize="15px"
-    android:textStyle="bold"    android:text="@string/registerbuttontext" 
-    android:id="@+id/registerButton"
-    android:enabled="false">
- </Button>
-
+></EditText>
 <LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  style="@style/textEditComboLayout" >
-  <Button 
-    style="@style/CancelButton"
-    android:text="@string/cancel_button" 
-    android:id="@+id/cancelButton" >    
+       android:orientation="horizontal"
+       android:layout_width="match_parent" 
+       android:layout_height="wrap_content">
+		
+		<CheckBox android:id="@+id/tosCheckBox" 
+                  android:layout_gravity="left"
+ 				  android:layout_width="wrap_content" android:layout_height="wrap_content"
+				 />
+		<TextView android:text="@string/betsquaredtos"  
+		          android:id="@+id/TextView03" 
+		          android:textSize="12dip"
+		          android:gravity="center"
+				  android:layout_width="match_parent" android:layout_height="wrap_content"
+				  android:textColor="#000000"/>
+</LinearLayout>		
+<Button
+   android:layout_marginTop="10dip"
+   android:textStyle="bold" 
+   android:layout_width="120dip" 
+   android:layout_height="40dip"
+   android:background="@drawable/button_bg"
+   android:id="@+id/registerButton"
+   android:text="@string/registerbuttontext" 
+   android:enabled="false">
  </Button>
  </LinearLayout>
- </LinearLayout>
+ </ScrollView>

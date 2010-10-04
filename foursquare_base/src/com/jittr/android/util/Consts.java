@@ -30,6 +30,7 @@ public final static String BS_ADD_GAME_ENDPOINT_URL = "http://jittr.com/jittr/ga
 public final static String BS_GAME_INVITES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getgameinvites.php";
 public final static String BS_GET_USER_GAMES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getusergames.php";
 public final static String BS_GET_USER_FRIENDS_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getfriends.php";
+public static final String BETSQUARED_SUFFIX = "";  //leave blank for now
 
 
 
@@ -41,6 +42,7 @@ public final static String FOURSQUARE_CONSUMER_KEY="AROV4OCBZMPAMSHLCF3LLYWQQ0W0
 public final static String FOURSQUARE_CONSUMER_SECRET="IT5NN1BSTKCORZ3YVC32BRAJD5O4201TCCAGAK2KAMUYHOQD";
 
 public final static String FOURSQUARE_CALLBACK_URL = "123";
+public static final String FOURSQUARE_SUFFIX = "@fs"; //appended to username when used as login
 
 //Facebook
 public final static String FACEBOOK_REQUEST_TOKEN_ENDPOINT_URL= "http://foursquare.com/oauth/request_token";
@@ -52,6 +54,7 @@ public final static String FACEBOOK_CALLBACK_URL = "123";
 public final static String FACEBOOK_API_KEY="2cdd2ba949d2d45e184f9814230ee20f";
 public final static String[] FACEBOOK_PERMISSIONS =
     new String[] {"publish_stream", "read_stream", "offline_access"};
+public static final String FACEBOOK_SUFFIX = "@fb";  //appended to username when used as login
 
 //Twitter
 public final static String TWITTER_REQUEST_TOKEN_ENDPOINT_URL="http://twitter.com/oauth/request_token";
@@ -60,6 +63,7 @@ public final static String TWITTER_AUTHORIZE_WEBSITE_URL="http://twitter.com/oau
 public final static String TWITTER_CONSUMER_KEY="EZmDfd0Sw0fPinp7CTNmNQ";
 public final static String TWITTER_CONSUMER_SECRET="xSY73z0TCs0drt00kFVFEG6LPNoH1yByRElWejrLE";
 public final static String TWITTER_CALLBACK_URL = "123";
+public static final String TWITTER_SUFFIX = "@twitter";  //appended to username when used as login
 public static final String NEW_REGISTRATION = "NEW_REGISTRATION";
 
 
@@ -86,6 +90,7 @@ public static final String BS_TYPENAME_USER = "User";
 public static final int LAYOUT_ADD_DONE = 1;
 public static final int LAYOUT_SELECT_BY_CHECKBOX = 2;
 public static final int LAYOUT_SELECT_BY_BUTTON = 3;
+public static final int LAYOUT_SELECT_BY_CHECKEDTEXTVIEW = 4;
 	
 
 

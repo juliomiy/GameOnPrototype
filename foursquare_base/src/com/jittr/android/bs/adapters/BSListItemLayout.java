@@ -1,25 +1,24 @@
 package com.jittr.android.bs.adapters;
 
-/*
- * @author juliomiyares
- * @date September 2010
- * @version 1.0
- * Layout for individal listitem - expected to work with xml layout bsbaselistiemlayout
- * 
- */
-import android.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
-
+/*
+ * @uathor juliomiyares
+ * @version 1.0
+ * @purpose used as layout for single view in a ListActivity
+ */
 public class BSListItemLayout <V> extends LinearLayout {
 
 	private BSListViewable <V> listViewText;
 	private TextView textView;
+	private CheckedTextView checkedTextView;
 	private CheckBox selectByCheckBox;
 	private Button selectByButton;
 	private int[] layoutAttributes;
@@ -36,9 +35,14 @@ public class BSListItemLayout <V> extends LinearLayout {
 	protected void onFinishInflate() {
 		super.onFinishInflate();
 		textView = (TextView)findViewById(android.R.id.text1);
+		checkedTextView = (CheckedTextView)findViewById(android.R.id.text2);
 		selectByButton = (Button)findViewById(android.R.id.button1);
 		selectByCheckBox=(CheckBox)findViewById(android.R.id.checkbox);
 		//textView.setText("Game/Event Item");
+	}
+	
+	public void setSelectByCheckedTextView() {
+		checkedTextView.setVisibility(View.VISIBLE);
 	}
 	public void setSelectByCheckBox() {
         selectByCheckBox.setVisibility(View.VISIBLE);		
@@ -48,7 +52,11 @@ public class BSListItemLayout <V> extends LinearLayout {
 	}
 	public void setEvent(BSListViewable <V> lvi) {
 		listViewText = lvi;
-		textView.setText(listViewText.getListViewText());
+		if (textView.getVisibility() == View.VISIBLE) textView.setText(listViewText.getListViewText());
+		else { 
+			checkedTextView.setText(listViewText.getListViewText());
+			//checkedTextView.setChecked(true);
+		}
 	}
 
 	public BSListViewable <V> getEvent() {

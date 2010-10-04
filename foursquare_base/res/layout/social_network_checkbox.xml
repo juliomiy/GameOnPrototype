@@ -2,24 +2,48 @@
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="horizontal"
-  android:layout_width="wrap_content"
+  android:layout_width="match_parent"
   android:layout_height="wrap_content">
 <CheckBox 
-     android:text="@string/facebook" 
+     android:text="" 
      android:id="@+id/facebookCheckBox"
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content">
  </CheckBox>
- <CheckBox 
-     android:text="@string/twitter" 
+ <ImageView 
+     android:id="@+id/ImageView01" 
+     android:gravity="center"
+     android:layout_gravity="center_vertical"
+     android:src="@drawable/facebook_icon"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+  </ImageView>
+  <CheckBox 
+     android:text="" 
      android:id="@+id/twitterCheckBox" 
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content">
  </CheckBox>
+ <ImageView 
+     android:id="@+id/ImageView02" 
+     android:gravity="center"
+     android:layout_gravity="center_vertical"
+     android:src="@drawable/twittericon"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+  </ImageView>
 <CheckBox 
-     android:text="@string/foursquare" 
+     android:text="" 
      android:id="@+id/foursquareCheckBox" 
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content">
  </CheckBox>
+<ImageView 
+     android:id="@+id/ImageView03" 
+     android:gravity="center"
+     android:layout_gravity="center_vertical"
+     android:src="@drawable/foursquareicon20x20"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+  </ImageView>
 </LinearLayout>

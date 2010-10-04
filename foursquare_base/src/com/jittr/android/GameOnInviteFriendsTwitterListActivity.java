@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import com.jittr.android.betsquared.GameOnSocialNetworkBase.SocialNetworkFriend;
 import com.jittr.android.bs.adapters.BSBaseAdapter;
 import com.jittr.android.twitter.twitterOAuth;
+import com.jittr.android.util.Consts;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -41,7 +42,7 @@ public class GameOnInviteFriendsTwitterListActivity extends
 		super.onResume();
 		if (null == twitter) {
 			twitter = new twitterOAuth(getAppContext());
-	 	    adapter = new BSBaseAdapter<SocialNetworkFriend>(this,(ArrayList<SocialNetworkFriend>) twitter.getFriends());
+	 	    adapter = new BSBaseAdapter<SocialNetworkFriend>(this,(ArrayList<SocialNetworkFriend>) twitter.getFriends(),Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
     	    setListAdapter(adapter);
     	    loggedInAsTextView.setText(loggedInAsTextView.getText() + " " + getAppContext().getUserSettings().getTwitterSN());
 		} //if

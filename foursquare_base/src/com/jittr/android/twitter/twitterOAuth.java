@@ -13,6 +13,8 @@ import twitter4j.User;
 import twitter4j.http.AccessToken;
 import twitter4j.http.RequestToken;
 
+import android.util.Log;
+
 import com.jittr.android.BetSquaredApplication;
 import com.jittr.android.betsquared.GameOnSocialNetworkBase;
 import static com.jittr.android.util.Consts.TWITTER_NETWORK;;
@@ -23,6 +25,7 @@ import static com.jittr.android.util.Consts.TWITTER_NETWORK;;
  */
 public class twitterOAuth extends GameOnSocialNetworkBase {
 
+	private static final String TAG = "twitterOAuth";
 	private Twitter twitter4j;
 	/**
 	 * 
@@ -91,9 +94,9 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 	/* @purpose Get Twitter friends, assumption that Oauth tokens are set for the user 
 	 * @version 1.0
 	 * @return ArrayList<SocialNetworkFriend>
+	 * TODO - if I stored the TwitterID which is a numeric, will save an http call to get it here 
 	 */
 	public ArrayList <SocialNetworkFriend> getFriends() {
-		String cursor;
 		String screenName = appContext.getUserSettings().getTwitterSN();
 		int[] intids = null;
 		IDs ids = null;
@@ -101,6 +104,7 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 		try {
 			ids = twitter4j.getFriendsIDs(screenName);
 			intids = ids.getIDs();
+			Log.d(TAG,"Number of friends = " + intids.length);
             for (int x=0; x < intids.length; x++) {
             	User user = twitter4j.showUser(intids[x]);
             	SocialNetworkFriend friend = new SocialNetworkFriend(); 

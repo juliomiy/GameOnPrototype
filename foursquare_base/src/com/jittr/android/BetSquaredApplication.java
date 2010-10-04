@@ -95,6 +95,8 @@ public class BetSquaredApplication extends Application {
 	}
 /* Log into the application - 
  * TODO - sync between application handset device credentials and host based credentials 
+ * TODO - If you logged in via one of the supported social networks, the password will be blank and 
+ * the oauth credentials needs to be validated instead
  */
 	public boolean login(String userName, String password) {
         boolean loginSuccessful = false;

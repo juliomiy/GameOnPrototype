@@ -4,8 +4,11 @@
 package com.jittr.android.bs.adapters;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 import com.jittr.android.R;
+import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.util.Consts;
 
 import android.content.Context;
@@ -23,6 +26,7 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 	private ArrayList <L> activityList;
 	private Context context;
 	private int[] layoutAttributes;
+	private HashMap<Integer,L> listSelection;
 	/**
 	 * 
 	 */
@@ -30,6 +34,7 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
     	this.context = context;
     	activityList = list;
     	layoutAttributes = attributes;
+    	listSelection = new HashMap<Integer,L>();
     } //constructor
 
 	public BSBaseAdapter() {
@@ -76,6 +81,9 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 		    	     case Consts.LAYOUT_SELECT_BY_BUTTON :
 		    		    tli.setSelectByButton();
 		    		   break; 
+		    	     case Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW :
+			    		tli.setSelectByCheckedTextView();
+			    	    break; 
 				   }  //switch
 				} //for
 			}
@@ -88,5 +96,45 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 
 	public void forceReload() {
 		notifyDataSetChanged();
+	}
+
+	/* toggle user selection using position as key.
+	 * if key exists, remove , else add
+	 */
+	public boolean toggleSelection(int position) {
+       if (null == listSelection.get(position)) {  //toggle on the selection
+    	   listSelection.put(position, (L) getItem(position));
+    	   return true;
+       } else {
+    	   listSelection.remove(position);  //toggle off the selection
+    	   return false;
+       } //if
+	} //toggleSelection
+	
+	/* 
+	 * @author juliomiyares
+	 * @version 1.0
+	 * @purpose - returns true if there are selected listItems, false otherwise
+	 */
+	public boolean isItemSelected() {
+		if (null != listSelection && listSelection.size() > 0) return true;
+        return false;
+	}   //itemsSelected
+	
+	/* return the keys (userIDs) of the game/bet invitees
+	 * TODO - make Generic instead of having to explicity 
+	 * set to FRIEND Object
+	 */
+	public String getSelectedKeys() {
+		
+		if (! isItemSelected() ) return null;
+		StringBuffer sb = new StringBuffer();
+		//listSelection.
+		for (Entry<Integer, L> entry : listSelection.entrySet()) {
+			Friend value = (Friend) entry.getValue();
+		    sb.append(value.getFrienduserid()  + " ");
+		} //for
+		sb.trimToSize();
+		return sb.toString();
 	}
 }  //class
