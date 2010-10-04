@@ -7,6 +7,7 @@ import java.util.List;
 
 import android.util.Log;
 
+import com.jittr.android.bs.dto.BSFriendRequests;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.Game;
@@ -15,6 +16,7 @@ import com.jittr.android.bs.dto.GameInvites;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.dto.UserGamesDetails;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
+import com.jittr.android.bs.handlers.BSFriendRequestHandler;
 import com.jittr.android.bs.handlers.FriendHandler;
 import com.jittr.android.bs.handlers.PublicGamesHandler;
 import com.jittr.android.bs.handlers.GameInvitesHandler;
@@ -271,6 +273,31 @@ public class BSClientAPIImpl implements BSClientInterface {
 		}
 		
 		return friends; 
+	}
+
+	
+	@Override
+	public void postInvite(HashMap<String, String> params) {
+		// TODO Auto-generated method stub
+		try {
+			String querStr = URLBuilder.createQueryStr(params);
+			
+			Log.d("","querStr:"+querStr);
+			Log.d("", "Url :"+Consts.BS_POST_INVITE_ENDPOINT_URL);
+			String data = htppClient.submitPostToServer(new URL(Consts.BS_POST_INVITE_ENDPOINT_URL), querStr); 
+			System.out.println("data "+data);
+			
+			BSFriendRequestHandler  fh = new BSFriendRequestHandler(data);
+			
+			BSFriendRequests fr = (BSFriendRequests)fh.parse();
+			System.out.println("fr "+fr);
+			//return ur;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			//return null;
+		}
+		
 	}
 	
 	

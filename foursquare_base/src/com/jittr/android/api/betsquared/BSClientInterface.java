@@ -23,4 +23,6 @@ public interface BSClientInterface {
 		GameInvites getGameInvites(HashMap<String , String> params);
 		UserGamesDetails getUserGames(HashMap<String, String> params);
 		List<Friend>  getUserFriends(HashMap<String, String> params);
+		void postInvite(HashMap<String, String> params);
+		
 }

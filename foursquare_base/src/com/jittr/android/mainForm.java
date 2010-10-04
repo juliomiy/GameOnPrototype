@@ -199,6 +199,17 @@ public class mainForm extends GameOnBaseActivity {
 		startActivity(intent);		
 	}
     protected void getPublicGameButtonClicked() {
+    	
+    	Log.d(" ", "getUserDashBoardButtonClicked ");
+		BSClientAPIImpl bs = new BSClientAPIImpl();
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("username", "Clay");
+		params.put("socialnetwork", "facebook");
+		params.put("socialnetworkid", "2");
+		
+		bs.postInvite(params);
+    	
+    	
     	Intent intent = new Intent(this,GetPublicGamesActivity.class);
 		startActivity(intent);		
 	}
