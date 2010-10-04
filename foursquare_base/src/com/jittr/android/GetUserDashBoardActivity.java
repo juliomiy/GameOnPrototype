@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.bs.dto.BSFriendRequests;
 import com.jittr.android.bs.dto.BSUserDashBoard;
 import com.jittr.android.fs.examples.BSClientAPIAsync;
 import com.jittr.android.fs.examples.DataFetchingCallBack;
@@ -66,7 +67,11 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity  {
 	    	BSClientAPIAsync newbs_async_client = new BSClientAPIAsync();
 	        HashMap<String, String> criteria = new HashMap<String, String>();
 	        criteria.put("userid", String.valueOf(getAppContext().getLoginID()));
+	        
+	        
 	        newbs_async_client.getUserDashBoard(criteria, this);
+	        
+	        
             //Below needs to be in dataLoaded Call Back
 	        /*
             if (null != dashBoard) {
@@ -89,6 +94,7 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity  {
 		}
 		
 		if(response !=null) {
+			
 			BSUserDashBoard dashBoard = (BSUserDashBoard)response;
 			userIDTextView.setText("UserID: " + dashBoard.getUserid());
 	        totalBetsTextView.setText("Total Bets: " + dashBoard.getTotalbets());
@@ -96,6 +102,7 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity  {
 	        betsInitiatedTextView.setText("Bets Initiated: " + dashBoard.getTotalbetsinitiated());
 	        totalWinsTextView.setText("Total Wins: " + dashBoard.getTotalwins());
 	        totalLosesTextView.setText("Total Loses: " + dashBoard.getTotalloses());
+	        
 		}
 		
 	}

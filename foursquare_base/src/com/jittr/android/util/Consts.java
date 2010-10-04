@@ -33,6 +33,12 @@ public final static String BS_GET_USER_FRIENDS_ENDPOINT_URL = "http://jittr.com/
 public final static String BS_POST_INVITE_ENDPOINT_URL = "http://jittr.com/jittr/gameon/testinvite.php"; 
 
 
+//Asynch Operation Codes
+
+public final static String POST_BS_INVITE = "POST_BS_INVITE";
+public final static String GET_BS_USER_DASH = "GET_BS_USER_DASH";
+public final static String GET_BS_PUBLIC_GAMES = "GET_BS_PUBLIC_GAMES";
+
 //FourSquare API 
 public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";
 public final static String FOURSQUARE_ACCESS_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/access_token";

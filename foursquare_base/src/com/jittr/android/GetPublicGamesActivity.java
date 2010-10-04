@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSGetPublicGamesAdapter;
+import com.jittr.android.bs.dto.BSFriendRequests;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.fs.examples.BSClientAPIAsync;
 import com.jittr.android.fs.examples.DataFetchingCallBack;
@@ -50,7 +51,9 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
         
         HashMap hm = new HashMap();
         hm.put("team", "New York Jets");
-        bsAsync.getPublicGames(hm,this);   //new
+        bsAsync.getPublicGames(hm,this); 
+        
+        
       //  adapter = new BSGetPublicGamesAdapter(this ,(ArrayList) bs.getPublicGames(hm));
       //  setListAdapter(adapter);
     } //onCreate
@@ -80,7 +83,9 @@ public class GetPublicGamesActivity extends GameOnBaseListActivity {
 		  HashMap hm = new HashMap();
 		//  String search = teamFilterSpinner.
 	       hm.put("team", "New York Mets");
-	       bsAsync.getPublicGames(hm,this);
+	       bsAsync.getPublicGames(hm,this); 
+	       
+	       
 	}
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {

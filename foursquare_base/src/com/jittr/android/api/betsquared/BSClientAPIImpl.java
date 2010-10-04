@@ -277,7 +277,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 
 	
 	@Override
-	public void postInvite(HashMap<String, String> params) {
+	public BSFriendRequests postInvite(HashMap<String, String> params) {
 		// TODO Auto-generated method stub
 		try {
 			String querStr = URLBuilder.createQueryStr(params);
@@ -285,18 +285,19 @@ public class BSClientAPIImpl implements BSClientInterface {
 			Log.d("","querStr:"+querStr);
 			Log.d("", "Url :"+Consts.BS_POST_INVITE_ENDPOINT_URL);
 			String data = htppClient.submitPostToServer(new URL(Consts.BS_POST_INVITE_ENDPOINT_URL), querStr); 
-			System.out.println("data "+data);
+			Log.d("","data "+data);
 			
 			BSFriendRequestHandler  fh = new BSFriendRequestHandler(data);
 			
 			BSFriendRequests fr = (BSFriendRequests)fh.parse();
-			System.out.println("fr "+fr);
-			//return ur;
+			Log.d(" ", " fr obj "+fr);
+			return fr;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 			//return null;
 		}
+		return null;
 		
 	}
 	
