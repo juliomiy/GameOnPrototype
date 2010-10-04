@@ -1,3 +1,6 @@
 *.ap_
 *.dex
 *.class
+*.prefs
+foursquare_base/default.properties
+

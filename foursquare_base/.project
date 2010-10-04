@@ -3,6 +3,7 @@
 	<name>foursquare_base</name>
 	<comment></comment>
 	<projects>
+		<project>facebook-android-sdk</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

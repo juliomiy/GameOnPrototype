@@ -31,8 +31,14 @@ public final static String BS_GAME_INVITES_ENDPOINT_URL = "http://jittr.com/jitt
 public final static String BS_GET_USER_GAMES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getusergames.php";
 public final static String BS_GET_USER_FRIENDS_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getfriends.php";
 public static final String BETSQUARED_SUFFIX = "";  //leave blank for now
+public final static String BS_POST_INVITE_ENDPOINT_URL = "http://jittr.com/jittr/gameon/testinvite.php"; 
 
 
+//Asynch Operation Codes
+
+public final static String POST_BS_INVITE = "POST_BS_INVITE";
+public final static String GET_BS_USER_DASH = "GET_BS_USER_DASH";
+public final static String GET_BS_PUBLIC_GAMES = "GET_BS_PUBLIC_GAMES";
 
 //FourSquare API 
 public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";

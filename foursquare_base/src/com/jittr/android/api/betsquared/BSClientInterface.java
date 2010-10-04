@@ -3,6 +3,7 @@ package com.jittr.android.api.betsquared;
 import java.util.HashMap;
 import java.util.List;
 
+import com.jittr.android.bs.dto.BSFriendRequests;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.Game;
@@ -23,4 +24,6 @@ public interface BSClientInterface {
 		GameInvites getGameInvites(HashMap<String , String> params);
 		UserGamesDetails getUserGames(HashMap<String, String> params);
 		List<Friend>  getUserFriends(HashMap<String, String> params);
+		BSFriendRequests postInvite(HashMap<String, String> params);
+		
 }

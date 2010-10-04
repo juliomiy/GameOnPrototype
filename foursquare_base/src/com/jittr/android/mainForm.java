@@ -199,6 +199,9 @@ public class mainForm extends GameOnBaseActivity {
 		startActivity(intent);		
 	}
     protected void getPublicGameButtonClicked() {
+    	
+    	Log.d(" ", "getUserDashBoardButtonClicked ");
+		
     	Intent intent = new Intent(this,GetPublicGamesActivity.class);
 		startActivity(intent);		
 	}

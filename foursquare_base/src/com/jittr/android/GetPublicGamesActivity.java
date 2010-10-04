@@ -5,7 +5,6 @@ import static com.jittr.android.util.Consts.INTENT_VIEW_PUBLIC_GAME;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSGetPublicGamesAdapter;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.fs.examples.BSClientAPIAsync;
