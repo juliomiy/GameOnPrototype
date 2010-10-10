@@ -17,6 +17,8 @@ import android.util.Log;
 
 import com.jittr.android.BetSquaredApplication;
 import com.jittr.android.betsquared.GameOnSocialNetworkBase;
+import com.jittr.android.bs.dto.SocialNetworkFriend;
+
 import static com.jittr.android.util.Consts.TWITTER_NETWORK;;
 
 /**
@@ -97,6 +99,9 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 	 * TODO - if I stored the TwitterID which is a numeric, will save an http call to get it here 
 	 */
 	public ArrayList <SocialNetworkFriend> getFriends() {
+        ArrayList<SocialNetworkFriend> al = appContext.getSocialNetworkFriends(TWITTER_NETWORK);
+        if (null != al) return al;
+        
 		String screenName = appContext.getUserSettings().getTwitterSN();
 		int[] intids = null;
 		IDs ids = null;
@@ -120,6 +125,9 @@ public class twitterOAuth extends GameOnSocialNetworkBase {
 			ids=null;
 			intids = null;
 		}  //finally
+		appContext.updateSocialNetworkFriends(TWITTER_NETWORK,arrayList);
 		return arrayList;
 	}  //getFriends
+	
+	
 } //class

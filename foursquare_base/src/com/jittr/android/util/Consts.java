@@ -31,7 +31,7 @@ public final static String BS_GAME_INVITES_ENDPOINT_URL = "http://jittr.com/jitt
 public final static String BS_GET_USER_GAMES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getusergames.php";
 public final static String BS_GET_USER_FRIENDS_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getfriends.php";
 public static final String BETSQUARED_SUFFIX = "";  //leave blank for now
-public final static String BS_POST_INVITE_ENDPOINT_URL = "http://jittr.com/jittr/gameon/testinvite.php"; 
+public final static String BS_POST_INVITE_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postfriend.php"; 
 
 
 //Asynch Operation Codes
@@ -44,11 +44,16 @@ public final static String GET_BS_PUBLIC_GAMES = "GET_BS_PUBLIC_GAMES";
 public final static String FOURSQUARE_REQUEST_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/request_token";
 public final static String FOURSQUARE_ACCESS_TOKEN_ENDPOINT_URL="http://foursquare.com/oauth/access_token";
 public final static String FOURSQUARE_AUTHORIZE_WEBSITE_URL="http://foursquare.com/oauth/authorize";
-public final static String FOURSQUARE_CONSUMER_KEY="AROV4OCBZMPAMSHLCF3LLYWQQ0W0F2WH1K1BDZDGBW1OFJSM";
-public final static String FOURSQUARE_CONSUMER_SECRET="IT5NN1BSTKCORZ3YVC32BRAJD5O4201TCCAGAK2KAMUYHOQD";
+//public final static String FOURSQUARE_CONSUMER_KEY="AROV4OCBZMPAMSHLCF3LLYWQQ0W0F2WH1K1BDZDGBW1OFJSM";
+public final static String FOURSQUARE_CONSUMER_KEY="VYSV4AGFMWLWXNCTVMUNC3TVK3NZSP2VRL305GEYCK34YTQ0";
+//public final static String FOURSQUARE_CONSUMER_SECRET="IT5NN1BSTKCORZ3YVC32BRAJD5O4201TCCAGAK2KAMUYHOQD";
+public final static String FOURSQUARE_CONSUMER_SECRET="QQ0ADIL4NZICDWGBOYI2AI0ANKROT2RJCEFSMSPWM0AMURNX";
 
-public final static String FOURSQUARE_CALLBACK_URL = "123";
-public static final String FOURSQUARE_SUFFIX = "@fs"; //appended to username when used as login
+//public final static String FOURSQUARE_CALLBACK_URL = "http://jittr.com/jittr/gameon/fsoauth.php";
+public final static String FOURSQUARE_CALLBACK_URL = "icecondor-android-app:///";
+public final static  String FOURSQUARE_SUFFIX = "@fs"; //appended to username when used as login
+public final static String FOURSQUARE_USER_URL = "http://api.foursquare.com/v1/user";
+public final static String FOURSQUARE_FRIENDS_URL = "http://api.foursquare.com/v1/friends";
 
 //Facebook
 public final static String FACEBOOK_REQUEST_TOKEN_ENDPOINT_URL= "http://foursquare.com/oauth/request_token";

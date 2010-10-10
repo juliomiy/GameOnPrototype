@@ -41,6 +41,7 @@ public class mainForm extends GameOnBaseActivity {
 	private Button twitterOAuthButton;
 	private Button userBetButton;
 	private Button testTwitterButton;
+	private Button testFoursquareButton;
 	protected final static String TAG = "mainForm";
   //  private BetSquaredApplication appContext;
     
@@ -85,7 +86,16 @@ public class mainForm extends GameOnBaseActivity {
         logoutButton = (Button)findViewById(R.id.logout_button);
         userBetButton = (Button)findViewById(R.id.userBetButton); 
         testTwitterButton = (Button)findViewById(R.id.testTwitterButton);
-  
+        testFoursquareButton = (Button)findViewById(R.id.testFoursquareButton);
+
+       testFoursquareButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+                testFoursquareButtonClicked();				
+			}
+		});
+
         testTwitterButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -198,6 +208,10 @@ public class mainForm extends GameOnBaseActivity {
        	Intent intent = new Intent(this,GetUserDashBoardActivity.class);
 		startActivity(intent);		
 	}
+	protected void testFoursquareButtonClicked() {
+      	Intent intent = new Intent(this,GameOnInviteFriendsFoursquareListActivity.class);
+		startActivity(intent);		
+	}
     protected void getPublicGameButtonClicked() {
     	
     	Log.d(" ", "getUserDashBoardButtonClicked ");
@@ -223,7 +237,8 @@ public class mainForm extends GameOnBaseActivity {
     
     //start foursquare oauth 
     private void foursquareOauthButtonClicked(View v) {
-		Intent intent = new Intent(this,FoursquareOauthActivity.class);
+//		Intent intent = new Intent(this,FoursquareOauthActivity.class);
+		Intent intent = new Intent(this,GameOnFoursquareAuthActivity.class);
 		startActivity(intent);
     }
 } //class

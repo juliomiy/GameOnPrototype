@@ -27,6 +27,10 @@
                android:label="Invite Friends - Twitter">
        </activity> 
        <activity
+               android:name=".GameOnInviteFriendsFoursquareListActivity"
+               android:label="Invite Friends - Foursquare">
+       </activity> 
+       <activity
                android:name=".TestTwitterActivity"
                android:label="Test Twitter">
        </activity> 
@@ -58,17 +62,15 @@
                  android:name=".GetBetSquareUserDetailsActivity"
                  android:label="@string/testgetbetsquareduserdetails">
        </activity>
-       <activity android:name=".FoursquareOauthActivity"  
+      <activity android:name=".GameOnFoursquareAuthActivity"  
                  android:label="@string/app_name"
                  android:launchMode="singleTop">
-          <intent-filter>
-             <action android:name="android.intent.action.VIEW" />
-             <category android:name="android.intent.category.DEFAULT" />
-             <category android:name="android.intent.category.BROWSABLE" />
-             <data android:scheme="http" 
-                   android:host="jittr.com"
-                   android:path="/jittr/gameon/" />
-          </intent-filter>                 
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="icecondor-android-app" />
+			</intent-filter>
                  
        </activity>
        <activity android:name=".GameOnRegisterEmailActivity"  

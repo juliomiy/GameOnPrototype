@@ -26,7 +26,7 @@
             android:layout_width="match_parent">
      </TextView>
  </LinearLayout>
-<TextView android:text="Invite Twitter Friends to BetSquared " 
+<TextView 
        android:layout_marginTop="10dip"
        android:gravity="center"
        android:textStyle="bold"
@@ -46,5 +46,18 @@
 		android:id="@id/android:list"
 		android:text="@string/nogames">
 </ListView>	
+ <Button 
+       android:layout_below="@id/android:list"
+       android:layout_centerHorizontal="true"
+       android:layout_gravity="center"
+	   android:layout_marginTop="10dip"
+	   android:textStyle="bold" 
+	   android:layout_width="120dip" 
+	   android:layout_height="40dip"
+	   android:background="@drawable/button_bg"
+	   android:text="@string/invitefriends" 
+       android:id="@+id/inviteFriendsButton"
+       android:enabled="false" 
+></Button>
 <include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
 </RelativeLayout>

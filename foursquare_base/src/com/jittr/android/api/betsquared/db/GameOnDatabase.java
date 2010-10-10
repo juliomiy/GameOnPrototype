@@ -4,10 +4,14 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
+/*
+ * @author juliomiyares
+ * @version 1.0
+ * @purpose - define sqlite local storage on the handset
+ */
 public class GameOnDatabase extends SQLiteOpenHelper {
-	public static final int VERSION = 10;
+	public static final int VERSION = 13;
 	public static final String DB_NAME  = "betsquared_db.sqlite";
 	public static final String GAME_TABLE = "go_games";
 	public static final String DB_USER_TABLE = "go_user";
@@ -33,6 +37,17 @@ public class GameOnDatabase extends SQLiteOpenHelper {
     public static final String DB_FRIENDS_TABLE_USERID = "friendUserID";
     public static final String DB_FRIENDS_TABLE_USERNAME = "friendUserName";
     public static final String DB_FRIENDS_TABLE_NAME = "friendName";
+	public static final String DB_SOCIALNETWORK_FRIENDS_TABLE = "go_socialNetworkFriends";
+	public static final String DB_SOCIALNETWORK_FRIENDS_NETWORKID="networkID";
+	public static final String DB_SOCIALNETWORK_FRIENDS_USERID="userID";
+	public static final String DB_SOCIALNETWORK_FRIENDS_USERNAME="userName";
+	public static final String DB_SOCIALNETWORK_FRIENDS_ISFRIEND = "isFriend";
+	public static final String DB_SOCIALNETWORK_FRIENDS_SYNCDATE = "syncDate";
+	public static final String DB_SOCIALNETWORK_FRIENDS_NAME = "name";
+	public static final String DB_SOCIALNETWORK_FRIENDS_AVATARURL = "avatarURL";
+	public static final String DB_USER_TABLE_FS_NAME = "foursquareName";
+	public static final String DB_USER_TABLE_FS_USERID = "foursquareUserID";
+	
 	public GameOnDatabase(Context context) {
 
 		super(context, DB_NAME, null, VERSION);
@@ -63,6 +78,8 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	      DB_USER_TABLE_PRIMARY_NETWORKID + " integer not null default 0," +
 	      DB_USER_TABLE_FS_TOKEN + " text null," +
 	      DB_USER_TABLE_FS_TOKEN_SECRET + " text null," +
+	      DB_USER_TABLE_FS_NAME + " text null," +
+	      DB_USER_TABLE_FS_USERID + " text null," +
 	      DB_USER_TABLE_FB_TOKEN + " text null," +
 	      DB_USER_TABLE_FB_TOKEN_SECRET + " text null," +
 	      DB_USER_TABLE_TWITTER_TOKEN + " text null," +
@@ -87,6 +104,24 @@ public class GameOnDatabase extends SQLiteOpenHelper {
                 "primary key (" + DB_USER_TABLE_USERID + "," + DB_FRIENDS_TABLE_USERID + ")" +
 	          ")";
 	      db.execSQL(sql); 
+	
+	      //foursquare friends/ twitter followers/facebook friends
+	      //minimize the network demands to find these - need to sync with the
+	      //network on a time to time basis
+	      sql = "create table " + DB_SOCIALNETWORK_FRIENDS_TABLE +
+                "(" +
+                    DB_SOCIALNETWORK_FRIENDS_NETWORKID + " integer not null," +
+                    DB_SOCIALNETWORK_FRIENDS_USERID + " text not null," +
+                    DB_SOCIALNETWORK_FRIENDS_USERNAME + " text not null," +
+                    DB_SOCIALNETWORK_FRIENDS_NAME + " text null," +
+                    DB_SOCIALNETWORK_FRIENDS_AVATARURL + " text null," +
+                    DB_SOCIALNETWORK_FRIENDS_ISFRIEND + " boolean not null default false," +
+                    DB_SOCIALNETWORK_FRIENDS_SYNCDATE + " date null default CURRENT_TIMESTAMP, " +
+                    
+                    "PRIMARY KEY (" + DB_SOCIALNETWORK_FRIENDS_NETWORKID + "," +
+                                      DB_SOCIALNETWORK_FRIENDS_USERID + ")" +
+                    ")";
+	      db.execSQL(sql); 
 	      
 	return true;
 	}  //createTable
@@ -94,6 +129,7 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	private boolean dropTables(SQLiteDatabase db) {
 		db.execSQL("Drop table if exists " + DB_USER_TABLE + ";");
 		db.execSQL("Drop Table if exists " + DB_FRIENDS_TABLE + ";");
+		db.execSQL("Drop table if exists " + DB_SOCIALNETWORK_FRIENDS_TABLE + ";");
 		return true;
 	}
 	/*temporary Convenience method for development to set a record in go_user and go_userSettings */

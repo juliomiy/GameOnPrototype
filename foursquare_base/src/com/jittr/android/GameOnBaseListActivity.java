@@ -1,7 +1,7 @@
 package com.jittr.android;
 
+import com.jittr.android.api.betsquared.DataFetchingCallBack;
 import com.jittr.android.bs.adapters.BSBaseAdapter;
-import com.jittr.android.fs.examples.DataFetchingCallBack;
 import com.jittr.android.util.Consts;
 
 import android.app.Dialog;
@@ -23,7 +23,7 @@ import android.widget.TextView;
 public abstract class GameOnBaseListActivity extends ListActivity implements DataFetchingCallBack {
 	private static final String TAG = "GameOnBaseListActivity";
 	protected TextView windowTitle;
-	private BetSquaredApplication appContext;
+	protected BetSquaredApplication appContext;
 	private ImageView windowIcon;
 	private Button betsButton;
 	private Button friendsButton;

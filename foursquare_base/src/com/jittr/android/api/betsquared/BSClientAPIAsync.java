@@ -1,4 +1,4 @@
-package com.jittr.android.fs.examples;
+package com.jittr.android.api.betsquared;
 
 import java.util.HashMap;
 import java.util.List;

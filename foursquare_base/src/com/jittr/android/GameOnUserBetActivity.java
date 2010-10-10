@@ -189,7 +189,6 @@ public final class GameOnUserBetActivity extends GameOnBaseListActivity {
 		super.onListItemClick(l, v, position, id);
 		boolean state = adapter.toggleSelection(position); //returns true if turned on, false if turned off
 		CheckedTextView ctv = (CheckedTextView) v.findViewById(android.R.id.text2);
-		//v.findViewById(android.R.id.text2);
 		ctv.setChecked(state);
 		betButton.setEnabled(passEdits());
 	}

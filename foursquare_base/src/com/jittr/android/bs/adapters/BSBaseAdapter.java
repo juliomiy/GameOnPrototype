@@ -137,4 +137,9 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 		sb.trimToSize();
 		return sb.toString();
 	}
+	
+	/* Return map of selected list items*/
+	public HashMap<Integer,L> getListSelectedMap() {
+		return listSelection;
+	}
 }  //class

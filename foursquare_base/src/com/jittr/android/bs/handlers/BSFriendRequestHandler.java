@@ -101,6 +101,11 @@ public class BSFriendRequestHandler extends DefaultHandler implements ParserInte
 				friend_request = null;
 			}
 		    
+		    //added Julio - left out in original , the userName of invited user
+		    if (localName.equalsIgnoreCase("username")){
+		        friend_request.setUser_name(builder.toString());
+		    }
+		    
 		    if (localName.equalsIgnoreCase("friend_invite")){
 		    	frnd_requests.setRequests(temp_requests);
 		    }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,6 +19,7 @@
     android:layout_below="@+id/foursquareoauth">
 </Button>
 <Button 
+    android:visibility="gone"
     android:text="@string/testfoursquareuserdetails"
     android:id="@+id/getuserdetails_button" 
     android:layout_width="wrap_content" 
@@ -26,14 +27,22 @@
     android:layout_below="@+id/twitterOAuthButton">
 </Button>
 <Button 
+    android:text="Test Foursquare Button"
+    android:id="@+id/testFoursquareButton" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/twitterOAuthButton">
+</Button>
+<Button 
+    android:visibility="visible"
     android:text="@string/testbetsquareuserdetails"
     android:id="@+id/getbetsuserdetails_button" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content"
-    android:layout_below="@+id/getuserdetails_button">
+    android:layout_below="@+id/testFoursquareutton">
 </Button>
 <Button 
-    android:visibility="invisible"
+    android:visibility="gone"
     android:text="@string/testnearbyvenues"
     android:id="@+id/getnearbyvenues_button" 
     android:layout_width="wrap_content" 
@@ -47,7 +56,7 @@
     android:layout_below="@+id/getbetsuserdetails_button">
 </Button>
 <Button 
-    android:visibility="invisible"
+    android:visibility="gone"
     android:text="@string/testgetuserdashboard"
     android:id="@+id/getuserdashboard_button" 
     android:layout_width="wrap_content" 
@@ -66,7 +75,8 @@
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content"
      android:layout_below="@+id/userBetButton">
- </Button><Button 
+ </Button>
+ <Button 
      android:text="@string/logoutbuttontext" 
      android:id="@+id/logout_button" 
      android:layout_width="wrap_content" 
@@ -74,11 +84,12 @@
      android:layout_below="@+id/testTwitterButton">
  </Button>
 <Button 
-     android:visibility="invisible"
+     android:visibility="gone"
      android:text="@string/cancel_button" 
      android:id="@+id/cancel_button" 
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content">
  </Button>
  <include android:id="@+id/bottomBar" layout="@layout/bottombar" />
-</RelativeLayout>
+</LinearLayout>
+ 

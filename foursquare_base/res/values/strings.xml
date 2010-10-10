@@ -32,6 +32,9 @@
     <string name="visitingteam">Visiting Team</string>
     <string name="hometeam">Home Team</string>
     <string name="betbutton">Bet</string>
+    <string name="invitefriends">Invite Friends</string>
+    <string name="invitefoursquarefriends">Invite Foursquare Friends to BetSquared</string>
+    <string name="invitetwitterfriends">Invite Twitter Friends to BetSquared</string>
     <string name="friendsbutton">Friends</string>
     <string name="mebutton">Me</string>
     <string name="betsbutton">Bets</string>

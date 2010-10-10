@@ -110,7 +110,7 @@ public class GameOnSignUpActivity extends GameOnBaseActivity {
 	 	   	    intent = new Intent(this,GameOnRegisterEmailActivity.class); //change to Facebook
 		   	    break; 
 		   case Consts.FOURSQUARE_NETWORK:	
-	 	   		intent = new Intent(this,GameOnRegisterEmailActivity.class);  //change to Foursquare
+	 	   		intent = new Intent(this,GameOnFoursquareAuthActivity.class);  //change to Foursquare
 		   		break; 
 		   case Consts.BETSQUARED_NETWORK:	   
 	 	   		intent = new Intent(GameOnSignUpActivity.this,GameOnRegisterEmailActivity.class);

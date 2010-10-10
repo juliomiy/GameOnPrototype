@@ -2,7 +2,7 @@ package com.jittr.android;
 
 import java.util.HashMap;
 
-import com.jittr.android.fs.examples.DataFetchingCallBack;
+import com.jittr.android.api.betsquared.DataFetchingCallBack;
 
 import android.app.Activity;
 import android.app.Dialog;

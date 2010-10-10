@@ -8,14 +8,8 @@ import static com.jittr.android.util.Consts.*;
 import android.util.Log;
 
 import com.jittr.android.BetSquaredApplication;
-import com.jittr.android.api.betsquared.db.GameOnDatabase;
-import com.jittr.android.bs.adapters.BSListViewable;
-
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.HashMap;
-
-import com.jittr.android.util.Consts;
+import static com.jittr.android.api.betsquared.db.GameOnDatabase.*;
+import com.jittr.android.bs.dto.GameOnUserSettings;
 
 import oauth.signpost.basic.DefaultOAuthProvider;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
@@ -44,6 +38,7 @@ public abstract class GameOnSocialNetworkBase implements
 	private String accessTokenEndpointUrl;
 	private String authorizeAccessUrl;
     protected BetSquaredApplication appContext;  //context to the application object
+    protected GameOnUserSettings userSettings;
     
 	public GameOnSocialNetworkBase() {
 		super();
@@ -68,6 +63,7 @@ public abstract class GameOnSocialNetworkBase implements
 	public GameOnSocialNetworkBase(BetSquaredApplication appObject, int network,String token, String secret) {
 	    super();	
 	    appContext = appObject;
+	    userSettings = appObject.getUserSettings();
 	    socialNetwork = network;
 		accessToken = token;
 		accessTokenSecret = secret;
@@ -192,20 +188,29 @@ public abstract class GameOnSocialNetworkBase implements
 			case FACEBOOK_NETWORK:
 				  break;
 			case TWITTER_NETWORK:
-				  sql += GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN + "='" + token + "'," +
-				         GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET + "='" + tokenSecret + "'," +
-				         GameOnDatabase.DB_USER_TABLE_TWITTER_USERID + "='" + networkUserID + "'," + 
-				         GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME + "='" + networkScreenName + "'," + 
-				         GameOnDatabase.DB_USER_TABLE_TWITTER_NAME + "='" + networkUserID + "'" ; 
+				  sql += DB_USER_TABLE_TWITTER_TOKEN + "='" + token + "'," +
+				         DB_USER_TABLE_TWITTER_TOKEN_SECRET + "='" + tokenSecret + "'," +
+				         DB_USER_TABLE_TWITTER_USERID + "='" + networkUserID + "'," + 
+				         DB_USER_TABLE_TWITTER_SCREENNAME + "='" + networkScreenName + "'," + 
+				         DB_USER_TABLE_TWITTER_NAME + "='" + networkUserID + "'" ; 
 ;
 				  break;
 			case FOURSQUARE_NETWORK:
+				  sql += DB_USER_TABLE_FS_TOKEN + "='" + token + "'," +
+			             DB_USER_TABLE_FS_TOKEN_SECRET + "='" + tokenSecret + "'" ;
+			       //  GameOnDatabase.DB_USER_TABLE_TWITTER_USERID + "='" + networkUserID + "'," + 
+			       //  GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME + "='" + networkScreenName + "'," + 
+			       //  GameOnDatabase.DB_USER_TABLE_TWITTER_NAME + "='" + networkUserID + "'" ; 
+;
 				  break;
 			
 		}  //switch
 		sql += " where userID = " + userID;
 		Log.d(TAG,sql);
 		//first save to device - low risk, minimal letency - stored in sqlite
+		if (null == appContext){
+			
+		}
 		appContext.updateDatabaseSQL(sql);
 		//save to Host via Http Post
 		
@@ -213,63 +218,4 @@ public abstract class GameOnSocialNetworkBase implements
 	}  //saveUserAuthCredentials
 
 	
-	public class SocialNetworkFriend implements BSListViewable {
-		String userID;
-		String userName;
-		String name;
-		URL profileImageURL;
-		/**
-		 * @return the userID
-		 */
-		public String getUserID() {
-			return userID;
-		}
-		/**
-		 * @param userID the userID to set
-		 */
-		public void setUserID(String userID) {
-			this.userID = userID;
-		}
-		/**
-		 * @return the userName
-		 */
-		public String getUserName() {
-			return userName;
-		}
-		/**
-		 * @param userName the userName to set
-		 */
-		public void setUserName(String userName) {
-			this.userName = userName;
-		}
-		/**
-		 * @return the name
-		 */
-		public String getName() {
-			return name;
-		}
-		/**
-		 * @param name the name to set
-		 */
-		public void setName(String name) {
-			this.name = name;
-		}
-		/**
-		 * @return the avatorURL
-		 */
-		public URL getProfileImageURL() {
-			return profileImageURL;
-		}
-		/**
-		 * @param avatorURL the avatorURL to set
-		 */
-		public void setProfileImageURL(URL url) {
-			profileImageURL = url;
-		}
-		@Override
-		public String getListViewText() {
-			return (name != null) ? name : userName; //+ " " + profileImageURL;
-		}  //getListView
-		
-	}
 }  //class

@@ -13,11 +13,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jittr.android.api.betsquared.BSClientAPIAsync;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.api.betsquared.DataFetchingCallBack;
 import com.jittr.android.bs.dto.BSFriendRequests;
 import com.jittr.android.bs.dto.BSUserDashBoard;
-import com.jittr.android.fs.examples.BSClientAPIAsync;
-import com.jittr.android.fs.examples.DataFetchingCallBack;
 
 public class GetUserDashBoardActivity extends GameOnBaseActivity  {
 

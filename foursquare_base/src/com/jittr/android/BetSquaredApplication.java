@@ -9,6 +9,8 @@ import com.jittr.android.GameOnProperties;
 import com.jittr.android.api.betsquared.db.GameOnDatabase;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.GameOnUserSettings;
+import com.jittr.android.bs.dto.SocialNetworkFriend;
+
 import static com.jittr.android.util.Consts.*;
 
 import android.app.Application;
@@ -39,6 +41,7 @@ public class BetSquaredApplication extends Application {
 	private SQLiteDatabase database;
 	private final static String TAG = "BetSquaredApplication";
 	private final String LOGGEDINAS = "loggedinas";
+	private final String LOGGEDINNETWORK = "loggedinnetwork";
 	/**
 	 * 
 	 */
@@ -71,6 +74,7 @@ public class BetSquaredApplication extends Application {
 		if (userID > 0) {
             gameOnUserSettings = new GameOnUserSettings(userID);
  		} else {
+ 			//TODO - perhaps show a list of userIDs on the handset device
 		 /*   Intent intent = new Intent(this,GameOnLoginActivity.class);
 		    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		    startActivity(intent); */
@@ -100,7 +104,7 @@ public class BetSquaredApplication extends Application {
  */
 	public boolean login(String userName, String password) {
         boolean loginSuccessful = false;
-        String sql = "select userName,userID from " + GameOnDatabase.DB_USER_TABLE +
+        String sql = "select userName,userID,primaryNetworkID from " + GameOnDatabase.DB_USER_TABLE +
         		     " where userName='" + userName + "' and password = '" + password + "'";
         Log.d(TAG, sql);
 
@@ -108,15 +112,17 @@ public class BetSquaredApplication extends Application {
         Cursor cursor = database.rawQuery(sql,null); 
         if (null != cursor && cursor.getCount() >0 && cursor.moveToFirst() ) {
         	userID = cursor.getInt(1);
+        	int primaryNetworkID = cursor.getInt(2);
+        	cursor.close();
         	sql = "update " + GameOnDatabase.DB_USER_TABLE + " set loggedInSince = CURRENT_TIMESTAMP where userID = " + userID; 
             Log.d(TAG,sql);
         	database.execSQL(sql);
         	gameOnProperties.storeSharedPreference(LOGGEDINAS, userID);
+        	gameOnProperties.storeSharedPreference(LOGGEDINNETWORK, primaryNetworkID);
         	Log.d(TAG,"UserID of Login = " + String.valueOf(userID));
             gameOnUserSettings = refreshUserSettings(userID);
         	loginSuccessful = true;
-        } //if
-        if (null != cursor) cursor.close();
+        } else  if (null != cursor) cursor.close();
  		return loginSuccessful;
 	} //login
 	
@@ -128,6 +134,7 @@ public class BetSquaredApplication extends Application {
         Log.d(TAG,sql);
     	database.execSQL(sql);
     	gameOnProperties.storeSharedPreference(LOGGEDINAS, 0);
+    	gameOnProperties.storeSharedPreference(LOGGEDINNETWORK, 0); //jhm 10/9/2010
     
     	logoutSuccessful = true;
     	gameOnUserSettings = null;  //blow away existing userSettings
@@ -135,24 +142,39 @@ public class BetSquaredApplication extends Application {
 		return logoutSuccessful;
 	} //logout
 	/* check if the user is logged in - returns go_user ID if loggedIn or false
+	 * JHM - October 9,2010 - handle a user that is logged in with a socialNetwork (OATH)
 	 */
 	 public int isLoggedIn() {
 
 		int loggedInAsInt = 0;
 		int preferredUserID = gameOnProperties.retrieveSharedPreference(LOGGEDINAS, 0);
-        
-		if (preferredUserID > 0) {
+        int preferredNetworkID = gameOnProperties.retrieveSharedPreference(LOGGEDINNETWORK, 0);  //JHM 10/9/2010
+	
+        if (preferredUserID > 0) {
            String sql = "select loggedInSince from " + GameOnDatabase.DB_USER_TABLE + " where userID = " + preferredUserID;   
            Log.d(TAG,sql);
            Cursor cursor = database.rawQuery(sql,null); 
            if (null != cursor && cursor.getCount() >0 && cursor.moveToFirst() ) {
               long loggedInSince = cursor.getLong(0);
-              if (loggedInSince > 0) {
-            	  loggedInAsInt = preferredUserID;
-              }
-              Log.d(TAG,"Value of LoggedInSince = " + loggedInSince);
-              gameOnUserSettings = refreshUserSettings(loggedInAsInt);
               cursor.close();
+              if (loggedInSince > 0) {
+                  gameOnUserSettings = refreshUserSettings(preferredUserID);
+            	  switch (preferredNetworkID) {
+            	     case BETSQUARED_NETWORK:
+                      	 loggedInAsInt = preferredUserID;
+                      	 break;
+            	     case FACEBOOK_NETWORK:
+            	    	 loggedInAsInt = (gameOnUserSettings.isFacebookAuthorized() ? preferredUserID : 0);
+            	    	 break;
+            	     case TWITTER_NETWORK:
+            	    	 loggedInAsInt = (gameOnUserSettings.isTwitterAuthorized() ? preferredUserID : 0);
+            	    	 break;
+            	     case FOURSQUARE_NETWORK:
+            	    	 loggedInAsInt = (gameOnUserSettings.isFoursquareAuthorized() ? preferredUserID : 0);
+            	    	 break;
+            	  }  //switch
+              } else if (null != cursor) cursor.close();
+              Log.d(TAG,"Value of LoggedInSince = " + loggedInSince);
            } //if
       
         } //if
@@ -270,7 +292,9 @@ public class BetSquaredApplication extends Application {
 	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_USERID,
 	    		                 
 	    		                 GameOnDatabase.DB_USER_TABLE_FS_TOKEN, 
-	    		                 GameOnDatabase.DB_USER_TABLE_FS_TOKEN_SECRET
+	    		                 GameOnDatabase.DB_USER_TABLE_FS_TOKEN_SECRET,
+	    		                 GameOnDatabase.DB_USER_TABLE_FS_NAME,
+	    		                 GameOnDatabase.DB_USER_TABLE_FS_USERID
 	    		                 }, 
 	                "userID ='" + userID + "'", null, null, null, null);
 	      /* will return at most 1 record so no loop is necessary. 0 rowcount means the credentials were not correct */
@@ -285,12 +309,69 @@ public class BetSquaredApplication extends Application {
                settings.setTwitterOAuthToken(cursor.getString(7));   
                settings.setTwitterOAuthTokenSecret(cursor.getString(8));
                settings.setTwitterSN(cursor.getString(9));		      
-               settings.setTwitterID(cursor.getString(10));		      
+               settings.setTwitterID(cursor.getString(10));	
+               settings.setFoursquareOAuthToken(cursor.getString(11));
+               settings.setFoursquareOAuthTokenSecret(cursor.getString(12));
+               settings.setFoursquareName(cursor.getString(13));
+               settings.setFoursquareUserID(cursor.getString(14));
 	       } //if
 	       cursor.close();
            Log.d(TAG,settings.toString());
 	       return settings;
 	 } //refreshUserSettings
+	 
+	 /* update handset sqlite  database with "friends" from the supported social Networks
+	  * TODO- add error handling 
+	  */
+	 public boolean updateSocialNetworkFriends(int networkID , ArrayList<SocialNetworkFriend> socialNetworkFriend) {
+         String sqlTable= "insert or replace into " + GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_TABLE +
+         "(" +
+        	GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_USERID + "," +
+         	GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_NETWORKID + "," +
+         	GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_USERNAME + "," +
+         	GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_NAME + "," +
+            GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_AVATARURL +
+         ") Values (";
+         for (SocialNetworkFriend friend : socialNetworkFriend) {
+        	 StringBuffer sql = new StringBuffer(sqlTable); 
+        	 sql.append("'" + friend.getUserID() + "',");
+        	 sql.append(networkID + ",'");
+        	 sql.append(friend.getUserName() + "','");
+        	 sql.append(friend.getName() + "','");
+        	 sql.append(friend.getProfileImageURL() + "')"); 
+        	 Log.d(TAG,sql.toString());
+    		 database.execSQL(sql.toString());
+        } //
+ 		 return true;
+	 }  //updateSocialNetworkFriend
+	 
+	 /* get the list of "friends" from the various social networks supported by BetSquare
+	  * These friend records stored on the handset to mitigate against excessive and expensive webservice calls
+	  * against the native social network api. Still need to sync in a system configurable manor
+	  */
+	 public ArrayList<SocialNetworkFriend> getSocialNetworkFriends(int networkID) {
+	
+	  ArrayList<SocialNetworkFriend> arrayList = null;	 
+      Cursor cursor = database.query(GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_TABLE, 
+    		  new String[] { GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_USERNAME,
+    		                 GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_USERID,
+    		                 GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_NAME,
+    		                 GameOnDatabase.DB_SOCIALNETWORK_FRIENDS_AVATARURL  }, 
+    			                "networkID =" + networkID , null, null, null, null);
+      if (null != cursor && cursor.getCount() >0 && cursor.moveToFirst() ) { 
+    	  arrayList = new ArrayList<SocialNetworkFriend>();
+    	  do {
+    		  SocialNetworkFriend friend = new SocialNetworkFriend();
+    		  friend.setUserName(cursor.getString(0));
+    		  friend.setUserID(cursor.getString(1));
+    		  friend.setName(cursor.getString(2));
+    //		  friend.setProfileImageURL(cursor.getString(3));
+    	      arrayList.add(friend);	  
+          } while (cursor.moveToNext()); //do
+      } //if
+      if (null != cursor) cursor.close();
+      return arrayList; 
+	 }  //getSocialNetworkFriends
 	 
 	 public int getLoginID() {
 		 Log.d(TAG,(gameOnUserSettings != null ? gameOnUserSettings.toString() : " GameOnUserSettings null"));

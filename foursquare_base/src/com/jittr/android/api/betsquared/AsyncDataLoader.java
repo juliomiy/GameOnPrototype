@@ -1,9 +1,8 @@
-package com.jittr.android.fs.examples;
+package com.jittr.android.api.betsquared;
 
 import java.util.HashMap;
 import java.util.List;
 
-import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.dto.BSFriendRequests;
 import com.jittr.android.bs.dto.BSUserDashBoard;
 import com.jittr.android.bs.dto.Game;

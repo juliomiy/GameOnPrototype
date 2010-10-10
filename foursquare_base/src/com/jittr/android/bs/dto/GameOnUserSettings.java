@@ -39,6 +39,8 @@ public class GameOnUserSettings implements Parcelable {
 	private String  foursquareOAuthTokenSecret;
 	private String foursquarePassword;
 	private final String TAG = "GameOnUserSettings";
+	private String foursquareName;
+	private String foursquareUserID;
 
 	 public static final Parcelable.Creator<GameOnUserSettings> CREATOR
 	    = new Parcelable.Creator<GameOnUserSettings>() {
@@ -382,6 +384,14 @@ public class GameOnUserSettings implements Parcelable {
 		this.foursquareOAuthTokenSecret = foursquareOAuthTokenSecret;
 	}
 
+	public void setFoursquareName(String name) {
+         foursquareName= name;		
+	}
+
+	public void setFoursquareUserID(String userID) {
+         foursquareUserID=userID;		
+	}
+
 //deprecated once oauth is required
 	public String getFoursquarePassword() {
 		//TODO - remove hardcoded value
@@ -391,9 +401,6 @@ public class GameOnUserSettings implements Parcelable {
 	public void setFoursquarePassword(String password) {
          foursquarePassword = password;		
 	}
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -417,12 +424,16 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(foursquareDefault);
 		builder.append(", foursquareID=");
 		builder.append(foursquareID);
+		builder.append(", foursquareName=");
+		builder.append(foursquareName);
 		builder.append(", foursquareOAuthToken=");
 		builder.append(foursquareOAuthToken);
 		builder.append(", foursquareOAuthTokenSecret=");
 		builder.append(foursquareOAuthTokenSecret);
 		builder.append(", foursquarePassword=");
 		builder.append(foursquarePassword);
+		builder.append(", foursquareUserID=");
+		builder.append(foursquareUserID);
 		builder.append(", fullName=");
 		builder.append(fullName);
 		builder.append(", icqID=");
@@ -456,4 +467,20 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append("]");
 		return builder.toString();
 	}
+
+	public boolean isFacebookAuthorized() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isTwitterAuthorized() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean isFoursquareAuthorized() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
 	} //class

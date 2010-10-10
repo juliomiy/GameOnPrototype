@@ -41,9 +41,11 @@ public class BSListItemLayout <V> extends LinearLayout {
 		//textView.setText("Game/Event Item");
 	}
 	
+
 	public void setSelectByCheckedTextView() {
 		checkedTextView.setVisibility(View.VISIBLE);
 	}
+	
 	public void setSelectByCheckBox() {
         selectByCheckBox.setVisibility(View.VISIBLE);		
 	}

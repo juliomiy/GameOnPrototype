@@ -6,11 +6,11 @@ package com.jittr.android;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.jittr.android.api.betsquared.BSClientAPIAsync;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSGetUserGamesAdapter;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.UserGamesDetails;
-import com.jittr.android.fs.examples.BSClientAPIAsync;
 
 import android.os.Bundle;
 
