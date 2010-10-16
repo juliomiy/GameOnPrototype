@@ -42,7 +42,7 @@
  <Button 
     android:text="@string/loginbuttontext" 
     android:id="@+id/loginButton" 
-    android:textSize="15px"
+    android:textSize="15dip"
     android:textStyle="bold"
     android:layout_width="match_parent" 
     android:layout_height="40dip">

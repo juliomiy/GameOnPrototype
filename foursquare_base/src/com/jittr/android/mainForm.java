@@ -74,7 +74,7 @@ public class mainForm extends GameOnBaseActivity {
 		}
     } //resume
     
-    private void setUpViews() {
+    protected void setUpViews() {
 		cancelButton = (Button) findViewById(R.id.cancel_button);
         foursquareOauthButton = (Button)findViewById(R.id.foursquareoauth);
         twitterOAuthButton = (Button)findViewById(R.id.twitterOAuthButton);
@@ -133,7 +133,8 @@ public class mainForm extends GameOnBaseActivity {
 			
 			@Override
 			public void onClick(View v) {
-		       viewUserDetails();		
+		    //   viewUserDetails();
+				testApproveDeclineFriends();
 			}
 		});
         
@@ -179,7 +180,11 @@ public class mainForm extends GameOnBaseActivity {
 		});
 
     } //setupViews
-    protected void testTwitterButtonClicked() {
+    protected void testApproveDeclineFriends() {
+       	Intent intent = new Intent(this,GameOnApproveDeclineListActivity.class);
+		startActivity(intent);				
+	}
+	protected void testTwitterButtonClicked() {
     	Intent intent = new Intent(this,GameOnInviteFriendsTwitterListActivity.class);
 		startActivity(intent);				
 		

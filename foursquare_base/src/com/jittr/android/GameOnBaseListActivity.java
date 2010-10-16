@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public abstract class GameOnBaseListActivity extends ListActivity implements DataFetchingCallBack {
-	private static final String TAG = "GameOnBaseListActivity";
+	static final String TAG = "GameOnBaseListActivity";
 	protected TextView windowTitle;
 	protected BetSquaredApplication appContext;
 	private ImageView windowIcon;

@@ -2,11 +2,15 @@ package com.jittr.android;
 
 import static com.jittr.android.util.Consts.INTENT_VIEW_PUBLIC_GAME;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.bs.adapters.BSBaseAdapter;
+import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.GameAddResponse;
+import com.jittr.android.util.Consts;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,15 +19,21 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 
-public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
+/* @author juliomiyares
+ * @version 1.0
+ * @date May 2010
+ */
+public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 
 	private RadioButton visitingTeamRadioButton;
 	private RadioButton homeTeamRadioButton;
@@ -40,6 +50,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 	private EditText wagerUnitsEditText;
 	private String wagerType;
 	private String wagerUnits;
+	protected BSBaseAdapter <Friend> adapter;
     
 	public GameOnCustomizePublicGameActivity() {
 		super();
@@ -50,6 +61,13 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
         setContentView(R.layout.gameoncustomizepublicgame);
         setUpViews();
         setBottomBar(0);  //no exclusion of bottom buttons
+        adapter = new BSBaseAdapter(this ,(ArrayList) getAppContext().getFriends(),Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
+        if (null != adapter) { 
+        	setListAdapter(adapter);
+        } else {
+        	//TODO handle error messaging
+        }  //if
+
     }   //onCreate
 
 	public void setWagerType(String wagerType) {
@@ -79,7 +97,8 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 		super.onResume();
 	}  //onResume	
 
-	private void setUpViews() {
+	protected void setUpViews() {
+		setUpViews(Consts.LAYOUT_ADD_DONE);
 		teamRadioGroup = (RadioGroup)findViewById(R.id.teamsRadioGroup);
         teamSelectionListener = new OnCheckedChangeListener() {
 
@@ -135,7 +154,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 		homeTeamRadioButton = (RadioButton)findViewById(R.id.homeTeamRadioButton);
         eventNameTextView = (TextView)findViewById(R.id.eventNameTextView);
         eventDateTimeTextView = (TextView)findViewById(R.id.eventDateTimeTextView);
-		cancelButton=(ImageButton)findViewById(R.id.cancelButton);
+/*		cancelButton=(ImageButton)findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -143,6 +162,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
                 cancelButtonClicked();				
 			}
 		});
+		*/
 		betButton=(Button)findViewById(R.id.betButton);
 		betButton.setEnabled(false);
 		betButton.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +176,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 	}  //setupViews
 
 	private boolean passEdits() {
-		if (null == wagerUnits || null == wagerType || null == selectedTeam || "".equals(selectedTeam)) return false;
+		if (null == wagerUnits || null == wagerType || null == selectedTeam || "".equals(selectedTeam) || !adapter.isItemSelected()) return false;
 		return true;
 	} //passEdits
 	
@@ -173,7 +193,12 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
         queryParams.put("teamname", selectedTeam);
         queryParams.put("publicgameid",game.getId());
      //   queryParams.put("sportname", game.getSportname());
+        //grab invited Friends
+        //currently returned as space delimited list 
+        String selectedFriends = adapter.getSelectedKeys();
+        queryParams.put("invitees", selectedFriends);
 
+        //TOOO - convert to Async method
 		BSClientAPIImpl bs = new BSClientAPIImpl();
 		GameAddResponse response = bs.addGame(queryParams);
 		if (null != response && response.getStatus_code().equals("200")) {
@@ -186,4 +211,26 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseActivity {
 	protected void cancelButtonClicked() {
  		finish();
 	} //cancelButton
+
+	/* @author juliomiyares
+	 * (non-Javadoc)
+	 * @see android.app.ListActivity#onListItemClick(android.widget.ListView, android.view.View, int, long)
+	 * @version 1.0
+	 * select from list of friends to invite to a bet
+	 * TODO - make more general and not tied only to the checkedTextView
+	 */
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		boolean state = adapter.toggleSelection(position); //returns true if turned on, false if turned off
+		CheckedTextView ctv = (CheckedTextView) v.findViewById(android.R.id.text2);
+		ctv.setChecked(state);
+		betButton.setEnabled(passEdits());
+	} //onListItemClick
+
+	@Override
+	public void dataLoaded(Object response) {
+		// TODO Auto-generated method stub
+		
+	}
 } //class

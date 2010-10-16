@@ -54,7 +54,7 @@ public class GameOnRegisterEmailActivity extends GameOnBaseActivity {
 		super.onResume();
 	}  //onResume	
 
-	private void setUpViews() {
+	protected void setUpViews() {
 		userNameEditText = (EditText)findViewById(R.id.userNameEditText);
 	    userNameEditText.setFilters(new UserNameInputFilter().setUpFilter());
 		

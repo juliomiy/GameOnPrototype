@@ -78,7 +78,7 @@ public class GetUserDetailsActivity extends GameOnBaseActivity implements LoadIm
 		} //if
 	} //onResume
 	
-	 private void setUpViews() {
+	 protected void setUpViews() {
 		   foursquareAvatarUrlTextView = (TextView)findViewById(R.id.foursquareAvatarUrlTextView);
 		   foursquareAvatarImageView = (ImageView)findViewById(R.id.foursquareAvatarUrlImageView);
 		   emailEditText = (EditText)findViewById(R.id.emailEditText);

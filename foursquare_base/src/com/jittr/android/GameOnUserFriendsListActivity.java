@@ -10,8 +10,10 @@ import java.util.List;
 import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSBaseAdapter;
 import com.jittr.android.bs.dto.Friend;
+import com.jittr.android.util.Consts;
 
 import android.os.Bundle;
+import android.util.Log;
 
 /**
  * @author juliomiyares
@@ -43,15 +45,24 @@ public final class GameOnUserFriendsListActivity extends GameOnBaseListActivity 
         userID = String.valueOf(getAppContext().getLoginID());
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("userid", userID);
-        List<Friend> friendsList = bs.getUserFriends(params);
+        ArrayList<Friend> friendsList = bs.getUserFriends(params);
+        
         if (null != friendsList ) {
-    	    adapter = new BSBaseAdapter<Friend>(this,(ArrayList<Friend>) friendsList);
+     //       adapter = new BSBaseAdapter(this ,(ArrayList) getAppContext().getFriends(),Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
+        	appContext.updateBetsquaredFriends( friendsList);
+    	    adapter = new BSBaseAdapter<Friend>(this,(ArrayList<Friend>) friendsList,Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
     	    setListAdapter(adapter);
         } //if
+        //TEST CODE - remove
+        HashMap<String,String> testhm = new HashMap<String,String>();
+        testhm.put("operation", "invites");
+        testhm.put("userid", userID);
+        ArrayList<Friend> testlist = bs.getFriendInvites(testhm);
+        Log.d(TAG,"test");
 	}  //onCreate
 
 	protected void setUpViews() {
-        super.setUpViews();  //call parent
+		super.setUpViews(Consts.LAYOUT_ADD_DONE);
 	} //setUpViews
 
 	/* (non-Javadoc)

@@ -35,7 +35,7 @@ public final class GameOnConfirmRegistration extends GameOnBaseActivity {
 		super.onResume();
 	}  //onResume	
 
-	private void setUpViews() {
+	protected void setUpViews() {
 		  confirmRegistrationTextView = (TextView)findViewById(R.id.confirmRegistrationTextView);
 	      cancelButton = (Button)findViewById(R.id.windowTitleLeftButton);
 	      cancelButton.setVisibility(View.VISIBLE);

@@ -251,7 +251,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 
 	
 	@Override
-	public List<Friend> getUserFriends(HashMap<String, String> params) {
+	public ArrayList<Friend> getUserFriends(HashMap<String, String> params) {
 		// TODO Auto-generated method stub
 		ArrayList<Friend> friends = new ArrayList<Friend>();
 		try {
@@ -275,7 +275,39 @@ public class BSClientAPIImpl implements BSClientInterface {
 		return friends; 
 	}
 
+
+	/* added by @author Julio Hernandez-Miyares
+	 * @date October 16,2010
+	 * get friend invites 
+	 * uses go_getfriends.php operation = invites
+	 * returns a set of friends who have invited you to be connected via betsquare
+	 * This is an internal api - the invitee and invitetor are both already betsquare users
+	 * and possess a betsquared userID 
+	 */
+	public ArrayList<Friend> getFriendInvites(HashMap<String, String> params) {
+		// TODO Auto-generated method stub
+		ArrayList<Friend> friends = new ArrayList<Friend>();
+		try {
+			
+			String url = URLBuilder.createUrl(Consts.BS_GET_FRIENDS_INVITES_ENDPOINT_URL,params);
+			Log.d("","Url :"+url);
 	
+			String data = htppClient.getContent(new URL(url));
+			System.out.println("data "+data);
+			
+			FriendHandler fh = new FriendHandler(data);
+			friends = (ArrayList<Friend>)fh.parse();
+			//System.out.println("friends  :"+friends);
+			//return friends; 
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			Log.w("", "Exception while getFriendInvites "+e.getMessage());
+		}
+		
+		return friends; 
+	}   //getFriendInvites
+
 	@Override
 	public BSFriendRequests postInvite(HashMap<String, String> params) {
 		// TODO Auto-generated method stub

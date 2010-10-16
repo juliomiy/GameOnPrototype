@@ -3,6 +3,7 @@ package com.jittr.android;
 import java.util.HashMap;
 
 import com.jittr.android.api.betsquared.DataFetchingCallBack;
+import com.jittr.android.util.Consts;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -35,6 +36,8 @@ public abstract class GameOnBaseActivity extends Activity implements DataFetchin
 	private Button betsButton;
 	private Button friendsButton;
 	protected ProgressDialog progressDialog;
+	private Button doneButton;
+
 	
 	public GameOnBaseActivity() {
 		super();
@@ -59,7 +62,29 @@ public abstract class GameOnBaseActivity extends Activity implements DataFetchin
 		Log.d(TAG, "In OnActivtyResult " + requestCode + " " + resultCode);
 		super.onActivityResult(requestCode, resultCode, data);
 	}
-	
+	protected void setUpViews(int... attributes) {
+	    for (int attribute : attributes) {
+	    	switch (attribute) {
+	    	   case Consts.LAYOUT_ADD_DONE :
+	    		   doneButton = (Button)findViewById(R.id.windowTitleLeftButton);	
+	    		   doneButton.setVisibility(View.VISIBLE);
+                   break;
+	    	}  //switch
+	    } //for
+	    if (doneButton != null) { 
+	    	doneButton.setText("Done");
+		    doneButton.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+	                finish();
+				}
+			});
+	    } //if
+	}  //setUpViews
+	protected void setUpViews() {
+	}
+
 	/* Sets up the bottomBar
 	 * @params
 	 * @returns true

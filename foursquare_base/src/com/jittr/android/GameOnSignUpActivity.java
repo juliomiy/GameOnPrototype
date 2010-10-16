@@ -54,7 +54,7 @@ public class GameOnSignUpActivity extends GameOnBaseActivity {
 		//data.
 	} //onActivityResult
 	
-	private void setUpViews() {
+	protected void setUpViews() {
          cancelButton = (Button)findViewById(R.id.windowTitleLeftButton);
          cancelButton.setVisibility(View.VISIBLE);		
          cancelButton.setOnClickListener(new View.OnClickListener() {

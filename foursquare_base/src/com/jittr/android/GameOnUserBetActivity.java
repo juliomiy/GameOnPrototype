@@ -163,6 +163,7 @@ public final class GameOnUserBetActivity extends GameOnBaseListActivity {
         //currently returned as space delimited list 
         String selectedFriends = adapter.getSelectedKeys();
         queryParams.put("invitees", selectedFriends);
+        //TOOO - convert to Async method
 		BSClientAPIImpl bs = new BSClientAPIImpl();
 		GameAddResponse response = bs.addGame(queryParams);
 		if (null != response && response.getStatus_code().equals("200")) {

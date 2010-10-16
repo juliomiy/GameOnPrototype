@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+       <activity
+               android:name=".GameOnApproveDeclineListActivity"
+               android:label="Approve/Decline">
+       </activity> 
        <activity 
                android:name=".GameOnConfirmRegistration"
                android:label="Confirm Registration">

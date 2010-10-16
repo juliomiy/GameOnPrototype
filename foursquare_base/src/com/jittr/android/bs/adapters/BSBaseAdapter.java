@@ -122,6 +122,7 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 	}   //itemsSelected
 	
 	/* return the keys (userIDs) of the game/bet invitees
+	 * return value is a space delimited string of Betsquared userIDs
 	 * TODO - make Generic instead of having to explicity 
 	 * set to FRIEND Object
 	 */
@@ -135,7 +136,8 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 		    sb.append(value.getFrienduserid()  + " ");
 		} //for
 		sb.trimToSize();
-		return sb.toString();
+		
+		return sb.toString().trim();
 	}
 	
 	/* Return map of selected list items*/

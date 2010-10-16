@@ -8,7 +8,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 /*
  * @author juliomiyares
  * @version 1.0
- * @purpose - define sqlite local storage on the handset
+ * @purpose - define sqlite local storage on the handset. Some of the tables are used to store 
+ * locally , the same information that is stored on the host. This is to limit the bandwidth requirements
+ * of the application
+ * So far, the following tables are synchronized on the handset
+ *              BetSquared Friends
+ *              Social Network Friends
+ *              
  */
 public class GameOnDatabase extends SQLiteOpenHelper {
 	public static final int VERSION = 13;

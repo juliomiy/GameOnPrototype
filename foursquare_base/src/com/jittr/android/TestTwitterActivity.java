@@ -25,7 +25,7 @@ public class TestTwitterActivity extends GameOnBaseActivity {
          setUpViews();
 	}
 	
-	  private void setUpViews() {
+	  protected void setUpViews() {
 		// TODO Auto-generated method stub
 		
 	}

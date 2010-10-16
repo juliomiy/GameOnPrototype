@@ -32,6 +32,7 @@ public final static String BS_GET_USER_GAMES_ENDPOINT_URL = "http://jittr.com/ji
 public final static String BS_GET_USER_FRIENDS_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getfriends.php";
 public static final String BETSQUARED_SUFFIX = "";  //leave blank for now
 public final static String BS_POST_INVITE_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postfriend.php"; 
+public static final String BS_GET_FRIENDS_INVITES_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getfriends.php";
 
 
 //Asynch Operation Codes

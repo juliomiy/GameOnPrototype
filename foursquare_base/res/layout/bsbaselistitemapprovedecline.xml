@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jittr.android.bs.adapters.BSListItemApproveDeclineLayout 
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+<TextView 
+    android:layout_gravity="left"
+    android:text="@+id/TextView01" 
+	android:id="@android:id/text1"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</TextView>
+<LinearLayout
+  android:gravity="right"
+  android:orientation="horizontal"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+<Button 
+    android:text="@string/approve" 
+    android:id="@android:id/button1"
+    android:gravity="center"
+    android:layout_width="wrap_content" 
+    android:layout_height="35dip">
+</Button>
+<Button 
+    android:text="@string/decline" 
+    android:id="@android:id/button2"
+    android:gravity="center"
+    android:layout_width="wrap_content" 
+    android:layout_height="35dip">
+</Button>
+</LinearLayout>
+</com.jittr.android.bs.adapters.BSListItemApproveDeclineLayout> 

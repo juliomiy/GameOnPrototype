@@ -166,7 +166,7 @@ public void onCreate(Bundle savedInstanceState) {
 //    webView.loadUrl(authURL);
   }  //onResume
   
-  private void setUpViews() {
+  protected void setUpViews() {
        webView = (WebView)findViewById(R.id.webView);
 	   webView.setWebViewClient(webViewClient);
   }  //setUpViews

@@ -11,6 +11,7 @@ import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.bs.adapters.BSGetUserGamesAdapter;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.UserGamesDetails;
+import com.jittr.android.util.Consts;
 
 import android.os.Bundle;
 
@@ -46,7 +47,7 @@ public class GameOnUserBetsListActivity extends GameOnBaseListActivity {
        // bsAsync.
         bs = new BSClientAPIImpl();
         userID = String.valueOf(getAppContext().getLoginID());
-        HashMap<String, String> params = new HashMap();
+        HashMap<String, String> params = new HashMap<String,String>();
         params.put("userid", userID);
         UserGamesDetails detail = bs.getUserGames(params);
         if (null != detail && detail.getStatus_code() == 200) {
@@ -56,9 +57,9 @@ public class GameOnUserBetsListActivity extends GameOnBaseListActivity {
 	}  //OnCreate
 
 	protected void setUpViews() {
-		// TODO Auto-generated method stub
-		
-	}
+		super.setUpViews(Consts.LAYOUT_ADD_DONE);
+	} //setUpViews
+	
 	/* (non-Javadoc)
 	 * @see com.jittr.android.fs.examples.DataFetchingCallBack#dataLoaded(java.lang.Object)
 	 */

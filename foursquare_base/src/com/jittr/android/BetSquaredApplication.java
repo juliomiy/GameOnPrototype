@@ -245,6 +245,8 @@ public class BetSquaredApplication extends Application {
 	 /*
 	  * Get friends from go_userFriends handset table
 	  * This function does not require going across the network
+	  * This is a convenience to speed up the application but requires synchronization 
+	  * with the HOST data to make sure the handset table is not out of date.
 	  */
 	 public ArrayList<Friend> getFriends() {
 		  ArrayList<Friend>arrayList = null;
@@ -319,6 +321,31 @@ public class BetSquaredApplication extends Application {
            Log.d(TAG,settings.toString());
 	       return settings;
 	 } //refreshUserSettings
+	
+	 /* update the betsquared friends on the handset
+	  * convenience to not have to go across the network constantly.
+	  * Add synchronization problem with the host data that needs to be addressed
+	  */
+	 public boolean updateBetsquaredFriends(ArrayList<Friend> betsquaredFriends) {
+         String sqlTable= "insert or replace into " + GameOnDatabase.DB_FRIENDS_TABLE +
+         "(" +
+            GameOnDatabase.DB_USER_TABLE_USERID + "," +
+        	GameOnDatabase.DB_FRIENDS_TABLE_USERID + "," +
+         	GameOnDatabase.DB_FRIENDS_TABLE_USERNAME + "," +
+         	GameOnDatabase.DB_FRIENDS_TABLE_NAME + 
+         ") Values (";
+         for (Friend friend : betsquaredFriends) {
+        	 StringBuffer sql = new StringBuffer(sqlTable);
+        	 sql.append( this.getLoginID() + ",");
+        	 sql.append("'" + friend.getFrienduserid() + "','");
+        	 sql.append(friend.getFriendusername() + "','");
+        	 sql.append(friend.getFriendname() + "')");
+        	 Log.d(TAG,sql.toString());
+    		 database.execSQL(sql.toString());
+        } //for
+		 
+		 return true;
+	 }  //updteBetsquaredFriends
 	 
 	 /* update handset sqlite  database with "friends" from the supported social Networks
 	  * TODO- add error handling 

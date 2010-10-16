@@ -35,7 +35,7 @@
 </Button>
 <Button 
     android:visibility="visible"
-    android:text="@string/testbetsquareuserdetails"
+    android:text="@string/testbetsquarapprovedecline"
     android:id="@+id/getbetsuserdetails_button" 
     android:layout_width="wrap_content" 
     android:layout_height="wrap_content"

@@ -28,12 +28,5 @@
    style="@style/StandardTextView"
     android:id="@+id/totalLosesTextView" 
  ></TextView>
-<ImageButton 
-    style="@style/StandardButton"
-    android:src="@drawable/finalarrow1"
-    android:text="@string/cancel_button" 
-    android:id="@+id/cancelButton" 
->
- </ImageButton>
-  <include android:id="@+id/bottomBar" layout="@layout/bottombar" />
+<include android:id="@+id/bottomBar" layout="@layout/bottombar" />
 </LinearLayout>

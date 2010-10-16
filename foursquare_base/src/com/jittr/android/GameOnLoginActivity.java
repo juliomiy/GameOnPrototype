@@ -41,7 +41,7 @@ public class GameOnLoginActivity extends GameOnBaseActivity {
 		}
 	}	
 
-	private void setUpViews() {
+	protected void setUpViews() {
 		userNameEditText = (EditText)findViewById(R.id.userNameEditText);
 		userNameEditText.addTextChangedListener(new TextWatcher() {
 

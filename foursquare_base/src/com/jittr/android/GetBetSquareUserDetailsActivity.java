@@ -86,7 +86,7 @@ private Button testButton;
 		} //if
 	} //onResume
 	
-	private void setUpViews() {
+	protected void setUpViews() {
 	    userNameEditText = (EditText)findViewById(R.id.userNameEditText);	
 	    firstNameEditText = (EditText)findViewById(R.id.firstNameEditText);	
 	    lastNameEditText = (EditText)findViewById(R.id.lastNameEditText);	

@@ -18,6 +18,7 @@ import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.api.betsquared.DataFetchingCallBack;
 import com.jittr.android.bs.dto.BSFriendRequests;
 import com.jittr.android.bs.dto.BSUserDashBoard;
+import com.jittr.android.util.Consts;
 
 public class GetUserDashBoardActivity extends GameOnBaseActivity  {
 
@@ -41,8 +42,9 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity  {
         setBottomBar(R.id.meButton);
     } //onCreate
 	
-	private void setUpViews() {
-		cancelButton = (ImageButton)findViewById(R.id.cancelButton);
+	protected void setUpViews() {
+		setUpViews(Consts.LAYOUT_ADD_DONE);
+//		cancelButton = (ImageButton)findViewById(R.id.cancelButton);
 		userIDTextView = (TextView)findViewById(R.id.userIDTextView);
 		totalBetsTextView = (TextView)findViewById(R.id.totalBetsTextView);
 		betsAcceptedTextView = (TextView)findViewById(R.id.betsAcceptedTextView);
@@ -50,12 +52,12 @@ public class GetUserDashBoardActivity extends GameOnBaseActivity  {
 		totalWinsTextView = (TextView)findViewById(R.id.totalWinsTextView);
 		totalLosesTextView = (TextView)findViewById(R.id.totalLosesTextView);
 
-		cancelButton.setOnClickListener(new View.OnClickListener() {
+	/*	cancelButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 		        finish();
 		    }
-		});
+		}); */
 	} //setUpViews
     
 	protected void onResume() {

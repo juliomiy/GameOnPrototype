@@ -4,11 +4,7 @@
   android:orientation="vertical"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
- <ImageButton 
-      style="@style/StandardCancelButton"
-      android:id="@+id/cancelButton" >
-</ImageButton>
-<TextView 
+ <TextView 
      style="@style/StandardTextView"
      android:layout_below="@+id/cancelButton"
      android:id="@+id/eventNameTextView" >
@@ -19,6 +15,7 @@
       android:id="@+id/eventDateTimeTextView" >
 </TextView>
 <RadioGroup 
+     android:orientation="horizontal"
      android:id="@+id/teamsRadioGroup" 
      android:layout_below="@+id/eventDateTimeTextView"
      android:imeOptions="actionNext"
@@ -51,6 +48,8 @@
      android:text="@string/wagertype">
 </TextView>
 <EditText
+     android:text="@string/ducketts"
+     android:hint="@string/ducketts"
      android:imeOptions="actionNext"
      style="@style/StandardEditText"
      android:id="@+id/wagerTypeEditText">
@@ -86,5 +85,16 @@
     android:text="@string/betbutton" 
     android:id="@+id/betButton" >
 </Button>
+<ListView
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_below="@+id/betButton"
+        android:layout_above="@+id/bottomBarLayout"
+ 		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:scrollbars="vertical"
+		android:id="@id/android:list"
+		android:text="@string/nogames">
+</ListView>	
 <include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
 </RelativeLayout>

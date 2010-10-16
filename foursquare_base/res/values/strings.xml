@@ -28,6 +28,7 @@
     <string name="logoutbuttontext">Logout</string>
     <string name="registerbuttontext">Join Betsquared</string>
     <string name="testgetbetsquareduserdetails">Test Get Betsquared User Details</string>
+    <string name="testbetsquarapprovedecline">Test Approve/Decline</string>
     <string name="avatarurl">Avatar Url</string>
     <string name="visitingteam">Visiting Team</string>
     <string name="hometeam">Home Team</string>
@@ -48,12 +49,15 @@
     <string name="signin_up_text">You can sign-in with your foursquare, facebook, twitter or other account.</string>
     <string name="betsquaredtos">Yes, I Accept Betsquared\'s test <a href="jittr.com"> Terms of Service</a></string>
     <string name="findfriends">Find Friends</string>
+    <string name="ducketts">Ducketts</string>
     <string name="confirmregistration">Welcome to Betsquared</string>
     <!--  Added for Facebook Example integration -->
     <string name="request">Request!</string>
     <string name="hello">Hello World!</string>
     <string name="upload">Upload Photo</string><string name="post">Wall Post!</string>
     <string name="delete">Delete Post</string>
+    <string name="approve">Approve</string>
+    <string name="decline">Decline</string>
     <!-- End Added for Facebook Example integration -->
 
  </resources>
