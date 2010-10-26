@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <!-- Used in customize Date driven layout -->
+    <string-array name="payment_choices">
+       <item>Facebook Currency</item>
+       <item>PayPal</item>
+       <item>Google Checkout</item>
+    </string-array>
     <string-array name="time_choices">
         <item>Today</item>
         <item>This Weekend</item>

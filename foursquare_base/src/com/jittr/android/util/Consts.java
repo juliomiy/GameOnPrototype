@@ -22,6 +22,9 @@ public static final int ERROR = 500;
 public static final String GOOGLE_MAP_API_KEY = "ABQIAAAAkkbA1TOcucOZig_ctpQNSRQH3Cvd4D3k_1VFIvdkDzxWu_QC3hQMauhlyVDyEB5rQFm5ddDmGwWIDg";	
 
 //Bet Square API
+
+public final static String BS_UPDATE_USER_BANKSTATEMENT_ENDPOINT_URL="http://jittr.com/jittr/gameon/go_postupdateuser.php";
+public final static String BS_GET_USER_ENDPOINT_URL="http://jittr.com/jittr/gameon/go_getuser.php";
 public final static String BS_ADD_USER_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postnewuser_post.php";
 public final static String BS_GET_PUBLIC_GAMES_ENDPOINT_URL ="http://api.betsquared.com/v1/go_getpublicgames.php"; 
 public final static String BS_GET_USER_DASHBOARD_ENDPOINT_URL = "http://api.betsquared.com/v1/go_getuserdashboard.php";
@@ -78,6 +81,11 @@ public final static String TWITTER_CALLBACK_URL = "123";
 public static final String TWITTER_SUFFIX = "@twitter";  //appended to username when used as login
 public static final String NEW_REGISTRATION = "NEW_REGISTRATION";
 
+//Tranasctions
+public final static int TRANSACTION_WAGER = 1;
+public final static int TRANSACTION_PURCHASE_DUCKETTS=2;
+public final static int TRANSACTION_TRANSFER_DUCKETTS=3;
+public final static int TRANSACTION_GIFT_DUCKETTS=4;
 
 //XML Tags
 public final static String XML_TAG_GAME_ID = "gameid";
@@ -103,6 +111,11 @@ public static final int LAYOUT_ADD_DONE = 1;
 public static final int LAYOUT_SELECT_BY_CHECKBOX = 2;
 public static final int LAYOUT_SELECT_BY_BUTTON = 3;
 public static final int LAYOUT_SELECT_BY_CHECKEDTEXTVIEW = 4;
+
+public static final int FRIEND_INVITE_DECLINE = 1;
+public static final int FRIEND_INVITE_APPROVE = 2;
+//betsquared errorCode - in 500 series
+public static final String BS_ERROR_PARSING_RESPONSE = "501";
 	
 
 

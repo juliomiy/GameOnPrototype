@@ -4,13 +4,16 @@
 package com.jittr.android.bs.adapters;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import com.jittr.android.api.betsquared.BSClientAPIImpl;
+import com.jittr.android.bs.dto.Friend;
+import com.jittr.android.util.Consts;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CheckedTextView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,8 +32,11 @@ public class BSListItemApproveDeclineLayout<V> extends LinearLayout {
 	private TextView textView;
 	private Button approveButton;
 	private Button declineButton;
-	public BSBaseApproveDeclineAdapter adapter;
+	//TODO - bad form that I have to include these pointers here
+	//TODO should be able to surface the list item interaction at the activity level
+	public BSBaseApproveDeclineAdapter<V> adapter;
 	public ArrayList<V>list;
+	public int userID;
 	/**
 	 * @param context
 	 */
@@ -70,17 +76,32 @@ public class BSListItemApproveDeclineLayout<V> extends LinearLayout {
 		});
 	}
 
+	/* Decline a Betsquare Friend  invite 
+	 * TODO - move out of this class
+	 */
 	protected void declineInvite() {
-         Toast.makeText(this.getContext(), "Declined " + listViewText.getListViewText(), 2000);
-    //     list.remove(1);
-         list.remove(listViewText);
-         adapter.notifyDataSetChanged();
+		 boolean rv = false;
+		 BSClientAPIImpl bs = new BSClientAPIImpl();
+		 rv = bs.processFriendInvite((Friend) listViewText,Consts.FRIEND_INVITE_DECLINE,userID);
+         if (rv) {
+		     list.remove(listViewText);
+             adapter.notifyDataSetChanged();
+         } //if
         // adapter.
-	}
+	}  //declineInvite
 
+	/* Approve a Betsquare Friend Invite
+	 * TODO - move out of this class
+	 */
 	protected void approveInvite() {
-          Toast.makeText(this.getContext(), "Approved " + listViewText.getListViewText(), 2000);		
-	}
+		 boolean rv = false;
+		 BSClientAPIImpl bs = new BSClientAPIImpl();
+		 rv = bs.processFriendInvite((Friend) listViewText,Consts.FRIEND_INVITE_APPROVE,userID);
+         if (rv) {
+		     list.remove(listViewText);
+             adapter.notifyDataSetChanged();
+         } //if
+	} //approveInvite
 
 	public void setEvent(BSListViewable <V> lvi) {
 		listViewText = lvi;

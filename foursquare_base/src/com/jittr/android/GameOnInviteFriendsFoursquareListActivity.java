@@ -61,7 +61,7 @@ public class GameOnInviteFriendsFoursquareListActivity extends
 	
 	protected void setUpViews() {
 
-		super.setUpViews();
+		super.setUpViews(Consts.LAYOUT_ADD_DONE);
 		instructionTextView = (TextView)findViewById(R.id.instructionTextView);
 		instructionTextView.setText(R.string.invitefoursquarefriends);
 		networkLogoImageView = (ImageView)findViewById(R.id.networkLogoImageView);

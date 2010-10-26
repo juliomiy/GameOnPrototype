@@ -16,6 +16,9 @@ import static com.jittr.android.util.Consts.*;
 import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -36,7 +39,9 @@ public class BetSquaredApplication extends Application {
 	private GameOnProperties gameOnProperties;  //user data - currently stored as preferences
 	private GameOnUserSettings gameOnUserSettings;
 	private boolean isLoggedIn;
+	private String appVersionCodeMajorMinor;
 	private int userID;
+	private String userIDString;
 	private String userName;
 	private SQLiteDatabase database;
 	private final static String TAG = "BetSquaredApplication";
@@ -53,6 +58,7 @@ public class BetSquaredApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		setAppVersionCodeMajorMinor();
 		GameOnDatabase helper = new GameOnDatabase(this);
 		database = helper.getWritableDatabase();
 		if (null == location) {
@@ -97,6 +103,21 @@ public class BetSquaredApplication extends Application {
 	public void Destroy() {
 		gameOnProperties = null;
 	}
+    public void setAppVersionCodeMajorMinor() {
+        PackageInfo info = null;;
+        PackageManager pm = getPackageManager();
+        try {
+			info = pm.getPackageInfo("com.jittr.android", 0);
+		   	appVersionCodeMajorMinor = "Package Info " + info.packageName + " Version " + info.versionCode  + info.versionName;
+		    } catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			   e.printStackTrace();
+		    } finally {
+    	      info = null;
+    	      pm = null;
+		    }
+    }  //setAppVersionCodeMajorMinor
+    
 /* Log into the application - 
  * TODO - sync between application handset device credentials and host based credentials 
  * TODO - If you logged in via one of the supported social networks, the password will be blank and 
@@ -400,6 +421,12 @@ public class BetSquaredApplication extends Application {
       return arrayList; 
 	 }  //getSocialNetworkFriends
 	 
+	 /* return existing Betsquared Properties else instantiate new object and return. Contains preferences 
+	  * 
+	  */
+	 public GameOnProperties getGameOnProperties() {
+		 return (   (null!=gameOnProperties) ? gameOnProperties: new GameOnProperties((BetSquaredApplication)this.getApplicationContext()));
+	 }
 	 public int getLoginID() {
 		 Log.d(TAG,(gameOnUserSettings != null ? gameOnUserSettings.toString() : " GameOnUserSettings null"));
 		 return (null != gameOnUserSettings ? gameOnUserSettings.getUserID() : 0);
@@ -414,7 +441,15 @@ public class BetSquaredApplication extends Application {
 		   return gameOnUserSettings; 
 	 }
 
+	public String getUserIDString() {
+		if (null==userIDString) userIDString = String.valueOf(getLoginID());
+		return userIDString;
+	}
 	public String getUserName() {
 		return gameOnUserSettings.getUserName();
+	}
+
+	public String getAppVersionCodeMajorMinor() {
+		return appVersionCodeMajorMinor;
 	}
 }  //class

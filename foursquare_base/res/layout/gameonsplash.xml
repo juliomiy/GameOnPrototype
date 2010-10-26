@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical"
+   android:background="@color/WHITE"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content">
+<ImageView 
+     android:layout_marginTop="10dip"
+    android:layout_gravity="center"
+    android:src="@drawable/betsquaredicon_100x100"
+    android:id="@+id/ImageView01" 
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+ </ImageView>
+<TextView 
+   android:layout_below="@+id/ImageView01"
+    android:layout_marginTop="10dip"
+    android:layout_gravity="center_vertical"
+    android:gravity="center"
+    android:id="@+id/betsquatedVersionTextView" 
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+</TextView>
+<LinearLayout
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_marginTop="10dip"
+   android:layout_alignParentBottom="true"
+   android:orientation="horizontal"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content">
+<TextView
+    android:linksClickable="true"
+    android:textStyle="italic"
+    android:id="@+id/copyrightTextView"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</TextView>
+<ImageView 
+    android:layout_gravity="center"
+    android:src="@drawable/jittr_logo50x36"
+    android:id="@+id/ImageView01" 
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+ </ImageView>
+</LinearLayout>
+</RelativeLayout>

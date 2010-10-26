@@ -8,7 +8,7 @@
 		android:layout_height="wrap_content"
 		android:scrollbars="vertical"
 		android:id="@id/android:list"
-		android:text="@string/nogames">
+		android:text="@string/nofriends">
 </ListView>	
 <include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
  </RelativeLayout>

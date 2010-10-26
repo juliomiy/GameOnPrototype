@@ -50,7 +50,21 @@
     <string name="betsquaredtos">Yes, I Accept Betsquared\'s test <a href="jittr.com"> Terms of Service</a></string>
     <string name="findfriends">Find Friends</string>
     <string name="ducketts">Ducketts</string>
+    <string name="paymentchoices">Payment Choices</string>
+    <!--  Menu Strings -->
     <string name="confirmregistration">Welcome to Betsquared</string>
+    <string name="aboutbetsquaredmenu">About Betsquared</string>
+    <string name="bankstatementmenu">Bank Statement</string>
+    <string name="preferencesmenu">Preferences</string>
+    <!--  End Menu Strings -->
+    <!--  Purchase Strings -->
+    <string name="purchasefailure">Purchase Failure!</string>
+    <string name="purchasefailure2">We\'re sorry, but your payment failed.</string>
+    <string name="purchasecanceled">Purchase Canceled!</string>
+    <string name="purchasecanceled2">Your payment has been canceled.</string>
+    <string name="purchasecanceled3">Your account was not charged.</string>
+    <string name="purchasesucceeded">Purchase Succeeded</string>
+    <string name="tryagain">Try Again!</string>
     <!--  Added for Facebook Example integration -->
     <string name="request">Request!</string>
     <string name="hello">Hello World!</string>
@@ -58,6 +72,9 @@
     <string name="delete">Delete Post</string>
     <string name="approve">Approve</string>
     <string name="decline">Decline</string>
+    <string name="nofriends">No Friends</string>
+    <string name="invitebetsquaredfriends">Find and Invite Betsquared Users</string>
+    <string name="revieworder">Review Order</string>
     <!-- End Added for Facebook Example integration -->
 
  </resources>

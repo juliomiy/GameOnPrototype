@@ -26,28 +26,38 @@
             android:layout_width="match_parent">
      </TextView>
  </LinearLayout>
-<TextView 
+<LinearLayout
+     android:layout_below="@+id/headerLayout" 
+     android:visibility="gone"
+     android:id="@+id/searchLayout"
+     android:layout_marginTop="10dip"
+     android:orientation="vertical" 
+     android:layout_height="wrap_content" 
+     android:layout_width="match_parent">
+ <TextView 
+       android:text="Search"
        android:layout_marginTop="10dip"
        android:gravity="center"
        android:textStyle="bold"
-       android:textSize="18dip"
        android:layout_gravity="center"
        android:id="@+id/instructionTextView" 
-       android:layout_below="@+id/headerLayout"
        android:layout_height="wrap_content" 
        android:layout_width="match_parent">
 </TextView>
- <ListView
-        android:layout_marginTop="10dip"
-        android:layout_below="@+id/instructionTextView"
- 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:scrollbars="vertical"
-		android:id="@id/android:list"
-		android:text="@string/nogames">
-</ListView>	
- <Button 
-       android:layout_below="@id/android:list"
+<EditText
+       android:hint="Search Query"
+       android:id="@+id/searchQueryEditText"       
+       android:layout_height="wrap_content" 
+       android:layout_width="match_parent"
+></EditText>
+</LinearLayout>
+<LinearLayout 
+    android:id="@+id/selectionLayout"
+    android:layout_below="@+id/searchLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<Button 
        android:layout_centerHorizontal="true"
        android:layout_gravity="center"
 	   android:layout_marginTop="10dip"
@@ -59,5 +69,15 @@
        android:id="@+id/inviteFriendsButton"
        android:enabled="false" 
 ></Button>
+<ListView
+        android:layout_weight="1"
+        android:layout_marginTop="10dip"
+ 		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:scrollbars="vertical"
+		android:id="@id/android:list"
+		android:text="@string/nofriends">
+</ListView>
+</LinearLayout>
 <include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
 </RelativeLayout>

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.jittr.android.R;
+import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.util.Consts;
 
 import android.content.Context;
@@ -23,10 +24,12 @@ public class BSBaseApproveDeclineAdapter <L> extends BaseAdapter {
 	private Context context;
 	private int[] layoutAttributes;
 	private HashMap<Integer,L> listSelection;
+	private int userID;
 
-    public BSBaseApproveDeclineAdapter(Context context, ArrayList <L> list) {
+    public BSBaseApproveDeclineAdapter(Context context, ArrayList <L> list,int userID) {
     	this.context = context;
     	activityList = list;
+    	this.userID=userID;
      } //constructor
 
 	/**
@@ -68,8 +71,11 @@ public class BSBaseApproveDeclineAdapter <L> extends BaseAdapter {
 		BSListItemApproveDeclineLayout  tli;
 		if (null == convertView) {
 			tli = (BSListItemApproveDeclineLayout)View.inflate(context, R.layout.bsbaselistitemapprovedecline,null);
+            //TODO = not happy that I need to do the following lines of code
 			tli.adapter = this;
 			tli.list = activityList;
+			tli.userID=userID;
+			//END TODO
 		/*	if (null != layoutAttributes) {
 				for (int attribute: layoutAttributes) {
 				   switch (attribute) {

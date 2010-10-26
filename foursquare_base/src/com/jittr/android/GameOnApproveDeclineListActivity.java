@@ -44,11 +44,11 @@ public class GameOnApproveDeclineListActivity extends GameOnBaseListActivity {
         String userID = String.valueOf(getAppContext().getLoginID());
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("userid", userID);
-  //      params.put("operation", "invites");
+        params.put("operation", "invitee");
  
-        ArrayList<Friend> friendsInviteList = bs.getUserFriends(params);
+        ArrayList<Friend> friendsInviteList = bs.getFriendInvites(params);
         if (null != friendsInviteList ) {
-            	adapter = new BSBaseApproveDeclineAdapter<Friend>(this,(ArrayList<Friend>) friendsInviteList);
+            	adapter = new BSBaseApproveDeclineAdapter<Friend>(this,(ArrayList<Friend>) friendsInviteList,this.getAppContext().getLoginID());
            	    setListAdapter(adapter);
         } //if
 

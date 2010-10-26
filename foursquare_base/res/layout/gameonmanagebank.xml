@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/relativeLayout"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+<LinearLayout 
+    android:layout_marginTop="10dip"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent" 
+    android:id="@+id/currentBalanceLinearLayout">
+<TextView 
+     android:id="@+id/textView01"
+     android:textStyle="bold"
+     android:layout_marginLeft="10dip"
+     android:layout_marginRight="10dip"
+     android:gravity="center"
+     android:layout_gravity="center"
+     android:text="Current Available Balance"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+</TextView>
+ <TextView 
+     android:gravity="center"
+     android:layout_gravity="center"
+     android:layout_height="wrap_content" 
+     android:layout_width="wrap_content"
+     android:layout_toRightOf="@+id/textView01" 
+     android:id="@+id/currentDuckettBalanceTextView">
+</TextView>
+</LinearLayout>
+<LinearLayout 
+    android:layout_marginTop="10dip"
+    android:layout_below="@+id/currentBalanceLinearLayout"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent" 
+    android:id="@+id/currentInPlayLinearLayout">
+<TextView 
+     android:layout_marginLeft="10dip"
+     android:layout_marginRight="10dip"
+     android:textStyle="bold"
+     android:gravity="center"
+     android:id="@+id/textView02"
+     android:text="Current In Play Balance"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+</TextView>
+ <TextView 
+     android:textStyle="bold"
+     android:gravity="center"
+     android:layout_height="wrap_content" 
+     android:layout_width="wrap_content"
+     android:layout_toRightOf="@+id/textView02" 
+     android:id="@+id/currentInPlayDuckettBalanceTextView">
+</TextView>
+</LinearLayout>
+<LinearLayout 
+    android:layout_marginTop="10dip"
+    android:layout_below="@+id/currentInPlayLinearLayout"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent" 
+    android:id="@+id/purchaseLinearLayout" >
+<TextView
+     android:layout_marginLeft="10dip"
+     android:text="Add to Balance"
+     android:id="@+id/addDuckettBalanceTextView"
+     android:layout_width="wrap_content" 
+     android:layout_height="wrap_content">
+</TextView>
+<EditText 
+     android:numeric="integer"
+     android:singleLine="true"
+     android:imeOptions="actionDone" 
+     android:layout_height="wrap_content" 
+     android:layout_width="wrap_content"
+     android:layout_toRightOf="@+id/addDuckettBalanceTextView" 
+     android:id="@+id/addDuckettBalanceEditText">
+</EditText>
+</LinearLayout>
+<Spinner 
+     android:prompt="@string/paymentchoices"
+     android:entries="@array/payment_choices"
+     android:layout_height="wrap_content" 
+     android:id="@+id/paymentChoicesSpinner"
+     android:layout_width="200dip" 
+     android:layout_below="@+id/purchaseLinearLayout">
+</Spinner>
+<Button 
+     android:enabled="false"
+     android:gravity="center"
+     android:layout_height="wrap_content" 
+     android:layout_width="150dip" 
+     android:layout_below="@+id/paymentChoicesSpinner" 
+     android:id="@+id/reviewOrderButton" 
+     android:text="@string/revieworder">
+ </Button>
+</RelativeLayout>

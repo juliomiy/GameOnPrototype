@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.jittr.android.bs.dto.BSFriendRequests;
+import com.jittr.android.bs.dto.BSUserBankStatement;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.Game;
@@ -25,5 +26,6 @@ public interface BSClientInterface {
 		UserGamesDetails getUserGames(HashMap<String, String> params);
 		List<Friend>  getUserFriends(HashMap<String, String> params);
 		BSFriendRequests postInvite(HashMap<String, String> params);
-		
-}
+		BSUserBankStatement getUserBankBalance(HashMap<String,String> params);
+		BSUserBankStatement updUserBankBalance(HashMap<String,String> params);
+}  //BSClientInterface

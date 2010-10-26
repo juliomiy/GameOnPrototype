@@ -41,8 +41,54 @@ public class GameOnUserSettings implements Parcelable {
 	private final String TAG = "GameOnUserSettings";
 	private String foursquareName;
 	private String foursquareUserID;
+	
+    private int ducketBankBalanceAvailable;
+    private int duckettsInPlay;
+    private int duckettOverDraftLimit;
+    private int duckettOverDraftAvailable;
+    private int duckettOverDraftInUse;
+    
+	 public int getDucketBankBalanceAvailable() {
+		return ducketBankBalanceAvailable;
+	}
 
-	 public static final Parcelable.Creator<GameOnUserSettings> CREATOR
+	public void setDucketBankBalanceAvailable(int ducketBankBalanceAvailable) {
+		this.ducketBankBalanceAvailable = ducketBankBalanceAvailable;
+	}
+
+	public int getDuckettsInPlay() {
+		return duckettsInPlay;
+	}
+
+	public void setDuckettsInPlay(int duckettsInPlay) {
+		this.duckettsInPlay = duckettsInPlay;
+	}
+
+	public int getDuckettOverDraftLimit() {
+		return duckettOverDraftLimit;
+	}
+
+	public void setDuckettOverDraftLimit(int duckettOverDraftLimit) {
+		this.duckettOverDraftLimit = duckettOverDraftLimit;
+	}
+
+	public int getDuckettOverDraftAvailable() {
+		return duckettOverDraftAvailable;
+	}
+
+	public void setDuckettOverDraftAvailable(int duckettOverDraftAvailable) {
+		this.duckettOverDraftAvailable = duckettOverDraftAvailable;
+	}
+
+	public int getDuckettOverDraftInUse() {
+		return duckettOverDraftInUse;
+	}
+
+	public void setDuckettOverDraftInUse(int duckettOverDraftInUse) {
+		this.duckettOverDraftInUse = duckettOverDraftInUse;
+	}
+
+	public static final Parcelable.Creator<GameOnUserSettings> CREATOR
 	    = new Parcelable.Creator<GameOnUserSettings>() {
 	   	
 	        public GameOnUserSettings createFromParcel(Parcel in) {
@@ -408,6 +454,16 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(TAG);
 		builder.append(", aimID=");
 		builder.append(aimID);
+		builder.append(", ducketBankBalanceAvailable=");
+		builder.append(ducketBankBalanceAvailable);
+		builder.append(", duckettOverDraftAvailable=");
+		builder.append(duckettOverDraftAvailable);
+		builder.append(", duckettOverDraftInUse=");
+		builder.append(duckettOverDraftInUse);
+		builder.append(", duckettOverDraftLimit=");
+		builder.append(duckettOverDraftLimit);
+		builder.append(", duckettsInPlay=");
+		builder.append(duckettsInPlay);
 		builder.append(", email=");
 		builder.append(email);
 		builder.append(", facebookDefault=");

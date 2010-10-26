@@ -127,7 +127,7 @@ public class Friend implements BSListViewable {
 
 	@Override
 	public String getListViewText() {
-		return (null != friendname ? friendname : friendusername);
+		return (null != friendname && ! "".equals(friendname) ? friendname : friendusername);
 	}
 	
 	

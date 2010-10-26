@@ -8,6 +8,7 @@ import java.util.List;
 import android.util.Log;
 
 import com.jittr.android.bs.dto.BSFriendRequests;
+import com.jittr.android.bs.dto.BSUserBankStatement;
 import com.jittr.android.bs.dto.BSUserDetails;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.Game;
@@ -17,6 +18,7 @@ import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.dto.UserGamesDetails;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
 import com.jittr.android.bs.handlers.BSFriendRequestHandler;
+import com.jittr.android.bs.handlers.BSUserBankStatementRequestHandler;
 import com.jittr.android.bs.handlers.FriendHandler;
 import com.jittr.android.bs.handlers.PublicGamesHandler;
 import com.jittr.android.bs.handlers.GameInvitesHandler;
@@ -44,7 +46,71 @@ public class BSClientAPIImpl implements BSClientInterface {
 		this("test","juliomiy","test");
 	}  //constructor
 	
-	public List<Game> getPublicGames(HashMap<String , String> criteria) {
+	/* searches betsquared users - intended to generate list of betsquared users who are not current friends
+	 * 
+	 */
+	public ArrayList<Friend> searchBetsquaredUsers(
+			HashMap<String, String> params) {
+		ArrayList<Friend> friends = new ArrayList<Friend>();
+		try {
+			
+			String url = URLBuilder.createUrl(Consts.BS_GET_FRIENDS_INVITES_ENDPOINT_URL,params);
+			Log.d("","Url :"+url);
+	
+			String data = htppClient.getContent(new URL(url));
+			System.out.println("data "+data);
+			
+			FriendHandler fh = new FriendHandler(data);
+			friends = (ArrayList<Friend>)fh.parse();
+			//System.out.println("friends  :"+friends);
+			//return friends; 
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			Log.w("", "Exception while getFriendInvites "+e.getMessage());
+		}
+		
+		return friends; 
+	} //searchBetsquaredUsers
+
+	//process Friend Invite operations - Approve/Decline
+    public boolean processFriendInvite(Friend friend , int operation,int loginID) {
+    	String operationStr = null;
+    	String inviteeBSUserIDStr= null;
+    	String invitetorBSUserIDStr = null;
+    	String invites = null;
+    	
+    	if (null == friend ) return false;
+    	
+    	invitetorBSUserIDStr = Integer.toString(friend.getFrienduserid());
+    	inviteeBSUserIDStr = Integer.toString(loginID);
+    	HashMap<String,String> params = new HashMap<String,String>();
+        switch (operation) {
+           case  Consts.FRIEND_INVITE_DECLINE :
+        	   params.put("inviteeuserid", inviteeBSUserIDStr);
+        	   operationStr="decline";
+        	   invites = "invitetoruserid=" + invitetorBSUserIDStr;
+        	   break;
+           case  Consts.FRIEND_INVITE_APPROVE:
+           	   params.put("inviteeuserid", inviteeBSUserIDStr);
+           	   operationStr="approve";
+        	   invites = "invitetoruserid=" + invitetorBSUserIDStr;
+        	   break;
+        default: return false;	   
+        }  //switch
+    	params.put("operation", operationStr);
+    	params.put("socialnetworkid", Integer.toString(Consts.BETSQUARED_NETWORK));
+    	params.put("socialnetworkname", "betsquared");
+    	params.put("invites", invites);
+    	BSFriendRequests response = this.postInvite(params);
+       	params = null;  //reset
+        
+    	if  (response.getStatus_code().equals("200")  )
+       	   return true;
+    	else return false;
+    }  //processFriendInvite
+	
+    public List<Game> getPublicGames(HashMap<String , String> criteria) {
 		
 		try {
 			
@@ -285,7 +351,6 @@ public class BSClientAPIImpl implements BSClientInterface {
 	 * and possess a betsquared userID 
 	 */
 	public ArrayList<Friend> getFriendInvites(HashMap<String, String> params) {
-		// TODO Auto-generated method stub
 		ArrayList<Friend> friends = new ArrayList<Friend>();
 		try {
 			
@@ -310,7 +375,6 @@ public class BSClientAPIImpl implements BSClientInterface {
 
 	@Override
 	public BSFriendRequests postInvite(HashMap<String, String> params) {
-		// TODO Auto-generated method stub
 		try {
 			String querStr = URLBuilder.createQueryStr(params);
 			
@@ -332,7 +396,57 @@ public class BSClientAPIImpl implements BSClientInterface {
 		return null;
 		
 	}
+
+	/* Get user BankBalance record, returns at most 1 record tied to the userID
+	 * (non-Javadoc)
+	 * @see com.jittr.android.api.betsquared.BSClientInterface#getUserBankBalance(java.util.HashMap)
+	 */
+	@Override
+	public BSUserBankStatement getUserBankBalance(HashMap<String, String> params) {
+		try {
+			String querStr = URLBuilder.createQueryStr(params);
+			
+			Log.d("","querStr:"+querStr);
+			Log.d("", "Url :"+Consts.BS_GET_USER_ENDPOINT_URL);
+			String data = htppClient.submitPostToServer(new URL(Consts.BS_GET_USER_ENDPOINT_URL), querStr); 
+			Log.d("","data "+data);
+			
+ 		    BSUserBankStatementRequestHandler  fh = new BSUserBankStatementRequestHandler(data);
+			
+			BSUserBankStatement bs = (BSUserBankStatement)fh.parse();
+			Log.d(" ", " bs obj "+bs);
+			return bs;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}  //getUserBankBalance
 	
-	
-	
-}
+	/* update the user's bank balance based on a transaction, usually a purchase of additional ducketts
+	 * (non-Javadoc)
+	 * @see com.jittr.android.api.betsquared.BSClientInterface#updUserBankBalance(java.util.HashMap)
+     * @version 1.0
+     * @date October 25,2010
+	 */
+	public BSUserBankStatement updUserBankBalance(HashMap<String,String>params) {
+		try {
+			String querStr = URLBuilder.createQueryStr(params);
+			
+			Log.d("","querStr:"+querStr);
+			Log.d("", "Url :"+Consts.BS_UPDATE_USER_BANKSTATEMENT_ENDPOINT_URL);
+			String data = htppClient.submitPostToServer(new URL(Consts.BS_UPDATE_USER_BANKSTATEMENT_ENDPOINT_URL), querStr); 
+			Log.d("","data "+data);
+			
+ 		    BSUserBankStatementRequestHandler  fh = new BSUserBankStatementRequestHandler(data);
+			
+			BSUserBankStatement bs = (BSUserBankStatement)fh.parse();
+			Log.d(" ", " bs obj "+bs);
+			return bs;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}  //updUserBankBalance
+}  //class

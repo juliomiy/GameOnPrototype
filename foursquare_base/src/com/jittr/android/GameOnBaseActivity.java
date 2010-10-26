@@ -170,13 +170,22 @@ public abstract class GameOnBaseActivity extends Activity implements DataFetchin
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {
 	
-		Intent intent;
+		Intent intent=null;
 		switch (item.getItemId())  {
 		   case R.id.update_user_settings :
 			   intent = new Intent(this,GetBetSquareUserDetailsActivity.class);
 			   break;
-	     default:
-	    	    return false;
+		   case R.id.inviteFriendsBetsquared :
+			   intent = new Intent(this, GameOnInviteFriendsBetsquareListActivity.class);
+			   break;
+		   case R.id.aboutBetsquared :
+			   intent = new Intent(this,GameOnSplashActivity.class);
+			   break;
+		   case R.id.banksettings :
+			   intent = new Intent(this,GameOnManageBankActivity.class);
+               break;
+		   default:
+	    	   return false;
 		}  //switch
 		
 	   startActivity(intent);	
@@ -239,4 +248,7 @@ public abstract class GameOnBaseActivity extends Activity implements DataFetchin
 		Log.d(TAG,"Pre Data Loading Call Back Triggered");
 	}
 
+	protected Button getDoneButton() {
+		return doneButton;
+	}
 }  //class

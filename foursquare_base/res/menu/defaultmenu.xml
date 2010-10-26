@@ -2,11 +2,19 @@
 <menu
   xmlns:android="http://schemas.android.com/apk/res/android">
    <item android:id="@+id/update_user_settings"
-          android:title="Preferences"
-          android:icon="@drawable/ic_menu_preferences" 
+          android:title="@string/preferencesmenu"
+          android:icon="@drawable/settings_48" 
      />
  <item android:id="@+id/banksettings"
-          android:title="Bank Statement"
+          android:title="@string/bankstatementmenu"
+          android:icon="@drawable/shopping" 
+ />
+ <item android:id="@+id/inviteFriendsBetsquared"
+          android:title="Betsquare Invite"
+          android:icon="@drawable/shopping" 
+ />
+ <item android:id="@+id/aboutBetsquared"
+          android:title="@string/aboutbetsquaredmenu"
           android:icon="@drawable/shopping" 
  />
  </menu>

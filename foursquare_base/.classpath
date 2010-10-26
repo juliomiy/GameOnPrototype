@@ -7,6 +7,7 @@
 	<classpathentry kind="lib" path="/Users/juliomiyares/Documents/GameOnPrototype/foursquare_base/lib/signpost-commonshttp4-1.2.1.1.jar"/>
 	<classpathentry kind="lib" path="/Users/juliomiyares/Documents/GameOnPrototype/foursquare_base/lib/signpost-core-1.2.1.1.jar"/>
 	<classpathentry kind="lib" path="/Users/juliomiyares/Documents/GameOnPrototype/foursquare_base/lib/twitter4j-core-2.1.2-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="lib/PayPal_MPL.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/FacebookSDK"/>
 	<classpathentry kind="lib" path="/Users/juliomiyares/Documents/GameOnPrototype/foursquare_base/lib/oauth-core-20090121.jar"/>
 	<classpathentry kind="output" path="bin"/>
