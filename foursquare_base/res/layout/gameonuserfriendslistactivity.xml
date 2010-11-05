@@ -3,7 +3,31 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
-  <ListView
+<LinearLayout 
+     android:id="@+id/headerLayout"
+     android:layout_marginTop="10dip"
+     android:orientation="horizontal" 
+     android:layout_height="wrap_content" 
+     android:layout_width="match_parent">
+     <ImageView 
+   	        android:layout_marginLeft="6sp" 
+   	        android:id="@+id/networkLogoImageView" 
+            android:src="@drawable/betsquaredicon_25x25"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+     </ImageView>
+     <TextView android:text="Betsquared Friends" 
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:id="@+id/loggedInAsTextView" 
+            android:layout_height="wrap_content" 
+            android:layout_width="match_parent">
+     </TextView>
+ </LinearLayout>
+ <ListView
+        android:layout_marginTop="10dip"
+        android:layout_below="@+id/headerLayout"
  		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:scrollbars="vertical"

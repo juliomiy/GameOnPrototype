@@ -3,14 +3,31 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
+ <LinearLayout 
+     android:id="@+id/headerLayout"
+     android:layout_marginTop="10dip"
+     android:orientation="horizontal" 
+     android:layout_height="wrap_content" 
+     android:layout_width="match_parent">
+     <ImageView 
+   	        android:layout_marginLeft="6sp"
+   	        android:layout_gravity="left" 
+   	        android:id="@+id/networkLogoImageView" 
+            android:src="@drawable/betsquaredicon_25x25"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+     </ImageView> 
  <TextView
     android:id="@+id/android:text1"
-    android:text="Process Friends"
-    android:layout_width="wrap_content" 
+    android:text=""
+    android:gravity="center"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="match_parent" 
     android:layout_height="wrap_content">
 </TextView>     
+</LinearLayout>
 <ListView 
-    android:layout_below="@+id/android:text1"
+    android:layout_below="@+id/headerLayout"
     android:layout_above="@+id/bottomBarLayout"
     android:id="@id/android:list" 
     android:layout_width="wrap_content" 

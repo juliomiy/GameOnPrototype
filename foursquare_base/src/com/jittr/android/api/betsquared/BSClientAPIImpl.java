@@ -14,11 +14,13 @@ import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.Game;
 import com.jittr.android.bs.dto.GameAddResponse;
 import com.jittr.android.bs.dto.GameInvites;
+import com.jittr.android.bs.dto.GameOnUserSettings;
 import com.jittr.android.bs.dto.UserAddResponse;
 import com.jittr.android.bs.dto.UserGamesDetails;
 import com.jittr.android.bs.handlers.BSDashBoardHandler;
 import com.jittr.android.bs.handlers.BSFriendRequestHandler;
 import com.jittr.android.bs.handlers.BSUserBankStatementRequestHandler;
+import com.jittr.android.bs.handlers.BSUserSettingsRequestHandler;
 import com.jittr.android.bs.handlers.FriendHandler;
 import com.jittr.android.bs.handlers.PublicGamesHandler;
 import com.jittr.android.bs.handlers.GameInvitesHandler;
@@ -45,7 +47,7 @@ public class BSClientAPIImpl implements BSClientInterface {
 		//default constructor
 		this("test","juliomiy","test");
 	}  //constructor
-	
+
 	/* searches betsquared users - intended to generate list of betsquared users who are not current friends
 	 * 
 	 */
@@ -240,9 +242,14 @@ public class BSClientAPIImpl implements BSClientInterface {
 		
 	}
 
+	/* create a game/wager - 
+	 * (non-Javadoc)
+	 * @see com.jittr.android.api.betsquared.BSClientInterface#addGame(java.util.HashMap)
+	 */
 	@Override
 	public GameAddResponse addGame(HashMap<String, String> params) {
-		// TODO Auto-generated method stub
+		AddGameResponseHandler gh;
+		GameAddResponse ur;
 		
 		try {
 			String querStr = URLBuilder.createQueryStr(params);
@@ -251,19 +258,30 @@ public class BSClientAPIImpl implements BSClientInterface {
 			Log.d("", "Url :"+Consts.BS_ADD_GAME_ENDPOINT_URL);
 			String data = htppClient.submitPostToServer(new URL(Consts.BS_ADD_GAME_ENDPOINT_URL), querStr); 
 			System.out.println("data "+data);
-			AddGameResponseHandler gh = new AddGameResponseHandler(data);
+			gh = new AddGameResponseHandler(data);
 			
-			GameAddResponse ur = (GameAddResponse)gh.parse();
-			return ur;
+			ur = (GameAddResponse)gh.parse();
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			ur = new GameAddResponse();
+			ur.setStatus_code(Consts.BS_ERROR_PARSING_RESPONSE);
+			ur.setStatus_message(e.getMessage());
+		} finally {
+			gh = null;
 		}
+		return ur;
 	}
 
+	/* Get Games/bet invites for a user
+	 * 
+	 * (non-Javadoc)
+	 * @see com.jittr.android.api.betsquared.BSClientInterface#getGameInvites(java.util.HashMap)
+	 */
 	@Override
 	public GameInvites getGameInvites(HashMap<String, String> params) {
+		GameInvitesHandler gh=null;
+		GameInvites game_invites = null;
 		
 		try {
 			
@@ -273,17 +291,20 @@ public class BSClientAPIImpl implements BSClientInterface {
 			String data = htppClient.getContent(new URL(url));
 			System.out.println("data "+data);
 			
-			GameInvitesHandler gh = new GameInvitesHandler(data);
-			GameInvites game_invites = (GameInvites)gh.parse();
+			gh = new GameInvitesHandler(data);
+			game_invites = (GameInvites)gh.parse();
 			System.out.println("game_invites  :"+game_invites);
-			return game_invites;
 		}
 		catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			game_invites = new GameInvites();
+			game_invites.setStatus_code(Consts.BS_ERROR_PARSING_RESPONSE);
+			game_invites.setStatus_message(e.getMessage());
+		} finally {
+			gh = null;
 		}
-
-	}
+		return game_invites;
+	} //getGameInvites
 
 	@Override
 	public UserGamesDetails getUserGames(HashMap<String, String> params) {
@@ -449,4 +470,35 @@ public class BSClientAPIImpl implements BSClientInterface {
 		}
 		return null;
 	}  //updUserBankBalance
+
+	/* Login a user via the host - returns GameOnUserSettings object if successful
+	 * 
+	 */
+	public GameOnUserSettings loginUser(HashMap<String, String> params) {
+		BSUserSettingsRequestHandler  requestHandler;
+		GameOnUserSettings userSettings = null;
+		
+		try {
+			String querStr = URLBuilder.createQueryStr(params);
+			
+			Log.d("","querStr:"+querStr);
+			Log.d("", "Url :"+Consts.BS_LOGIN_USER_ENDPOINT_URL);
+			String data = htppClient.submitPostToServer(new URL(Consts.BS_LOGIN_USER_ENDPOINT_URL), querStr); 
+			Log.d("","data "+data);
+			
+ 		    requestHandler = new BSUserSettingsRequestHandler(data);
+			
+			userSettings = (GameOnUserSettings)requestHandler.parse();
+			Log.d(" ", " bs obj "+userSettings);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			userSettings = new GameOnUserSettings();
+			userSettings.setStatus_message("");
+			userSettings.setStatus_code("");
+		} finally {
+			requestHandler = null;
+		}
+		return userSettings;
+	}  //loginUser
 }  //class

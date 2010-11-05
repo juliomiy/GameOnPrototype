@@ -31,6 +31,7 @@ public abstract class GameOnBaseListActivity extends ListActivity implements Dat
 	private Button placesButton;
 	protected ProgressDialog progressDialog;
 	private Button doneButton;
+	private TextView activityTextView;
 
 	public GameOnBaseListActivity() {
 		super();
@@ -67,12 +68,22 @@ public abstract class GameOnBaseListActivity extends ListActivity implements Dat
 	}
 
 	protected void setUpViews(int... attributes) {
+		activityTextView = (TextView)findViewById(android.R.id.text1);
 	    for (int attribute : attributes) {
 	    	switch (attribute) {
 	    	   case Consts.LAYOUT_ADD_DONE :
 	    		   doneButton = (Button)findViewById(R.id.windowTitleLeftButton);	
 	    		   doneButton.setVisibility(View.VISIBLE);
                    break;
+	    	   case Consts.LAYOUT_GAMEONGAMEINVITES_LISTACTIVITY :
+	    		   if (null != activityTextView) activityTextView.setText(R.string.gameinvitesapprovedecline);
+	    		   break;
+	    	   case Consts.LAYOUT_GAMEONFRIENDINVITES_LISTACTIVITY :
+	    		   if (null != activityTextView) activityTextView.setText(R.string.friendinvitesapprovedecline);
+	    		   break;
+	    	   case Consts.LAYOUT_GAMEONUSERBETS_LISTACTIVITY :
+	    		   if (null != activityTextView) activityTextView.setText(R.string.userbets);
+	    		   break;
 	    	}  //switch
 	    } //for
 	    if (doneButton != null) { 

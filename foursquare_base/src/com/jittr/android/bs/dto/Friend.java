@@ -1,5 +1,7 @@
 package com.jittr.android.bs.dto;
 
+import java.util.HashMap;
+
 import com.jittr.android.bs.adapters.BSListViewable;
 
 public class Friend implements BSListViewable {
@@ -128,6 +130,14 @@ public class Friend implements BSListViewable {
 	@Override
 	public String getListViewText() {
 		return (null != friendname && ! "".equals(friendname) ? friendname : friendusername);
+	}
+
+
+
+	@Override
+	public HashMap getListViewArray() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

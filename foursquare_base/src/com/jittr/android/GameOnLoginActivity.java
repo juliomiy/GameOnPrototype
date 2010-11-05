@@ -138,8 +138,13 @@ public class GameOnLoginActivity extends GameOnBaseActivity {
 			 Log.d(TAG,getAppContext().getUserSettings().toString());
 			 finish();
 		 } else {
-			 Toast.makeText(this, "Error Logging in", Toast.LENGTH_LONG).show();
-			 
+			 int userID = getAppContext().loginThroughHost(userName, password);
+             if (userID <=0) {
+			    Toast.makeText(this, "Error Logging in", Toast.LENGTH_LONG).show();
+             } else {
+    			 Log.d(TAG,getAppContext().getUserSettings().toString());
+            	 finish();
+             }
 		 } //if
 	} //loginClickButton
 

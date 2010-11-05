@@ -23,8 +23,8 @@ import android.widget.CheckBox;
  * @purpose - Adapter class for ListActivity
  */
 public class BSBaseAdapter <L>  extends BaseAdapter {
-	private ArrayList <L> activityList;
-	private Context context;
+	protected ArrayList <L> activityList;
+	protected Context context;
 	private int[] layoutAttributes;
 	private HashMap<Integer,L> listSelection;
 	/**
@@ -45,7 +45,7 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 	 */
 	@Override
 	public int getCount() {
-		return (null == activityList) ? null : activityList.size();
+		return (null == activityList) ? 0 : activityList.size();
 	}
 
 	/* (non-Javadoc)
@@ -84,6 +84,12 @@ public class BSBaseAdapter <L>  extends BaseAdapter {
 		    	     case Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW :
 			    		tli.setSelectByCheckedTextView();
 			    	    break; 
+		    	     case Consts.LAYOUT_SELECT_BY_TEXTVIEW :
+			    		tli.setSelectByTextView();
+			    	    break; 
+		    	     case Consts.LAYOUT_DISPLAY_AVATAR :
+		    	        tli.setAvatar(true);
+		    	        break;
 				   }  //switch
 				} //for
 			}

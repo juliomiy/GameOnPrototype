@@ -70,16 +70,6 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 
     }   //onCreate
 
-	public void setWagerType(String wagerType) {
-		this.wagerType = wagerType;
-		betButton.setEnabled(passEdits());
-	}
-
-	public void setWagerUnits(String wagerUnits) {
-		this.wagerUnits = wagerUnits;
-		betButton.setEnabled(passEdits());
-	}
-
 	protected void onResume() {
 		callingIntent = super.getIntent();
 	    if (callingIntent != null) {
@@ -129,6 +119,8 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
         	
         });
         wagerTypeEditText = (EditText)findViewById(R.id.wagerTypeEditText);
+        wagerTypeEditText.setText(R.string.ducketts);
+        
         wagerTypeEditText.addTextChangedListener(new TextWatcher() {
 
 			@Override
@@ -173,7 +165,34 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 				
 			}
 		});
-	}  //setupViews
+		setWagerType(getString(R.string.ducketts));
+	 }  //setupViews
+
+	public void setWagerType(String wagerType) {
+		this.wagerType = wagerType;
+		betButton.setEnabled(passEdits());
+	}
+
+	public void setWagerUnits(String wagerUnits) {
+		this.wagerUnits = wagerUnits;
+		betButton.setEnabled(passEdits());
+	}
+
+	public String getSelectedTeam() {
+		return selectedTeam;
+	}
+
+	public void setSelectedTeam(String selectedTeam) {
+		this.selectedTeam = selectedTeam;
+	}
+
+	public String getWagerType() {
+		return wagerType;
+	}
+
+	public String getWagerUnits() {
+		return wagerUnits;
+	}
 
 	private boolean passEdits() {
 		if (null == wagerUnits || null == wagerType || null == selectedTeam || "".equals(selectedTeam) || !adapter.isItemSelected()) return false;
@@ -181,7 +200,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 	} //passEdits
 	
 	protected void betButtonClickedI() {
-		HashMap<String, String> queryParams = new HashMap();
+		HashMap<String, String> queryParams = new HashMap<String,String>();
 		queryParams.put("eventname", game.getEventname());
 		queryParams.put("eventdatetime", game.getEventdatetime());
 		queryParams.put("wagerunits", wagerUnits);

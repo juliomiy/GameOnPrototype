@@ -39,7 +39,8 @@ public class GameOnUserBetsListActivity extends GameOnBaseListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         String userID=null;
-        setContentView(R.layout.gameonuserbetslistactivity);
+//        setContentView(R.layout.gameonuserbetslistactivity);
+        setContentView(R.layout.defaultlistview);
         
         setUpViews();
         setBottomBar(R.id.betsButton);
@@ -57,7 +58,7 @@ public class GameOnUserBetsListActivity extends GameOnBaseListActivity {
 	}  //OnCreate
 
 	protected void setUpViews() {
-		super.setUpViews(Consts.LAYOUT_ADD_DONE);
+		super.setUpViews(Consts.LAYOUT_ADD_DONE,Consts.LAYOUT_GAMEONUSERBETS_LISTACTIVITY);
 	} //setUpViews
 	
 	/* (non-Javadoc)

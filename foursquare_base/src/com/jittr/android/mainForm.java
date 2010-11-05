@@ -42,6 +42,7 @@ public class mainForm extends GameOnBaseActivity {
 	private Button userBetButton;
 	private Button testTwitterButton;
 	private Button testFoursquareButton;
+	private Button testGameInvitesButton;
 	protected final static String TAG = "mainForm";
   //  private BetSquaredApplication appContext;
     
@@ -87,6 +88,15 @@ public class mainForm extends GameOnBaseActivity {
         userBetButton = (Button)findViewById(R.id.userBetButton); 
         testTwitterButton = (Button)findViewById(R.id.testTwitterButton);
         testFoursquareButton = (Button)findViewById(R.id.testFoursquareButton);
+        testGameInvitesButton = (Button)findViewById(R.id.gameInviteButton);
+
+      testGameInvitesButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+                testGameInvitesButtonClicked();				
+			}
+		});
 
        testFoursquareButton.setOnClickListener(new View.OnClickListener() {
 			
@@ -180,7 +190,11 @@ public class mainForm extends GameOnBaseActivity {
 		});
 
     } //setupViews
-    protected void testApproveDeclineFriends() {
+    protected void testGameInvitesButtonClicked() {
+       	Intent intent = new Intent(this,GameOnGameInvitesListActivity.class);
+		startActivity(intent);				
+	}
+	protected void testApproveDeclineFriends() {
        	Intent intent = new Intent(this,GameOnApproveDeclineListActivity.class);
 		startActivity(intent);				
 	}

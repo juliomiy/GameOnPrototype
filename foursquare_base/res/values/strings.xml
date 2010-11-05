@@ -75,6 +75,9 @@
     <string name="nofriends">No Friends</string>
     <string name="invitebetsquaredfriends">Find and Invite Betsquared Users</string>
     <string name="revieworder">Review Order</string>
+    <string name="gameinvitesapprovedecline">Bet Invites Approve/Decline</string>
+    <string name="friendinvitesapprovedecline">Friend Invites Approve/Decline</string>
+    <string name="userbets">My Current Bets</string>
     <!-- End Added for Facebook Example integration -->
 
  </resources>

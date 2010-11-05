@@ -41,6 +41,8 @@ public class GameOnUserSettings implements Parcelable {
 	private final String TAG = "GameOnUserSettings";
 	private String foursquareName;
 	private String foursquareUserID;
+	private String statusCode;
+	private String statusMessage;
 	
     private int ducketBankBalanceAvailable;
     private int duckettsInPlay;
@@ -48,6 +50,19 @@ public class GameOnUserSettings implements Parcelable {
     private int duckettOverDraftAvailable;
     private int duckettOverDraftInUse;
     
+	public String getStatus_code() {
+		return statusCode;
+	}
+	public void setStatus_code(String statusCode) {
+		this.statusCode = statusCode;
+	}
+	public String getStatus_message() {
+		return statusMessage;
+	}
+	public void setStatus_message(String statusMessage) {
+		this.statusMessage = statusMessage;
+	}
+
 	 public int getDucketBankBalanceAvailable() {
 		return ducketBankBalanceAvailable;
 	}
@@ -260,7 +275,8 @@ public class GameOnUserSettings implements Parcelable {
 	 * @return the primaryNetworkID
 	 */
 	public int getPrimaryNetworkID() {
-		return primaryNetworkID;
+        return 4;
+		//	return primaryNetworkID;
 	}
 	/**
 	 * @param primaryNetworkID the primaryNetworkID to set
@@ -272,7 +288,8 @@ public class GameOnUserSettings implements Parcelable {
 	 * @return the primaryNetworkName
 	 */
 	public String getPrimaryNetworkName() {
-		return primaryNetworkName;
+        return "BETSQUARED";
+		//return primaryNetworkName;
 	}
 	/**
 	 * @param primaryNetworkName the primaryNetworkName to set
@@ -506,6 +523,10 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(primaryNetworkID);
 		builder.append(", primaryNetworkName=");
 		builder.append(primaryNetworkName);
+		builder.append(", statusCode=");
+		builder.append(statusCode);
+		builder.append(", statusMessage=");
+		builder.append(statusMessage);
 		builder.append(", twitterDefault=");
 		builder.append(twitterDefault);
 		builder.append(", twitterID=");
@@ -537,6 +558,25 @@ public class GameOnUserSettings implements Parcelable {
 	public boolean isFoursquareAuthorized() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+    //Setter for userID that takes a String and converts to an integer
+	public void setUserID(String string) {
+		if (null!=string && !"".equals(string)) {
+			try {
+			    userID = Integer.valueOf(string);
+			} catch (NumberFormatException e) {
+				
+			}
+		} //if
+	}  //setUserID
+	public void setPrimaryNetworkID(String string) {
+		if (null!=string && !"".equals(string)) {
+			try {
+			    primaryNetworkID = Integer.valueOf(string);
+			} catch (NumberFormatException e) {
+				
+			}
+		} //if
 	}
 	
 	} //class

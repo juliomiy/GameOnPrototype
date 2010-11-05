@@ -59,7 +59,7 @@ public class GameOnApproveDeclineListActivity extends GameOnBaseListActivity {
 	} //onResume
 	
 	protected void setUpViews() {
-		super.setUpViews(Consts.LAYOUT_ADD_DONE);
+		super.setUpViews(Consts.LAYOUT_ADD_DONE,Consts.LAYOUT_GAMEONFRIENDINVITES_LISTACTIVITY);
 	} //setUpViews
 
 	/* (non-Javadoc)

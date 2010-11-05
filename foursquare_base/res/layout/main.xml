@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    theme="@style/gameon_background_color"
-    >
+    android:layout_height="wrap_content"
+    theme="@style/gameon_background_color">
+ <ScrollView  
+    android:id="@+id/ScrollView01" android:layout_width="match_parent" android:layout_height="wrap_content">
+<LinearLayout 
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+ <Button 
+    android:text="Game Invite Approve/Decline"
+    android:id="@+id/gameInviteButton" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+</Button>
 <Button 
     android:text="@string/foursquareoauth"
     android:id="@+id/foursquareoauth" 
@@ -90,6 +101,7 @@
      android:layout_width="wrap_content" 
      android:layout_height="wrap_content">
  </Button>
- <include android:id="@+id/bottomBar" layout="@layout/bottombar" />
 </LinearLayout>
- 
+ </ScrollView>
+<include android:id="@+id/bottomBar" layout="@layout/bottombar" />
+ </LinearLayout>

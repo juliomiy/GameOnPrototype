@@ -34,11 +34,12 @@ public class AddGameResponseHandler extends DefaultHandler implements ParserInte
 			SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(new DataInputStream(new ByteArrayInputStream(data.getBytes())), this);
-            
-            return response;
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            response = new GameAddResponse();
+            response.setStatus_code(Consts.BS_ERROR_PARSING_RESPONSE);
+            response.setStatus_message(e.getMessage());
         }
+        return response;
 	}
 
 	public void startDocument() throws SAXException {

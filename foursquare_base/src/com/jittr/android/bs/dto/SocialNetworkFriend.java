@@ -1,6 +1,7 @@
 package com.jittr.android.bs.dto;
 
 import java.net.URL;
+import java.util.HashMap;
 
 import com.jittr.android.bs.adapters.BSListViewable;
 
@@ -151,6 +152,11 @@ public class SocialNetworkFriend implements BSListViewable {
 		builder.append(userName);
 		builder.append("]");
 		return builder.toString();
+	}
+	@Override
+	public HashMap getListViewArray() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

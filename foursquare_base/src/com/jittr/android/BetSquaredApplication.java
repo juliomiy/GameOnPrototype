@@ -4,8 +4,10 @@
 package com.jittr.android;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import com.jittr.android.GameOnProperties;
+import com.jittr.android.api.betsquared.BSClientAPIImpl;
 import com.jittr.android.api.betsquared.db.GameOnDatabase;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.GameOnUserSettings;
@@ -122,6 +124,8 @@ public class BetSquaredApplication extends Application {
  * TODO - sync between application handset device credentials and host based credentials 
  * TODO - If you logged in via one of the supported social networks, the password will be blank and 
  * the oauth credentials needs to be validated instead
+ * It's possible the user record does not exist on the handset, if that is the case,
+ * do a hostbased login and then rebuild the sqlite records on the handset
  */
 	public boolean login(String userName, String password) {
         boolean loginSuccessful = false;
@@ -143,7 +147,9 @@ public class BetSquaredApplication extends Application {
         	Log.d(TAG,"UserID of Login = " + String.valueOf(userID));
             gameOnUserSettings = refreshUserSettings(userID);
         	loginSuccessful = true;
-        } else  if (null != cursor) cursor.close();
+        } else {
+        	if (null != cursor) cursor.close();
+        } //if
  		return loginSuccessful;
 	} //login
 	
@@ -202,6 +208,29 @@ public class BetSquaredApplication extends Application {
         return loggedInAsInt;
 	 } //isLoggedIn
 	 
+	 /* Login through the host mechanism - if successful, will return the userID, update the handset device with userSettings as well as setting 
+	  * the main GameOnUserSettings property*/
+	 public int loginThroughHost(String userName,String password) {
+		 int userID=-1;
+		 GameOnUserSettings userSettings=null;
+		 HashMap<String,String>params = new HashMap<String,String>();
+		 params.put("username", userName);
+		 params.put("password", password);
+		 params.put("operation", "login");
+		 
+		 BSClientAPIImpl bs = new BSClientAPIImpl();
+		 userSettings = bs.loginUser(params);
+		 if (null != userSettings && userSettings.getStatus_code().equals("200")) {
+			 userID = userSettings.getUserID();
+			 userSettings.setPassword(password);
+			 setUserSettings(userSettings);
+			 Log.d(TAG,"Before calling registerNewUser " + userSettings.toString());
+			 registerNewUser(userSettings);  //not really registering "new user" 
+		 }
+		 params = null; bs=null;
+		 return userID;
+	 } //loginThroughHost
+	 
 	 /* register a user on the device 
 	  * This eventually will register an entirely new user for the application 
 	  * Is an involved function as the user may have already registered on the website and will need to ascertain that 
@@ -239,7 +268,7 @@ public class BetSquaredApplication extends Application {
  		    case FACEBOOK_NETWORK:
  		    	break;
  		} //switch
- 		userID = (int) database.insert(GameOnDatabase.DB_USER_TABLE, null, values);
+ 		userID = (int) database.replace(GameOnDatabase.DB_USER_TABLE, null, values);
 
  		//update gameOnProperties to note userID on the handset. There is an implied Login while registering
  		//so just call login function which will take care of all the scaffolding
@@ -433,6 +462,7 @@ public class BetSquaredApplication extends Application {
 	 }
 
 	 public void setUserSettings(GameOnUserSettings in) {
+		 gameOnUserSettings = null;  //null out previous instance
 		 gameOnUserSettings = in;
 	 }
 	 
@@ -442,8 +472,7 @@ public class BetSquaredApplication extends Application {
 	 }
 
 	public String getUserIDString() {
-		if (null==userIDString) userIDString = String.valueOf(getLoginID());
-		return userIDString;
+		if (null!=gameOnUserSettings) return String.valueOf(getLoginID()); else return null;
 	}
 	public String getUserName() {
 		return gameOnUserSettings.getUserName();

@@ -22,7 +22,9 @@ public static final int ERROR = 500;
 public static final String GOOGLE_MAP_API_KEY = "ABQIAAAAkkbA1TOcucOZig_ctpQNSRQH3Cvd4D3k_1VFIvdkDzxWu_QC3hQMauhlyVDyEB5rQFm5ddDmGwWIDg";	
 
 //Bet Square API
-
+public static final String BS_GET_GAME_INVITE_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getgameinvite.php";
+public final static String BS_POST_GAME_INVITE_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postinvite.php"; 
+public static final String BS_LOGIN_USER_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_getuser.php";
 public final static String BS_UPDATE_USER_BANKSTATEMENT_ENDPOINT_URL="http://jittr.com/jittr/gameon/go_postupdateuser.php";
 public final static String BS_GET_USER_ENDPOINT_URL="http://jittr.com/jittr/gameon/go_getuser.php";
 public final static String BS_ADD_USER_ENDPOINT_URL = "http://jittr.com/jittr/gameon/go_postnewuser_post.php";
@@ -111,11 +113,24 @@ public static final int LAYOUT_ADD_DONE = 1;
 public static final int LAYOUT_SELECT_BY_CHECKBOX = 2;
 public static final int LAYOUT_SELECT_BY_BUTTON = 3;
 public static final int LAYOUT_SELECT_BY_CHECKEDTEXTVIEW = 4;
+public static final int LAYOUT_SELECT_BY_TEXTVIEW = 5;
+public static final int LAYOUT_DISPLAY_AVATAR = 6;
+public static final int LAYOUT_GAMEONGAMEINVITES_LISTACTIVITY = 8;
+
 
 public static final int FRIEND_INVITE_DECLINE = 1;
 public static final int FRIEND_INVITE_APPROVE = 2;
 //betsquared errorCode - in 500 series
 public static final String BS_ERROR_PARSING_RESPONSE = "501";
+public static final int LAYOUT_GAMEONFRIENDINVITES_LISTACTIVITY = 9;
+public static final int LAYOUT_GAMEONUSERBETS_LISTACTIVITY = 10;
+
+//Sport League IDS
+public static final int NFL_LEAGUE = 1;
+public static final int MLB_LEAGUE = 2;
+public static final int NBA_LEAGUE = 3;
+public static final int NHL_LEAGUE = 4;
+
 	
 
 

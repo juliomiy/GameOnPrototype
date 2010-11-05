@@ -111,6 +111,18 @@ public class GameInvitesHandler extends DefaultHandler implements ParserInterfac
 		    else if (localName.equalsIgnoreCase("wagerunits")){
 		    	game_invite.setWagerunits(builder.toString());
 		    }
+		    else if (localName.equalsIgnoreCase("leagueid")){
+		    	game_invite.setLeagueID(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase("leaguename")){
+		    	game_invite.setLeagueName(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase("sportid")){
+		    	game_invite.setSportID(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase("leaguename")){
+		    	game_invite.setSportName(builder.toString());
+		    }
 		    else if (localName.equalsIgnoreCase("gameinvite")){
 		    	temp_invites.add(game_invite);
 		    }

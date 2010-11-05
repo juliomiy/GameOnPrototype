@@ -50,7 +50,7 @@ public final class GameOnUserFriendsListActivity extends GameOnBaseListActivity 
         if (null != friendsList ) {
      //       adapter = new BSBaseAdapter(this ,(ArrayList) getAppContext().getFriends(),Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
         	appContext.updateBetsquaredFriends( friendsList);
-    	    adapter = new BSBaseAdapter<Friend>(this,(ArrayList<Friend>) friendsList,Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
+    	    adapter = new BSBaseAdapter<Friend>(this,(ArrayList<Friend>) friendsList,Consts.LAYOUT_SELECT_BY_TEXTVIEW,Consts.LAYOUT_DISPLAY_AVATAR);
     	    setListAdapter(adapter);
         } //if
         //TEST CODE - remove

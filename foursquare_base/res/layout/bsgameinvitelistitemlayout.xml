@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jittr.android.bs.adapters.BSGameInviteListItemLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent"
+	android:padding="6dip">
+
+	<ImageView android:id="@+id/avatarImageView" android:layout_width="50px"
+		android:layout_height="50px" android:layout_alignParentTop="true"
+		android:layout_alignParentBottom="true" android:layout_marginRight="6dip"
+		android:src="@drawable/icon"/>
+
+	<TextView android:text="EventName" android:id="@+id/eventNameTextView"
+		android:layout_toRightOf="@+id/avatarImageView" android:gravity="center_vertical"
+		android:layout_width="match_parent" android:layout_height="wrap_content"
+		android:padding="5dp" android:textSize="20sp" android:ellipsize="end" />
+    <LinearLayout
+		android:layout_below="@+id/eventNameTextView"
+  		android:layout_toRightOf="@id/avatarImageView" 
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+	<TextView android:text="EventDate" android:id="@+id/eventDateTextView"
+		android:gravity="center_vertical" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:padding="5dp"
+		android:textSize="14sp" android:ellipsize="end" />
+
+	<TextView android:text="Bet Creator" android:id="@+id/betCreatorNameTextView"
+		android:gravity="center_vertical"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:padding="5dp"
+		android:textSize="14sp" 
+		android:ellipsize="end" />
+   </LinearLayout>
+</com.jittr.android.bs.adapters.BSGameInviteListItemLayout >

@@ -48,7 +48,16 @@ public final class GameOnUserBetActivity extends GameOnBaseListActivity {
         setContentView(R.layout.gameonuserbetlayout);
         setUpViews();
         setBottomBar(0);
-        adapter = new BSBaseAdapter(this ,(ArrayList) getAppContext().getFriends(),Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
+        ArrayList<Friend>friendList = getAppContext().getFriends();
+        if (null==friendList) {
+            BSClientAPIImpl bs = new BSClientAPIImpl();
+            String userIDStr = getAppContext().getUserIDString();
+            HashMap<String, String> params = new HashMap<String, String>();
+            params.put("userid", userIDStr);
+            friendList = bs.getUserFriends(params);
+            getAppContext().updateBetsquaredFriends(friendList);
+        } //if
+        if (null!=friendList) adapter = new BSBaseAdapter(this ,friendList,Consts.LAYOUT_SELECT_BY_CHECKEDTEXTVIEW);
         if (null != adapter) { 
         	setListAdapter(adapter);
         } else {
