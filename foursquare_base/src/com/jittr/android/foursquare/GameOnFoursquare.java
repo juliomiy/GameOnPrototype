@@ -88,7 +88,7 @@ public class GameOnFoursquare extends GameOnSocialNetworkBase {
 		} catch (Exception error) {
 			error.printStackTrace();
 		}
-		saveUserAuthCredentials(appContext.getLoginID(),Consts.FOURSQUARE_NETWORK, getAccessToken(), getAccessTokenSecret(),null,null,null);
+		saveUserAuthCredentials(appContext.getLoginID(),Consts.FOURSQUARE_NETWORK, getAccessToken(), getAccessTokenSecret(),null,null,null,null);
 	}
 
 	protected ArrayList<SocialNetworkFriend> readFriendsDocument(InputStream data)

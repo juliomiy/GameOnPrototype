@@ -1,9 +1,17 @@
 package com.jittr.android.bs.dto;
 
+import java.util.HashMap;
+
+import com.jittr.android.bs.adapters.BSListViewable;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Game implements Parcelable {
+/* @author juliomiyares
+ * @version 1.0
+ * @date May 2010
+ */
+public class Game implements Parcelable, BSListViewable {
 
 	private String id;
 	private String publicGameID;
@@ -25,6 +33,8 @@ public class Game implements Parcelable {
 	private String typeName;
 	private int sportID;
 	private String sportName;
+	private String StatusCode;
+	private String StatusMessage;
 	
 	private final String TAG = "Game";
 	
@@ -57,11 +67,64 @@ public class Game implements Parcelable {
         sportID = in.readInt();
         typeName = in.readString();
         typeID = in.readInt();
-	}
+        stadiumname = in.readString();
+        city = in.readString();
+        state = in.readString();
+        latitude = in.readString();
+        longitude = in.readString();
+	}  //readFromParcel
+	
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeString(id);
+		dest.writeString(publicGameID);
+		dest.writeString(getHomeTeam());
+		dest.writeString(getVisitingTeam());
+        dest.writeString(eventname);
+        dest.writeString(eventdatetime);
+        dest.writeString(sportName);
+        dest.writeInt(sportID);
+        dest.writeString(typeName);
+        dest.writeInt(typeID);
+        dest.writeString(stadiumname);
+        dest.writeString(city);
+        dest.writeString(state);
+        dest.writeString(latitude);
+        dest.writeString(longitude);
 
+	}  //writeToParcel
+	
 	public Game() {
 	    super();	
 	}
+	
+	//build Game Object from GameInvite Object
+	public Game(GameInvite gameInvite) {
+	   this.setId(gameInvite.getGameid());
+	   this.setPublicGameID(gameInvite.getPublicGameIDStr());
+	   this.setTypeID(gameInvite.getTypeID());
+	   this.setEventname( gameInvite.getEventname());
+	   this.setEventdatetime( gameInvite.getEventdatetime());
+	   //gameInvite.g
+	   
+	}  //constructor - create Game Object from GameInvite Object
+	
+	public String getStatusCode() {
+		return StatusCode;
+	}
+
+	public void setStatusCode(String statusCode) {
+		StatusCode = statusCode;
+	}
+
+	public String getStatusMessage() {
+		return StatusMessage;
+	}
+
+	public void setStatusMessage(String statusMessage) {
+		StatusMessage = statusMessage;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -233,13 +296,14 @@ public class Game implements Parcelable {
 		this.sportName = sportName;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Game [TAG=");
+		builder.append("Game [StatusCode=");
+		builder.append(StatusCode);
+		builder.append(", StatusMessage=");
+		builder.append(StatusMessage);
+		builder.append(", TAG=");
 		builder.append(TAG);
 		builder.append(", address=");
 		builder.append(address);
@@ -289,19 +353,19 @@ public class Game implements Parcelable {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 	@Override
-	public void writeToParcel(Parcel dest, int flags) {
-		dest.writeString(id);
-		dest.writeString(publicGameID);
-		dest.writeString(getHomeTeam());
-		dest.writeString(getVisitingTeam());
-        dest.writeString(eventname);
-        dest.writeString(eventdatetime);
-        dest.writeString(sportName);
-        dest.writeInt(sportID);
-        dest.writeString(typeName);
-        dest.writeInt(typeID);
-	}  //writeToParcel
+	public HashMap getListViewArray() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getListViewText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 }  //class

@@ -6,19 +6,21 @@ import com.jittr.android.bs.adapters.BSListViewable;
 
 
 public class GameInvite implements BSListViewable {
-	String gameid;
-	String createdByUserID;
-	String createdByUserName;
-	String eventname;
-	String eventdatetime;
-	String closedatetime;
-	String wagertype;
-	String wagerunits;
-	int sportID;
-	String sportName;
-	int leagueID;
-	String leagueName;
-	int numberOfSubscribers;
+	private String gameid;
+	private int publicGameID;  //added JHM 11/8/2010
+	private int typeID; //added JHM 11/8/2010
+	private String createdByUserID;
+	private String createdByUserName;
+	private String eventname;
+	private String eventdatetime;
+	private String closedatetime;
+	private String wagertype;
+	private String wagerunits;
+	private int sportID;
+	private String sportName;
+	private int leagueID;
+	private String leagueName;
+	private int numberOfSubscribers;
 	private String sportIDStr;
 	private String leagueIDStr;
 	
@@ -150,12 +152,16 @@ public class GameInvite implements BSListViewable {
 		builder.append(leagueName);
 		builder.append(", numberOfSubscribers=");
 		builder.append(numberOfSubscribers);
+		builder.append(", publicGameID=");
+		builder.append(publicGameID);
 		builder.append(", sportID=");
 		builder.append(sportID);
 		builder.append(", sportIDStr=");
 		builder.append(sportIDStr);
 		builder.append(", sportName=");
 		builder.append(sportName);
+		builder.append(", typeID=");
+		builder.append(typeID);
 		builder.append(", wagertype=");
 		builder.append(wagertype);
 		builder.append(", wagerunits=");
@@ -176,4 +182,41 @@ public class GameInvite implements BSListViewable {
         hm.put("leagueid", this.getLeagueIDStr());
 		return hm;
 	} //getListViewArray
+
+	//converts to an int type
+	public int getWagerunitsInt() {
+        int decimalPos = wagerunits.indexOf(".");
+        String tmp = wagerunits;
+        
+        if (decimalPos !=-1) {
+           tmp = wagerunits.substring(0, decimalPos);
+        }
+		// TODO Auto-generated method stub
+		return Integer.parseInt(tmp);
+	}
+	public int getPublicGameID() {
+		return publicGameID;
+	}
+	public String getPublicGameIDStr() {
+        return Integer.toString(publicGameID);
+	}
+	public int getTypeID() {
+		return typeID;
+	}
+	public void setPublicGameID(String string) {
+        if (null == string) return;
+		try {
+			publicGameID = Integer.parseInt(string);
+		} catch (NumberFormatException e) {
+			
+		}
+	}
+	public void setTypeID(String string) {
+        if (null == string) return;
+		try {
+			typeID = Integer.parseInt(string);
+		} catch (NumberFormatException e) {
+			
+		}
+	}
 } //class

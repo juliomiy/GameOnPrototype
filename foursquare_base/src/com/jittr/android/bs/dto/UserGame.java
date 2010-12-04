@@ -1,16 +1,20 @@
 package com.jittr.android.bs.dto;
 
 import java.util.Date;
+import java.util.HashMap;
 
-
+import com.jittr.android.bs.adapters.BSListViewable;
 
 /**
  * @author rg230v
  * Encapsulates User Participating Game Details
+ * @version 1.0
+ * @modified - by juliomiyares added initiatorflag - true if this game initiated by the current
+ * user, false otherwise, Added numberofInvites
  * 
  */
 
-public class UserGame {
+public class UserGame implements BSListViewable {
 
 	int gameid;
 	int createdbyuserid;
@@ -25,8 +29,13 @@ public class UserGame {
 	int sportid;
 	String typename;
 	String sportname;
+	int numberofInvites;
+	boolean initiatorFlag;
     int numberofsubscribers;
     
+    public boolean getInitiatorFlag() {
+    	return initiatorFlag;
+    }
 	public int getGameid() {
 		return gameid;
 	}
@@ -111,18 +120,65 @@ public class UserGame {
 	public void setNumberofsubscribers(int numberofsubscribers) {
 		this.numberofsubscribers = numberofsubscribers;
 	}
+	public int getNumberofInvites() {
+		return numberofInvites;
+	}
+	public void setNumberofInvites(int numberofInvites) {
+		this.numberofInvites = numberofInvites;
+	}
+	public boolean isInitiatorFlag() {
+		return initiatorFlag;
+	}
+	public void setInitiatorFlag(boolean initiatorFlag) {
+		this.initiatorFlag = initiatorFlag;
+	}
 	@Override
 	public String toString() {
-		return "UserGame [createdbyuserid=" + createdbyuserid
-				+ ", createdbyusername=" + createdbyusername
-				+ ", eventdatetimeStr=" + eventdatetimeStr
-				+ ", eventdatetime_Dt=" + eventdatetime_Dt + ", eventname="
-				+ eventname + ", gameid=" + gameid + ", numberofsubscribers="
-				+ numberofsubscribers + ", publicgameid=" + publicgameid
-				+ ", sportid=" + sportid + ", sportname=" + sportname
-				+ ", typeid=" + typeid + ", typename=" + typename
-				+ ", wagertype=" + wagertype + ", wagerunits=" + wagerunits
-				+ "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("UserGame [createdbyuserid=");
+		builder.append(createdbyuserid);
+		builder.append(", createdbyusername=");
+		builder.append(createdbyusername);
+		builder.append(", eventdatetimeStr=");
+		builder.append(eventdatetimeStr);
+		builder.append(", eventdatetime_Dt=");
+		builder.append(eventdatetime_Dt);
+		builder.append(", eventname=");
+		builder.append(eventname);
+		builder.append(", gameid=");
+		builder.append(gameid);
+		builder.append(", initiatorFlag=");
+		builder.append(initiatorFlag);
+		builder.append(", numberofInvites=");
+		builder.append(numberofInvites);
+		builder.append(", numberofsubscribers=");
+		builder.append(numberofsubscribers);
+		builder.append(", publicgameid=");
+		builder.append(publicgameid);
+		builder.append(", sportid=");
+		builder.append(sportid);
+		builder.append(", sportname=");
+		builder.append(sportname);
+		builder.append(", typeid=");
+		builder.append(typeid);
+		builder.append(", typename=");
+		builder.append(typename);
+		builder.append(", wagertype=");
+		builder.append(wagertype);
+		builder.append(", wagerunits=");
+		builder.append(wagerunits);
+		builder.append("]");
+		return builder.toString();
+	}
+	@Override
+	public HashMap getListViewArray() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String getListViewText() {
+		// TODO Auto-generated method stub
+		return null;
 	} 
    
 	

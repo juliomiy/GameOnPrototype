@@ -8,6 +8,8 @@ import android.os.Parcelable;
 /*
  * @author juliomiyares
  * @version 1.0
+ * @changes
+ * fleshed out isTwitterAuthorized and isFoursquareAuthorized methods
  */
 public class GameOnUserSettings implements Parcelable {
 
@@ -38,6 +40,8 @@ public class GameOnUserSettings implements Parcelable {
 	private String  foursquareOAuthToken;
 	private String  foursquareOAuthTokenSecret;
 	private String foursquarePassword;
+	private String foursquareAvatar;
+	private String twitterAvatar;
 	private final String TAG = "GameOnUserSettings";
 	private String foursquareName;
 	private String foursquareUserID;
@@ -461,6 +465,18 @@ public class GameOnUserSettings implements Parcelable {
 		return "cuba1a";
 		//return foursquarePassword;
 	}
+	public String getFoursquareAvatar() {
+		return foursquareAvatar;
+	}
+	public void setFoursquareAvatar(String foursquareAvatar) {
+		this.foursquareAvatar = foursquareAvatar;
+	}
+	public String getTwitterAvatar() {
+		return twitterAvatar;
+	}
+	public void setTwitterAvatar(String twitterAvatar) {
+		this.twitterAvatar = twitterAvatar;
+	}
 	public void setFoursquarePassword(String password) {
          foursquarePassword = password;		
 	}
@@ -493,6 +509,8 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(facebookOAuthTokenSecret);
 		builder.append(", firstName=");
 		builder.append(firstName);
+		builder.append(", foursquareAvatar=");
+		builder.append(foursquareAvatar);
 		builder.append(", foursquareDefault=");
 		builder.append(foursquareDefault);
 		builder.append(", foursquareID=");
@@ -527,6 +545,8 @@ public class GameOnUserSettings implements Parcelable {
 		builder.append(statusCode);
 		builder.append(", statusMessage=");
 		builder.append(statusMessage);
+		builder.append(", twitterAvatar=");
+		builder.append(twitterAvatar);
 		builder.append(", twitterDefault=");
 		builder.append(twitterDefault);
 		builder.append(", twitterID=");
@@ -550,15 +570,28 @@ public class GameOnUserSettings implements Parcelable {
 		return false;
 	}
 
+	/* returns true if the oauth credentials are present 
+	 * Does not guarantee they are still valid
+	 */
 	public boolean isTwitterAuthorized() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		if (null != twitterOAuthToken && !"".equals(twitterOAuthToken.trim())
+				 && null != twitterOAuthTokenSecret && !"".equals(twitterOAuthTokenSecret.trim()))
+            return true;
+		else
+			return false;
+	} //isTwitterAuthorized
 
+	/* returns true if the oauth credentials are present 
+	 * Does not guarantee they are still valid
+	 */
 	public boolean isFoursquareAuthorized() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+		if (null != foursquareOAuthToken && !"".equals(foursquareOAuthToken.trim())
+				 && null != foursquareOAuthTokenSecret && !"".equals(foursquareOAuthTokenSecret.trim()))
+           return true;
+ 		else
+			return false;
+	}  //isFoursquareAuthorized
+	
     //Setter for userID that takes a String and converts to an integer
 	public void setUserID(String string) {
 		if (null!=string && !"".equals(string)) {

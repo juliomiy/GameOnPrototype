@@ -96,6 +96,12 @@ public class GameInvitesHandler extends DefaultHandler implements ParserInterfac
 		    else if (localName.equalsIgnoreCase("createdbyusername")) {
 		    	game_invite.setCreatedByUserName(builder.toString());
 		    }
+		    else if (localName.equalsIgnoreCase("publicgameid")){
+		    	game_invite.setPublicGameID(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase("typeid")){
+		    	game_invite.setTypeID(builder.toString());
+		    }
 		    else if (localName.equalsIgnoreCase("eventname")){
 		    	game_invite.setEventname(builder.toString());
 		    }

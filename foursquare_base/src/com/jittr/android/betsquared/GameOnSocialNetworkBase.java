@@ -174,10 +174,11 @@ public abstract class GameOnSocialNetworkBase implements
 	/* (non-Javadoc)
 	 * @see com.jittr.android.betsquared.GameOnSocialNetworkInterface#saveUserAuthCredentials(int, java.lang.String, java.lang.String)
 	 */
-	@Override
 	public boolean saveUserAuthCredentials(int userID,int socialNetwork, String token,
-			String tokenSecret, String networkUserID, String networkScreenName, String networkName) {
+			String tokenSecret, String networkUserID, String networkScreenName, String networkName,
+			String imageURL) {
 
+        if (null == appContext) return false;
 		String sql = "update go_user set ";
 		if (null == token) token = getAccessToken();
 		if (null == tokenSecret) tokenSecret = getAccessTokenSecret();
@@ -192,12 +193,14 @@ public abstract class GameOnSocialNetworkBase implements
 				         DB_USER_TABLE_TWITTER_TOKEN_SECRET + "='" + tokenSecret + "'," +
 				         DB_USER_TABLE_TWITTER_USERID + "='" + networkUserID + "'," + 
 				         DB_USER_TABLE_TWITTER_SCREENNAME + "='" + networkScreenName + "'," + 
-				         DB_USER_TABLE_TWITTER_NAME + "='" + networkUserID + "'" ; 
+				         DB_USER_TABLE_TWITTER_NAME + "='" + networkUserID + "'," + 
+				         DB_USER_TABLE_TWITTER_AVATAR + "='" + imageURL + "'" ; 
 ;
 				  break;
 			case FOURSQUARE_NETWORK:
 				  sql += DB_USER_TABLE_FS_TOKEN + "='" + token + "'," +
-			             DB_USER_TABLE_FS_TOKEN_SECRET + "='" + tokenSecret + "'" ;
+			             DB_USER_TABLE_FS_TOKEN_SECRET + "='" + tokenSecret + "'," +
+  			             DB_USER_TABLE_FS_AVATAR + "='" + imageURL + "'"; 
 			       //  GameOnDatabase.DB_USER_TABLE_TWITTER_USERID + "='" + networkUserID + "'," + 
 			       //  GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME + "='" + networkScreenName + "'," + 
 			       //  GameOnDatabase.DB_USER_TABLE_TWITTER_NAME + "='" + networkUserID + "'" ; 
@@ -208,11 +211,8 @@ public abstract class GameOnSocialNetworkBase implements
 		sql += " where userID = " + userID;
 		Log.d(TAG,sql);
 		//first save to device - low risk, minimal letency - stored in sqlite
-		if (null == appContext){
-			
-		}
 		appContext.updateDatabaseSQL(sql);
-		//save to Host via Http Post
+		//TODO JHM 11/19/2010 save to Host via Http Post
 		
 		return false;
 	}  //saveUserAuthCredentials

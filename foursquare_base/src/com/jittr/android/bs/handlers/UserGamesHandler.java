@@ -27,6 +27,7 @@ import com.jittr.android.fs.utils.Constants;
 public class UserGamesHandler extends DefaultHandler implements ParserInterface {
 
 	String data = "";
+	private int userID;  //added JHM 11/6/2010
 	private StringBuilder builder;
     private UserGame user_game = null;
     private ArrayList<UserGame> user_games = null;
@@ -91,6 +92,10 @@ public class UserGamesHandler extends DefaultHandler implements ParserInterface 
 				else if (localName.equalsIgnoreCase("numberofgames")){
 					userGameDetails.setNumberOfGames(Integer.parseInt(builder.toString()));
 				}
+				else if (localName.equalsIgnoreCase("userid")){
+					setUserID(builder.toString());
+					userGameDetails.setUserID(String.valueOf(userID));
+				}
 			}
 			if(this.user_game !=null) {
 				if (localName.equalsIgnoreCase("gameid")){
@@ -147,6 +152,10 @@ public class UserGamesHandler extends DefaultHandler implements ParserInterface 
 			}   
 			if (localName.equalsIgnoreCase("game")){
 			    	System.out.println("Adding to Games List ");
+			    	if (user_game.getCreatedbyuserid() == userID)
+			    		 user_game.setInitiatorFlag(true);
+			    	else
+			    		 user_game.setInitiatorFlag(false);
 			    	user_games.add(user_game);  
 			    	user_game=null;
 			}
@@ -160,7 +169,16 @@ public class UserGamesHandler extends DefaultHandler implements ParserInterface 
 	}
 	
     
-    public List<Object> parseList() {
+    private void setUserID(String string) {
+         try {
+        	 userID = Integer.parseInt(string);
+         } catch (NumberFormatException e)  {
+        	 userID = 0; 
+         }
+    }
+
+
+	public List<Object> parseList() {
 		
     	try {
 			SAXParserFactory factory = SAXParserFactory.newInstance();

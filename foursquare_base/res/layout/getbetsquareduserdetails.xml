@@ -30,6 +30,7 @@
     android:id="@+id/TextView01"> 
 </TextView>
 <EditText 
+    android:imeOptions="actionNext"
     style="@style/StandardEditText"
     android:text="@string/firstname" 
     android:id="@+id/firstNameEditText"> 
@@ -46,6 +47,7 @@
     android:id="@+id/TextView01"> 
 </TextView>
 <EditText 
+    android:imeOptions="actionNext"
     style="@style/StandardEditText"
     android:text="@string/lastname" 
     android:id="@+id/lastNameEditText"> 
@@ -62,26 +64,71 @@
     android:id="@+id/TextView01"> 
 </TextView>
 <EditText 
+    android:imeOptions="actionNext"
     style="@style/StandardEmailEditText"
     android:text="@string/emailaddress" 
     android:id="@+id/emailEditText"> 
  </EditText>
 </LinearLayout>
-<LinearLayout 
+<LinearLayout
+    android:id="@+id/linearLayoutTwitter"
     android:layout_below="@+id/LinearLayout04"
-    android:id="@+id/LinearLayout05" 
-    android:layout_width="wrap_content" 
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content">
-<Button 
-    style="@style/StandardButton"
-    android:text="@string/update" 
-    android:id="@+id/updateButton"> 
-</Button>
-<Button 
-    style="@style/StandardButton"
-    android:text="@string/cancel_button" 
-    android:id="@+id/cancelButton"> 
-</Button>
+ <Button
+    android:text="@string/loginbuttontext"
+    android:drawablePadding="5dip"
+    android:drawableLeft="@drawable/twittericon"
+    android:id="@+id/twitterLoginButton"
+    android:layout_width="wrap_content"
+    android:layout_height="50dip">
+ </Button>   
+<TextView 
+    style="@style/StandardTextView"
+    android:id="@+id/twitterNameTextView"> 
+</TextView>
 </LinearLayout>
+<LinearLayout
+    android:id="@+id/linearLayoutFoursquare"
+    android:layout_below="@+id/linearLayoutTwitter"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+ <Button
+    android:text="@string/loginbuttontext"
+    android:drawablePadding="5dip"
+    android:drawableLeft="@drawable/foursquareicon20x20"
+    android:id="@+id/foursquareLoginButton"
+    android:layout_width="wrap_content"
+    android:layout_height="50dip">
+ </Button>   
+<TextView 
+    style="@style/StandardTextView"
+    android:id="@+id/foursquareNameTextView"> 
+</TextView>
+</LinearLayout>
+<LinearLayout 
+    android:id="@+id/linearLayoutDefault"
+    android:layout_below="@+id/linearLayoutFoursquare"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+   <ToggleButton
+   android:drawableTop="@drawable/twittertoggle"
+   android:id="@+id/facebookToggleButton" 
+   android:layout_width="75dip" android:layout_height="60dip">
+   </ToggleButton>
+   <ToggleButton
+   android:drawableTop="@drawable/twittertoggle"
+   android:id="@+id/twitterToggleButton" 
+   android:layout_width="75dip" android:layout_height="60dip">
+   </ToggleButton>
+   <ToggleButton
+   android:drawableTop="@drawable/twittertoggle"
+   android:id="@+id/foursquareToggleButton" 
+   android:layout_width="75dip" android:layout_height="60dip">
+   </ToggleButton>
+ </LinearLayout>
 <include android:id="@+id/bottomBarLayout" layout="@layout/bottombar" />
 </RelativeLayout>

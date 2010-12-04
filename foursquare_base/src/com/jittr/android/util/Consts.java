@@ -6,6 +6,11 @@ public final class Consts {
 public static final String INTENT_VIEW_VENUE = "VIEW_VENUE"; 	
 public static final String INTENT_VIEW_PUBLIC_GAME = "VIEW_PUBLIC_GAME";
 public static final String INTENT_USER_SETTINGS = "VIEW_USER_SETTINGS";
+public static final String INTENT_RESPOND_GAME_INVITE = "VIEW_GAME_INVITE";
+public static final String INTENT_VIEW_GAME = "VIEW_GAME";
+
+public static final int INTENT_CUSTOMIZE_BET = 1;
+public static final int INTENT_ACCEPT_DECLINE_BET = 2;
 
 public static final int FACEBOOK_NETWORK = 1;
 public static final int TWITTER_NETWORK = 2;

@@ -12,6 +12,6 @@ public interface GameOnSocialNetworkInterface {
 	public boolean isAuthorized();
 	public String getAuthUrl();
 	public boolean saveUserAuthCredentials(int userID, int network, String token, String tokenSecret,
-			                  String networkUserID, String networkScreenName, String networkName);
+			                  String networkUserID, String networkScreenName, String networkName,String avatarURL);
 	public void signRequest();
 }  //interface

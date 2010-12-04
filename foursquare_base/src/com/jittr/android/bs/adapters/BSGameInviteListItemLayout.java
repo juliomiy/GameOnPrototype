@@ -94,7 +94,7 @@ public class BSGameInviteListItemLayout<V> extends RelativeLayout {
  				    avatarImageView.setImageResource(com.jittr.android.R.drawable.nbalogo_50x50);
 			    	break; 
 			     default :   
- 				    avatarImageView.setImageResource(com.jittr.android.R.drawable.mlblogo_30x50);
+ 				    avatarImageView.setImageResource(com.jittr.android.R.drawable.android_50x50);
    }  //swtich
 		    }
 			hm=null;

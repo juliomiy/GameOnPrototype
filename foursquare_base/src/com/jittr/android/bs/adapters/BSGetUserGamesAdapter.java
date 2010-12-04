@@ -64,13 +64,18 @@ public class BSGetUserGamesAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		GameListItemLayout tli;
+		UserGame userGame = userGames.get(position);
+    	Game game = new Game();
+ 
 		if (null == convertView) {
 			tli = (GameListItemLayout)View.inflate(context, R.layout.gamelistitem, null);
+            tli.textView.setTextColor(userGame.getInitiatorFlag() ? this.context.getResources().getColor(R.color.GREEN) : this.context.getResources().getColor( R.color.BLUE));
+		//	tli.setBackgroundColor(userGame.getInitiatorFlag() ? R.color.GREEN : R.color.BLUE);
+//    		game.setEventname(userGames.get(position).getEventname() + (userGame.getInitiatorFlag() ? " initiator" : " subscriber"));
 		} else {
 			tli = (GameListItemLayout)convertView;
 		}
-		Game game = new Game();
-		game.setEventname(userGames.get(position).getEventname());
+   		game.setEventname(userGames.get(position).getEventname() + (userGame.getInitiatorFlag() ? " initiator" : " subscriber"));
 		tli.setEvent(game);
 		return tli;	
 	}

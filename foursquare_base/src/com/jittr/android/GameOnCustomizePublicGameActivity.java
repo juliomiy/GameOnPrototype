@@ -1,6 +1,8 @@
 package com.jittr.android;
 
 import static com.jittr.android.util.Consts.INTENT_VIEW_PUBLIC_GAME;
+import static com.jittr.android.util.Consts.INTENT_RESPOND_GAME_INVITE;
+import static com.jittr.android.util.Consts.INTENT_VIEW_GAME;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,6 +34,9 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 /* @author juliomiyares
  * @version 1.0
  * @date May 2010
+ * @modified by Juliomiyares
+ * @date November 8,2010
+ * 
  */
 public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 
@@ -51,6 +56,7 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 	private String wagerType;
 	private String wagerUnits;
 	protected BSBaseAdapter <Friend> adapter;
+	private int activityMode;  //added JHM 11/8/2010 -determines the mode/customize or accept/decline game invite
     
 	public GameOnCustomizePublicGameActivity() {
 		super();
@@ -74,6 +80,11 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 		callingIntent = super.getIntent();
 	    if (callingIntent != null) {
 	          game  = callingIntent.getParcelableExtra(INTENT_VIEW_PUBLIC_GAME);
+	          activityMode = callingIntent.getIntExtra(INTENT_VIEW_GAME, Consts.INTENT_CUSTOMIZE_BET);
+	          if (activityMode == Consts.INTENT_ACCEPT_DECLINE_BET) {
+                  int wagerUnits = callingIntent.getIntExtra("WAGER_AMOUNT",0);
+	        	  wagerUnitsEditText.setText(String.valueOf(wagerUnits));
+	          }
 	    }
 	    if (null != game) {
 	    	game.setTypeID(1);  //TODO Remove Temp
@@ -210,7 +221,8 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
         queryParams.put("typename",game.getTypeName());
         queryParams.put("type",String.valueOf(game.getTypeID()));
         queryParams.put("teamname", selectedTeam);
-        queryParams.put("publicgameid",game.getId());
+//        queryParams.put("publicgameid",game.getId());
+        queryParams.put("publicgameid",game.getPublicGameID());
      //   queryParams.put("sportname", game.getSportname());
         //grab invited Friends
         //currently returned as space delimited list 
@@ -227,6 +239,13 @@ public class GameOnCustomizePublicGameActivity extends GameOnBaseListActivity {
 		}  //if
 	}  //betButton
 
+	protected void acceptButtonClicked() {
+		
+	} //acceptButtonClicked
+	protected void declineButtonClicked() {
+		
+	} //declineButtonClicked
+	
 	protected void cancelButtonClicked() {
  		finish();
 	} //cancelButton

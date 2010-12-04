@@ -98,11 +98,26 @@ public class UserDetailsHandler extends DefaultHandler implements ParserInterfac
 		    else if (localName.equalsIgnoreCase("facebookuserid")){
 		    	userDetails.setFacebookuserid(builder.toString());
 		    }
+		    else if (localName.equalsIgnoreCase("facebookaccesstoken")){
+		    	userDetails.setFacebookAccessToken(builder.toString());
+		    }
 		    else if (localName.equalsIgnoreCase("twitteruserid")){
 		    	userDetails.setTwitteruserid(builder.toString());
 		    }	
+		    else if (localName.equalsIgnoreCase("twitteraccesstoken")){
+		    	userDetails.setTwitterAccessToken(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase("twittertokensecret")){
+		    	userDetails.setTwitterTokenSecret(builder.toString());
+		    }
 		    else if (localName.equalsIgnoreCase("foursquareuserid")){
 		    	userDetails.setTwitteruserid(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase("foursquareaccesstoken")){
+		    	userDetails.setFoursquareAccessToken(builder.toString());
+		    }
+		    else if (localName.equalsIgnoreCase("foursquaretokensecret")){
+		    	userDetails.setFoursquareTokenSecret(builder.toString());
 		    }
 		    else if (localName.equalsIgnoreCase("facebookdefault")){
 		    	userDetails.setFacebookdefault(builder.toString());

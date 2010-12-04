@@ -17,7 +17,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  *              
  */
 public class GameOnDatabase extends SQLiteOpenHelper {
-	public static final int VERSION = 13;
+	public static final int VERSION = 16;
 	public static final String DB_NAME  = "betsquared_db.sqlite";
 	public static final String GAME_TABLE = "go_games";
 	public static final String DB_USER_TABLE = "go_user";
@@ -27,19 +27,25 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	public static final String DB_USER_TABLE_FIRSTNAME = "firstName";
 	public static final String DB_USER_TABLE_LASTNAME = "lastName";
 	public static final String DB_USER_TABLE_EMAIL = "email";
+	public static final String DB_USER_TABLE_FS_DEFAULT="foursquareDefault";
 	public static final String DB_USER_TABLE_FS_TOKEN="foursquareToken";
 	public static final String DB_USER_TABLE_FS_TOKEN_SECRET="foursquareTokenSecret";
+	public static final String DB_USER_TABLE_FS_AVATAR = "foursquareAvatar";	
+	public static final String DB_USER_TABLE_TWITTER_DEFAULT="twitterDefault";
 	public static final String DB_USER_TABLE_TWITTER_TOKEN="twitterToken";
 	public static final String DB_USER_TABLE_TWITTER_TOKEN_SECRET="twitterTokenSecret";
+	public static final String DB_USER_TABLE_FB_DEFAULT="facebookDefault";
 	public static final String DB_USER_TABLE_FB_TOKEN="facebookToken";
 	public static final String DB_USER_TABLE_FB_TOKEN_SECRET="facebookTokenSecret";
 	public static final String DB_USER_TABLE_TWITTER_USERID = "twitterUserID";	
 	public static final String DB_USER_TABLE_TWITTER_SCREENNAME = "twitterScreenName";	
 	public static final String DB_USER_TABLE_TWITTER_NAME = "twitterName";
+	public static final String DB_USER_TABLE_TWITTER_AVATAR = "twitterAvatar";	
 	public static final String DB_USER_TABLE_PRIMARY_NETWORKNAME = "primaryNetworkName";
 	public static final String DB_USER_TABLE_PHONENUMBER = "phoneNumber";
 	public static final String DB_USER_TABLE_PRIMARY_NETWORKID = "primaryNetworkID";	
-    public static final String DB_FRIENDS_TABLE = "go_userFriends";
+    public static final String  DB_USER_TABLE_UPDATE_HOST="updateHostFlag";
+	public static final String DB_FRIENDS_TABLE = "go_userFriends";
     public static final String DB_FRIENDS_TABLE_USERID = "friendUserID";
     public static final String DB_FRIENDS_TABLE_USERNAME = "friendUserName";
     public static final String DB_FRIENDS_TABLE_NAME = "friendName";
@@ -71,6 +77,7 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 		setDefaultSettings(db);
 	}
 
+	// added foursquare and twitter avatar fields
 	private boolean createTables(SQLiteDatabase db) {
 		String sql = "create table " + DB_USER_TABLE  +
 		" ("  + DB_USER_TABLE_USERID + " integer primary key autoincrement not null," +
@@ -82,17 +89,23 @@ public class GameOnDatabase extends SQLiteOpenHelper {
 	      DB_USER_TABLE_PHONENUMBER + " text null," +
 	      DB_USER_TABLE_PRIMARY_NETWORKNAME + " text null," +
 	      DB_USER_TABLE_PRIMARY_NETWORKID + " integer not null default 0," +
+	  	  DB_USER_TABLE_FS_DEFAULT + " integer not null default 0," +
 	      DB_USER_TABLE_FS_TOKEN + " text null," +
 	      DB_USER_TABLE_FS_TOKEN_SECRET + " text null," +
 	      DB_USER_TABLE_FS_NAME + " text null," +
 	      DB_USER_TABLE_FS_USERID + " text null," +
+	      DB_USER_TABLE_FS_AVATAR + " text null, " +
+	      DB_USER_TABLE_FB_DEFAULT + " integer not null default 0," + 
 	      DB_USER_TABLE_FB_TOKEN + " text null," +
 	      DB_USER_TABLE_FB_TOKEN_SECRET + " text null," +
+	      DB_USER_TABLE_TWITTER_DEFAULT + " integer not null default 0," + 
 	      DB_USER_TABLE_TWITTER_TOKEN + " text null," +
 	      DB_USER_TABLE_TWITTER_TOKEN_SECRET + " text null," +
 	      DB_USER_TABLE_TWITTER_USERID + " text null," +
 	      DB_USER_TABLE_TWITTER_SCREENNAME + " text null," +
 	      DB_USER_TABLE_TWITTER_NAME + " text null," +
+	      DB_USER_TABLE_TWITTER_AVATAR + " text null, " +
+	      DB_USER_TABLE_UPDATE_HOST + " integer not null default 0," +
 	      "loggedInSince timestamp null, " + 
 	      "bankBalance float not null default 0," +
 	      "createdDate timestamp not null default CURRENT_TIMESTAMP," +

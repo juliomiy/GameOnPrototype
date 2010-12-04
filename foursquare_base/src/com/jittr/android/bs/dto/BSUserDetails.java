@@ -18,6 +18,11 @@ public class BSUserDetails {
 	String facebookdefault;
 	String twitterdefault;
 	String foursquaredefault;
+	private String twitterAccessToken;
+	private String facebookAccessToken;
+	private String foursquareAccessToken;
+	private String twitterTokenSecret;
+	private String foursquareTokenSecret;
 	
 	public BSUserDetails() {
 		
@@ -153,19 +158,141 @@ public class BSUserDetails {
 
 	@Override
 	public String toString() {
-		return "BSUser [email=" + email + ", facebookdefault="
-				+ facebookdefault + ", facebookprofileimageurl="
-				+ facebookprofileimageurl + ", facebookuserid="
-				+ facebookuserid + ", firstname=" + firstname
-				+ ", foursquaredefault=" + foursquaredefault
-				+ ", foursquareprofileimageurl=" + foursquareprofileimageurl
-				+ ", foursquareuserid=" + foursquareuserid + ", lastname="
-				+ lastname + ", status_code=" + status_code
-				+ ", status_message=" + status_message + ", twitterdefault="
-				+ twitterdefault + ", twitterprofileimageurl="
-				+ twitterprofileimageurl + ", twitteruserid=" + twitteruserid
-				+ ", userid=" + userid + ", username=" + username + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("BSUserDetails [email=");
+		builder.append(email);
+		builder.append(", facebookAccessToken=");
+		builder.append(facebookAccessToken);
+		builder.append(", facebookdefault=");
+		builder.append(facebookdefault);
+		builder.append(", facebookprofileimageurl=");
+		builder.append(facebookprofileimageurl);
+		builder.append(", facebookuserid=");
+		builder.append(facebookuserid);
+		builder.append(", firstname=");
+		builder.append(firstname);
+		builder.append(", foursquareAccessToken=");
+		builder.append(foursquareAccessToken);
+		builder.append(", foursquareTokenSecret=");
+		builder.append(foursquareTokenSecret);
+		builder.append(", foursquaredefault=");
+		builder.append(foursquaredefault);
+		builder.append(", foursquareprofileimageurl=");
+		builder.append(foursquareprofileimageurl);
+		builder.append(", foursquareuserid=");
+		builder.append(foursquareuserid);
+		builder.append(", lastname=");
+		builder.append(lastname);
+		builder.append(", status_code=");
+		builder.append(status_code);
+		builder.append(", status_message=");
+		builder.append(status_message);
+		builder.append(", twitterAccessToken=");
+		builder.append(twitterAccessToken);
+		builder.append(", twitterTokenSecret=");
+		builder.append(twitterTokenSecret);
+		builder.append(", twitterdefault=");
+		builder.append(twitterdefault);
+		builder.append(", twitterprofileimageurl=");
+		builder.append(twitterprofileimageurl);
+		builder.append(", twitteruserid=");
+		builder.append(twitteruserid);
+		builder.append(", userid=");
+		builder.append(userid);
+		builder.append(", username=");
+		builder.append(username);
+		builder.append("]");
+		return builder.toString();
 	}
+
+	public boolean getFoursquareDefaultBoolean() {
+		if (null != foursquaredefault && 
+				("1".equals(foursquaredefault) || "true".equals(foursquaredefault.toLowerCase()))) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean getFacebookDefaultBoolean() {
+		if (null != facebookdefault && 
+				("1".equals(facebookdefault) || "true".equals(facebookdefault.toLowerCase()))) {
+			return true;
+		}
+		return false;
+	}
+
+	public boolean getTwitterDefaultBoolean() {
+		if (null != twitterdefault && 
+				("1".equals(twitterdefault) || "true".equals(twitterdefault.toLowerCase()))) {
+			return true;
+		}
+		return false;
+	}
+
+	public void setTwitterAccessToken(String string) {
+        twitterAccessToken = string;		
+	}
+
+	public void setFacebookAccessToken(String string) {
+        facebookAccessToken = string;		
+	}
+
+	public void setFoursquareAccessToken(String string) {
+        foursquareAccessToken = string;		
+	}
+	public void setTwitterTokenSecret(String string) {
+         twitterTokenSecret = string;		
+	}
+	public void setFoursquareTokenSecret(String string) {
+        foursquareTokenSecret = string;		
+	}
+
+	public String getTwitterAccessToken() {
+		return twitterAccessToken;
+	}
+
+	public String getFacebookAccessToken() {
+		return facebookAccessToken;
+	}
+
+	public String getFoursquareAccessToken() {
+		return foursquareAccessToken;
+	}
+
+	public String getTwitterTokenSecret() {
+		return twitterTokenSecret;
+	}
+
+	public String getFoursquareTokenSecret() {
+		return foursquareTokenSecret;
+	}
+
+	public boolean isFacebookAuthorized() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	/* returns true if the oauth credentials are present 
+	 * Does not guarantee they are still valid
+	 */
+	public boolean isTwitterAuthorized() {
+		if (null != twitterAccessToken && !"".equals(twitterAccessToken.trim())
+				 && null != twitterTokenSecret && !"".equals(twitterTokenSecret.trim()))
+            return true;
+		else
+			return false;
+	} //isTwitterAuthorized
+
+	/* returns true if the oauth credentials are present 
+	 * Does not guarantee they are still valid
+	 */
+	public boolean isFoursquareAuthorized() {
+		if (null != foursquareAccessToken && !"".equals(foursquareAccessToken.trim())
+				 && null != foursquareTokenSecret && !"".equals(foursquareTokenSecret.trim()))
+           return true;
+ 		else
+			return false;
+	}  //isFoursquareAuthorized
 }
 
 

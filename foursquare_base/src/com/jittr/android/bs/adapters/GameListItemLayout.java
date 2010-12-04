@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class GameListItemLayout extends LinearLayout {
 
-	private TextView textView;
+	protected TextView textView;
 	private Game game;
 	public GameListItemLayout(Context context) {
 		super(context);

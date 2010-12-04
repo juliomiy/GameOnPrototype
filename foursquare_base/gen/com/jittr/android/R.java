@@ -8,246 +8,317 @@
 package com.jittr.android;
 
 public final class R {
+    public static final class anim {
+        public static final int bump_left_hand=0x7f040000;
+        public static final int bump_right_hand=0x7f040001;
+        public static final int bump_signal=0x7f040002;
+        public static final int bump_slide_down=0x7f040003;
+        public static final int bump_slide_up=0x7f040004;
+    }
     public static final class array {
-        public static final int mlb=0x7f050005;
-        public static final int nba=0x7f050006;
-        public static final int nfl=0x7f050004;
+        public static final int mlb=0x7f060005;
+        public static final int nba=0x7f060006;
+        public static final int nfl=0x7f060004;
         /**  Used in customize Date driven layout 
          */
-        public static final int payment_choices=0x7f050000;
-        public static final int sport_choices=0x7f050002;
-        public static final int team_choices=0x7f050003;
-        public static final int time_choices=0x7f050001;
+        public static final int payment_choices=0x7f060000;
+        public static final int sport_choices=0x7f060002;
+        public static final int team_choices=0x7f060003;
+        public static final int time_choices=0x7f060001;
     }
     public static final class attr {
     }
     public static final class color {
-        public static final int BLACK=0x7f060001;
-        public static final int WHITE=0x7f060000;
-        public static final int button_color_dark=0x7f060010;
-        public static final int button_color_disabled=0x7f060011;
+        public static final int BLACK=0x7f090003;
+        public static final int BLUE=0x7f090001;
+        public static final int GREEN=0x7f090000;
+        public static final int WHITE=0x7f090002;
+        public static final int button_color_dark=0x7f090012;
+        public static final int button_color_disabled=0x7f090013;
         /**   Button 
          */
-        public static final int button_color_light=0x7f06000f;
-        public static final int button_default_border=0x7f060012;
-        public static final int button_disabled_focused_border=0x7f060014;
-        public static final int button_focused_border=0x7f060013;
-        public static final int color_background=0x7f060004;
-        public static final int color_foreground=0x7f060003;
-        public static final int color_foreground_inverse=0x7f060005;
-        public static final int list_item_color_dark=0x7f060016;
-        public static final int list_item_color_disabled=0x7f06001b;
+        public static final int button_color_light=0x7f090011;
+        public static final int button_default_border=0x7f090014;
+        public static final int button_disabled_focused_border=0x7f090016;
+        public static final int button_focused_border=0x7f090015;
+        public static final int color_background=0x7f090006;
+        public static final int color_foreground=0x7f090005;
+        public static final int color_foreground_inverse=0x7f090007;
+        public static final int list_item_color_dark=0x7f090018;
+        public static final int list_item_color_disabled=0x7f09001d;
         /**   List Item 
          */
-        public static final int list_item_color_light=0x7f060015;
-        public static final int list_item_pressed_color_dark=0x7f06001a;
-        public static final int list_item_pressed_color_light=0x7f060019;
-        public static final int list_item_selected_color_dark=0x7f060018;
-        public static final int list_item_selected_color_light=0x7f060017;
-        public static final int textfield_color_dark=0x7f06000a;
-        public static final int textfield_color_disabled=0x7f06000b;
+        public static final int list_item_color_light=0x7f090017;
+        public static final int list_item_pressed_color_dark=0x7f09001c;
+        public static final int list_item_pressed_color_light=0x7f09001b;
+        public static final int list_item_selected_color_dark=0x7f09001a;
+        public static final int list_item_selected_color_light=0x7f090019;
+        public static final int textfield_color_dark=0x7f09000c;
+        public static final int textfield_color_disabled=0x7f09000d;
         /**  Text Field 
          */
-        public static final int textfield_color_light=0x7f060009;
-        public static final int textfield_default_border=0x7f06000c;
-        public static final int textfield_disabled_focused_border=0x7f06000e;
-        public static final int textfield_focused_border=0x7f06000d;
-        public static final int title_border=0x7f060008;
-        public static final int title_color_dark=0x7f060007;
-        public static final int title_color_light=0x7f060006;
-        public static final int translucent_red=0x7f060002;
+        public static final int textfield_color_light=0x7f09000b;
+        public static final int textfield_default_border=0x7f09000e;
+        public static final int textfield_disabled_focused_border=0x7f090010;
+        public static final int textfield_focused_border=0x7f09000f;
+        public static final int title_border=0x7f09000a;
+        public static final int title_color_dark=0x7f090009;
+        public static final int title_color_light=0x7f090008;
+        public static final int translucent_red=0x7f090004;
     }
     public static final class d {
-        public static final int lastNameEditText=0x7f0b0000;
-        public static final int twitterEditText=0x7f0b0001;
+        public static final int lastNameEditText=0x7f0c0000;
+        public static final int twitterEditText=0x7f0c0001;
     }
     public static final class drawable {
         public static final int android_50x50=0x7f020000;
         public static final int betsquaredicon_100x100=0x7f020001;
         public static final int betsquaredicon_25x25=0x7f020002;
         public static final int betsquareredicon=0x7f020003;
-        public static final int button_bg=0x7f020004;
-        public static final int emailsignupbutton=0x7f020005;
-        public static final int facebook_icon=0x7f020006;
-        public static final int facebooksignupbutton=0x7f020007;
-        public static final int finalarrow1=0x7f020008;
-        public static final int foursquareicon20x20=0x7f020009;
-        public static final int foursquaresignupbutton=0x7f02000a;
-        public static final int ic_menu_preferences=0x7f02000b;
-        public static final int icon=0x7f02000c;
-        public static final int jittr_logo50x36=0x7f02000d;
-        public static final int list_item_background_disabled=0x7f02000e;
-        public static final int list_item_background_focus=0x7f02000f;
-        public static final int list_item_divider=0x7f020010;
-        public static final int list_selector_background=0x7f020011;
-        public static final int login=0x7f020012;
-        public static final int login_button=0x7f020013;
-        public static final int login_down=0x7f020014;
-        public static final int logout=0x7f020015;
-        public static final int logout_button=0x7f020016;
-        public static final int logout_down=0x7f020017;
-        public static final int mlblogo_30x50=0x7f020018;
-        public static final int nbalogo_50x50=0x7f020019;
-        public static final int nfllogo_50x50=0x7f02001a;
-        public static final int nhllogo_50x50=0x7f02001b;
-        public static final int options_48=0x7f02001c;
-        public static final int rectangle_background=0x7f02001d;
-        public static final int rounded=0x7f02001e;
-        public static final int rounded_sel=0x7f02001f;
-        public static final int settings_48=0x7f020020;
-        public static final int shopping=0x7f020021;
-        public static final int small_side_lockup_white=0x7f020022;
-        public static final int twittericon=0x7f020023;
-        public static final int twittersignupbutton=0x7f020024;
-        public static final int window_title_background=0x7f020025;
+        public static final int btn_bump_normal=0x7f020004;
+        public static final int btn_bump_normal_blue=0x7f020005;
+        public static final int btn_bump_normal_dark=0x7f020006;
+        public static final int btn_bump_normal_disable=0x7f020007;
+        public static final int btn_bump_normal_disable_focused=0x7f020008;
+        public static final int btn_bump_pressed=0x7f020009;
+        public static final int btn_bump_selected=0x7f02000a;
+        public static final int bump_button_blue=0x7f02000b;
+        public static final int bump_button_dark=0x7f02000c;
+        public static final int bump_close=0x7f02000d;
+        public static final int bump_close_button=0x7f02000e;
+        public static final int bump_close_selected=0x7f02000f;
+        public static final int bump_gradient=0x7f020010;
+        public static final int bump_gradient_2=0x7f020011;
+        public static final int bump_lefthand=0x7f020012;
+        public static final int bump_nonetwork=0x7f020013;
+        public static final int bump_notify=0x7f020014;
+        public static final int bump_righthand=0x7f020015;
+        public static final int bump_signal1=0x7f020016;
+        public static final int bump_signal2=0x7f020017;
+        public static final int bump_signal3=0x7f020018;
+        public static final int bump_signal4=0x7f020019;
+        public static final int bump_white_low=0x7f02001a;
+        public static final int button_bg=0x7f02001b;
+        public static final int emailsignupbutton=0x7f02001c;
+        public static final int facebook_icon=0x7f02001d;
+        public static final int facebooksignupbutton=0x7f02001e;
+        public static final int finalarrow1=0x7f02001f;
+        public static final int foursquareicon20x20=0x7f020020;
+        public static final int foursquaresignupbutton=0x7f020021;
+        public static final int ic_menu_preferences=0x7f020022;
+        public static final int icon=0x7f020023;
+        public static final int jittr_logo50x36=0x7f020024;
+        public static final int list_item_background_disabled=0x7f020025;
+        public static final int list_item_background_focus=0x7f020026;
+        public static final int list_item_divider=0x7f020027;
+        public static final int list_selector_background=0x7f020028;
+        public static final int login=0x7f020029;
+        public static final int login_button=0x7f02002a;
+        public static final int login_down=0x7f02002b;
+        public static final int logout=0x7f02002c;
+        public static final int logout_button=0x7f02002d;
+        public static final int logout_down=0x7f02002e;
+        public static final int mlblogo_30x50=0x7f02002f;
+        public static final int nbalogo_50x50=0x7f020030;
+        public static final int nfllogo_50x50=0x7f020031;
+        public static final int nhllogo_50x50=0x7f020032;
+        public static final int options_48=0x7f020033;
+        public static final int rectangle_background=0x7f020034;
+        public static final int rounded=0x7f020035;
+        public static final int rounded_sel=0x7f020036;
+        public static final int settings_48=0x7f020037;
+        public static final int shopping=0x7f020038;
+        public static final int small_side_lockup_white=0x7f020039;
+        public static final int twittericon=0x7f02003a;
+        public static final int twittersignupbutton=0x7f02003b;
+        public static final int twittertoggle=0x7f02003c;
+        public static final int window_title_background=0x7f02003d;
     }
     public static final class id {
-        public static final int BuyMore=0x7f0a0043;
-        public static final int Done=0x7f0a0044;
-        public static final int ImageButton05=0x7f0a004f;
-        public static final int ImageView01=0x7f0a0027;
-        public static final int ImageView02=0x7f0a003e;
-        public static final int ImageView03=0x7f0a0082;
-        public static final int LinearLayout01=0x7f0a0046;
-        public static final int LinearLayout02=0x7f0a0054;
-        public static final int LinearLayout03=0x7f0a0055;
-        public static final int LinearLayout04=0x7f0a0056;
-        public static final int LinearLayout05=0x7f0a0057;
-        public static final int ResultsText1=0x7f0a0040;
-        public static final int ResultsText2=0x7f0a0041;
-        public static final int ResultsText3=0x7f0a0042;
-        public static final int ResultsTitle=0x7f0a003f;
-        public static final int ScrollView01=0x7f0a0026;
-        public static final int TextView01=0x7f0a0008;
-        public static final int TextView03=0x7f0a003d;
-        public static final int aboutBetsquared=0x7f0a0091;
-        public static final int actionButtonsLayout=0x7f0a0059;
-        public static final int addDuckettBalanceEditText=0x7f0a0035;
-        public static final int addDuckettBalanceTextView=0x7f0a0034;
-        public static final int addressTextView=0x7f0a0085;
-        public static final int avatarImageView=0x7f0a000a;
-        public static final int banksettings=0x7f0a008f;
-        public static final int betButton=0x7f0a0013;
-        public static final int betCreatorNameTextView=0x7f0a000d;
-        public static final int betEditText=0x7f0a0053;
-        public static final int betsAcceptedTextView=0x7f0a0062;
-        public static final int betsButton=0x7f0a0003;
-        public static final int betsInitiatedTextView=0x7f0a0061;
-        public static final int betsquatedVersionTextView=0x7f0a0051;
-        public static final int bottomBar=0x7f0a0065;
-        public static final int bottomBarLayout=0x7f0a0002;
-        public static final int cancelButton=0x7f0a0014;
-        public static final int cancel_button=0x7f0a0058;
-        public static final int cell1=0x7f0a006b;
-        public static final int cityStateTextView=0x7f0a0086;
-        public static final int confirmRegistrationTextView=0x7f0a0017;
-        public static final int copyrightTextView=0x7f0a0052;
-        public static final int currentBalanceLinearLayout=0x7f0a002d;
-        public static final int currentDuckettBalanceTextView=0x7f0a002f;
-        public static final int currentGeoTextView=0x7f0a0083;
-        public static final int currentInPlayDuckettBalanceTextView=0x7f0a0032;
-        public static final int currentInPlayLinearLayout=0x7f0a0030;
-        public static final int deletePostButton=0x7f0a007e;
-        public static final int duckettsToPurchaseTextView=0x7f0a0047;
-        public static final int emailEditText=0x7f0a0039;
-        public static final int enter_pin_title=0x7f0a0001;
-        public static final int eventDateTextView=0x7f0a000c;
-        public static final int eventDateTimeTextView=0x7f0a001b;
-        public static final int eventNameTextView=0x7f0a000b;
-        public static final int faceBookEditText=0x7f0a0068;
-        public static final int facebookCheckBox=0x7f0a007f;
-        public static final int findFriendSocialNetworkLayout=0x7f0a001a;
-        public static final int findFriendsButton=0x7f0a0019;
-        public static final int firstNameEditText=0x7f0a003a;
-        public static final int foursquareAvatarUrlImageView=0x7f0a006a;
-        public static final int foursquareAvatarUrlTextView=0x7f0a0069;
-        public static final int foursquareCheckBox=0x7f0a0081;
-        public static final int foursquareoauth=0x7f0a006d;
-        public static final int friendsButton=0x7f0a0005;
-        public static final int gameInviteButton=0x7f0a006c;
-        public static final int getbetsuserdetails_button=0x7f0a0071;
-        public static final int getnearbyvenues_button=0x7f0a0073;
-        public static final int getpublicgames_button=0x7f0a0074;
-        public static final int getuserdashboard_button=0x7f0a0075;
-        public static final int getuserdetails_button=0x7f0a006f;
-        public static final int goButton=0x7f0a005a;
-        public static final int header=0x7f0a008b;
-        public static final int headerLayout=0x7f0a0015;
-        public static final int homeTeamRadioButton=0x7f0a0012;
-        public static final int hometeam=0x7f0a0011;
-        public static final int instructionTextView=0x7f0a0022;
-        public static final int inviteFriendsBetsquared=0x7f0a0090;
-        public static final int inviteFriendsButton=0x7f0a0025;
-        public static final int lastNameEdiTtext=0x7f0a0066;
-        public static final int lastNameEditText=0x7f0a003b;
-        public static final int latLongTextView=0x7f0a0087;
-        public static final int loggedInAsTextView=0x7f0a0020;
-        public static final int login=0x7f0a0079;
-        public static final int loginButton=0x7f0a002a;
-        public static final int logout_button=0x7f0a0078;
-        public static final int meButton=0x7f0a0006;
-        public static final int networkLogoImageView=0x7f0a0016;
-        public static final int passwordEditText=0x7f0a0038;
-        public static final int paymentChoicesSpinner=0x7f0a0036;
-        public static final int placesButton=0x7f0a0004;
-        public static final int postButton=0x7f0a007d;
-        public static final int pricePerDuckettTextView=0x7f0a0048;
-        public static final int purchaseLinearLayout=0x7f0a0033;
-        public static final int registerButton=0x7f0a002b;
-        public static final int relativeLayout=0x7f0a002c;
-        public static final int requestButton=0x7f0a007c;
-        public static final int reviewOrderButton=0x7f0a0037;
-        public static final int reviewPurchaseRelativeLayout=0x7f0a0045;
-        public static final int searchLayout=0x7f0a0021;
-        public static final int searchQueryEditText=0x7f0a0023;
-        public static final int selectionLayout=0x7f0a0024;
-        public static final int selectionSpinnerLayout=0x7f0a005b;
-        public static final int signUpByEmailButton=0x7f0a0050;
-        public static final int signUpByFacebookButton=0x7f0a004c;
-        public static final int signUpByFoursquareButton=0x7f0a004e;
-        public static final int signUpByTwitterButton=0x7f0a004d;
-        public static final int sportFilterSpinner=0x7f0a005d;
-        public static final int subTotalTextView=0x7f0a0049;
-        public static final int taxAmountTextView=0x7f0a004a;
-        public static final int teamFilterSpinner=0x7f0a005e;
-        public static final int teamsRadioGroup=0x7f0a000e;
-        public static final int test=0x7f0a008a;
-        public static final int testButton=0x7f0a0007;
-        public static final int testFoursquareButton=0x7f0a0070;
-        public static final int testFoursquareutton=0x7f0a0072;
-        public static final int testTwitterButton=0x7f0a0077;
-        public static final int textView01=0x7f0a002e;
-        public static final int textView02=0x7f0a0031;
-        public static final int timeFilterSpinner=0x7f0a005c;
-        public static final int tosCheckBox=0x7f0a003c;
-        public static final int totalBetsTextView=0x7f0a0060;
-        public static final int totalLosesTextView=0x7f0a0064;
-        public static final int totalPurchaseTextView=0x7f0a004b;
-        public static final int totalWinsTextView=0x7f0a0063;
-        public static final int twitterCheckBox=0x7f0a0080;
-        public static final int twitterEditText=0x7f0a0067;
-        public static final int twitterOAuthButton=0x7f0a006e;
-        public static final int txt=0x7f0a007a;
-        public static final int updateButton=0x7f0a0018;
-        public static final int update_user_settings=0x7f0a008e;
-        public static final int uploadButton=0x7f0a007b;
-        public static final int userBetButton=0x7f0a0076;
-        public static final int userIDTextView=0x7f0a005f;
-        public static final int userNameEditText=0x7f0a0028;
-        public static final int userPasswordEditText=0x7f0a0029;
-        public static final int user_avatar=0x7f0a0009;
-        public static final int venueNameTextView=0x7f0a0084;
-        public static final int visitingTeamRadioButton=0x7f0a0010;
-        public static final int visitingteam=0x7f0a000f;
-        public static final int wagerTypeEditText=0x7f0a001d;
-        public static final int wagerTypeLayout=0x7f0a001c;
-        public static final int wagerUnitsEditText=0x7f0a001f;
-        public static final int wagerUnitsLayout=0x7f0a001e;
-        public static final int webView=0x7f0a0088;
-        public static final int web_view=0x7f0a0000;
-        public static final int windowTitleLeftButton=0x7f0a0089;
-        public static final int windowicon=0x7f0a008d;
-        public static final int windowtitle=0x7f0a008c;
+        public static final int BuyMore=0x7f0b0060;
+        public static final int Done=0x7f0b0061;
+        public static final int ImageButton05=0x7f0b006c;
+        public static final int ImageView01=0x7f0b0044;
+        public static final int ImageView02=0x7f0b005b;
+        public static final int ImageView03=0x7f0b00a8;
+        public static final int LinearLayout01=0x7f0b0063;
+        public static final int LinearLayout02=0x7f0b0071;
+        public static final int LinearLayout03=0x7f0b0072;
+        public static final int LinearLayout04=0x7f0b0073;
+        public static final int ResultsText1=0x7f0b005d;
+        public static final int ResultsText2=0x7f0b005e;
+        public static final int ResultsText3=0x7f0b005f;
+        public static final int ResultsTitle=0x7f0b005c;
+        public static final int ScrollView01=0x7f0b0043;
+        public static final int TextView01=0x7f0b0008;
+        public static final int TextView03=0x7f0b005a;
+        public static final int aboutBetsquared=0x7f0b00b7;
+        public static final int actionButtonsLayout=0x7f0b007f;
+        public static final int addDuckettBalanceEditText=0x7f0b0052;
+        public static final int addDuckettBalanceTextView=0x7f0b0051;
+        public static final int addressTextView=0x7f0b00ab;
+        public static final int api_popup=0x7f0b000e;
+        public static final int avatarImageView=0x7f0b000a;
+        public static final int banksettings=0x7f0b00b5;
+        public static final int betButton=0x7f0b0030;
+        public static final int betCreatorNameTextView=0x7f0b000d;
+        public static final int betEditText=0x7f0b0070;
+        public static final int betsAcceptedTextView=0x7f0b0088;
+        public static final int betsButton=0x7f0b0003;
+        public static final int betsInitiatedTextView=0x7f0b0087;
+        public static final int betsquatedVersionTextView=0x7f0b006e;
+        public static final int bottomBar=0x7f0b008b;
+        public static final int bottomBarLayout=0x7f0b0002;
+        public static final int bump_hand_left=0x7f0b0013;
+        public static final int bump_hand_right=0x7f0b0014;
+        public static final int bump_icon=0x7f0b0015;
+        public static final int bump_logo=0x7f0b0010;
+        public static final int bump_signal=0x7f0b0016;
+        public static final int bump_signal4=0x7f0b0017;
+        public static final int cancelButton=0x7f0b0031;
+        public static final int cancel_button=0x7f0b007e;
+        public static final int cell1=0x7f0b0091;
+        public static final int cityStateTextView=0x7f0b00ac;
+        public static final int close_window=0x7f0b0011;
+        public static final int confirmRegistrationTextView=0x7f0b0034;
+        public static final int confirm_prompt=0x7f0b001d;
+        public static final int content_layout=0x7f0b001a;
+        public static final int copyrightTextView=0x7f0b006f;
+        public static final int currentBalanceLinearLayout=0x7f0b004a;
+        public static final int currentDuckettBalanceTextView=0x7f0b004c;
+        public static final int currentGeoTextView=0x7f0b00a9;
+        public static final int currentInPlayDuckettBalanceTextView=0x7f0b004f;
+        public static final int currentInPlayLinearLayout=0x7f0b004d;
+        public static final int deletePostButton=0x7f0b00a4;
+        public static final int duckettsToPurchaseTextView=0x7f0b0064;
+        public static final int edit_text_cancel=0x7f0b0023;
+        public static final int edit_text_okay=0x7f0b0024;
+        public static final int emailEditText=0x7f0b0056;
+        public static final int enter_pin_title=0x7f0b0001;
+        public static final int eventDateTextView=0x7f0b000c;
+        public static final int eventDateTimeTextView=0x7f0b0038;
+        public static final int eventNameTextView=0x7f0b000b;
+        public static final int faceBookEditText=0x7f0b008e;
+        public static final int facebookCheckBox=0x7f0b00a5;
+        public static final int facebookToggleButton=0x7f0b007b;
+        public static final int findFriendSocialNetworkLayout=0x7f0b0037;
+        public static final int findFriendsButton=0x7f0b0036;
+        public static final int firstNameEditText=0x7f0b0057;
+        public static final int foursquareAvatarUrlImageView=0x7f0b0090;
+        public static final int foursquareAvatarUrlTextView=0x7f0b008f;
+        public static final int foursquareCheckBox=0x7f0b00a7;
+        public static final int foursquareLoginButton=0x7f0b0078;
+        public static final int foursquareNameTextView=0x7f0b0079;
+        public static final int foursquareToggleButton=0x7f0b007d;
+        public static final int foursquareoauth=0x7f0b0093;
+        public static final int friendsButton=0x7f0b0005;
+        public static final int gameInviteButton=0x7f0b0092;
+        public static final int getbetsuserdetails_button=0x7f0b0097;
+        public static final int getnearbyvenues_button=0x7f0b0099;
+        public static final int getpublicgames_button=0x7f0b009a;
+        public static final int getuserdashboard_button=0x7f0b009b;
+        public static final int getuserdetails_button=0x7f0b0095;
+        public static final int goButton=0x7f0b0080;
+        public static final int header=0x7f0b00b1;
+        public static final int headerLayout=0x7f0b0032;
+        public static final int homeTeamRadioButton=0x7f0b002f;
+        public static final int hometeam=0x7f0b002e;
+        public static final int instructionTextView=0x7f0b003f;
+        public static final int inviteFriendsBetsquared=0x7f0b00b6;
+        public static final int inviteFriendsButton=0x7f0b0042;
+        public static final int lastNameEdiTtext=0x7f0b008c;
+        public static final int lastNameEditText=0x7f0b0058;
+        public static final int latLongTextView=0x7f0b00ad;
+        public static final int linearLayoutDefault=0x7f0b007a;
+        public static final int linearLayoutFoursquare=0x7f0b0077;
+        public static final int linearLayoutTwitter=0x7f0b0074;
+        public static final int loggedInAsTextView=0x7f0b003d;
+        public static final int login=0x7f0b009f;
+        public static final int loginButton=0x7f0b0047;
+        public static final int logout_button=0x7f0b009e;
+        public static final int meButton=0x7f0b0006;
+        public static final int networkLogoImageView=0x7f0b0033;
+        public static final int no_button=0x7f0b001f;
+        public static final int notify=0x7f0b001c;
+        public static final int notify_bar=0x7f0b001b;
+        public static final int passwordEditText=0x7f0b0055;
+        public static final int paymentChoicesSpinner=0x7f0b0053;
+        public static final int placesButton=0x7f0b0004;
+        public static final int postButton=0x7f0b00a3;
+        public static final int pricePerDuckettTextView=0x7f0b0065;
+        public static final int progress=0x7f0b0018;
+        public static final int prompt_edit_text=0x7f0b0020;
+        public static final int purchaseLinearLayout=0x7f0b0050;
+        public static final int registerButton=0x7f0b0048;
+        public static final int relativeLayout=0x7f0b0049;
+        public static final int requestButton=0x7f0b00a2;
+        public static final int response_bar=0x7f0b0022;
+        public static final int reviewOrderButton=0x7f0b0054;
+        public static final int reviewPurchaseRelativeLayout=0x7f0b0062;
+        public static final int searchLayout=0x7f0b003e;
+        public static final int searchQueryEditText=0x7f0b0040;
+        public static final int selectionLayout=0x7f0b0041;
+        public static final int selectionSpinnerLayout=0x7f0b0081;
+        public static final int signUpByEmailButton=0x7f0b006d;
+        public static final int signUpByFacebookButton=0x7f0b0069;
+        public static final int signUpByFoursquareButton=0x7f0b006b;
+        public static final int signUpByTwitterButton=0x7f0b006a;
+        public static final int sportFilterSpinner=0x7f0b0083;
+        public static final int start_edit_name=0x7f0b0028;
+        public static final int start_prompt=0x7f0b0025;
+        public static final int start_user_name=0x7f0b0027;
+        public static final int status=0x7f0b0019;
+        public static final int status_bar=0x7f0b0012;
+        public static final int subTotalTextView=0x7f0b0066;
+        public static final int taxAmountTextView=0x7f0b0067;
+        public static final int teamFilterSpinner=0x7f0b0084;
+        public static final int teamsRadioGroup=0x7f0b002b;
+        public static final int test=0x7f0b00b0;
+        public static final int testButton=0x7f0b0007;
+        public static final int testFoursquareButton=0x7f0b0096;
+        public static final int testFoursquareutton=0x7f0b0098;
+        public static final int testTwitterButton=0x7f0b009d;
+        public static final int textView01=0x7f0b004b;
+        public static final int textView02=0x7f0b004e;
+        public static final int text_edit_text=0x7f0b0021;
+        public static final int timeFilterSpinner=0x7f0b0082;
+        public static final int title_bar=0x7f0b000f;
+        public static final int tosCheckBox=0x7f0b0059;
+        public static final int totalBetsTextView=0x7f0b0086;
+        public static final int totalLosesTextView=0x7f0b008a;
+        public static final int totalPurchaseTextView=0x7f0b0068;
+        public static final int totalWinsTextView=0x7f0b0089;
+        public static final int twitterCheckBox=0x7f0b00a6;
+        public static final int twitterEditText=0x7f0b008d;
+        public static final int twitterLoginButton=0x7f0b0075;
+        public static final int twitterNameTextView=0x7f0b0076;
+        public static final int twitterOAuthButton=0x7f0b0094;
+        public static final int twitterToggleButton=0x7f0b007c;
+        public static final int txt=0x7f0b00a0;
+        public static final int updateButton=0x7f0b0035;
+        public static final int update_user_settings=0x7f0b00b4;
+        public static final int uploadButton=0x7f0b00a1;
+        public static final int userBetButton=0x7f0b009c;
+        public static final int userIDTextView=0x7f0b0085;
+        public static final int userNameEditText=0x7f0b0045;
+        public static final int userPasswordEditText=0x7f0b0046;
+        public static final int user_avatar=0x7f0b0009;
+        public static final int user_bar=0x7f0b0026;
+        public static final int venueNameTextView=0x7f0b00aa;
+        public static final int visitingTeamRadioButton=0x7f0b002d;
+        public static final int visitingteam=0x7f0b002c;
+        public static final int wagerTypeEditText=0x7f0b003a;
+        public static final int wagerTypeLayout=0x7f0b0039;
+        public static final int wagerUnitsEditText=0x7f0b003c;
+        public static final int wagerUnitsLayout=0x7f0b003b;
+        public static final int waiting_progress=0x7f0b002a;
+        public static final int waiting_prompt=0x7f0b0029;
+        public static final int webView=0x7f0b00ae;
+        public static final int web_view=0x7f0b0000;
+        public static final int windowTitleLeftButton=0x7f0b00af;
+        public static final int windowicon=0x7f0b00b3;
+        public static final int windowtitle=0x7f0b00b2;
+        public static final int yes_button=0x7f0b001e;
     }
     public static final class layout {
         public static final int authorization_view=0x7f030000;
@@ -255,127 +326,975 @@ public final class R {
         public static final int bsbaselistitemapprovedecline=0x7f030002;
         public static final int bsbaselistitemlayout=0x7f030003;
         public static final int bsgameinvitelistitemlayout=0x7f030004;
-        public static final int customizepublicgame=0x7f030005;
-        public static final int defaultlistview=0x7f030006;
-        public static final int gamelistitem=0x7f030007;
-        public static final int gameonconfirmregistration=0x7f030008;
-        public static final int gameoncustomizepublicgame=0x7f030009;
-        public static final int gameoninvitefriendslistactivity=0x7f03000a;
-        public static final int gameonloginlayout=0x7f03000b;
-        public static final int gameonmanagebank=0x7f03000c;
-        public static final int gameonregisterlayout=0x7f03000d;
-        public static final int gameonresultpurchase=0x7f03000e;
-        public static final int gameonreviewpurchase=0x7f03000f;
-        public static final int gameonsignupmain=0x7f030010;
-        public static final int gameonsplash=0x7f030011;
-        public static final int gameonuserbetlayout=0x7f030012;
-        public static final int gameonuserbetslistactivity=0x7f030013;
-        public static final int gameonuserfriendslistactivity=0x7f030014;
-        public static final int getbetsquareduserdetails=0x7f030015;
-        public static final int getnearbyvenues=0x7f030016;
-        public static final int getpublicgames=0x7f030017;
-        public static final int getuserdashboard=0x7f030018;
-        public static final int getuserdetails=0x7f030019;
-        public static final int main=0x7f03001a;
-        public static final int mainfacebook=0x7f03001b;
-        public static final int social_network_checkbox=0x7f03001c;
-        public static final int venuelistitem=0x7f03001d;
-        public static final int viewvenue=0x7f03001e;
-        public static final int webview=0x7f03001f;
-        public static final int windowtitle=0x7f030020;
+        public static final int bump_api_popup=0x7f030005;
+        public static final int bump_confirm_view=0x7f030006;
+        public static final int bump_edit_text=0x7f030007;
+        public static final int bump_start_view=0x7f030008;
+        public static final int bump_waiting_view=0x7f030009;
+        public static final int customizepublicgame=0x7f03000a;
+        public static final int defaultlistview=0x7f03000b;
+        public static final int gamelistitem=0x7f03000c;
+        public static final int gameonconfirmregistration=0x7f03000d;
+        public static final int gameoncustomizepublicgame=0x7f03000e;
+        public static final int gameoninvitefriendslistactivity=0x7f03000f;
+        public static final int gameonloginlayout=0x7f030010;
+        public static final int gameonmanagebank=0x7f030011;
+        public static final int gameonregisterlayout=0x7f030012;
+        public static final int gameonresultpurchase=0x7f030013;
+        public static final int gameonreviewpurchase=0x7f030014;
+        public static final int gameonsignupmain=0x7f030015;
+        public static final int gameonsplash=0x7f030016;
+        public static final int gameonuserbetlayout=0x7f030017;
+        public static final int gameonuserbetslistactivity=0x7f030018;
+        public static final int gameonuserfriendslistactivity=0x7f030019;
+        public static final int getbetsquareduserdetails=0x7f03001a;
+        public static final int getnearbyvenues=0x7f03001b;
+        public static final int getpublicgames=0x7f03001c;
+        public static final int getuserdashboard=0x7f03001d;
+        public static final int getuserdetails=0x7f03001e;
+        public static final int main=0x7f03001f;
+        public static final int mainfacebook=0x7f030020;
+        public static final int social_network_checkbox=0x7f030021;
+        public static final int venuelistitem=0x7f030022;
+        public static final int viewvenue=0x7f030023;
+        public static final int webview=0x7f030024;
+        public static final int windowtitle=0x7f030025;
     }
     public static final class menu {
-        public static final int defaultmenu=0x7f090000;
+        public static final int defaultmenu=0x7f0a0000;
     }
     public static final class raw {
-        public static final int gameonv1=0x7f040000;
+        public static final int bump_blip=0x7f050000;
+        public static final int gameonv1=0x7f050001;
     }
     public static final class string {
-        public static final int aboutbetsquaredmenu=0x7f070034;
-        public static final int app_description=0x7f070001;
-        public static final int app_name=0x7f070000;
-        public static final int approve=0x7f070043;
-        public static final int avatarurl=0x7f07001d;
-        public static final int bankstatementmenu=0x7f070035;
-        public static final int betbutton=0x7f070020;
-        public static final int betsbutton=0x7f070026;
-        public static final int betsquaredtos=0x7f07002f;
-        public static final int cancel_button=0x7f070004;
+        public static final int aboutbetsquaredmenu=0x7f070054;
+        public static final int app_description=0x7f070021;
+        public static final int app_name=0x7f070020;
+        public static final int approve=0x7f070063;
+        public static final int avatarurl=0x7f07003d;
+        public static final int bankstatementmenu=0x7f070055;
+        public static final int betbutton=0x7f070040;
+        public static final int betsbutton=0x7f070046;
+        public static final int betsquaredtos=0x7f07004f;
+        /**  This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+ This message tells the user that the connection is almost complete and prompts him to bump his phone with the other user's phone again.  "bump" is used as a verb here. 
+         */
+        public static final int bump_again=0x7f070002;
+        /**  Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that the other user's version of the Bump app does not support a feature called "Bump-an-App".  "Bump-an-app" means "share an application by using the Bump application.  The '\' in "user\'s" is to allow the computer to display the apostrophe.  If your translation uses an apostrophe, please use "\'".  In this case, "Bump" refers to the name of our application, so please leave "Bump" in English.  If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+         */
+        public static final int bump_app_unsupp=0x7f070013;
+        /**  Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+ Tell the user that Bump is having trouble finding his location.  Ask them to turn on Location Services or connect both devices to the same Wifi network 
+         */
+        public static final int bump_bad_location=0x7f070017;
+        /**  This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+ This message tells the user that the this application cannot connect to the Bump service 
+         */
+        public static final int bump_cannot_connect=0x7f070005;
+        /**  This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+ This message prompts the user to check that his internet connection is working. 
+         */
+        public static final int bump_check_network=0x7f07000b;
+        /**  This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+ This prompt asks the user if he would like to connect with the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation. 
+         */
+        public static final int bump_confirm_connect=0x7f070006;
+        /**  This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that he is now connected to the other user.  "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+         */
+        public static final int bump_connected=0x7f070007;
+        /**  This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+ This message tells the user that the Bump service is currently trying to find a connection with another user.  
+         */
+        public static final int bump_connecting=0x7f070008;
+        public static final int bump_default_action=0x7f07001f;
+        /**  This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+ This text appears on a button that allows the user to change his displayed name in the application.  Please pay special attention to keeping this text as short as possible while still conveying the meaning. 
+         */
+        public static final int bump_edit_name=0x7f070009;
+        /**  This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+ This message tells the user that the application they are using does not have a valid key for the Bump API.  "Key" in this context means "permission" or "authorization".  Please leave "Bump API" in English.  
+         */
+        public static final int bump_invalid_key=0x7f070001;
+        /**  This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+         */
+        public static final int bump_no=0x7f07001d;
+        public static final int bump_no_location=0x7f07001e;
+        /**  Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPhone may be unknown and warm them that Bump may now work 
+         */
+        public static final int bump_no_location_iphone=0x7f070016;
+        /**  Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+ Tell the user that the location of his iPod may be unknown and warm them that Bump may now work 
+         */
+        public static final int bump_no_location_ipod=0x7f070015;
+        /**  *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+ *********************************** 
+ Tell the user that no match was found with another user and ask him to please try again 
+         */
+        public static final int bump_no_match=0x7f070011;
+        /**  Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+ Tell the user that there was no matching device phone, meaning that he was the only person to bump 
+         */
+        public static final int bump_no_matches=0x7f070018;
+        /**  This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+ This message is displayed to tell the user that the Network (the internet, the cellular network, etc) is not currently available. 
+         */
+        public static final int bump_no_network=0x7f07000a;
+        /**  Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+ Tell the user that his version of Bump does not support a feature called Bump-an-App. "Bump-an-app" means "share an application by using the Bump application. If there is a good way to translation "Bump-an-app" while keeping the "Bump" part of it in English, feel free to do so.  Otherwise leave "Bump-an-App" in English too.  
+         */
+        public static final int bump_old_version=0x7f07001b;
+        /**  This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+ This message is displayed if the user attempts to share an item with a user of a different app.  We tell the user he can only share with users of the Bump app.  Please leave "Bump App" in English. 
+         */
+        public static final int bump_only_share=0x7f070012;
+        /**  *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+ *********************************************************************** 
+ SPECIAL NOTES TO TRANSLATORS:  
+   Background information: These phrases are from an iPhone app called "Bump" that lets two users connect to share contact information and photos by physically bumping their two phones together.  Before starting your translation, please watch this 30-second video so you understand what this means: http://bu.mp/videos.html 
+   How to treat the word "bump":  "Bump" is the name of the application and the name of our company, but it represents a physical action of bumping two phones together.  Please use the most appropriate word in your language to represent this, unless otherwise instructed. 
+   *Length of your tranlsations*:  Because these phrases will appear on a mobile phone, you must keep your translations short in length so they fit in the space provided.  Please try to keep your translations shorter-than or equal-to the length of the English phrase.  If you must alter the wording to achieve this, that is OK.  
+   Special placeholders:  This file is read directly by the computer to generate the phrases in the application.  Some phrases contain special characters that represent various things.  For example, %s is used as a placeholder for another word, usually a person's name.  \n is sometimes used to represent a newline character.  If a special character placeholder appears in the English phrase, please use it in your translation in the appropriate place.  
+   How to read this file:  Each phrase listed is shown in this format: "This is the English phrase" = "This is where you put your translation</string>  Please DO NOT ALTER THE LEFT HAND SIDE OF THE = sign IN ANY WAY.  You will place your translation in place of the English phrase on the RIGHT-HAND SIDE of the =.  For example, "This phrase is in English" = "This phrase is now in Chinese becuase I replaced the English phrase with my translation</string>  Above each phrase, we've explained exactly how this phrase is used and included any special instructions.  Please DO NOT tranlsation these instructions :) 
+   IF YOU HAVE ANY QUESTIONS WHATSOEVER, PLEASE EMAIL translations@bu.mp  or call 1-650-275-2867.  We will respond within minutes unless we are asleep.  Thanks!!! :)  
+ *********************************************************************** 
+ Tell the user that the other user has canceled the bump connection and ask him to please try again.  The %s is a placeholder for a person's name.  Please use %s as a placeholder for the other user's name. "bump" is used as a noun here. 
+         */
+        public static final int bump_other_canceled=0x7f070000;
+        /**  ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+ ************************************** 
+ Tell the user that the person they bumped with experienced  an error with their network communications and ask them to try again later when a better signal is available 
+         */
+        public static final int bump_other_error=0x7f070014;
+        /**  This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+ This message asks the user to please wait while the Bump service is doing something. 
+         */
+        public static final int bump_please_wait=0x7f07000c;
+        /**  Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+ Tell the user that his network connection may be too slow. 
+         */
+        public static final int bump_slow_network=0x7f07001a;
+        /**  This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+ This message tells the user that the connection was successfully made using Bump. "Bump" is used as a noun here.  
+         */
+        public static final int bump_successful=0x7f070004;
+        /**  This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+ This prompts the user to bump his phone against the phone of another user to initiate a connection between their two phones. "Bump" is used as a verb here.  \n represents a newline character, so please make sure the translation includes this.  
+         */
+        public static final int bump_to_connect=0x7f070003;
+        /**  Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+ Tell the user that sometimes they have to bump twice to find a match 
+         */
+        public static final int bump_two_times=0x7f070019;
+        /**  This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+ This message tells the user that the action he just tried to perform is not supported by this application. 
+         */
+        public static final int bump_unsupported=0x7f07000d;
+        /**  This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+ This message tells the user that the Bump service is waiting for the other user to do something. "%s" is a placeholder for the other user's name.  Please use it in your translation.  
+         */
+        public static final int bump_waiting_for=0x7f07000e;
+        /**  This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+ This message tells the user to please wait while the Bump service is initialized.  "Warming up" is an English slang for "initializing" or "getting ready".  The \n before "please" represents a newline character, please use it in your translation. 
+         */
+        public static final int bump_warming_up=0x7f07000f;
+        /**  This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+ This text appears on a small button, so it must be short 
+         */
+        public static final int bump_yes=0x7f07001c;
+        /**  This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+ This message informs the user that he canceled the bump connection.  "bump" is used as a noun here.   
+         */
+        public static final int bump_you_canceled=0x7f070010;
+        public static final int cancel_button=0x7f070024;
         /**   Menu Strings 
          */
-        public static final int confirmregistration=0x7f070033;
-        public static final int decline=0x7f070044;
-        public static final int delete=0x7f070042;
-        public static final int ducketts=0x7f070031;
-        public static final int emailaddress=0x7f07000a;
-        public static final int facebook=0x7f07002b;
-        public static final int facebookid=0x7f07000e;
-        public static final int findfriends=0x7f070030;
-        public static final int firstname=0x7f070010;
-        public static final int foursquare=0x7f07002d;
-        public static final int foursquarebase=0x7f070002;
-        public static final int foursquareoauth=0x7f070003;
-        public static final int friendinvitesapprovedecline=0x7f070049;
-        public static final int friendsbutton=0x7f070024;
-        public static final int gameinvitesapprovedecline=0x7f070048;
-        public static final int gobutton=0x7f070012;
-        public static final int hello=0x7f07003f;
-        public static final int hometeam=0x7f07001f;
-        public static final int invitebetsquaredfriends=0x7f070046;
-        public static final int invitefoursquarefriends=0x7f070022;
-        public static final int invitefriends=0x7f070021;
-        public static final int invitetwitterfriends=0x7f070023;
-        public static final int lastname=0x7f07000f;
-        public static final int loginbuttontext=0x7f070018;
-        public static final int logoutbuttontext=0x7f070019;
-        public static final int mebutton=0x7f070025;
-        public static final int nofriends=0x7f070045;
-        public static final int nogames=0x7f070011;
-        public static final int novenues=0x7f07000b;
-        public static final int paymentchoices=0x7f070032;
-        public static final int placesbutton=0x7f070027;
-        public static final int post=0x7f070041;
-        public static final int preferencesmenu=0x7f070036;
-        public static final int purchasecanceled=0x7f070039;
-        public static final int purchasecanceled2=0x7f07003a;
-        public static final int purchasecanceled3=0x7f07003b;
+        public static final int confirmregistration=0x7f070053;
+        public static final int decline=0x7f070064;
+        public static final int delete=0x7f070062;
+        public static final int ducketts=0x7f070051;
+        public static final int emailaddress=0x7f07002a;
+        public static final int facebook=0x7f07004b;
+        public static final int facebookid=0x7f07002e;
+        public static final int findfriends=0x7f070050;
+        public static final int firstname=0x7f070030;
+        public static final int foursquare=0x7f07004d;
+        public static final int foursquarebase=0x7f070022;
+        public static final int foursquareoauth=0x7f070023;
+        public static final int friendinvitesapprovedecline=0x7f070069;
+        public static final int friendsbutton=0x7f070044;
+        public static final int gameinvitesapprovedecline=0x7f070068;
+        public static final int gobutton=0x7f070032;
+        public static final int hello=0x7f07005f;
+        public static final int hometeam=0x7f07003f;
+        public static final int invitebetsquaredfriends=0x7f070066;
+        public static final int invitefoursquarefriends=0x7f070042;
+        public static final int invitefriends=0x7f070041;
+        public static final int invitetwitterfriends=0x7f070043;
+        public static final int lastname=0x7f07002f;
+        public static final int loginbuttontext=0x7f070038;
+        public static final int logoutbuttontext=0x7f070039;
+        public static final int mebutton=0x7f070045;
+        public static final int nofriends=0x7f070065;
+        public static final int nogames=0x7f070031;
+        public static final int novenues=0x7f07002b;
+        public static final int paymentchoices=0x7f070052;
+        public static final int placesbutton=0x7f070047;
+        public static final int post=0x7f070061;
+        public static final int preferencesmenu=0x7f070056;
+        public static final int purchasecanceled=0x7f070059;
+        public static final int purchasecanceled2=0x7f07005a;
+        public static final int purchasecanceled3=0x7f07005b;
         /**   End Menu Strings 
   Purchase Strings 
          */
-        public static final int purchasefailure=0x7f070037;
-        public static final int purchasefailure2=0x7f070038;
-        public static final int purchasesucceeded=0x7f07003c;
-        public static final int register=0x7f070013;
-        public static final int registerbuttontext=0x7f07001a;
+        public static final int purchasefailure=0x7f070057;
+        public static final int purchasefailure2=0x7f070058;
+        public static final int purchasesucceeded=0x7f07005c;
+        public static final int register=0x7f070033;
+        public static final int registerbuttontext=0x7f07003a;
         /**   Added for Facebook Example integration 
          */
-        public static final int request=0x7f07003e;
-        public static final int revieworder=0x7f070047;
-        public static final int signin_up_text=0x7f07002e;
-        public static final int testbetsquarapprovedecline=0x7f07001c;
-        public static final int testbetsquareuserdetails=0x7f070006;
-        public static final int testbutton=0x7f070028;
-        public static final int testfoursquareuserdetails=0x7f070005;
-        public static final int testgetbetsquareduserdetails=0x7f07001b;
-        public static final int testgetpublicgames=0x7f070008;
-        public static final int testgetuserdashboard=0x7f070015;
-        public static final int testnearbyvenues=0x7f070007;
-        public static final int testviewvenueactivity=0x7f070009;
-        public static final int tryagain=0x7f07003d;
-        public static final int twitter=0x7f07002c;
-        public static final int twitterid=0x7f07000c;
-        public static final int twitteroauth=0x7f07000d;
-        public static final int update=0x7f070014;
-        public static final int upload=0x7f070040;
-        public static final int userbets=0x7f07004a;
-        public static final int username=0x7f070016;
-        public static final int userpassword=0x7f070017;
-        public static final int visitingteam=0x7f07001e;
-        public static final int wagertype=0x7f07002a;
-        public static final int wagerunits=0x7f070029;
+        public static final int request=0x7f07005e;
+        public static final int revieworder=0x7f070067;
+        public static final int signin_up_text=0x7f07004e;
+        public static final int testbetsquarapprovedecline=0x7f07003c;
+        public static final int testbetsquareuserdetails=0x7f070026;
+        public static final int testbutton=0x7f070048;
+        public static final int testfoursquareuserdetails=0x7f070025;
+        public static final int testgetbetsquareduserdetails=0x7f07003b;
+        public static final int testgetpublicgames=0x7f070028;
+        public static final int testgetuserdashboard=0x7f070035;
+        public static final int testnearbyvenues=0x7f070027;
+        public static final int testviewvenueactivity=0x7f070029;
+        public static final int tryagain=0x7f07005d;
+        public static final int twitter=0x7f07004c;
+        public static final int twitterid=0x7f07002c;
+        public static final int twitteroauth=0x7f07002d;
+        public static final int update=0x7f070034;
+        public static final int upload=0x7f070060;
+        public static final int userbets=0x7f07006a;
+        public static final int username=0x7f070036;
+        public static final int userpassword=0x7f070037;
+        public static final int visitingteam=0x7f07003e;
+        public static final int wagertype=0x7f07004a;
+        public static final int wagerunits=0x7f070049;
     }
     public static final class style {
-        public static final int CancelButton=0x7f08000b;
+        public static final int BumpDialog=0x7f080000;
+        public static final int CancelButton=0x7f08000c;
         /**   <style name="TextAppearance.Title.WindowTitle">
        <item name="android:textColor">#fff</item>
         <item name="android:textSize">18sp</item> 
@@ -387,24 +1306,24 @@ public final class R {
      <item name="android:shadowRadius">5</item> 
      <item name="android:shadowColor">#1155CC</item> 
          */
-        public static final int CustomWindowTitleBackground=0x7f080003;
-        public static final int CustomWindowTitleText=0x7f080004;
-        public static final int StandardButton=0x7f08000a;
-        public static final int StandardCancelButton=0x7f080001;
+        public static final int CustomWindowTitleBackground=0x7f080004;
+        public static final int CustomWindowTitleText=0x7f080005;
+        public static final int StandardButton=0x7f08000b;
+        public static final int StandardCancelButton=0x7f080002;
         /**   <item name="android:minWidth">75.5dip</item>  
          */
-        public static final int StandardEditText=0x7f080006;
-        public static final int StandardEmailEditText=0x7f080008;
-        public static final int StandardListView=0x7f08000c;
-        public static final int StandardPasswordEditText=0x7f080007;
-        public static final int StandardTextView=0x7f080009;
-        public static final int Theme_GameOn=0x7f08000e;
+        public static final int StandardEditText=0x7f080007;
+        public static final int StandardEmailEditText=0x7f080009;
+        public static final int StandardListView=0x7f08000d;
+        public static final int StandardPasswordEditText=0x7f080008;
+        public static final int StandardTextView=0x7f08000a;
+        public static final int Theme_GameOn=0x7f08000f;
         /**    <item name="android:background">@drawable/window_title_background</item> 
    <item name="android:background">@drawable/small_side_lockup_white</item> 
          */
-        public static final int WindowTitleBackground=0x7f080005;
-        public static final int bottomBar=0x7f080000;
-        public static final int gameon_background_color=0x7f080002;
-        public static final int textEditComboLayout=0x7f08000d;
+        public static final int WindowTitleBackground=0x7f080006;
+        public static final int bottomBar=0x7f080001;
+        public static final int gameon_background_color=0x7f080003;
+        public static final int textEditComboLayout=0x7f08000e;
     }
 }

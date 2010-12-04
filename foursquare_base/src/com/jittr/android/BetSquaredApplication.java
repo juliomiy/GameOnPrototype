@@ -12,6 +12,7 @@ import com.jittr.android.api.betsquared.db.GameOnDatabase;
 import com.jittr.android.bs.dto.Friend;
 import com.jittr.android.bs.dto.GameOnUserSettings;
 import com.jittr.android.bs.dto.SocialNetworkFriend;
+import com.jittr.android.util.Consts;
 
 import static com.jittr.android.util.Consts.*;
 
@@ -260,10 +261,12 @@ public class BetSquaredApplication extends Application {
  		    	values.put(GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN, userSettings.getTwitterOAuthToken());
  		    	values.put(GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET, userSettings.getTwitterOAuthTokenSecret());
  		    	values.put(GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME, userSettings.getTwitterSN());
+ 		    	values.put(GameOnDatabase.DB_USER_TABLE_TWITTER_AVATAR, userSettings.getTwitterAvatar());
  		    	break;
  		    case FOURSQUARE_NETWORK:
  		    	values.put(GameOnDatabase.DB_USER_TABLE_FS_TOKEN, userSettings.getFoursquareOAuthToken());
  		    	values.put(GameOnDatabase.DB_USER_TABLE_FS_TOKEN_SECRET, userSettings.getFoursquareOAuthTokenSecret());
+ 		    	values.put(GameOnDatabase.DB_USER_TABLE_FS_AVATAR, userSettings.getFoursquareAvatar());
  		    	break;
  		    case FACEBOOK_NETWORK:
  		    	break;
@@ -342,11 +345,13 @@ public class BetSquaredApplication extends Application {
 	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_TOKEN_SECRET,
 	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_SCREENNAME,
 	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_USERID,
+	    		                 GameOnDatabase.DB_USER_TABLE_TWITTER_AVATAR,
 	    		                 
 	    		                 GameOnDatabase.DB_USER_TABLE_FS_TOKEN, 
 	    		                 GameOnDatabase.DB_USER_TABLE_FS_TOKEN_SECRET,
 	    		                 GameOnDatabase.DB_USER_TABLE_FS_NAME,
-	    		                 GameOnDatabase.DB_USER_TABLE_FS_USERID
+	    		                 GameOnDatabase.DB_USER_TABLE_FS_USERID,
+	    		                 GameOnDatabase.DB_USER_TABLE_FS_AVATAR
 	    		                 }, 
 	                "userID ='" + userID + "'", null, null, null, null);
 	      /* will return at most 1 record so no loop is necessary. 0 rowcount means the credentials were not correct */
@@ -362,16 +367,38 @@ public class BetSquaredApplication extends Application {
                settings.setTwitterOAuthTokenSecret(cursor.getString(8));
                settings.setTwitterSN(cursor.getString(9));		      
                settings.setTwitterID(cursor.getString(10));	
-               settings.setFoursquareOAuthToken(cursor.getString(11));
-               settings.setFoursquareOAuthTokenSecret(cursor.getString(12));
-               settings.setFoursquareName(cursor.getString(13));
-               settings.setFoursquareUserID(cursor.getString(14));
+               settings.setTwitterAvatar(cursor.getString(11));	
+               
+               settings.setFoursquareOAuthToken(cursor.getString(12));
+               settings.setFoursquareOAuthTokenSecret(cursor.getString(13));
+               settings.setFoursquareName(cursor.getString(14));
+               settings.setFoursquareUserID(cursor.getString(15));
+               settings.setFoursquareAvatar(cursor.getString(16));
 	       } //if
-	       cursor.close();
+	       if (null != cursor) cursor.close();
            Log.d(TAG,settings.toString());
+           cursor=null;
 	       return settings;
 	 } //refreshUserSettings
 	
+	 public boolean updateSocialNetworkSetting(int socialNetwork, boolean checked) {
+		 String sql = "update " + GameOnDatabase.DB_USER_TABLE  + " set " + GameOnDatabase.DB_USER_TABLE_UPDATE_HOST + "=1,";
+		 switch (socialNetwork) {
+		    case Consts.FACEBOOK_NETWORK:
+		    	sql +=  GameOnDatabase.DB_USER_TABLE_FB_DEFAULT + " = " + (checked == true ? 1:0);
+		    	break;
+		    case Consts.TWITTER_NETWORK:
+		    	sql += GameOnDatabase.DB_USER_TABLE_TWITTER_DEFAULT + " = " +  (checked == true ? 1:0);
+		    	break;
+		    case Consts.FOURSQUARE_NETWORK:
+		    	sql += GameOnDatabase.DB_USER_TABLE_FS_DEFAULT + " = " +  (checked == true ? 1:0);
+		    	break;
+		    default: return false;
+		 }
+ 	     sql += " where userID = " + getLoginID();
+ 	     int rv = updateDatabaseSQL(sql);
+		 return (rv > 0 ? true : false);
+	 }
 	 /* update the betsquared friends on the handset
 	  * convenience to not have to go across the network constantly.
 	  * Add synchronization problem with the host data that needs to be addressed
@@ -447,6 +474,7 @@ public class BetSquaredApplication extends Application {
           } while (cursor.moveToNext()); //do
       } //if
       if (null != cursor) cursor.close();
+      cursor=null;
       return arrayList; 
 	 }  //getSocialNetworkFriends
 	 

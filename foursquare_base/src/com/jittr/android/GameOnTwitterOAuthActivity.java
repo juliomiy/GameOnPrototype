@@ -88,7 +88,7 @@ public class GameOnTwitterOAuthActivity extends GameOnBaseActivity {
 							    Log.d(TAG, "In Not New Registration");
    	    	       		        twitter.saveUserAuthCredentials(getAppContext().getLoginID(), TWITTER_NETWORK,twitter.getAccessToken(), 
    	    	    				twitter.getAccessTokenSecret(),
-   	    	    				String.valueOf(twitterID), twitterSN, null);
+   	    	    				String.valueOf(twitterID), twitterSN, null,imageURL);
    	    	    	    		getAppContext().refreshUserSettings(getAppContext().getLoginID());
 						} else if (isNewRegistration && !errorState) {
 							Log.d(TAG,"In New Registration");

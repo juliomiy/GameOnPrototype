@@ -75,6 +75,9 @@ public class PublicGamesHandler extends DefaultHandler implements ParserInterfac
 		    if (localName.equalsIgnoreCase("gameid")){
 		        game.setId(builder.toString());
 		    } 
+		    if (localName.equalsIgnoreCase("publicgameid")){
+		        game.setPublicGameID(builder.toString());
+		    } 
 		    else if (localName.equalsIgnoreCase("sportname")){
 		    	game.setSportname(builder.toString());
 		    }

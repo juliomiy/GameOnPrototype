@@ -102,7 +102,10 @@ public class mainForm extends GameOnBaseActivity {
 			
 			@Override
 			public void onClick(View v) {
-                testFoursquareButtonClicked();				
+				if (!getAppContext().getUserSettings().isFoursquareAuthorized()) {
+					foursquareOauthButtonClicked(v);
+				}
+				else testFoursquareButtonClicked();				
 			}
 		});
 
@@ -110,7 +113,10 @@ public class mainForm extends GameOnBaseActivity {
 			
 			@Override
 			public void onClick(View v) {
-                testTwitterButtonClicked();				
+				if (!getAppContext().getUserSettings().isTwitterAuthorized()) {
+					twitterOAuthButtonClicked();
+				}
+				else testTwitterButtonClicked();				
 			}
 		});
         userBetButton.setOnClickListener(new View.OnClickListener() {
